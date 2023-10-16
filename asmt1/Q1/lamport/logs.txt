@@ -1,0 +1,1648 @@
+2023/10/08 12:21:18 ===============START===============
+2023/10/08 12:21:18 Client 0's clock: 1
+2023/10/08 12:21:18 Client 0 sending: {0 0 1}
+2023/10/08 12:21:18 Client 1's clock: 1
+2023/10/08 12:21:18 Client 1 sending: {1 0 1}
+2023/10/08 12:21:18 Client 2's clock: 1
+2023/10/08 12:21:18 Client 2 sending: {2 0 1}
+2023/10/08 12:21:18 Server received: {0 0 1}
+2023/10/08 12:21:18 Server's clock:  2
+2023/10/08 12:21:18 Drop the message {0 0 1}
+2023/10/08 12:21:18 Server received: {1 0 1}
+2023/10/08 12:21:18 Server's clock:  3
+2023/10/08 12:21:18 Drop the message {1 0 1}
+2023/10/08 12:21:18 Server received: {2 0 1}
+2023/10/08 12:21:18 Server's clock:  4
+2023/10/08 12:21:18 Server forward to Client 0 {2 0 4}
+2023/10/08 12:21:18 Server forward to Client 1 {2 0 4}
+2023/10/08 12:21:18 Client 1 received: {2 0 4}
+2023/10/08 12:21:18 Client 1's clock: 5
+2023/10/08 12:21:18 Client 0 received: {2 0 4}
+2023/10/08 12:21:18 Client 0's clock: 5
+2023/10/08 12:21:18 Client 0's clock: 6
+2023/10/08 12:21:18 Client 0 sending: {0 1 6}
+2023/10/08 12:21:18 Server received: {0 1 6}
+2023/10/08 12:21:18 Server's clock:  7
+2023/10/08 12:21:18 Server forward to Client 1 {0 1 7}
+2023/10/08 12:21:18 Server forward to Client 2 {0 1 7}
+2023/10/08 12:21:18 Client 2 received: {0 1 7}
+2023/10/08 12:21:18 Client 2's clock: 8
+2023/10/08 12:21:18 Client 1 received: {0 1 7}
+2023/10/08 12:21:18 Client 1's clock: 8
+2023/10/08 12:21:20 Client 0's clock: 7
+2023/10/08 12:21:20 Client 0 sending: {0 2 7}
+2023/10/08 12:21:20 Server received: {0 2 7}
+2023/10/08 12:21:20 Server's clock:  8
+2023/10/08 12:21:20 Drop the message {0 2 7}
+2023/10/08 12:21:21 Client 0's clock: 8
+2023/10/08 12:21:21 Client 0 sending: {0 3 8}
+2023/10/08 12:21:21 Server received: {0 3 8}
+2023/10/08 12:21:21 Server's clock:  9
+2023/10/08 12:21:21 Drop the message {0 3 8}
+2023/10/08 12:21:22 Client 1's clock: 9
+2023/10/08 12:21:22 Client 1 sending: {1 1 9}
+2023/10/08 12:21:22 Server received: {1 1 9}
+2023/10/08 12:21:22 Server's clock:  10
+2023/10/08 12:21:22 Server forward to Client 0 {1 1 10}
+2023/10/08 12:21:22 Server forward to Client 2 {1 1 10}
+2023/10/08 12:21:22 Client 2 received: {1 1 10}
+2023/10/08 12:21:22 Client 2's clock: 11
+2023/10/08 12:21:22 Client 0 received: {1 1 10}
+2023/10/08 12:21:22 Client 0's clock: 11
+2023/10/08 12:21:22 Client 2's clock: 12
+2023/10/08 12:21:22 Client 2 sending: {2 1 12}
+2023/10/08 12:21:22 Server received: {2 1 12}
+2023/10/08 12:21:22 Server's clock:  13
+2023/10/08 12:21:22 Drop the message {2 1 12}
+2023/10/08 12:21:23 Client 2's clock: 13
+2023/10/08 12:21:23 Client 2 sending: {2 2 13}
+2023/10/08 12:21:23 Server received: {2 2 13}
+2023/10/08 12:21:23 Server's clock:  14
+2023/10/08 12:21:23 Server forward to Client 0 {2 2 14}
+2023/10/08 12:21:23 Server forward to Client 1 {2 2 14}
+2023/10/08 12:21:23 Client 1 received: {2 2 14}
+2023/10/08 12:21:23 Client 1's clock: 15
+2023/10/08 12:21:23 Client 0 received: {2 2 14}
+2023/10/08 12:21:23 Client 0's clock: 15
+2023/10/08 12:21:24 Client 2's clock: 14
+2023/10/08 12:21:24 Client 2 sending: {2 3 14}
+2023/10/08 12:21:24 Server received: {2 3 14}
+2023/10/08 12:21:24 Server's clock:  15
+2023/10/08 12:21:24 Server forward to Client 0 {2 3 15}
+2023/10/08 12:21:24 Server forward to Client 1 {2 3 15}
+2023/10/08 12:21:24 Client 1 received: {2 3 15}
+2023/10/08 12:21:24 Client 1's clock: 16
+2023/10/08 12:21:24 Client 0 received: {2 3 15}
+2023/10/08 12:21:24 Client 0's clock: 16
+2023/10/08 12:21:24 Client 2's clock: 15
+2023/10/08 12:21:24 Client 2 sending: {2 4 15}
+2023/10/08 12:21:24 Server received: {2 4 15}
+2023/10/08 12:21:24 Server's clock:  16
+2023/10/08 12:21:24 Server forward to Client 0 {2 4 16}
+2023/10/08 12:21:24 Server forward to Client 1 {2 4 16}
+2023/10/08 12:21:24 Client 0 received: {2 4 16}
+2023/10/08 12:21:24 Client 0's clock: 17
+2023/10/08 12:21:24 Client 1 received: {2 4 16}
+2023/10/08 12:21:24 Client 1's clock: 17
+2023/10/08 12:21:24 Client 2's clock: 16
+2023/10/08 12:21:24 Client 2 sending: {2 5 16}
+2023/10/08 12:21:24 Server received: {2 5 16}
+2023/10/08 12:21:24 Server's clock:  17
+2023/10/08 12:21:24 Drop the message {2 5 16}
+2023/10/08 12:21:25 Client 0's clock: 18
+2023/10/08 12:21:25 Client 0 sending: {0 4 18}
+2023/10/08 12:21:25 Server received: {0 4 18}
+2023/10/08 12:21:25 Server's clock:  19
+2023/10/08 12:21:25 Drop the message {0 4 18}
+2023/10/08 12:21:27 Client 1's clock: 18
+2023/10/08 12:21:27 Client 1 sending: {1 2 18}
+2023/10/08 12:21:27 Server received: {1 2 18}
+2023/10/08 12:21:27 Server's clock:  20
+2023/10/08 12:21:27 Server forward to Client 0 {1 2 20}
+2023/10/08 12:21:27 Server forward to Client 2 {1 2 20}
+2023/10/08 12:21:27 Client 2 received: {1 2 20}
+2023/10/08 12:21:27 Client 2's clock: 21
+2023/10/08 12:21:27 Client 0 received: {1 2 20}
+2023/10/08 12:21:27 Client 0's clock: 21
+2023/10/08 12:21:35 ===============START===============
+2023/10/08 12:21:35 Client 7's clock: 1
+2023/10/08 12:21:35 Client 7 sending: {7 0 1}
+2023/10/08 12:21:35 Client 0's clock: 1
+2023/10/08 12:21:35 Client 0 sending: {0 0 1}
+2023/10/08 12:21:35 Client 1's clock: 1
+2023/10/08 12:21:35 Client 1 sending: {1 0 1}
+2023/10/08 12:21:35 Client 2's clock: 1
+2023/10/08 12:21:35 Client 2 sending: {2 0 1}
+2023/10/08 12:21:35 Client 3's clock: 1
+2023/10/08 12:21:35 Client 3 sending: {3 0 1}
+2023/10/08 12:21:35 Client 4's clock: 1
+2023/10/08 12:21:35 Client 4 sending: {4 0 1}
+2023/10/08 12:21:35 Client 5's clock: 1
+2023/10/08 12:21:35 Client 5 sending: {5 0 1}
+2023/10/08 12:21:35 Client 6's clock: 1
+2023/10/08 12:21:35 Client 6 sending: {6 0 1}
+2023/10/08 12:21:35 Client 9's clock: 1
+2023/10/08 12:21:35 Client 9 sending: {9 0 1}
+2023/10/08 12:21:35 Client 8's clock: 1
+2023/10/08 12:21:35 Client 8 sending: {8 0 1}
+2023/10/08 12:21:35 Client 10's clock: 1
+2023/10/08 12:21:35 Client 10 sending: {10 0 1}
+2023/10/08 12:21:35 Client 13's clock: 1
+2023/10/08 12:21:35 Client 13 sending: {13 0 1}
+2023/10/08 12:21:35 Client 11's clock: 1
+2023/10/08 12:21:35 Client 11 sending: {11 0 1}
+2023/10/08 12:21:35 Client 12's clock: 1
+2023/10/08 12:21:35 Client 12 sending: {12 0 1}
+2023/10/08 12:21:35 Client 14's clock: 1
+2023/10/08 12:21:35 Client 14 sending: {14 0 1}
+2023/10/08 12:21:35 Server received: {7 0 1}
+2023/10/08 12:21:35 Server's clock:  2
+2023/10/08 12:21:35 Server forward to Client 0 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 1 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 2 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 3 {7 0 2}
+2023/10/08 12:21:35 Client 1 received: {7 0 2}
+2023/10/08 12:21:35 Client 0 received: {7 0 2}
+2023/10/08 12:21:35 Client 0's clock: 3
+2023/10/08 12:21:35 Server forward to Client 4 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 5 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 6 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 8 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 9 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 10 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 11 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 12 {7 0 2}
+2023/10/08 12:21:35 Client 4 received: {7 0 2}
+2023/10/08 12:21:35 Client 4's clock: 3
+2023/10/08 12:21:35 Client 5 received: {7 0 2}
+2023/10/08 12:21:35 Client 5's clock: 3
+2023/10/08 12:21:35 Server forward to Client 13 {7 0 2}
+2023/10/08 12:21:35 Server forward to Client 14 {7 0 2}
+2023/10/08 12:21:35 Server received: {0 0 1}
+2023/10/08 12:21:35 Client 2 received: {7 0 2}
+2023/10/08 12:21:35 Client 2's clock: 3
+2023/10/08 12:21:35 Client 1's clock: 3
+2023/10/08 12:21:35 Client 3 received: {7 0 2}
+2023/10/08 12:21:35 Client 3's clock: 3
+2023/10/08 12:21:35 Client 12 received: {7 0 2}
+2023/10/08 12:21:35 Client 12's clock: 3
+2023/10/08 12:21:35 Client 6 received: {7 0 2}
+2023/10/08 12:21:35 Client 6's clock: 3
+2023/10/08 12:21:35 Client 8 received: {7 0 2}
+2023/10/08 12:21:35 Client 8's clock: 3
+2023/10/08 12:21:35 Client 9 received: {7 0 2}
+2023/10/08 12:21:35 Client 9's clock: 3
+2023/10/08 12:21:35 Client 10 received: {7 0 2}
+2023/10/08 12:21:35 Client 10's clock: 3
+2023/10/08 12:21:35 Client 11 received: {7 0 2}
+2023/10/08 12:21:35 Client 11's clock: 3
+2023/10/08 12:21:35 Server's clock:  3
+2023/10/08 12:21:35 Server forward to Client 1 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 2 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 3 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 4 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 5 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 6 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 7 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 8 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 9 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 10 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 11 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 12 {0 0 3}
+2023/10/08 12:21:35 Server forward to Client 13 {0 0 3}
+2023/10/08 12:21:35 Client 12 received: {0 0 3}
+2023/10/08 12:21:35 Client 12's clock: 4
+2023/10/08 12:21:35 Client 13 received: {7 0 2}
+2023/10/08 12:21:35 Client 13's clock: 3
+2023/10/08 12:21:35 Client 13 received: {0 0 3}
+2023/10/08 12:21:35 Client 5 received: {0 0 3}
+2023/10/08 12:21:35 Client 5's clock: 4
+2023/10/08 12:21:35 Client 6 received: {0 0 3}
+2023/10/08 12:21:35 Client 6's clock: 4
+2023/10/08 12:21:35 Client 13's clock: 4
+2023/10/08 12:21:35 Client 4 received: {0 0 3}
+2023/10/08 12:21:35 Client 4's clock: 4
+2023/10/08 12:21:35 Client 7 received: {0 0 3}
+2023/10/08 12:21:35 Client 7's clock: 4
+2023/10/08 12:21:35 Client 8 received: {0 0 3}
+2023/10/08 12:21:35 Client 8's clock: 4
+2023/10/08 12:21:35 Client 9 received: {0 0 3}
+2023/10/08 12:21:35 Client 9's clock: 4
+2023/10/08 12:21:35 Client 10 received: {0 0 3}
+2023/10/08 12:21:35 Client 10's clock: 4
+2023/10/08 12:21:35 Client 11 received: {0 0 3}
+2023/10/08 12:21:35 Client 11's clock: 4
+2023/10/08 12:21:35 Client 14 received: {7 0 2}
+2023/10/08 12:21:35 Client 14's clock: 3
+2023/10/08 12:21:35 Client 3 received: {0 0 3}
+2023/10/08 12:21:35 Client 3's clock: 4
+2023/10/08 12:21:35 Server forward to Client 14 {0 0 3}
+2023/10/08 12:21:35 Server received: {1 0 1}
+2023/10/08 12:21:35 Server's clock:  4
+2023/10/08 12:21:35 Server forward to Client 0 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 2 {1 0 4}
+2023/10/08 12:21:35 Client 0 received: {1 0 4}
+2023/10/08 12:21:35 Client 0's clock: 5
+2023/10/08 12:21:35 Client 2 received: {0 0 3}
+2023/10/08 12:21:35 Client 2's clock: 4
+2023/10/08 12:21:35 Client 2 received: {1 0 4}
+2023/10/08 12:21:35 Client 2's clock: 5
+2023/10/08 12:21:35 Server forward to Client 3 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 4 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 5 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 6 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 7 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 8 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 9 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 10 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 11 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 12 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 13 {1 0 4}
+2023/10/08 12:21:35 Server forward to Client 14 {1 0 4}
+2023/10/08 12:21:35 Client 9 received: {1 0 4}
+2023/10/08 12:21:35 Client 12 received: {1 0 4}
+2023/10/08 12:21:35 Client 12's clock: 5
+2023/10/08 12:21:35 Client 1 received: {0 0 3}
+2023/10/08 12:21:35 Client 1's clock: 4
+2023/10/08 12:21:35 Client 6 received: {1 0 4}
+2023/10/08 12:21:35 Client 6's clock: 5
+2023/10/08 12:21:35 Client 14 received: {0 0 3}
+2023/10/08 12:21:35 Client 14's clock: 4
+2023/10/08 12:21:35 Client 14 received: {1 0 4}
+2023/10/08 12:21:35 Client 14's clock: 5
+2023/10/08 12:21:35 Server received: {2 0 1}
+2023/10/08 12:21:35 Server's clock:  5
+2023/10/08 12:21:35 Drop the message {2 0 1}
+2023/10/08 12:21:35 Server received: {3 0 1}
+2023/10/08 12:21:35 Server's clock:  6
+2023/10/08 12:21:35 Drop the message {3 0 1}
+2023/10/08 12:21:35 Server received: {4 0 1}
+2023/10/08 12:21:35 Server's clock:  7
+2023/10/08 12:21:35 Server forward to Client 0 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 1 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 2 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 3 {4 0 7}
+2023/10/08 12:21:35 Client 2 received: {4 0 7}
+2023/10/08 12:21:35 Client 2's clock: 8
+2023/10/08 12:21:35 Client 4 received: {1 0 4}
+2023/10/08 12:21:35 Client 4's clock: 5
+2023/10/08 12:21:35 Client 3 received: {1 0 4}
+2023/10/08 12:21:35 Client 3's clock: 5
+2023/10/08 12:21:35 Client 3 received: {4 0 7}
+2023/10/08 12:21:35 Client 3's clock: 8
+2023/10/08 12:21:35 Client 13 received: {1 0 4}
+2023/10/08 12:21:35 Client 13's clock: 5
+2023/10/08 12:21:35 Client 10 received: {1 0 4}
+2023/10/08 12:21:35 Client 10's clock: 5
+2023/10/08 12:21:35 Client 11 received: {1 0 4}
+2023/10/08 12:21:35 Client 11's clock: 5
+2023/10/08 12:21:35 Client 5 received: {1 0 4}
+2023/10/08 12:21:35 Client 5's clock: 5
+2023/10/08 12:21:35 Client 8 received: {1 0 4}
+2023/10/08 12:21:35 Client 8's clock: 5
+2023/10/08 12:21:35 Client 7 received: {1 0 4}
+2023/10/08 12:21:35 Client 7's clock: 5
+2023/10/08 12:21:35 Client 9's clock: 5
+2023/10/08 12:21:35 Client 0 received: {4 0 7}
+2023/10/08 12:21:35 Client 0's clock: 8
+2023/10/08 12:21:35 Client 1 received: {4 0 7}
+2023/10/08 12:21:35 Client 1's clock: 8
+2023/10/08 12:21:35 Server forward to Client 5 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 6 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 7 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 8 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 9 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 10 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 11 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 12 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 13 {4 0 7}
+2023/10/08 12:21:35 Server forward to Client 14 {4 0 7}
+2023/10/08 12:21:35 Client 8 received: {4 0 7}
+2023/10/08 12:21:35 Client 8's clock: 8
+2023/10/08 12:21:35 Client 7 received: {4 0 7}
+2023/10/08 12:21:35 Client 7's clock: 8
+2023/10/08 12:21:35 Client 6 received: {4 0 7}
+2023/10/08 12:21:35 Client 6's clock: 8
+2023/10/08 12:21:35 Client 5 received: {4 0 7}
+2023/10/08 12:21:35 Client 5's clock: 8
+2023/10/08 12:21:35 Server received: {5 0 1}
+2023/10/08 12:21:35 Server's clock:  8
+2023/10/08 12:21:35 Server forward to Client 0 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 1 {5 0 8}
+2023/10/08 12:21:35 Client 0 received: {5 0 8}
+2023/10/08 12:21:35 Client 0's clock: 9
+2023/10/08 12:21:35 Client 12 received: {4 0 7}
+2023/10/08 12:21:35 Client 12's clock: 8
+2023/10/08 12:21:35 Client 13 received: {4 0 7}
+2023/10/08 12:21:35 Client 13's clock: 8
+2023/10/08 12:21:35 Client 10 received: {4 0 7}
+2023/10/08 12:21:35 Client 10's clock: 8
+2023/10/08 12:21:35 Client 11 received: {4 0 7}
+2023/10/08 12:21:35 Client 11's clock: 8
+2023/10/08 12:21:35 Client 14 received: {4 0 7}
+2023/10/08 12:21:35 Client 14's clock: 8
+2023/10/08 12:21:35 Client 9 received: {4 0 7}
+2023/10/08 12:21:35 Client 9's clock: 8
+2023/10/08 12:21:35 Server forward to Client 2 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 3 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 4 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 6 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 7 {5 0 8}
+2023/10/08 12:21:35 Client 3 received: {5 0 8}
+2023/10/08 12:21:35 Client 3's clock: 9
+2023/10/08 12:21:35 Client 1 received: {5 0 8}
+2023/10/08 12:21:35 Client 1's clock: 9
+2023/10/08 12:21:35 Server forward to Client 8 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 9 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 10 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 11 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 12 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 13 {5 0 8}
+2023/10/08 12:21:35 Server forward to Client 14 {5 0 8}
+2023/10/08 12:21:35 Server received: {6 0 1}
+2023/10/08 12:21:35 Server's clock:  9
+2023/10/08 12:21:35 Server forward to Client 0 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 1 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 2 {6 0 9}
+2023/10/08 12:21:35 Client 1 received: {6 0 9}
+2023/10/08 12:21:35 Client 1's clock: 10
+2023/10/08 12:21:35 Client 12 received: {5 0 8}
+2023/10/08 12:21:35 Client 12's clock: 9
+2023/10/08 12:21:35 Client 14 received: {5 0 8}
+2023/10/08 12:21:35 Client 0 received: {6 0 9}
+2023/10/08 12:21:35 Client 0's clock: 10
+2023/10/08 12:21:35 Client 11 received: {5 0 8}
+2023/10/08 12:21:35 Client 11's clock: 9
+2023/10/08 12:21:35 Client 4 received: {5 0 8}
+2023/10/08 12:21:35 Client 4's clock: 9
+2023/10/08 12:21:35 Client 6 received: {5 0 8}
+2023/10/08 12:21:35 Client 6's clock: 9
+2023/10/08 12:21:35 Client 2 received: {5 0 8}
+2023/10/08 12:21:35 Client 2's clock: 9
+2023/10/08 12:21:35 Client 2 received: {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 3 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 4 {6 0 9}
+2023/10/08 12:21:35 Client 7 received: {5 0 8}
+2023/10/08 12:21:35 Client 7's clock: 9
+2023/10/08 12:21:35 Client 8 received: {5 0 8}
+2023/10/08 12:21:35 Client 8's clock: 9
+2023/10/08 12:21:35 Client 10 received: {5 0 8}
+2023/10/08 12:21:35 Client 10's clock: 9
+2023/10/08 12:21:35 Client 13 received: {5 0 8}
+2023/10/08 12:21:35 Client 13's clock: 9
+2023/10/08 12:21:35 Client 14's clock: 9
+2023/10/08 12:21:35 Client 2's clock: 10
+2023/10/08 12:21:35 Server forward to Client 5 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 7 {6 0 9}
+2023/10/08 12:21:35 Client 4 received: {6 0 9}
+2023/10/08 12:21:35 Client 4's clock: 10
+2023/10/08 12:21:35 Client 3 received: {6 0 9}
+2023/10/08 12:21:35 Client 3's clock: 10
+2023/10/08 12:21:35 Client 9 received: {5 0 8}
+2023/10/08 12:21:35 Client 9's clock: 9
+2023/10/08 12:21:35 Server forward to Client 8 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 9 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 10 {6 0 9}
+2023/10/08 12:21:35 Client 8 received: {6 0 9}
+2023/10/08 12:21:35 Client 8's clock: 10
+2023/10/08 12:21:35 Client 7 received: {6 0 9}
+2023/10/08 12:21:35 Client 7's clock: 10
+2023/10/08 12:21:35 Server forward to Client 11 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 12 {6 0 9}
+2023/10/08 12:21:35 Client 5 received: {6 0 9}
+2023/10/08 12:21:35 Client 5's clock: 10
+2023/10/08 12:21:35 Client 10 received: {6 0 9}
+2023/10/08 12:21:35 Client 10's clock: 10
+2023/10/08 12:21:35 Client 9 received: {6 0 9}
+2023/10/08 12:21:35 Client 9's clock: 10
+2023/10/08 12:21:35 Server forward to Client 13 {6 0 9}
+2023/10/08 12:21:35 Server forward to Client 14 {6 0 9}
+2023/10/08 12:21:35 Server received: {9 0 1}
+2023/10/08 12:21:35 Server's clock:  10
+2023/10/08 12:21:35 Server forward to Client 0 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 1 {9 0 10}
+2023/10/08 12:21:35 Client 0 received: {9 0 10}
+2023/10/08 12:21:35 Client 0's clock: 11
+2023/10/08 12:21:35 Client 12 received: {6 0 9}
+2023/10/08 12:21:35 Client 12's clock: 10
+2023/10/08 12:21:35 Client 11 received: {6 0 9}
+2023/10/08 12:21:35 Client 11's clock: 10
+2023/10/08 12:21:35 Client 13 received: {6 0 9}
+2023/10/08 12:21:35 Client 13's clock: 10
+2023/10/08 12:21:35 Client 14 received: {6 0 9}
+2023/10/08 12:21:35 Client 14's clock: 10
+2023/10/08 12:21:35 Server forward to Client 2 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 3 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 4 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 5 {9 0 10}
+2023/10/08 12:21:35 Client 3 received: {9 0 10}
+2023/10/08 12:21:35 Client 3's clock: 11
+2023/10/08 12:21:35 Client 2 received: {9 0 10}
+2023/10/08 12:21:35 Client 2's clock: 11
+2023/10/08 12:21:35 Client 1 received: {9 0 10}
+2023/10/08 12:21:35 Client 1's clock: 11
+2023/10/08 12:21:35 Server forward to Client 6 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 7 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 8 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 10 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 11 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 12 {9 0 10}
+2023/10/08 12:21:35 Client 7 received: {9 0 10}
+2023/10/08 12:21:35 Client 7's clock: 11
+2023/10/08 12:21:35 Client 6 received: {9 0 10}
+2023/10/08 12:21:35 Client 6's clock: 11
+2023/10/08 12:21:35 Client 4 received: {9 0 10}
+2023/10/08 12:21:35 Client 4's clock: 11
+2023/10/08 12:21:35 Client 5 received: {9 0 10}
+2023/10/08 12:21:35 Client 5's clock: 11
+2023/10/08 12:21:35 Client 8 received: {9 0 10}
+2023/10/08 12:21:35 Client 8's clock: 11
+2023/10/08 12:21:35 Server forward to Client 13 {9 0 10}
+2023/10/08 12:21:35 Server forward to Client 14 {9 0 10}
+2023/10/08 12:21:35 Client 13 received: {9 0 10}
+2023/10/08 12:21:35 Client 14 received: {9 0 10}
+2023/10/08 12:21:35 Client 14's clock: 11
+2023/10/08 12:21:35 Client 12 received: {9 0 10}
+2023/10/08 12:21:35 Client 12's clock: 11
+2023/10/08 12:21:35 Client 10 received: {9 0 10}
+2023/10/08 12:21:35 Client 10's clock: 11
+2023/10/08 12:21:35 Client 11 received: {9 0 10}
+2023/10/08 12:21:35 Client 11's clock: 11
+2023/10/08 12:21:35 Server received: {8 0 1}
+2023/10/08 12:21:35 Server's clock:  11
+2023/10/08 12:21:35 Client 13's clock: 11
+2023/10/08 12:21:35 Server forward to Client 0 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 1 {8 0 11}
+2023/10/08 12:21:35 Client 0 received: {8 0 11}
+2023/10/08 12:21:35 Client 0's clock: 12
+2023/10/08 12:21:35 Server forward to Client 2 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 3 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 4 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 5 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 6 {8 0 11}
+2023/10/08 12:21:35 Client 3 received: {8 0 11}
+2023/10/08 12:21:35 Client 3's clock: 12
+2023/10/08 12:21:35 Client 1 received: {8 0 11}
+2023/10/08 12:21:35 Client 1's clock: 12
+2023/10/08 12:21:35 Client 2 received: {8 0 11}
+2023/10/08 12:21:35 Client 2's clock: 12
+2023/10/08 12:21:35 Server forward to Client 7 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 9 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 10 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 11 {8 0 11}
+2023/10/08 12:21:35 Client 7 received: {8 0 11}
+2023/10/08 12:21:35 Client 7's clock: 12
+2023/10/08 12:21:35 Client 6 received: {8 0 11}
+2023/10/08 12:21:35 Client 6's clock: 12
+2023/10/08 12:21:35 Server forward to Client 12 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 13 {8 0 11}
+2023/10/08 12:21:35 Server forward to Client 14 {8 0 11}
+2023/10/08 12:21:35 Server received: {10 0 1}
+2023/10/08 12:21:35 Server's clock:  12
+2023/10/08 12:21:35 Server forward to Client 0 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 1 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 2 {10 0 12}
+2023/10/08 12:21:35 Client 0 received: {10 0 12}
+2023/10/08 12:21:35 Client 0's clock: 13
+2023/10/08 12:21:35 Client 12 received: {8 0 11}
+2023/10/08 12:21:35 Client 12's clock: 12
+2023/10/08 12:21:35 Server forward to Client 3 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 4 {10 0 12}
+2023/10/08 12:21:35 Client 3 received: {10 0 12}
+2023/10/08 12:21:35 Client 3's clock: 13
+2023/10/08 12:21:35 Client 5 received: {8 0 11}
+2023/10/08 12:21:35 Client 5's clock: 12
+2023/10/08 12:21:35 Client 9 received: {8 0 11}
+2023/10/08 12:21:35 Client 9's clock: 12
+2023/10/08 12:21:35 Client 11 received: {8 0 11}
+2023/10/08 12:21:35 Client 11's clock: 12
+2023/10/08 12:21:35 Client 10 received: {8 0 11}
+2023/10/08 12:21:35 Client 10's clock: 12
+2023/10/08 12:21:35 Client 4 received: {8 0 11}
+2023/10/08 12:21:35 Client 4's clock: 12
+2023/10/08 12:21:35 Client 4 received: {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 5 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 6 {10 0 12}
+2023/10/08 12:21:35 Client 14 received: {8 0 11}
+2023/10/08 12:21:35 Client 14's clock: 12
+2023/10/08 12:21:35 Client 13 received: {8 0 11}
+2023/10/08 12:21:35 Client 13's clock: 12
+2023/10/08 12:21:35 Client 1 received: {10 0 12}
+2023/10/08 12:21:35 Client 1's clock: 13
+2023/10/08 12:21:35 Client 2 received: {10 0 12}
+2023/10/08 12:21:35 Client 2's clock: 13
+2023/10/08 12:21:35 Client 4's clock: 13
+2023/10/08 12:21:35 Server forward to Client 7 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 8 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 9 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 11 {10 0 12}
+2023/10/08 12:21:35 Client 7 received: {10 0 12}
+2023/10/08 12:21:35 Client 9 received: {10 0 12}
+2023/10/08 12:21:35 Client 9's clock: 13
+2023/10/08 12:21:35 Client 6 received: {10 0 12}
+2023/10/08 12:21:35 Client 6's clock: 13
+2023/10/08 12:21:35 Client 5 received: {10 0 12}
+2023/10/08 12:21:35 Client 5's clock: 13
+2023/10/08 12:21:35 Server forward to Client 12 {10 0 12}
+2023/10/08 12:21:35 Server forward to Client 13 {10 0 12}
+2023/10/08 12:21:35 Client 12 received: {10 0 12}
+2023/10/08 12:21:35 Client 12's clock: 13
+2023/10/08 12:21:35 Client 8 received: {10 0 12}
+2023/10/08 12:21:35 Client 8's clock: 13
+2023/10/08 12:21:35 Client 11 received: {10 0 12}
+2023/10/08 12:21:35 Client 11's clock: 13
+2023/10/08 12:21:35 Client 7's clock: 13
+2023/10/08 12:21:35 Server forward to Client 14 {10 0 12}
+2023/10/08 12:21:35 Server received: {13 0 1}
+2023/10/08 12:21:35 Client 13 received: {10 0 12}
+2023/10/08 12:21:35 Client 13's clock: 13
+2023/10/08 12:21:35 Server's clock:  13
+2023/10/08 12:21:35 Server forward to Client 0 {13 0 13}
+2023/10/08 12:21:35 Client 14 received: {10 0 12}
+2023/10/08 12:21:35 Client 14's clock: 13
+2023/10/08 12:21:35 Server forward to Client 1 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 2 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 3 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 4 {13 0 13}
+2023/10/08 12:21:35 Client 2 received: {13 0 13}
+2023/10/08 12:21:35 Client 2's clock: 14
+2023/10/08 12:21:35 Client 1 received: {13 0 13}
+2023/10/08 12:21:35 Client 1's clock: 14
+2023/10/08 12:21:35 Client 0 received: {13 0 13}
+2023/10/08 12:21:35 Client 0's clock: 14
+2023/10/08 12:21:35 Server forward to Client 5 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 6 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 7 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 8 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 9 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 10 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 11 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 12 {13 0 13}
+2023/10/08 12:21:35 Server forward to Client 14 {13 0 13}
+2023/10/08 12:21:35 Client 8 received: {13 0 13}
+2023/10/08 12:21:35 Client 8's clock: 14
+2023/10/08 12:21:35 Client 12 received: {13 0 13}
+2023/10/08 12:21:35 Client 12's clock: 14
+2023/10/08 12:21:35 Client 7 received: {13 0 13}
+2023/10/08 12:21:35 Client 7's clock: 14
+2023/10/08 12:21:35 Client 3 received: {13 0 13}
+2023/10/08 12:21:35 Client 3's clock: 14
+2023/10/08 12:21:35 Client 5 received: {13 0 13}
+2023/10/08 12:21:35 Client 5's clock: 14
+2023/10/08 12:21:35 Client 4 received: {13 0 13}
+2023/10/08 12:21:35 Client 9 received: {13 0 13}
+2023/10/08 12:21:35 Client 4's clock: 14
+2023/10/08 12:21:35 Client 6 received: {13 0 13}
+2023/10/08 12:21:35 Client 6's clock: 14
+2023/10/08 12:21:35 Server received: {11 0 1}
+2023/10/08 12:21:35 Server's clock:  14
+2023/10/08 12:21:35 Server forward to Client 0 {11 0 14}
+2023/10/08 12:21:35 Client 10 received: {13 0 13}
+2023/10/08 12:21:35 Client 10's clock: 14
+2023/10/08 12:21:35 Client 11 received: {13 0 13}
+2023/10/08 12:21:35 Client 11's clock: 14
+2023/10/08 12:21:35 Client 14 received: {13 0 13}
+2023/10/08 12:21:35 Client 14's clock: 14
+2023/10/08 12:21:35 Client 9's clock: 14
+2023/10/08 12:21:35 Server forward to Client 1 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 2 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 3 {11 0 14}
+2023/10/08 12:21:35 Client 1 received: {11 0 14}
+2023/10/08 12:21:35 Client 1's clock: 15
+2023/10/08 12:21:35 Client 0 received: {11 0 14}
+2023/10/08 12:21:35 Client 0's clock: 15
+2023/10/08 12:21:35 Server forward to Client 4 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 5 {11 0 14}
+2023/10/08 12:21:35 Client 2 received: {11 0 14}
+2023/10/08 12:21:35 Client 2's clock: 15
+2023/10/08 12:21:35 Client 3 received: {11 0 14}
+2023/10/08 12:21:35 Client 3's clock: 15
+2023/10/08 12:21:35 Server forward to Client 6 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 7 {11 0 14}
+2023/10/08 12:21:35 Client 5 received: {11 0 14}
+2023/10/08 12:21:35 Client 5's clock: 15
+2023/10/08 12:21:35 Client 4 received: {11 0 14}
+2023/10/08 12:21:35 Client 4's clock: 15
+2023/10/08 12:21:35 Server forward to Client 8 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 9 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 10 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 12 {11 0 14}
+2023/10/08 12:21:35 Client 10 received: {11 0 14}
+2023/10/08 12:21:35 Client 10's clock: 15
+2023/10/08 12:21:35 Client 7 received: {11 0 14}
+2023/10/08 12:21:35 Client 7's clock: 15
+2023/10/08 12:21:35 Client 6 received: {11 0 14}
+2023/10/08 12:21:35 Client 6's clock: 15
+2023/10/08 12:21:35 Client 8 received: {11 0 14}
+2023/10/08 12:21:35 Client 8's clock: 15
+2023/10/08 12:21:35 Server forward to Client 13 {11 0 14}
+2023/10/08 12:21:35 Server forward to Client 14 {11 0 14}
+2023/10/08 12:21:35 Server received: {12 0 1}
+2023/10/08 12:21:35 Client 14 received: {11 0 14}
+2023/10/08 12:21:35 Client 14's clock: 15
+2023/10/08 12:21:35 Client 9 received: {11 0 14}
+2023/10/08 12:21:35 Client 9's clock: 15
+2023/10/08 12:21:35 Server's clock:  15
+2023/10/08 12:21:35 Drop the message {12 0 1}
+2023/10/08 12:21:35 Server received: {14 0 1}
+2023/10/08 12:21:35 Server's clock:  16
+2023/10/08 12:21:35 Server forward to Client 0 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 1 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 2 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 3 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 4 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 5 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 6 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 7 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 8 {14 0 16}
+2023/10/08 12:21:35 Client 0 received: {14 0 16}
+2023/10/08 12:21:35 Client 0's clock: 17
+2023/10/08 12:21:35 Client 3 received: {14 0 16}
+2023/10/08 12:21:35 Client 3's clock: 17
+2023/10/08 12:21:35 Client 13 received: {11 0 14}
+2023/10/08 12:21:35 Client 13's clock: 15
+2023/10/08 12:21:35 Client 1 received: {14 0 16}
+2023/10/08 12:21:35 Client 1's clock: 17
+2023/10/08 12:21:35 Server forward to Client 9 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 10 {14 0 16}
+2023/10/08 12:21:35 Client 9 received: {14 0 16}
+2023/10/08 12:21:35 Client 9's clock: 17
+2023/10/08 12:21:35 Client 8 received: {14 0 16}
+2023/10/08 12:21:35 Client 8's clock: 17
+2023/10/08 12:21:35 Client 12 received: {11 0 14}
+2023/10/08 12:21:35 Client 12's clock: 15
+2023/10/08 12:21:35 Client 2 received: {14 0 16}
+2023/10/08 12:21:35 Client 2's clock: 17
+2023/10/08 12:21:35 Client 4 received: {14 0 16}
+2023/10/08 12:21:35 Client 4's clock: 17
+2023/10/08 12:21:35 Client 7 received: {14 0 16}
+2023/10/08 12:21:35 Client 7's clock: 17
+2023/10/08 12:21:35 Client 6 received: {14 0 16}
+2023/10/08 12:21:35 Client 6's clock: 17
+2023/10/08 12:21:35 Client 5 received: {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 11 {14 0 16}
+2023/10/08 12:21:35 Client 5's clock: 17
+2023/10/08 12:21:35 Server forward to Client 12 {14 0 16}
+2023/10/08 12:21:35 Server forward to Client 13 {14 0 16}
+2023/10/08 12:21:35 Client 13 received: {14 0 16}
+2023/10/08 12:21:35 Client 13's clock: 17
+2023/10/08 12:21:35 Client 11 received: {14 0 16}
+2023/10/08 12:21:35 Client 11's clock: 17
+2023/10/08 12:21:35 Client 10 received: {14 0 16}
+2023/10/08 12:21:35 Client 10's clock: 17
+2023/10/08 12:21:35 Client 12 received: {14 0 16}
+2023/10/08 12:21:35 Client 12's clock: 17
+2023/10/08 12:21:36 Client 10's clock: 18
+2023/10/08 12:21:36 Client 10 sending: {10 1 18}
+2023/10/08 12:21:36 Server received: {10 1 18}
+2023/10/08 12:21:36 Server's clock:  19
+2023/10/08 12:21:36 Server forward to Client 0 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 1 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 2 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 3 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 4 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 5 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 6 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 7 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 8 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 9 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 11 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 12 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 13 {10 1 19}
+2023/10/08 12:21:36 Server forward to Client 14 {10 1 19}
+2023/10/08 12:21:36 Client 14 received: {10 1 19}
+2023/10/08 12:21:36 Client 14's clock: 20
+2023/10/08 12:21:36 Client 0 received: {10 1 19}
+2023/10/08 12:21:36 Client 0's clock: 20
+2023/10/08 12:21:36 Client 1 received: {10 1 19}
+2023/10/08 12:21:36 Client 1's clock: 20
+2023/10/08 12:21:36 Client 8 received: {10 1 19}
+2023/10/08 12:21:36 Client 8's clock: 20
+2023/10/08 12:21:36 Client 5 received: {10 1 19}
+2023/10/08 12:21:36 Client 5's clock: 20
+2023/10/08 12:21:36 Client 2 received: {10 1 19}
+2023/10/08 12:21:36 Client 2's clock: 20
+2023/10/08 12:21:36 Client 3 received: {10 1 19}
+2023/10/08 12:21:36 Client 3's clock: 20
+2023/10/08 12:21:36 Client 4 received: {10 1 19}
+2023/10/08 12:21:36 Client 4's clock: 20
+2023/10/08 12:21:36 Client 9 received: {10 1 19}
+2023/10/08 12:21:36 Client 9's clock: 20
+2023/10/08 12:21:36 Client 11 received: {10 1 19}
+2023/10/08 12:21:36 Client 11's clock: 20
+2023/10/08 12:21:36 Client 12 received: {10 1 19}
+2023/10/08 12:21:36 Client 12's clock: 20
+2023/10/08 12:21:36 Client 13 received: {10 1 19}
+2023/10/08 12:21:36 Client 13's clock: 20
+2023/10/08 12:21:36 Client 7 received: {10 1 19}
+2023/10/08 12:21:36 Client 7's clock: 20
+2023/10/08 12:21:36 Client 6 received: {10 1 19}
+2023/10/08 12:21:36 Client 6's clock: 20
+2023/10/08 12:21:36 Client 9's clock: 21
+2023/10/08 12:21:36 Client 9 sending: {9 1 21}
+2023/10/08 12:21:36 Server received: {9 1 21}
+2023/10/08 12:21:36 Server's clock:  22
+2023/10/08 12:21:36 Server forward to Client 0 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 1 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 2 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 3 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 4 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 5 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 6 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 7 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 8 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 10 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 11 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 12 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 13 {9 1 22}
+2023/10/08 12:21:36 Server forward to Client 14 {9 1 22}
+2023/10/08 12:21:36 Client 14 received: {9 1 22}
+2023/10/08 12:21:36 Client 14's clock: 23
+2023/10/08 12:21:36 Client 0 received: {9 1 22}
+2023/10/08 12:21:36 Client 0's clock: 23
+2023/10/08 12:21:36 Client 1 received: {9 1 22}
+2023/10/08 12:21:36 Client 1's clock: 23
+2023/10/08 12:21:36 Client 2 received: {9 1 22}
+2023/10/08 12:21:36 Client 2's clock: 23
+2023/10/08 12:21:36 Client 3 received: {9 1 22}
+2023/10/08 12:21:36 Client 3's clock: 23
+2023/10/08 12:21:36 Client 4 received: {9 1 22}
+2023/10/08 12:21:36 Client 4's clock: 23
+2023/10/08 12:21:36 Client 5 received: {9 1 22}
+2023/10/08 12:21:36 Client 5's clock: 23
+2023/10/08 12:21:36 Client 6 received: {9 1 22}
+2023/10/08 12:21:36 Client 6's clock: 23
+2023/10/08 12:21:36 Client 7 received: {9 1 22}
+2023/10/08 12:21:36 Client 7's clock: 23
+2023/10/08 12:21:36 Client 8 received: {9 1 22}
+2023/10/08 12:21:36 Client 8's clock: 23
+2023/10/08 12:21:36 Client 10 received: {9 1 22}
+2023/10/08 12:21:36 Client 10's clock: 23
+2023/10/08 12:21:36 Client 11 received: {9 1 22}
+2023/10/08 12:21:36 Client 11's clock: 23
+2023/10/08 12:21:36 Client 12 received: {9 1 22}
+2023/10/08 12:21:36 Client 12's clock: 23
+2023/10/08 12:21:36 Client 13 received: {9 1 22}
+2023/10/08 12:21:36 Client 13's clock: 23
+2023/10/08 12:21:36 Client 9's clock: 22
+2023/10/08 12:21:36 Client 9 sending: {9 2 22}
+2023/10/08 12:21:36 Server received: {9 2 22}
+2023/10/08 12:21:36 Server's clock:  23
+2023/10/08 12:21:36 Server forward to Client 0 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 1 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 2 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 3 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 4 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 5 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 6 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 7 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 8 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 10 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 11 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 12 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 13 {9 2 23}
+2023/10/08 12:21:36 Server forward to Client 14 {9 2 23}
+2023/10/08 12:21:36 Client 14 received: {9 2 23}
+2023/10/08 12:21:36 Client 14's clock: 24
+2023/10/08 12:21:36 Client 0 received: {9 2 23}
+2023/10/08 12:21:36 Client 0's clock: 24
+2023/10/08 12:21:36 Client 1 received: {9 2 23}
+2023/10/08 12:21:36 Client 1's clock: 24
+2023/10/08 12:21:36 Client 2 received: {9 2 23}
+2023/10/08 12:21:36 Client 2's clock: 24
+2023/10/08 12:21:36 Client 3 received: {9 2 23}
+2023/10/08 12:21:36 Client 3's clock: 24
+2023/10/08 12:21:36 Client 4 received: {9 2 23}
+2023/10/08 12:21:36 Client 4's clock: 24
+2023/10/08 12:21:36 Client 5 received: {9 2 23}
+2023/10/08 12:21:36 Client 5's clock: 24
+2023/10/08 12:21:36 Client 6 received: {9 2 23}
+2023/10/08 12:21:36 Client 6's clock: 24
+2023/10/08 12:21:36 Client 7 received: {9 2 23}
+2023/10/08 12:21:36 Client 7's clock: 24
+2023/10/08 12:21:36 Client 8 received: {9 2 23}
+2023/10/08 12:21:36 Client 8's clock: 24
+2023/10/08 12:21:36 Client 10 received: {9 2 23}
+2023/10/08 12:21:36 Client 10's clock: 24
+2023/10/08 12:21:36 Client 11 received: {9 2 23}
+2023/10/08 12:21:36 Client 11's clock: 24
+2023/10/08 12:21:36 Client 12 received: {9 2 23}
+2023/10/08 12:21:36 Client 12's clock: 24
+2023/10/08 12:21:36 Client 13 received: {9 2 23}
+2023/10/08 12:21:36 Client 13's clock: 24
+2023/10/08 12:21:36 Client 9's clock: 23
+2023/10/08 12:21:36 Client 9 sending: {9 3 23}
+2023/10/08 12:21:36 Server received: {9 3 23}
+2023/10/08 12:21:36 Server's clock:  24
+2023/10/08 12:21:36 Drop the message {9 3 23}
+2023/10/08 12:21:37 Client 12's clock: 25
+2023/10/08 12:21:37 Client 12 sending: {12 1 25}
+2023/10/08 12:21:37 Server received: {12 1 25}
+2023/10/08 12:21:37 Server's clock:  26
+2023/10/08 12:21:37 Drop the message {12 1 25}
+2023/10/08 12:21:37 Client 7's clock: 25
+2023/10/08 12:21:37 Client 7 sending: {7 1 25}
+2023/10/08 12:21:37 Server received: {7 1 25}
+2023/10/08 12:21:37 Server's clock:  27
+2023/10/08 12:21:37 Server forward to Client 0 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 1 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 2 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 3 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 4 {7 1 27}
+2023/10/08 12:21:37 Client 1 received: {7 1 27}
+2023/10/08 12:21:37 Client 1's clock: 28
+2023/10/08 12:21:37 Server forward to Client 5 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 6 {7 1 27}
+2023/10/08 12:21:37 Client 4 received: {7 1 27}
+2023/10/08 12:21:37 Client 4's clock: 28
+2023/10/08 12:21:37 Client 2 received: {7 1 27}
+2023/10/08 12:21:37 Client 2's clock: 28
+2023/10/08 12:21:37 Client 0 received: {7 1 27}
+2023/10/08 12:21:37 Client 0's clock: 28
+2023/10/08 12:21:37 Client 3 received: {7 1 27}
+2023/10/08 12:21:37 Client 3's clock: 28
+2023/10/08 12:21:37 Server forward to Client 8 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 9 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 10 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 11 {7 1 27}
+2023/10/08 12:21:37 Client 9 received: {7 1 27}
+2023/10/08 12:21:37 Client 9's clock: 28
+2023/10/08 12:21:37 Client 6 received: {7 1 27}
+2023/10/08 12:21:37 Client 6's clock: 28
+2023/10/08 12:21:37 Server forward to Client 12 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 13 {7 1 27}
+2023/10/08 12:21:37 Server forward to Client 14 {7 1 27}
+2023/10/08 12:21:37 Client 5 received: {7 1 27}
+2023/10/08 12:21:37 Client 5's clock: 28
+2023/10/08 12:21:37 Client 8 received: {7 1 27}
+2023/10/08 12:21:37 Client 8's clock: 28
+2023/10/08 12:21:37 Client 11 received: {7 1 27}
+2023/10/08 12:21:37 Client 11's clock: 28
+2023/10/08 12:21:37 Client 10 received: {7 1 27}
+2023/10/08 12:21:37 Client 10's clock: 28
+2023/10/08 12:21:37 Client 14 received: {7 1 27}
+2023/10/08 12:21:37 Client 14's clock: 28
+2023/10/08 12:21:37 Client 12 received: {7 1 27}
+2023/10/08 12:21:37 Client 12's clock: 28
+2023/10/08 12:21:37 Client 13 received: {7 1 27}
+2023/10/08 12:21:37 Client 13's clock: 28
+2023/10/08 12:21:37 Client 9's clock: 29
+2023/10/08 12:21:37 Client 9 sending: {9 4 29}
+2023/10/08 12:21:37 Server received: {9 4 29}
+2023/10/08 12:21:37 Server's clock:  30
+2023/10/08 12:21:37 Drop the message {9 4 29}
+2023/10/08 12:21:37 Client 9's clock: 30
+2023/10/08 12:21:37 Client 9 sending: {9 5 30}
+2023/10/08 12:21:37 Server received: {9 5 30}
+2023/10/08 12:21:37 Server's clock:  31
+2023/10/08 12:21:37 Drop the message {9 5 30}
+2023/10/08 12:21:37 Client 0's clock: 29
+2023/10/08 12:21:37 Client 0 sending: {0 1 29}
+2023/10/08 12:21:37 Server received: {0 1 29}
+2023/10/08 12:21:37 Server's clock:  32
+2023/10/08 12:21:37 Server forward to Client 1 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 2 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 3 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 4 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 5 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 6 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 7 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 8 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 9 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 10 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 11 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 12 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 13 {0 1 32}
+2023/10/08 12:21:37 Server forward to Client 14 {0 1 32}
+2023/10/08 12:21:37 Client 14 received: {0 1 32}
+2023/10/08 12:21:37 Client 14's clock: 33
+2023/10/08 12:21:37 Client 1 received: {0 1 32}
+2023/10/08 12:21:37 Client 1's clock: 33
+2023/10/08 12:21:37 Client 2 received: {0 1 32}
+2023/10/08 12:21:37 Client 2's clock: 33
+2023/10/08 12:21:37 Client 3 received: {0 1 32}
+2023/10/08 12:21:37 Client 3's clock: 33
+2023/10/08 12:21:37 Client 4 received: {0 1 32}
+2023/10/08 12:21:37 Client 4's clock: 33
+2023/10/08 12:21:37 Client 5 received: {0 1 32}
+2023/10/08 12:21:37 Client 5's clock: 33
+2023/10/08 12:21:37 Client 6 received: {0 1 32}
+2023/10/08 12:21:37 Client 6's clock: 33
+2023/10/08 12:21:37 Client 7 received: {0 1 32}
+2023/10/08 12:21:37 Client 7's clock: 33
+2023/10/08 12:21:37 Client 8 received: {0 1 32}
+2023/10/08 12:21:37 Client 8's clock: 33
+2023/10/08 12:21:37 Client 9 received: {0 1 32}
+2023/10/08 12:21:37 Client 9's clock: 33
+2023/10/08 12:21:37 Client 10 received: {0 1 32}
+2023/10/08 12:21:37 Client 10's clock: 33
+2023/10/08 12:21:37 Client 11 received: {0 1 32}
+2023/10/08 12:21:37 Client 11's clock: 33
+2023/10/08 12:21:37 Client 12 received: {0 1 32}
+2023/10/08 12:21:37 Client 12's clock: 33
+2023/10/08 12:21:37 Client 13 received: {0 1 32}
+2023/10/08 12:21:37 Client 13's clock: 33
+2023/10/08 12:21:37 Client 5's clock: 34
+2023/10/08 12:21:37 Client 5 sending: {5 1 34}
+2023/10/08 12:21:37 Server received: {5 1 34}
+2023/10/08 12:21:37 Server's clock:  35
+2023/10/08 12:21:37 Server forward to Client 0 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 1 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 2 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 3 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 4 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 6 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 7 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 8 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 9 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 10 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 11 {5 1 35}
+2023/10/08 12:21:37 Client 0 received: {5 1 35}
+2023/10/08 12:21:37 Client 2 received: {5 1 35}
+2023/10/08 12:21:37 Client 2's clock: 36
+2023/10/08 12:21:37 Server forward to Client 12 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 13 {5 1 35}
+2023/10/08 12:21:37 Server forward to Client 14 {5 1 35}
+2023/10/08 12:21:37 Client 13 received: {5 1 35}
+2023/10/08 12:21:37 Client 13's clock: 36
+2023/10/08 12:21:37 Client 11 received: {5 1 35}
+2023/10/08 12:21:37 Client 11's clock: 36
+2023/10/08 12:21:37 Client 4 received: {5 1 35}
+2023/10/08 12:21:37 Client 4's clock: 36
+2023/10/08 12:21:37 Client 6 received: {5 1 35}
+2023/10/08 12:21:37 Client 6's clock: 36
+2023/10/08 12:21:37 Client 7 received: {5 1 35}
+2023/10/08 12:21:37 Client 7's clock: 36
+2023/10/08 12:21:37 Client 8 received: {5 1 35}
+2023/10/08 12:21:37 Client 8's clock: 36
+2023/10/08 12:21:37 Client 9 received: {5 1 35}
+2023/10/08 12:21:37 Client 9's clock: 36
+2023/10/08 12:21:37 Client 10 received: {5 1 35}
+2023/10/08 12:21:37 Client 10's clock: 36
+2023/10/08 12:21:37 Client 3 received: {5 1 35}
+2023/10/08 12:21:37 Client 3's clock: 36
+2023/10/08 12:21:37 Client 1 received: {5 1 35}
+2023/10/08 12:21:37 Client 1's clock: 36
+2023/10/08 12:21:37 Client 0's clock: 36
+2023/10/08 12:21:37 Client 12 received: {5 1 35}
+2023/10/08 12:21:37 Client 12's clock: 36
+2023/10/08 12:21:37 Client 14 received: {5 1 35}
+2023/10/08 12:21:37 Client 14's clock: 36
+2023/10/08 12:21:37 Client 1's clock: 37
+2023/10/08 12:21:37 Client 1 sending: {1 1 37}
+2023/10/08 12:21:37 Server received: {1 1 37}
+2023/10/08 12:21:37 Server's clock:  38
+2023/10/08 12:21:37 Drop the message {1 1 37}
+2023/10/08 12:21:38 Client 14's clock: 37
+2023/10/08 12:21:38 Client 14 sending: {14 1 37}
+2023/10/08 12:21:38 Server received: {14 1 37}
+2023/10/08 12:21:38 Server's clock:  39
+2023/10/08 12:21:38 Drop the message {14 1 37}
+2023/10/08 12:21:38 Client 5's clock: 35
+2023/10/08 12:21:38 Client 5 sending: {5 2 35}
+2023/10/08 12:21:38 Server received: {5 2 35}
+2023/10/08 12:21:38 Server's clock:  40
+2023/10/08 12:21:38 Server forward to Client 0 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 1 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 2 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 3 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 4 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 6 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 7 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 8 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 9 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 10 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 11 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 12 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 13 {5 2 40}
+2023/10/08 12:21:38 Server forward to Client 14 {5 2 40}
+2023/10/08 12:21:38 Client 14 received: {5 2 40}
+2023/10/08 12:21:38 Client 14's clock: 41
+2023/10/08 12:21:38 Client 0 received: {5 2 40}
+2023/10/08 12:21:38 Client 0's clock: 41
+2023/10/08 12:21:38 Client 1 received: {5 2 40}
+2023/10/08 12:21:38 Client 1's clock: 41
+2023/10/08 12:21:38 Client 2 received: {5 2 40}
+2023/10/08 12:21:38 Client 2's clock: 41
+2023/10/08 12:21:38 Client 3 received: {5 2 40}
+2023/10/08 12:21:38 Client 3's clock: 41
+2023/10/08 12:21:38 Client 4 received: {5 2 40}
+2023/10/08 12:21:38 Client 4's clock: 41
+2023/10/08 12:21:38 Client 6 received: {5 2 40}
+2023/10/08 12:21:38 Client 6's clock: 41
+2023/10/08 12:21:38 Client 7 received: {5 2 40}
+2023/10/08 12:21:38 Client 7's clock: 41
+2023/10/08 12:21:38 Client 8 received: {5 2 40}
+2023/10/08 12:21:38 Client 8's clock: 41
+2023/10/08 12:21:38 Client 9 received: {5 2 40}
+2023/10/08 12:21:38 Client 9's clock: 41
+2023/10/08 12:21:38 Client 10 received: {5 2 40}
+2023/10/08 12:21:38 Client 10's clock: 41
+2023/10/08 12:21:38 Client 11 received: {5 2 40}
+2023/10/08 12:21:38 Client 11's clock: 41
+2023/10/08 12:21:38 Client 12 received: {5 2 40}
+2023/10/08 12:21:38 Client 12's clock: 41
+2023/10/08 12:21:38 Client 13 received: {5 2 40}
+2023/10/08 12:21:38 Client 13's clock: 41
+2023/10/08 12:21:38 Client 14's clock: 42
+2023/10/08 12:21:38 Client 14 sending: {14 2 42}
+2023/10/08 12:21:38 Server received: {14 2 42}
+2023/10/08 12:21:38 Server's clock:  43
+2023/10/08 12:21:38 Drop the message {14 2 42}
+2023/10/08 12:21:38 Client 13's clock: 42
+2023/10/08 12:21:38 Client 13 sending: {13 1 42}
+2023/10/08 12:21:38 Server received: {13 1 42}
+2023/10/08 12:21:38 Server's clock:  44
+2023/10/08 12:21:38 Drop the message {13 1 42}
+2023/10/08 12:21:38 Client 6's clock: 42
+2023/10/08 12:21:38 Client 6 sending: {6 1 42}
+2023/10/08 12:21:38 Server received: {6 1 42}
+2023/10/08 12:21:38 Server's clock:  45
+2023/10/08 12:21:38 Server forward to Client 0 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 1 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 2 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 3 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 4 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 5 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 7 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 8 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 9 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 10 {6 1 45}
+2023/10/08 12:21:38 Client 1 received: {6 1 45}
+2023/10/08 12:21:38 Client 1's clock: 46
+2023/10/08 12:21:38 Client 2 received: {6 1 45}
+2023/10/08 12:21:38 Client 2's clock: 46
+2023/10/08 12:21:38 Client 0 received: {6 1 45}
+2023/10/08 12:21:38 Client 0's clock: 46
+2023/10/08 12:21:38 Server forward to Client 11 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 12 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 13 {6 1 45}
+2023/10/08 12:21:38 Server forward to Client 14 {6 1 45}
+2023/10/08 12:21:38 Client 14 received: {6 1 45}
+2023/10/08 12:21:38 Client 14's clock: 46
+2023/10/08 12:21:38 Client 12 received: {6 1 45}
+2023/10/08 12:21:38 Client 11 received: {6 1 45}
+2023/10/08 12:21:38 Client 11's clock: 46
+2023/10/08 12:21:38 Client 3 received: {6 1 45}
+2023/10/08 12:21:38 Client 3's clock: 46
+2023/10/08 12:21:38 Client 4 received: {6 1 45}
+2023/10/08 12:21:38 Client 4's clock: 46
+2023/10/08 12:21:38 Client 5 received: {6 1 45}
+2023/10/08 12:21:38 Client 5's clock: 46
+2023/10/08 12:21:38 Client 7 received: {6 1 45}
+2023/10/08 12:21:38 Client 7's clock: 46
+2023/10/08 12:21:38 Client 8 received: {6 1 45}
+2023/10/08 12:21:38 Client 8's clock: 46
+2023/10/08 12:21:38 Client 9 received: {6 1 45}
+2023/10/08 12:21:38 Client 9's clock: 46
+2023/10/08 12:21:38 Client 12's clock: 46
+2023/10/08 12:21:38 Client 13 received: {6 1 45}
+2023/10/08 12:21:38 Client 13's clock: 46
+2023/10/08 12:21:38 Client 10 received: {6 1 45}
+2023/10/08 12:21:38 Client 10's clock: 46
+2023/10/08 12:21:38 Client 11's clock: 47
+2023/10/08 12:21:38 Client 11 sending: {11 1 47}
+2023/10/08 12:21:38 Server received: {11 1 47}
+2023/10/08 12:21:38 Server's clock:  48
+2023/10/08 12:21:38 Drop the message {11 1 47}
+2023/10/08 12:21:38 Client 2's clock: 47
+2023/10/08 12:21:38 Client 2 sending: {2 1 47}
+2023/10/08 12:21:38 Server received: {2 1 47}
+2023/10/08 12:21:38 Server's clock:  49
+2023/10/08 12:21:38 Drop the message {2 1 47}
+2023/10/08 12:21:39 Client 3's clock: 47
+2023/10/08 12:21:39 Client 3 sending: {3 1 47}
+2023/10/08 12:21:39 Server received: {3 1 47}
+2023/10/08 12:21:39 Server's clock:  50
+2023/10/08 12:21:39 Drop the message {3 1 47}
+2023/10/08 12:21:39 Client 14's clock: 47
+2023/10/08 12:21:39 Client 14 sending: {14 3 47}
+2023/10/08 12:21:39 Server received: {14 3 47}
+2023/10/08 12:21:39 Server's clock:  51
+2023/10/08 12:21:39 Server forward to Client 0 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 1 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 2 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 3 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 4 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 5 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 6 {14 3 51}
+2023/10/08 12:21:39 Client 0 received: {14 3 51}
+2023/10/08 12:21:39 Client 0's clock: 52
+2023/10/08 12:21:39 Server forward to Client 7 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 8 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 9 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 10 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 11 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 12 {14 3 51}
+2023/10/08 12:21:39 Server forward to Client 13 {14 3 51}
+2023/10/08 12:21:39 Client 13 received: {14 3 51}
+2023/10/08 12:21:39 Client 13's clock: 52
+2023/10/08 12:21:39 Client 6 received: {14 3 51}
+2023/10/08 12:21:39 Client 6's clock: 52
+2023/10/08 12:21:39 Client 2 received: {14 3 51}
+2023/10/08 12:21:39 Client 2's clock: 52
+2023/10/08 12:21:39 Client 3 received: {14 3 51}
+2023/10/08 12:21:39 Client 3's clock: 52
+2023/10/08 12:21:39 Client 4 received: {14 3 51}
+2023/10/08 12:21:39 Client 4's clock: 52
+2023/10/08 12:21:39 Client 5 received: {14 3 51}
+2023/10/08 12:21:39 Client 5's clock: 52
+2023/10/08 12:21:39 Client 1 received: {14 3 51}
+2023/10/08 12:21:39 Client 1's clock: 52
+2023/10/08 12:21:39 Client 7 received: {14 3 51}
+2023/10/08 12:21:39 Client 7's clock: 52
+2023/10/08 12:21:39 Client 11 received: {14 3 51}
+2023/10/08 12:21:39 Client 11's clock: 52
+2023/10/08 12:21:39 Client 10 received: {14 3 51}
+2023/10/08 12:21:39 Client 10's clock: 52
+2023/10/08 12:21:39 Client 8 received: {14 3 51}
+2023/10/08 12:21:39 Client 8's clock: 52
+2023/10/08 12:21:39 Client 9 received: {14 3 51}
+2023/10/08 12:21:39 Client 9's clock: 52
+2023/10/08 12:21:39 Client 12 received: {14 3 51}
+2023/10/08 12:21:39 Client 12's clock: 52
+2023/10/08 12:21:39 Client 12's clock: 53
+2023/10/08 12:21:39 Client 12 sending: {12 2 53}
+2023/10/08 12:21:39 Server received: {12 2 53}
+2023/10/08 12:21:39 Server's clock:  54
+2023/10/08 12:21:39 Server forward to Client 0 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 1 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 2 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 3 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 4 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 5 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 6 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 7 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 8 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 9 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 10 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 11 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 13 {12 2 54}
+2023/10/08 12:21:39 Server forward to Client 14 {12 2 54}
+2023/10/08 12:21:39 Client 14 received: {12 2 54}
+2023/10/08 12:21:39 Client 14's clock: 55
+2023/10/08 12:21:39 Client 0 received: {12 2 54}
+2023/10/08 12:21:39 Client 0's clock: 55
+2023/10/08 12:21:39 Client 1 received: {12 2 54}
+2023/10/08 12:21:39 Client 1's clock: 55
+2023/10/08 12:21:39 Client 2 received: {12 2 54}
+2023/10/08 12:21:39 Client 2's clock: 55
+2023/10/08 12:21:39 Client 3 received: {12 2 54}
+2023/10/08 12:21:39 Client 3's clock: 55
+2023/10/08 12:21:39 Client 4 received: {12 2 54}
+2023/10/08 12:21:39 Client 4's clock: 55
+2023/10/08 12:21:39 Client 5 received: {12 2 54}
+2023/10/08 12:21:39 Client 5's clock: 55
+2023/10/08 12:21:39 Client 6 received: {12 2 54}
+2023/10/08 12:21:39 Client 6's clock: 55
+2023/10/08 12:21:39 Client 7 received: {12 2 54}
+2023/10/08 12:21:39 Client 7's clock: 55
+2023/10/08 12:21:39 Client 8 received: {12 2 54}
+2023/10/08 12:21:39 Client 8's clock: 55
+2023/10/08 12:21:39 Client 9 received: {12 2 54}
+2023/10/08 12:21:39 Client 9's clock: 55
+2023/10/08 12:21:39 Client 10 received: {12 2 54}
+2023/10/08 12:21:39 Client 10's clock: 55
+2023/10/08 12:21:39 Client 11 received: {12 2 54}
+2023/10/08 12:21:39 Client 11's clock: 55
+2023/10/08 12:21:39 Client 13 received: {12 2 54}
+2023/10/08 12:21:39 Client 13's clock: 55
+2023/10/08 12:21:39 Client 3's clock: 56
+2023/10/08 12:21:39 Client 3 sending: {3 2 56}
+2023/10/08 12:21:39 Server received: {3 2 56}
+2023/10/08 12:21:39 Server's clock:  57
+2023/10/08 12:21:39 Drop the message {3 2 56}
+2023/10/08 12:21:39 Client 4's clock: 56
+2023/10/08 12:21:39 Client 4 sending: {4 1 56}
+2023/10/08 12:21:39 Server received: {4 1 56}
+2023/10/08 12:21:39 Server's clock:  58
+2023/10/08 12:21:39 Server forward to Client 0 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 1 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 2 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 3 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 5 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 6 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 7 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 8 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 9 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 10 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 11 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 12 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 13 {4 1 58}
+2023/10/08 12:21:39 Server forward to Client 14 {4 1 58}
+2023/10/08 12:21:39 Client 14 received: {4 1 58}
+2023/10/08 12:21:39 Client 14's clock: 59
+2023/10/08 12:21:39 Client 0 received: {4 1 58}
+2023/10/08 12:21:39 Client 0's clock: 59
+2023/10/08 12:21:39 Client 7 received: {4 1 58}
+2023/10/08 12:21:39 Client 7's clock: 59
+2023/10/08 12:21:39 Client 1 received: {4 1 58}
+2023/10/08 12:21:39 Client 1's clock: 59
+2023/10/08 12:21:39 Client 2 received: {4 1 58}
+2023/10/08 12:21:39 Client 2's clock: 59
+2023/10/08 12:21:39 Client 3 received: {4 1 58}
+2023/10/08 12:21:39 Client 3's clock: 59
+2023/10/08 12:21:39 Client 5 received: {4 1 58}
+2023/10/08 12:21:39 Client 5's clock: 59
+2023/10/08 12:21:39 Client 6 received: {4 1 58}
+2023/10/08 12:21:39 Client 6's clock: 59
+2023/10/08 12:21:39 Client 10 received: {4 1 58}
+2023/10/08 12:21:39 Client 10's clock: 59
+2023/10/08 12:21:39 Client 8 received: {4 1 58}
+2023/10/08 12:21:39 Client 8's clock: 59
+2023/10/08 12:21:39 Client 9 received: {4 1 58}
+2023/10/08 12:21:39 Client 9's clock: 59
+2023/10/08 12:21:39 Client 12 received: {4 1 58}
+2023/10/08 12:21:39 Client 12's clock: 59
+2023/10/08 12:21:39 Client 11 received: {4 1 58}
+2023/10/08 12:21:39 Client 11's clock: 59
+2023/10/08 12:21:39 Client 6's clock: 56
+2023/10/08 12:21:39 Client 6 sending: {6 2 56}
+2023/10/08 12:21:39 Server received: {6 2 56}
+2023/10/08 12:21:39 Client 13 received: {4 1 58}
+2023/10/08 12:21:39 Client 13's clock: 59
+2023/10/08 12:21:39 Server's clock:  59
+2023/10/08 12:21:39 Drop the message {6 2 56}
+2023/10/08 12:21:39 Client 8's clock: 60
+2023/10/08 12:21:39 Client 8 sending: {8 1 60}
+2023/10/08 12:21:39 Server received: {8 1 60}
+2023/10/08 12:21:39 Server's clock:  61
+2023/10/08 12:21:39 Server forward to Client 0 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 1 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 2 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 3 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 4 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 5 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 6 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 7 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 9 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 10 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 11 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 12 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 13 {8 1 61}
+2023/10/08 12:21:39 Server forward to Client 14 {8 1 61}
+2023/10/08 12:21:39 Client 14 received: {8 1 61}
+2023/10/08 12:21:39 Client 6 received: {8 1 61}
+2023/10/08 12:21:39 Client 6's clock: 62
+2023/10/08 12:21:39 Client 14's clock: 62
+2023/10/08 12:21:39 Client 7 received: {8 1 61}
+2023/10/08 12:21:39 Client 7's clock: 62
+2023/10/08 12:21:39 Client 9 received: {8 1 61}
+2023/10/08 12:21:39 Client 9's clock: 62
+2023/10/08 12:21:39 Client 10 received: {8 1 61}
+2023/10/08 12:21:39 Client 10's clock: 62
+2023/10/08 12:21:39 Client 11 received: {8 1 61}
+2023/10/08 12:21:39 Client 13 received: {8 1 61}
+2023/10/08 12:21:39 Client 5 received: {8 1 61}
+2023/10/08 12:21:39 Client 5's clock: 62
+2023/10/08 12:21:39 Client 11's clock: 62
+2023/10/08 12:21:39 Client 12 received: {8 1 61}
+2023/10/08 12:21:39 Client 12's clock: 62
+2023/10/08 12:21:39 Client 0 received: {8 1 61}
+2023/10/08 12:21:39 Client 0's clock: 62
+2023/10/08 12:21:39 Client 1 received: {8 1 61}
+2023/10/08 12:21:39 Client 1's clock: 62
+2023/10/08 12:21:39 Client 2 received: {8 1 61}
+2023/10/08 12:21:39 Client 2's clock: 62
+2023/10/08 12:21:39 Client 3 received: {8 1 61}
+2023/10/08 12:21:39 Client 3's clock: 62
+2023/10/08 12:21:39 Client 4 received: {8 1 61}
+2023/10/08 12:21:39 Client 4's clock: 62
+2023/10/08 12:21:39 Client 13's clock: 62
+2023/10/08 12:21:39 Client 11's clock: 63
+2023/10/08 12:21:39 Client 11 sending: {11 2 63}
+2023/10/08 12:21:39 Server received: {11 2 63}
+2023/10/08 12:21:39 Server's clock:  64
+2023/10/08 12:21:39 Drop the message {11 2 63}
+2023/10/08 12:21:40 Client 10's clock: 63
+2023/10/08 12:21:40 Client 10 sending: {10 2 63}
+2023/10/08 12:21:40 Server received: {10 2 63}
+2023/10/08 12:21:40 Server's clock:  65
+2023/10/08 12:21:40 Server forward to Client 0 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 1 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 2 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 3 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 4 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 5 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 6 {10 2 65}
+2023/10/08 12:21:40 Client 1 received: {10 2 65}
+2023/10/08 12:21:40 Client 1's clock: 66
+2023/10/08 12:21:40 Client 0 received: {10 2 65}
+2023/10/08 12:21:40 Client 0's clock: 66
+2023/10/08 12:21:40 Client 2 received: {10 2 65}
+2023/10/08 12:21:40 Client 2's clock: 66
+2023/10/08 12:21:40 Server forward to Client 7 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 8 {10 2 65}
+2023/10/08 12:21:40 Client 6 received: {10 2 65}
+2023/10/08 12:21:40 Client 6's clock: 66
+2023/10/08 12:21:40 Client 3 received: {10 2 65}
+2023/10/08 12:21:40 Client 3's clock: 66
+2023/10/08 12:21:40 Client 4 received: {10 2 65}
+2023/10/08 12:21:40 Client 4's clock: 66
+2023/10/08 12:21:40 Client 5 received: {10 2 65}
+2023/10/08 12:21:40 Client 5's clock: 66
+2023/10/08 12:21:40 Server forward to Client 9 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 11 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 12 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 13 {10 2 65}
+2023/10/08 12:21:40 Server forward to Client 14 {10 2 65}
+2023/10/08 12:21:40 Client 14 received: {10 2 65}
+2023/10/08 12:21:40 Client 14's clock: 66
+2023/10/08 12:21:40 Client 8 received: {10 2 65}
+2023/10/08 12:21:40 Client 8's clock: 66
+2023/10/08 12:21:40 Client 7 received: {10 2 65}
+2023/10/08 12:21:40 Client 7's clock: 66
+2023/10/08 12:21:40 Client 13 received: {10 2 65}
+2023/10/08 12:21:40 Client 13's clock: 66
+2023/10/08 12:21:40 Client 11 received: {10 2 65}
+2023/10/08 12:21:40 Client 11's clock: 66
+2023/10/08 12:21:40 Client 9 received: {10 2 65}
+2023/10/08 12:21:40 Client 9's clock: 66
+2023/10/08 12:21:40 Client 12 received: {10 2 65}
+2023/10/08 12:21:40 Client 12's clock: 66
+2023/10/08 12:21:40 Client 12's clock: 67
+2023/10/08 12:21:40 Client 12 sending: {12 3 67}
+2023/10/08 12:21:40 Server received: {12 3 67}
+2023/10/08 12:21:40 Server's clock:  68
+2023/10/08 12:21:40 Drop the message {12 3 67}
+2023/10/08 12:21:40 Client 2's clock: 67
+2023/10/08 12:21:40 Client 2 sending: {2 2 67}
+2023/10/08 12:21:40 Server received: {2 2 67}
+2023/10/08 12:21:40 Server's clock:  69
+2023/10/08 12:21:40 Drop the message {2 2 67}
+2023/10/08 12:21:40 Client 11's clock: 67
+2023/10/08 12:21:40 Client 11 sending: {11 3 67}
+2023/10/08 12:21:40 Server received: {11 3 67}
+2023/10/08 12:21:40 Server's clock:  70
+2023/10/08 12:21:40 Drop the message {11 3 67}
+2023/10/08 12:21:40 Client 7's clock: 67
+2023/10/08 12:21:40 Client 7 sending: {7 2 67}
+2023/10/08 12:21:40 Server received: {7 2 67}
+2023/10/08 12:21:40 Server's clock:  71
+2023/10/08 12:21:40 Drop the message {7 2 67}
+2023/10/08 12:21:41 Client 1's clock: 67
+2023/10/08 12:21:41 Client 1 sending: {1 2 67}
+2023/10/08 12:21:41 Server received: {1 2 67}
+2023/10/08 12:21:41 Server's clock:  72
+2023/10/08 12:21:41 Server forward to Client 0 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 2 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 3 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 4 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 5 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 6 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 7 {1 2 72}
+2023/10/08 12:21:41 Client 5 received: {1 2 72}
+2023/10/08 12:21:41 Client 5's clock: 73
+2023/10/08 12:21:41 Client 0 received: {1 2 72}
+2023/10/08 12:21:41 Client 0's clock: 73
+2023/10/08 12:21:41 Client 2 received: {1 2 72}
+2023/10/08 12:21:41 Client 2's clock: 73
+2023/10/08 12:21:41 Client 3 received: {1 2 72}
+2023/10/08 12:21:41 Client 3's clock: 73
+2023/10/08 12:21:41 Client 4 received: {1 2 72}
+2023/10/08 12:21:41 Client 4's clock: 73
+2023/10/08 12:21:41 Server forward to Client 8 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 9 {1 2 72}
+2023/10/08 12:21:41 Client 7 received: {1 2 72}
+2023/10/08 12:21:41 Client 8 received: {1 2 72}
+2023/10/08 12:21:41 Client 8's clock: 73
+2023/10/08 12:21:41 Client 6 received: {1 2 72}
+2023/10/08 12:21:41 Client 6's clock: 73
+2023/10/08 12:21:41 Server forward to Client 10 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 11 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 12 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 13 {1 2 72}
+2023/10/08 12:21:41 Server forward to Client 14 {1 2 72}
+2023/10/08 12:21:41 Client 11 received: {1 2 72}
+2023/10/08 12:21:41 Client 13 received: {1 2 72}
+2023/10/08 12:21:41 Client 13's clock: 73
+2023/10/08 12:21:41 Client 9 received: {1 2 72}
+2023/10/08 12:21:41 Client 9's clock: 73
+2023/10/08 12:21:41 Client 14 received: {1 2 72}
+2023/10/08 12:21:41 Client 14's clock: 73
+2023/10/08 12:21:41 Client 7's clock: 73
+2023/10/08 12:21:41 Client 10 received: {1 2 72}
+2023/10/08 12:21:41 Client 10's clock: 73
+2023/10/08 12:21:41 Client 12 received: {1 2 72}
+2023/10/08 12:21:41 Client 12's clock: 73
+2023/10/08 12:21:41 Client 11's clock: 73
+2023/10/08 12:21:41 Client 3's clock: 74
+2023/10/08 12:21:41 Client 3 sending: {3 3 74}
+2023/10/08 12:21:41 Server received: {3 3 74}
+2023/10/08 12:21:41 Server's clock:  75
+2023/10/08 12:21:41 Server forward to Client 0 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 1 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 2 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 4 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 5 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 6 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 7 {3 3 75}
+2023/10/08 12:21:41 Client 0 received: {3 3 75}
+2023/10/08 12:21:41 Client 6 received: {3 3 75}
+2023/10/08 12:21:41 Client 6's clock: 76
+2023/10/08 12:21:41 Client 1 received: {3 3 75}
+2023/10/08 12:21:41 Client 1's clock: 76
+2023/10/08 12:21:41 Client 2 received: {3 3 75}
+2023/10/08 12:21:41 Client 2's clock: 76
+2023/10/08 12:21:41 Server forward to Client 8 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 9 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 10 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 11 {3 3 75}
+2023/10/08 12:21:41 Client 9 received: {3 3 75}
+2023/10/08 12:21:41 Client 9's clock: 76
+2023/10/08 12:21:41 Client 7 received: {3 3 75}
+2023/10/08 12:21:41 Client 7's clock: 76
+2023/10/08 12:21:41 Server forward to Client 12 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 13 {3 3 75}
+2023/10/08 12:21:41 Server forward to Client 14 {3 3 75}
+2023/10/08 12:21:41 Client 14 received: {3 3 75}
+2023/10/08 12:21:41 Client 14's clock: 76
+2023/10/08 12:21:41 Client 13 received: {3 3 75}
+2023/10/08 12:21:41 Client 13's clock: 76
+2023/10/08 12:21:41 Client 12 received: {3 3 75}
+2023/10/08 12:21:41 Client 12's clock: 76
+2023/10/08 12:21:41 Client 5 received: {3 3 75}
+2023/10/08 12:21:41 Client 5's clock: 76
+2023/10/08 12:21:41 Client 0's clock: 76
+2023/10/08 12:21:41 Client 8 received: {3 3 75}
+2023/10/08 12:21:41 Client 8's clock: 76
+2023/10/08 12:21:41 Client 11 received: {3 3 75}
+2023/10/08 12:21:41 Client 11's clock: 76
+2023/10/08 12:21:41 Client 10 received: {3 3 75}
+2023/10/08 12:21:41 Client 10's clock: 76
+2023/10/08 12:21:41 Client 4 received: {3 3 75}
+2023/10/08 12:21:41 Client 4's clock: 76
+2023/10/08 12:21:41 Client 0's clock: 77
+2023/10/08 12:21:41 Client 0 sending: {0 2 77}
+2023/10/08 12:21:41 Server received: {0 2 77}
+2023/10/08 12:21:41 Server's clock:  78
+2023/10/08 12:21:41 Server forward to Client 1 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 2 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 3 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 4 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 5 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 6 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 7 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 8 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 9 {0 2 78}
+2023/10/08 12:21:41 Client 6 received: {0 2 78}
+2023/10/08 12:21:41 Client 6's clock: 79
+2023/10/08 12:21:41 Server forward to Client 10 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 11 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 12 {0 2 78}
+2023/10/08 12:21:41 Client 10 received: {0 2 78}
+2023/10/08 12:21:41 Client 10's clock: 79
+2023/10/08 12:21:41 Client 1 received: {0 2 78}
+2023/10/08 12:21:41 Client 1's clock: 79
+2023/10/08 12:21:41 Server forward to Client 13 {0 2 78}
+2023/10/08 12:21:41 Server forward to Client 14 {0 2 78}
+2023/10/08 12:21:41 Client 14 received: {0 2 78}
+2023/10/08 12:21:41 Client 13 received: {0 2 78}
+2023/10/08 12:21:41 Client 13's clock: 79
+2023/10/08 12:21:41 Client 4 received: {0 2 78}
+2023/10/08 12:21:41 Client 4's clock: 79
+2023/10/08 12:21:41 Client 3 received: {0 2 78}
+2023/10/08 12:21:41 Client 3's clock: 79
+2023/10/08 12:21:41 Client 9 received: {0 2 78}
+2023/10/08 12:21:41 Client 9's clock: 79
+2023/10/08 12:21:41 Client 7 received: {0 2 78}
+2023/10/08 12:21:41 Client 7's clock: 79
+2023/10/08 12:21:41 Client 8 received: {0 2 78}
+2023/10/08 12:21:41 Client 8's clock: 79
+2023/10/08 12:21:41 Client 2 received: {0 2 78}
+2023/10/08 12:21:41 Client 2's clock: 79
+2023/10/08 12:21:41 Client 5 received: {0 2 78}
+2023/10/08 12:21:41 Client 5's clock: 79
+2023/10/08 12:21:41 Client 12 received: {0 2 78}
+2023/10/08 12:21:41 Client 12's clock: 79
+2023/10/08 12:21:41 Client 11 received: {0 2 78}
+2023/10/08 12:21:41 Client 11's clock: 79
+2023/10/08 12:21:41 Client 14's clock: 79
+2023/10/08 12:21:41 Client 9's clock: 80
+2023/10/08 12:21:41 Client 9 sending: {9 6 80}
+2023/10/08 12:21:41 Server received: {9 6 80}
+2023/10/08 12:21:41 Server's clock:  81
+2023/10/08 12:21:41 Server forward to Client 0 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 1 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 2 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 3 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 4 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 5 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 6 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 7 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 8 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 10 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 11 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 12 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 13 {9 6 81}
+2023/10/08 12:21:41 Server forward to Client 14 {9 6 81}
+2023/10/08 12:21:41 Client 14 received: {9 6 81}
+2023/10/08 12:21:41 Client 14's clock: 82
+2023/10/08 12:21:41 Client 0 received: {9 6 81}
+2023/10/08 12:21:41 Client 0's clock: 82
+2023/10/08 12:21:41 Client 1 received: {9 6 81}
+2023/10/08 12:21:41 Client 1's clock: 82
+2023/10/08 12:21:41 Client 2 received: {9 6 81}
+2023/10/08 12:21:41 Client 2's clock: 82
+2023/10/08 12:21:41 Client 3 received: {9 6 81}
+2023/10/08 12:21:41 Client 3's clock: 82
+2023/10/08 12:21:41 Client 4 received: {9 6 81}
+2023/10/08 12:21:41 Client 4's clock: 82
+2023/10/08 12:21:41 Client 5 received: {9 6 81}
+2023/10/08 12:21:41 Client 5's clock: 82
+2023/10/08 12:21:41 Client 6 received: {9 6 81}
+2023/10/08 12:21:41 Client 6's clock: 82
+2023/10/08 12:21:41 Client 7 received: {9 6 81}
+2023/10/08 12:21:41 Client 7's clock: 82
+2023/10/08 12:21:41 Client 10 received: {9 6 81}
+2023/10/08 12:21:41 Client 10's clock: 82
+2023/10/08 12:21:41 Client 11 received: {9 6 81}
+2023/10/08 12:21:41 Client 11's clock: 82
+2023/10/08 12:21:41 Client 8 received: {9 6 81}
+2023/10/08 12:21:41 Client 8's clock: 82
+2023/10/08 12:21:41 Client 12 received: {9 6 81}
+2023/10/08 12:21:41 Client 12's clock: 82
+2023/10/08 12:21:41 Client 13 received: {9 6 81}
+2023/10/08 12:21:41 Client 13's clock: 82
+2023/10/08 12:21:41 Client 8's clock: 83
+2023/10/08 12:21:41 Client 8 sending: {8 2 83}
+2023/10/08 12:21:41 Server received: {8 2 83}
+2023/10/08 12:21:41 Server's clock:  84
+2023/10/08 12:21:41 Server forward to Client 0 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 1 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 2 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 3 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 4 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 5 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 6 {8 2 84}
+2023/10/08 12:21:41 Client 1 received: {8 2 84}
+2023/10/08 12:21:41 Client 0 received: {8 2 84}
+2023/10/08 12:21:41 Client 0's clock: 85
+2023/10/08 12:21:41 Server forward to Client 7 {8 2 84}
+2023/10/08 12:21:41 Client 2 received: {8 2 84}
+2023/10/08 12:21:41 Client 7 received: {8 2 84}
+2023/10/08 12:21:41 Client 7's clock: 85
+2023/10/08 12:21:41 Client 6 received: {8 2 84}
+2023/10/08 12:21:41 Client 4 received: {8 2 84}
+2023/10/08 12:21:41 Client 4's clock: 85
+2023/10/08 12:21:41 Client 5 received: {8 2 84}
+2023/10/08 12:21:41 Client 5's clock: 85
+2023/10/08 12:21:41 Client 3 received: {8 2 84}
+2023/10/08 12:21:41 Client 3's clock: 85
+2023/10/08 12:21:41 Client 1's clock: 85
+2023/10/08 12:21:41 Server forward to Client 9 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 10 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 11 {8 2 84}
+2023/10/08 12:21:41 Client 2's clock: 85
+2023/10/08 12:21:41 Client 6's clock: 85
+2023/10/08 12:21:41 Server forward to Client 12 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 13 {8 2 84}
+2023/10/08 12:21:41 Server forward to Client 14 {8 2 84}
+2023/10/08 12:21:41 Client 11 received: {8 2 84}
+2023/10/08 12:21:41 Client 11's clock: 85
+2023/10/08 12:21:41 Client 9 received: {8 2 84}
+2023/10/08 12:21:41 Client 9's clock: 85
+2023/10/08 12:21:41 Client 10 received: {8 2 84}
+2023/10/08 12:21:41 Client 10's clock: 85
+2023/10/08 12:21:41 Client 14 received: {8 2 84}
+2023/10/08 12:21:41 Client 14's clock: 85
+2023/10/08 12:21:41 Client 12 received: {8 2 84}
+2023/10/08 12:21:41 Client 12's clock: 85
+2023/10/08 12:21:41 Client 13 received: {8 2 84}
+2023/10/08 12:21:41 Client 13's clock: 85
+2023/10/08 12:21:42 Client 5's clock: 86
+2023/10/08 12:21:42 Client 5 sending: {5 3 86}
+2023/10/08 12:21:42 Server received: {5 3 86}
+2023/10/08 12:21:42 Server's clock:  87
+2023/10/08 12:21:42 Drop the message {5 3 86}
+2023/10/08 12:21:42 Client 10's clock: 86
+2023/10/08 12:21:42 Client 10 sending: {10 3 86}
+2023/10/08 12:21:42 Server received: {10 3 86}
+2023/10/08 12:21:42 Server's clock:  88
+2023/10/08 12:21:42 Drop the message {10 3 86}
+2023/10/08 12:32:47 ===============START===============
+2023/10/08 12:32:47 Client 1's clock: 1
+2023/10/08 12:32:47 Client 1 sending: {1 0 1}
+2023/10/08 12:32:47 Server received: {1 0 1}
+2023/10/08 12:32:47 Server's clock:  2
+2023/10/08 12:32:47 Server forward to Client 0 {1 0 2}
+2023/10/08 12:32:47 Client 2's clock: 1
+2023/10/08 12:32:47 Client 0's clock: 1
+2023/10/08 12:32:47 Server forward to Client 2 {1 0 2}
+2023/10/08 12:32:47 Client 0 received: {1 0 2}
+2023/10/08 12:32:47 Client 2 sending: {2 0 1}
+2023/10/08 12:32:47 Client 0 sending: {0 0 1}
+2023/10/08 12:32:47 Client 2 received: {1 0 2}
+2023/10/08 12:32:47 Client 0's clock: 3
+2023/10/08 12:32:47 Server received: {2 0 1}
+2023/10/08 12:32:47 Client 2's clock: 3
+2023/10/08 12:32:47 Server's clock:  3
+2023/10/08 12:32:47 Server forward to Client 0 {2 0 3}
+2023/10/08 12:32:47 Server forward to Client 1 {2 0 3}
+2023/10/08 12:32:47 Client 0 received: {2 0 3}
+2023/10/08 12:32:47 Client 0's clock: 4
+2023/10/08 12:32:47 Client 1 received: {2 0 3}
+2023/10/08 12:32:47 Server received: {0 0 1}
+2023/10/08 12:32:47 Client 1's clock: 4
+2023/10/08 12:32:47 Server's clock:  4
+2023/10/08 12:32:47 Server forward to Client 1 {0 0 4}
+2023/10/08 12:32:47 Server forward to Client 2 {0 0 4}
+2023/10/08 12:32:47 Client 1 received: {0 0 4}
+2023/10/08 12:32:47 Client 2 received: {0 0 4}
+2023/10/08 12:32:47 Client 1's clock: 5
+2023/10/08 12:32:47 Client 2's clock: 5
+2023/10/08 12:32:48 Client 2's clock: 6
+2023/10/08 12:32:48 Client 2 sending: {2 1 6}
+2023/10/08 12:32:48 Server received: {2 1 6}
+2023/10/08 12:32:48 Server's clock:  7
+2023/10/08 12:32:48 Drop the message {2 1 6}
+2023/10/08 12:32:51 Client 0's clock: 5
+2023/10/08 12:32:51 Client 0 sending: {0 1 5}
+2023/10/08 12:32:51 Server received: {0 1 5}
+2023/10/08 12:32:51 Server's clock:  8
+2023/10/08 12:32:51 Server forward to Client 1 {0 1 8}
+2023/10/08 12:32:51 Server forward to Client 2 {0 1 8}
+2023/10/08 12:32:51 Client 1 received: {0 1 8}
+2023/10/08 12:32:51 Client 1's clock: 9
+2023/10/08 12:32:51 Client 2 received: {0 1 8}
+2023/10/08 12:32:51 Client 2's clock: 9
