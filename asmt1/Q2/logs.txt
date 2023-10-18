@@ -1,95 +1,147 @@
-2023/10/18 21:33:49 bully.go:50: ===============START===============
-2023/10/18 21:33:49 bully.go:19: Node 0 starts to execute replica_routine.
-2023/10/18 21:33:49 bully.go:19: Node 3 starts to execute replica_routine.
-2023/10/18 21:33:49 bully.go:19: Node 1 starts to execute replica_routine.
-2023/10/18 21:33:49 bully.go:28: Node 4 starts to execute coordinator_routine.
-2023/10/18 21:33:49 node_listen.go:16: Node 2 received a message {}.
-2023/10/18 21:33:49 node_listen.go:16: Node 0 received a message {}.
-2023/10/18 21:33:49 node_listen.go:16: Node 1 received a message {}.
-2023/10/18 21:33:49 node_listen.go:16: Node 3 received a message {}.
-2023/10/18 21:33:49 node_listen.go:191: Coordinator 4 sent a sync message {}.
-2023/10/18 21:33:49 bully.go:19: Node 2 starts to execute replica_routine.
-2023/10/18 21:33:50 node_listen.go:191: Coordinator 4 sent a sync message {}.
-2023/10/18 21:33:50 node_listen.go:16: Node 1 received a message {}.
-2023/10/18 21:33:50 node_listen.go:16: Node 0 received a message {}.
-2023/10/18 21:33:50 node_listen.go:16: Node 2 received a message {}.
-2023/10/18 21:33:50 node_listen.go:16: Node 3 received a message {}.
-2023/10/18 21:33:51 node_listen.go:191: Coordinator 4 sent a sync message {}.
-2023/10/18 21:33:51 node_listen.go:16: Node 1 received a message {}.
-2023/10/18 21:33:51 node_listen.go:16: Node 0 received a message {}.
-2023/10/18 21:33:51 node_listen.go:16: Node 2 received a message {}.
-2023/10/18 21:33:51 node_listen.go:16: Node 3 received a message {}.
-2023/10/18 21:33:52 node_listen.go:191: Coordinator 4 sent a sync message {}.
-2023/10/18 21:33:52 node_listen.go:16: Node 1 received a message {}.
-2023/10/18 21:33:52 node_listen.go:16: Node 0 received a message {}.
-2023/10/18 21:33:52 node_listen.go:16: Node 2 received a message {}.
-2023/10/18 21:33:52 node_listen.go:16: Node 3 received a message {}.
-2023/10/18 21:33:53 node.go:124: Node 4 failed.
-2023/10/18 21:33:58 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:33:58 node_listen.go:41: Node 1 detected coordinator 4 failed.
-2023/10/18 21:33:58 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:33:58 node_listen.go:41: Node 3 detected coordinator 4 failed.
-2023/10/18 21:33:58 node.go:49: Node 3 started an election.
-2023/10/18 21:33:58 node.go:49: Node 1 started an election.
-2023/10/18 21:33:58 node.go:64: Node 1 sent elect msg to 2.
-2023/10/18 21:33:58 node.go:64: Node 1 sent elect msg to 3.
-2023/10/18 21:33:58 node.go:64: Node 3 sent elect msg to 4.
-2023/10/18 21:33:58 node_listen.go:140: Coordinator 4 received a message Elect 3 as new coordinator..
-2023/10/18 21:33:58 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:33:58 node_listen.go:62: Node 2 received a message Elect 1 as new coordinator.
-2023/10/18 21:33:58 node_listen.go:77: Node 2 sent ACK to node 1.
-2023/10/18 21:33:58 node.go:49: Node 2 started an election.
-2023/10/18 21:33:58 node_listen.go:140: Coordinator 4 received a message Elect 1 as new coordinator..
-2023/10/18 21:33:58 node.go:64: Node 1 sent elect msg to 4.
-2023/10/18 21:33:58 node_listen.go:41: Node 0 detected coordinator 4 failed.
-2023/10/18 21:33:58 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:33:58 node_listen.go:62: Node 1 received a message Request from node 1 is refused by node 2.
-2023/10/18 21:33:58 node_listen.go:62: Node 3 received a message Elect 1 as new coordinator.
-2023/10/18 21:33:58 node.go:49: Node 0 started an election.
-2023/10/18 21:34:04 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:04 node.go:97: Node 3 is broadcasting a victory to 0.
-2023/10/18 21:34:04 node_listen.go:62: Node 0 received a message Node 3 is the new coordinator
-2023/10/18 21:34:04 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:04 node.go:81: Node 1 Stop the goroutine broadcast_victory.
-2023/10/18 21:34:04 node_listen.go:62: Node 1 received a message Request from node 1 is refused by node 3.
-2023/10/18 21:34:04 node_listen.go:62: Node 1 received a message Elect 0 as new coordinator.
-2023/10/18 21:34:04 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:04 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:04 node_listen.go:94: Node 3 sent ACK to node 1.
-2023/10/18 21:34:04 node_listen.go:62: Node 3 received a message Elect 2 as new coordinator.
-2023/10/18 21:34:04 node_listen.go:41: Node 1 detected coordinator 4 failed.
-2023/10/18 21:34:04 node.go:49: Node 1 started an election.
-2023/10/18 21:34:04 node.go:64: Node 1 sent elect msg to 2.
-2023/10/18 21:34:04 node.go:64: Node 0 sent elect msg to 1.
-2023/10/18 21:34:04 node.go:64: Node 2 sent elect msg to 3.
-2023/10/18 21:34:04 node.go:64: Node 2 sent elect msg to 4.
-2023/10/18 21:34:04 node.go:64: Node 1 sent elect msg to 3.
-2023/10/18 21:34:04 node_listen.go:62: Node 3 received a message Elect 1 as new coordinator.
-2023/10/18 21:34:04 node_listen.go:62: Node 2 received a message Elect 1 as new coordinator.
-2023/10/18 21:34:04 node_listen.go:140: Coordinator 4 received a message Elect 2 as new coordinator..
-2023/10/18 21:34:04 node_listen.go:140: Coordinator 4 received a message Elect 1 as new coordinator..
-2023/10/18 21:34:04 node.go:64: Node 1 sent elect msg to 4.
-2023/10/18 21:34:10 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:10 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:10 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:10 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:16 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:16 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:16 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:16 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:22 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:22 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:22 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:22 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:28 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:28 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:28 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:28 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:34 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:34 node_listen.go:36: Node 3 sync timeout
-2023/10/18 21:34:34 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:34 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:40 node_listen.go:36: Node 1 sync timeout
-2023/10/18 21:34:40 node_listen.go:36: Node 2 sync timeout
-2023/10/18 21:34:40 node_listen.go:36: Node 0 sync timeout
-2023/10/18 21:34:40 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:31:18 bully.go:50: ===============START===============
+2023/10/18 22:31:18 bully.go:19: Node 2 starts to execute replica_routine.
+2023/10/18 22:31:18 bully.go:28: Node 4 starts to execute coordinator_routine.
+2023/10/18 22:31:18 bully.go:19: Node 0 starts to execute replica_routine.
+2023/10/18 22:31:18 bully.go:19: Node 1 starts to execute replica_routine.
+2023/10/18 22:31:18 bully.go:19: Node 3 starts to execute replica_routine.
+2023/10/18 22:31:18 node_listen.go:191: Coordinator 4 sent a sync message {}.
+2023/10/18 22:31:18 node_listen.go:16: Node 1 received a message {}.
+2023/10/18 22:31:18 node_listen.go:16: Node 0 received a message {}.
+2023/10/18 22:31:18 node_listen.go:16: Node 2 received a message {}.
+2023/10/18 22:31:18 node_listen.go:16: Node 3 received a message {}.
+2023/10/18 22:31:19 node_listen.go:191: Coordinator 4 sent a sync message {}.
+2023/10/18 22:31:19 node_listen.go:16: Node 1 received a message {}.
+2023/10/18 22:31:19 node_listen.go:16: Node 0 received a message {}.
+2023/10/18 22:31:19 node_listen.go:16: Node 2 received a message {}.
+2023/10/18 22:31:19 node_listen.go:16: Node 3 received a message {}.
+2023/10/18 22:31:20 node_listen.go:191: Coordinator 4 sent a sync message {}.
+2023/10/18 22:31:20 node_listen.go:16: Node 1 received a message {}.
+2023/10/18 22:31:20 node_listen.go:16: Node 0 received a message {}.
+2023/10/18 22:31:20 node_listen.go:16: Node 2 received a message {}.
+2023/10/18 22:31:20 node_listen.go:16: Node 3 received a message {}.
+2023/10/18 22:31:21 node_listen.go:191: Coordinator 4 sent a sync message {}.
+2023/10/18 22:31:21 node_listen.go:16: Node 1 received a message {}.
+2023/10/18 22:31:21 node_listen.go:16: Node 0 received a message {}.
+2023/10/18 22:31:21 node_listen.go:16: Node 2 received a message {}.
+2023/10/18 22:31:21 node_listen.go:16: Node 3 received a message {}.
+2023/10/18 22:31:22 node.go:124: Node 4 failed.
+2023/10/18 22:31:27 node_listen.go:36: Node 0 sync timeout
+2023/10/18 22:31:27 node_listen.go:36: Node 1 sync timeout
+2023/10/18 22:31:27 node_listen.go:41: Node 1 detected coordinator 4 failed.
+2023/10/18 22:31:27 node.go:49: Node 1 started an election.
+2023/10/18 22:31:27 node.go:64: Node 1 sent elect msg to 2.
+2023/10/18 22:31:27 node.go:64: Node 1 sent elect msg to 3.
+2023/10/18 22:31:27 node.go:64: Node 1 sent elect msg to 4.
+2023/10/18 22:31:27 node_listen.go:41: Node 0 detected coordinator 4 failed.
+2023/10/18 22:31:27 node.go:49: Node 0 started an election.
+2023/10/18 22:31:27 node.go:64: Node 0 sent elect msg to 1.
+2023/10/18 22:31:27 node_listen.go:140: Coordinator 4 received a message Elect 1 as new coordinator..
+2023/10/18 22:31:27 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:31:27 node_listen.go:41: Node 3 detected coordinator 4 failed.
+2023/10/18 22:31:27 node.go:49: Node 3 started an election.
+2023/10/18 22:31:27 node.go:64: Node 3 sent elect msg to 4.
+2023/10/18 22:31:27 node_listen.go:62: Node 1 received a message Elect 0 as new coordinator.
+2023/10/18 22:31:27 node_listen.go:94: Node 1 sent ACK to node 0.
+2023/10/18 22:31:27 node_listen.go:62: Node 3 received a message Elect 1 as new coordinator.
+2023/10/18 22:31:27 node_listen.go:94: Node 3 sent ACK to node 1.
+2023/10/18 22:31:27 node_listen.go:140: Coordinator 4 received a message Elect 3 as new coordinator..
+2023/10/18 22:31:27 node_listen.go:36: Node 2 sync timeout
+2023/10/18 22:31:27 node_listen.go:62: Node 0 received a message Request from node 0 is refused by node 1.
+2023/10/18 22:31:27 node_listen.go:62: Node 2 received a message Elect 1 as new coordinator.
+2023/10/18 22:31:27 node_listen.go:62: Node 1 received a message Request from node 1 is refused by node 3.
+2023/10/18 22:31:27 node_listen.go:41: Node 2 detected coordinator 4 failed.
+2023/10/18 22:31:27 node.go:49: Node 2 started an election.
+2023/10/18 22:31:27 node.go:64: Node 2 sent elect msg to 3.
+2023/10/18 22:31:27 node.go:64: Node 2 sent elect msg to 4.
+2023/10/18 22:31:27 node_listen.go:62: Node 3 received a message Elect 2 as new coordinator.
+2023/10/18 22:31:27 node_listen.go:140: Coordinator 4 received a message Elect 2 as new coordinator..
+2023/10/18 22:31:33 node_listen.go:36: Node 1 sync timeout
+2023/10/18 22:31:33 node.go:81: Node 1 Stop the goroutine broadcast_victory.
+2023/10/18 22:31:33 node_listen.go:36: Node 0 sync timeout
+2023/10/18 22:31:33 node_listen.go:36: Node 2 sync timeout
+2023/10/18 22:31:33 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:31:33 node_listen.go:62: Node 1 received a message Request from node 1 is refused by node 2.
+2023/10/18 22:31:33 node_listen.go:77: Node 2 sent ACK to node 1.
+2023/10/18 22:31:33 node_listen.go:62: Node 2 received a message Elect 0 as new coordinator.
+2023/10/18 22:31:33 node_listen.go:41: Node 1 detected coordinator 4 failed.
+2023/10/18 22:31:33 node.go:49: Node 2 started an election.
+2023/10/18 22:31:33 node.go:64: Node 0 sent elect msg to 2.
+2023/10/18 22:31:33 node.go:49: Node 1 started an election.
+2023/10/18 22:31:39 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:31:39 node_listen.go:36: Node 1 sync timeout
+2023/10/18 22:31:39 node_listen.go:36: Node 0 sync timeout
+2023/10/18 22:31:39 node_listen.go:36: Node 2 sync timeout
+2023/10/18 22:31:45 node_listen.go:36: Node 2 sync timeout
+2023/10/18 22:31:45 node_listen.go:36: Node 0 sync timeout
+2023/10/18 22:31:45 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:31:45 node_listen.go:36: Node 1 sync timeout
+2023/10/18 22:31:51 node_listen.go:36: Node 1 sync timeout
+2023/10/18 22:31:51 node_listen.go:36: Node 0 sync timeout
+2023/10/18 22:31:51 node_listen.go:36: Node 2 sync timeout
+2023/10/18 22:31:51 node_listen.go:36: Node 3 sync timeout
+2023/10/18 22:32:03 bully.go:50: ===============START===============
+2023/10/18 22:32:03 bully.go:19: Node 0 starts to execute replica_routine.
+2023/10/18 22:32:03 bully.go:19: Node 1 starts to execute replica_routine.
+2023/10/18 22:32:03 bully.go:28: Node 2 starts to execute coordinator_routine.
+2023/10/18 22:32:03 node_listen.go:186: Coordinator 2 sent a sync message {}.
+2023/10/18 22:32:03 node_listen.go:14: Node 1 received a message {}.
+2023/10/18 22:32:03 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:04 node_listen.go:186: Coordinator 2 sent a sync message {}.
+2023/10/18 22:32:04 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:04 node_listen.go:14: Node 1 received a message {}.
+2023/10/18 22:32:05 node_listen.go:186: Coordinator 2 sent a sync message {}.
+2023/10/18 22:32:05 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:05 node_listen.go:14: Node 1 received a message {}.
+2023/10/18 22:32:06 node_listen.go:186: Coordinator 2 sent a sync message {}.
+2023/10/18 22:32:06 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:06 node_listen.go:14: Node 1 received a message {}.
+2023/10/18 22:32:07 node.go:124: Node 2 failed.
+2023/10/18 22:32:12 node_listen.go:34: Node 1 sync timeout
+2023/10/18 22:32:12 node_listen.go:39: Node 1 detected coordinator 2 failed.
+2023/10/18 22:32:12 node_listen.go:34: Node 0 sync timeout
+2023/10/18 22:32:12 node_listen.go:39: Node 0 detected coordinator 2 failed.
+2023/10/18 22:32:12 node.go:49: Node 1 started an election.
+2023/10/18 22:32:12 node.go:64: Node 1 sent elect msg to 2.
+2023/10/18 22:32:12 node.go:49: Node 0 started an election.
+2023/10/18 22:32:12 node.go:64: Node 0 sent elect msg to 1.
+2023/10/18 22:32:12 node_listen.go:135: Coordinator 2 received a message Elect 1 as new coordinator..
+2023/10/18 22:32:12 node_listen.go:57: Node 1 received a message Elect 0 as new coordinator.
+2023/10/18 22:32:12 node_listen.go:135: Coordinator 2 received a message Elect 0 as new coordinator..
+2023/10/18 22:32:12 node.go:64: Node 0 sent elect msg to 2.
+2023/10/18 22:32:12 node_listen.go:89: Node 1 sent ACK to node 0.
+2023/10/18 22:32:12 node_listen.go:57: Node 0 received a message Request from node 0 is refused by node 1.
+2023/10/18 22:32:18 node.go:81: Node 0 Stop the goroutine broadcast_victory.
+2023/10/18 22:32:18 node_listen.go:34: Node 1 sync timeout
+2023/10/18 22:32:18 node_listen.go:34: Node 0 sync timeout
+2023/10/18 22:32:18 node.go:97: Node 1 is broadcasting a victory to 0.
+2023/10/18 22:32:18 node_listen.go:57: Node 0 received a message Node 1 is the new coordinator
+2023/10/18 22:32:18 node_listen.go:39: Node 0 detected coordinator 1 failed.
+2023/10/18 22:32:18 node.go:49: Node 0 started an election.
+2023/10/18 22:32:18 node.go:64: Node 0 sent elect msg to 1.
+2023/10/18 22:32:18 node.go:97: Node 1 is broadcasting a victory to 2.
+2023/10/18 22:32:18 node_listen.go:135: Coordinator 2 received a message Node 1 is the new coordinator.
+2023/10/18 22:32:18 node_listen.go:57: Node 1 received a message Elect 0 as new coordinator.
+2023/10/18 22:32:18 node_listen.go:135: Coordinator 2 received a message Elect 0 as new coordinator..
+2023/10/18 22:32:18 node.go:64: Node 0 sent elect msg to 2.
+2023/10/18 22:32:18 node_listen.go:72: Node 1 sent ACK to node 0.
+2023/10/18 22:32:18 node_listen.go:57: Node 1 received a message Stop the goroutine
+2023/10/18 22:32:18 node_listen.go:57: Node 0 received a message Request from node 0 is refused by node 1.
+2023/10/18 22:32:18 node.go:115: Node 1 sent role switch messgae.
+2023/10/18 22:32:18 bully.go:42: Node 1 switch role.
+2023/10/18 22:32:18 bully.go:28: Node 1 starts to execute coordinator_routine.
+2023/10/18 22:32:18 node_listen.go:14: Node 1 received a message Stop the goroutine.
+2023/10/18 22:32:18 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:18 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:19 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:19 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:20 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:20 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:21 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:21 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:22 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:22 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:23 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:23 node_listen.go:14: Node 0 received a message {}.
+2023/10/18 22:32:24 node.go:81: Node 0 Stop the goroutine broadcast_victory.
+2023/10/18 22:32:24 node_listen.go:186: Coordinator 1 sent a sync message {}.
+2023/10/18 22:32:24 node_listen.go:14: Node 0 received a message {}.

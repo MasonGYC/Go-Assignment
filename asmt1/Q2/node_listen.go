@@ -6,8 +6,6 @@ import (
 )
 
 func (n *Node) rep_sync() {
-	// fmt.Printf("Node %d rep_listen_ch_sync.\n", n.id)
-	// logger.Printf("Node %d rep_listen_ch_sync.\n", n.id)
 
 	for {
 		select {
@@ -52,9 +50,6 @@ func (n *Node) rep_sync() {
 }
 
 func (n *Node) rep_elect() {
-
-	// fmt.Printf("Node %d rep_listen_ch_elect.\n", n.id)
-	// logger.Printf("Node %d rep_listen_ch_elect.\n", n.id)
 
 	for {
 		msg := <-n.ch_elect

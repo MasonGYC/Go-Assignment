@@ -13,8 +13,6 @@ todo:
 1. lamport total order, present order
 2. q1 register pattern
 3. q1 function func (a * server), don't use go func () inside a func
-4. change to printf
-5. timestamp in message change to logical clock
-6. mutex for n.state
-7. break -> return 
-8. write tests (order of events)
+9. build code: https://go.dev/doc/code#Organization 
+10. documentation
+11. random node fails at predefined time

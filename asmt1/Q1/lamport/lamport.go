@@ -1,18 +1,10 @@
 package main
 
-// 2. Use Lamport’s logical clock to determine a total order of all the messages received at
-// all the registered clients. Subsequently, present (i.e., print) this order for all registered
-// clients to know the order in which the messages should be read. (10 points)
-
-// 3. Use Vector clock to redo the assignment. Implement the detection of causality violation
-// and print any such detected causality violation. (10 points)
-
 import (
 	"fmt"
 	"log"
 	"math/rand"
 	"os"
-	"strconv"
 	"sync"
 	"time"
 )
@@ -62,16 +54,16 @@ func clientSend(c Client, sch chan Message) {
 
 			// receive data
 			m := <-c.ch
-			fmt.Println("Client "+strconv.Itoa(c.id)+" received:", m)
-			log.Println("Client "+strconv.Itoa(c.id)+" received:", m)
+			fmt.Printf("Client %d received: %d.\n", c.id, m.message)
+			log.Printf("Client %d received: %d.\n", c.id, m.message)
 
 			// update clock
 			mutex.Lock()
 			c.clock = max(m.clock, c.clock) + 1
 			mutex.Unlock()
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
-			log.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
+			fmt.Printf("Client %d's clock: %d", c.id, c.clock)
+			log.Printf("Client %d's clock: %d", c.id, c.clock)
 		}
 	}()
 
@@ -87,11 +79,11 @@ func clientSend(c Client, sch chan Message) {
 			// send a new message
 			send := newMessage(c.id, i, c.clock)
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
-			log.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
+			fmt.Printf("Client %d's clock:  %d.\n", c.id, c.clock)
+			log.Printf("Client %d's clock:  %d.\n", c.id, c.clock)
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+" sending:", send)
-			log.Println("Client "+strconv.Itoa(c.id)+" sending:", send)
+			fmt.Printf("Client %d sending: %d.\n", c.id, send)
+			log.Printf("Client %d sending: %d.\n", c.id, send)
 
 			sch <- send
 
@@ -109,16 +101,16 @@ func serverRecv(s Server) {
 	for {
 		// receive messages from all channels and print it
 		msg := <-s.ch
-		fmt.Println("Server received:", msg)
-		log.Println("Server received:", msg)
+		fmt.Printf("Server received: %d.\n", msg)
+		log.Printf("Server received: %d.\n", msg)
 
 		// update clock
 		mutex.Lock()
 		s.clock = max(msg.clock, s.clock) + 1
 		mutex.Unlock()
 
-		fmt.Println("Server's clock: ", s.clock)
-		log.Println("Server's clock: ", s.clock)
+		fmt.Printf("Server's clock: %d.\n", s.clock)
+		log.Printf("Server's clock: %d.\n", s.clock)
 
 		// check forward or drop
 		flag := rand.Intn(2)
@@ -129,16 +121,16 @@ func serverRecv(s Server) {
 			for j := 0; j < s.num_clients; j++ {
 				// check if not sender, then forward
 				if j != msg.sender_id {
-					fmt.Println("Server forward to Client "+strconv.Itoa(j), msg)
-					log.Println("Server forward to Client "+strconv.Itoa(j), msg)
+					fmt.Printf("Server forward to Client %d %d.\n", j, msg)
+					log.Printf("Server forward to Client %d %d.\n", j, msg)
 
 					s.clients[j].ch <- msg
 				}
 
 			}
 		} else {
-			fmt.Println("Drop the message", msg)
-			log.Println("Drop the message", msg)
+			fmt.Printf("Drop the message: %d.\n", msg)
+			log.Printf("Drop the message: %d.\n", msg)
 		}
 
 	}
@@ -153,7 +145,7 @@ func main() {
 	}
 
 	log.SetOutput(file)
-	log.Println("===============START===============")
+	log.Printf("===============START===============")
 
 	// define the number of clients
 	const num_clients int = 15

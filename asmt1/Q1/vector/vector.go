@@ -1,6 +1,3 @@
-// 3. Use Vector clock to redo the assignment. Implement the detection of causality violation
-// and print any such detected causality violation. (10 points)
-
 package main
 
 import (
@@ -9,7 +6,6 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"strconv"
 	"sync"
 	"time"
 )
@@ -88,19 +84,19 @@ func clientSend(c Client, sch chan Message) {
 			// receive data
 			msg := <-c.ch
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+" received:", msg)
-			log.Println("Client "+strconv.Itoa(c.id)+" received:", msg)
+			fmt.Printf("Client %d received:.\n", msg)
+			log.Printf("Client %d received:.\n", msg)
 
 			// check causality violation
 			// If the local vector clock of the receiving machine is more than the vector clock Of the message, then a potential causality violation is detected.
 			violation, _ := clockIsGreaterThan(c.clock, msg.clock)
 			if violation {
-				fmt.Println("Potential violation detected!")
-				fmt.Println("Local clock: ", c.clock)
-				fmt.Println("Message clock: ", msg.clock)
-				log.Println("Potential violation detected!")
-				log.Println("Local clock: ", c.clock)
-				log.Println("Message clock: ", msg.clock)
+				fmt.Printf("Potential violation detected!")
+				fmt.Printf("Local clock: %d.\n", c.clock)
+				fmt.Printf("Message clock: %d.\n", msg.clock)
+				log.Printf("Potential violation detected!")
+				log.Printf("Local clock: %d.\n", c.clock)
+				log.Printf("Message clock: %d.\n", msg.clock)
 			}
 
 			// update clock
@@ -111,8 +107,8 @@ func clientSend(c Client, sch chan Message) {
 			c.clock[c.id] = c.clock[c.id] + 1
 			mutex.Unlock()
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
-			log.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
+			fmt.Printf("Client %d's clock: %d.\n", c.id, c.clock)
+			log.Printf("Client %d's clock: %d.\n", c.id, c.clock)
 		}
 	}()
 
@@ -129,11 +125,11 @@ func clientSend(c Client, sch chan Message) {
 			// send a new message
 			send := newMessage(c.id, i, c.clock)
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
-			log.Println("Client "+strconv.Itoa(c.id)+"'s clock:", c.clock)
+			fmt.Printf("Client %d's clock:.\n", c.clock)
+			log.Printf("Client %d's clock:.\n", c.clock)
 
-			fmt.Println("Client "+strconv.Itoa(c.id)+" sending:", send)
-			log.Println("Client "+strconv.Itoa(c.id)+" sending:", send)
+			fmt.Printf("Client %d sending:.\n", send)
+			log.Printf("Client %d sending:.\n", send)
 
 			sch <- send
 
@@ -151,19 +147,19 @@ func serverRecv(s Server) {
 	for {
 		// receive messages from all channels and print it
 		msg := <-s.ch
-		fmt.Println("Server received:", msg)
-		log.Println("Server received:", msg)
+		fmt.Printf("Server received: %d.\n", msg)
+		log.Printf("Server received: %d.\n", msg)
 
 		// check causality violation
 		// If the local vector clock of the receiving machine is more than the vector clock Of the message, then a potential causality violation is detected.
 		violation, _ := clockIsGreaterThan(s.clock, msg.clock)
 		if violation {
-			fmt.Println("Potential violation detected!")
-			fmt.Println("Local clock: ", s.clock)
-			fmt.Println("Message clock: ", msg.clock)
-			log.Println("Potential violation detected!")
-			log.Println("Local clock: ", s.clock)
-			log.Println("Message clock: ", msg.clock)
+			fmt.Printf("Potential violation detected!")
+			fmt.Printf("Local clock: %d.\n", s.clock)
+			fmt.Printf("Message clock: %d.\n", msg.clock)
+			log.Printf("Potential violation detected!")
+			log.Printf("Local clock: %d.\n", s.clock)
+			log.Printf("Message clock: %d.\n", msg.clock)
 		}
 
 		// update clock
@@ -174,8 +170,8 @@ func serverRecv(s Server) {
 		s.clock[s.id] = s.clock[s.id] + 1
 		mutex.Unlock()
 
-		fmt.Println("Server's clock: ", s.clock)
-		log.Println("Server's clock: ", s.clock)
+		fmt.Printf("Server's clock: ", s.clock)
+		log.Printf("Server's clock: ", s.clock)
 
 		// check forward or drop
 		flag := rand.Intn(2)
@@ -185,15 +181,15 @@ func serverRecv(s Server) {
 			msg.clock = s.clock
 			for j := 0; j < s.num_clients; j++ {
 				if j != msg.sender_id {
-					fmt.Println("Server forward to Client "+strconv.Itoa(j), msg)
-					log.Println("Server forward to Client "+strconv.Itoa(j), msg)
+					fmt.Printf("Server forward to Client %d %d.\n", j, msg)
+					log.Printf("Server forward to Client %d %d.\n", j, msg)
 
 					s.clients[j].ch <- msg
 				}
 			}
 		} else {
-			fmt.Println("Drop the message", msg)
-			log.Println("Drop the message", msg)
+			fmt.Printf("Drop the message %d.\n", msg)
+			log.Printf("Drop the message %d.\n", msg)
 		}
 
 	}
@@ -208,7 +204,7 @@ func main() {
 	}
 
 	log.SetOutput(file)
-	log.Println("===============START===============")
+	log.Printf("===============START===============")
 
 	// define the number of clients
 	const num_clients int = 15

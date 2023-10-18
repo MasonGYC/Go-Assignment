@@ -50,7 +50,7 @@ func main() {
 	logger.Println("===============START===============")
 
 	// define the number of nodes
-	const num_nodes int = 5
+	const num_nodes int = 3
 	const sync_interval = time.Second
 	const timeout = 6 * time.Second // 2T(m) + T(p)
 
