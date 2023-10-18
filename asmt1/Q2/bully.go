@@ -1,149 +1,87 @@
-// // 1. Implement the above protocol of joint synchronization and election via GO (20 points)
-// // The coordinator initiates the synchronization process by sending message to all other machines.
-// // Upon receiving the message from the coordinator, each machine updates its local version of the data structure with the coordinator’s version.
-// // a new coordinator is chosen by the Bully algorithm. You can assume a fixed timeout to simulate the behaviour of detecting a fault.
 package main
 
+// 1. Implement the above protocol of joint synchronization and election via GO (20 points)
+// The coordinator initiates the synchronization process by sending message to all other machines.
+// Upon receiving the message from the coordinator, each machine updates its local version of the data structure with the coordinator’s version.
+// a new coordinator is chosen by the Bully algorithm. You can assume a fixed timeout to simulate the behaviour of detecting a fault.
 // version working w/o bully. can send sync msg
 
 import (
 	"fmt"
-	"log"
-	"os"
-	"strconv"
 	"time"
 )
 
-const DATA int = 0
-const SYNC int = 1
+func (n *Node) replica_routine() {
+	go n.rep_sync()
+	go n.rep_elect()
 
-type Data struct {
+	fmt.Printf("Node %d starts to execute replica_routine.\n", n.id)
+	logger.Printf("Node %d starts to execute replica_routine.\n", n.id)
 }
 
-type Replica struct {
-	id      int
-	ch      chan Message
-	data    Data
-	timeout time.Duration // assume if not receiving message after timeout, then coordinator failed
+func (n *Node) coordinator_routine() {
+
+	go n.coor_elect()
+	go n.coor_sync()
+
+	fmt.Printf("Node %d starts to execute coordinator_routine.\n", n.id)
+	logger.Printf("Node %d starts to execute coordinator_routine.\n", n.id)
 }
 
-type Coordinator struct {
-	id            int
-	num_replicas  int
-	replicas      map[int]Replica
-	ch            chan Message
-	data          Data
-	sync_interval time.Duration //send sync msg every sync_interval
-}
-
-type Message struct {
-	sender_id    int
-	message_type int
-	message      any // i-th msg
-}
-
-func bully() {
-
-}
-
-func replica(rep Replica, ch chan Message) {
-
-	// Start a goroutine to receive coordinator message
-	go func() {
-		for {
-
-			// receive data
-			select {
-			case msg := <-rep.ch:
-
-				fmt.Println("Replica "+strconv.Itoa(rep.id)+" received:", msg)
-				log.Println("Replica "+strconv.Itoa(rep.id)+" received:", msg)
-
-				switch msg.message_type {
-				case SYNC:
-					coor_data := msg.message.(Data) // SYNC come with Data in message field
-					rep.data = coor_data            // update local data
-				default:
-
-				}
-			case <-time.After(rep.timeout):
-
-				fmt.Println("Coordinator failed")
-				log.Println("Coordinator failed")
-
-				go bully() //select new coordinator using bully algo
-			}
-
-		}
-	}()
-}
-
-func coordinator(coor Coordinator) {
-
-	// initiates the synchronization process
-	go func() {
-		for {
-
-			// create sync message
-			var msg = Message{
-				sender_id:    coor.id,
-				message_type: SYNC,
-				message:      coor.data,
-			}
-
-			// send sync message to all other machines.
-			for i := 0; i < coor.num_replicas; i++ {
-				coor.replicas[i].ch <- msg
-			}
-
-			// sleep for sync_interval
-			time.Sleep(coor.sync_interval)
+func (n *Node) execute() {
+	for {
+		if n.role == COORDINATOR {
+			n.coordinator_routine()
+		} else if n.role == REPLICA {
+			n.replica_routine()
 		}
 
-	}()
+		role_switch_msg := <-n.ch_role_switch
+		fmt.Println(role_switch_msg)
+		fmt.Printf("Node %d switch to role.\n", n.id)
+		logger.Printf("Node %d switch role.\n", n.id)
+	}
 
 }
 
 func main() {
 
 	// log outputs for debugging purpose
-	file, err := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-	if err != nil {
-		log.Fatal(err)
+	logger.Println("===============START===============")
+
+	// define the number of nodes
+	const num_nodes int = 5
+	const sync_interval = time.Second
+	const timeout = 6 * time.Second // 2T(m) + T(p)
+
+	// initialize (num_nodes-1) replicas
+	var nodes = make([]*Node, num_nodes)
+	for i := 0; i < num_nodes; i++ {
+		nodes[i] = NewNode(i, sync_interval, timeout, REPLICA, nodes)
 	}
 
-	log.SetOutput(file)
-	log.Println("===============START===============")
+	// make graph[highest] coordinator
+	nodes[num_nodes-1].role = COORDINATOR
 
-	// define the number of clients
-	const num_replicas int = 15
-
-	// init clients and channels
-	var coor = Coordinator{
-		id:            0, // first one
-		num_replicas:  num_replicas,
-		replicas:      make(map[int]Replica),
-		ch:            make(chan Message),
-		sync_interval: time.Second,
+	// execute node go routines
+	for i := 0; i < num_nodes; i++ {
+		go nodes[i].execute()
 	}
 
-	for i := 0; i < num_replicas; i++ {
-		coor.replicas[i] = Replica{
-			id:      i + 1,
-			ch:      make(chan Message),
-			timeout: 2 * time.Second,
-		}
-	}
-
-	// execute client and server go routines
-	for i := 0; i < num_replicas; i++ {
-		go replica(coor.replicas[i], coor.ch)
-	}
-	go coordinator(coor)
+	// Simulate coordinator failure for once
+	go func() {
+		// var coorNode Node
+		// for i := range nodes {
+		// 	if .status == COORDINATOR {
+		// 		coorNode = *nodes[i]
+		// 		break
+		// 	}
+		// }
+		time.Sleep(4 * time.Second)
+		nodes[num_nodes-1].fail()
+	}()
 
 	var input string
 	// wait for the input, as otherwise, the program will not wait
 	fmt.Scanln(&input)
 }
-
-// //TODO: a function to simulate coordinator fails
