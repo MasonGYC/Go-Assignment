@@ -1,0 +1,85 @@
+2023/10/19 22:59:48 run.go:61: ===============START===============
+2023/10/19 22:59:48 run.go:41: execute Node 2's state: NORMAL.
+2023/10/19 22:59:48 run.go:41: execute Node 3's state: NORMAL.
+2023/10/19 22:59:48 run.go:41: execute Node 0's state: NORMAL.
+2023/10/19 22:59:48 run.go:22: Node 0 starts to execute worker_tasks.
+2023/10/19 22:59:48 run.go:22: Node 2 starts to execute worker_tasks.
+2023/10/19 22:59:48 run.go:32: Node 3 starts to execute coordinator_tasks.
+2023/10/19 22:59:48 run.go:41: execute Node 1's state: NORMAL.
+2023/10/19 22:59:48 node.go:170: Node 0 received a message {}.
+2023/10/19 22:59:48 run.go:22: Node 1 starts to execute worker_tasks.
+2023/10/19 22:59:48 node.go:170: Node 1 received a message {}.
+2023/10/19 22:59:48 node.go:358: Coordinator 3 sent a sync message {}.
+2023/10/19 22:59:48 node.go:170: Node 2 received a message {}.
+2023/10/19 22:59:49 node.go:358: Coordinator 3 sent a sync message {}.
+2023/10/19 22:59:49 node.go:170: Node 0 received a message {}.
+2023/10/19 22:59:49 node.go:170: Node 1 received a message {}.
+2023/10/19 22:59:49 node.go:170: Node 2 received a message {}.
+2023/10/19 22:59:50 node.go:358: Coordinator 3 sent a sync message {}.
+2023/10/19 22:59:50 node.go:170: Node 0 received a message {}.
+2023/10/19 22:59:50 node.go:170: Node 2 received a message {}.
+2023/10/19 22:59:50 node.go:170: Node 1 received a message {}.
+2023/10/19 22:59:51 node.go:358: Coordinator 3 sent a sync message {}.
+2023/10/19 22:59:51 node.go:170: Node 0 received a message {}.
+2023/10/19 22:59:51 node.go:170: Node 1 received a message {}.
+2023/10/19 22:59:51 node.go:170: Node 2 received a message {}.
+2023/10/19 22:59:52 node.go:136: Node 3 failed.
+2023/10/19 22:59:57 node.go:195: Node 2 detected coordinator 3 failed.
+2023/10/19 22:59:57 node.go:195: Node 0 detected coordinator 3 failed.
+2023/10/19 22:59:57 node.go:47: Node 0 started an election.
+2023/10/19 22:59:57 node.go:65: Node 0 sent elect msg to 1.
+2023/10/19 22:59:57 node.go:65: Node 0 sent elect msg to 2.
+2023/10/19 22:59:57 node.go:65: Node 0 sent elect msg to 3.
+2023/10/19 22:59:57 node.go:217: Node 1 received a message Elect 0 as new coordinator.
+2023/10/19 22:59:57 node.go:233: Node 1 sent ACK to node 0.
+2023/10/19 22:59:57 node.go:47: Node 1 started an election.
+2023/10/19 22:59:57 node.go:47: Node 2 started an election.
+2023/10/19 22:59:57 node.go:65: Node 2 sent elect msg to 3.
+2023/10/19 22:59:57 node.go:217: Node 0 received a message Request from node 0 is refused by node 1.
+2023/10/19 22:59:57 node.go:217: Node 2 received a message Elect 0 as new coordinator.
+2023/10/19 22:59:57 node.go:195: Node 1 detected coordinator 3 failed.
+2023/10/19 22:59:57 node.go:47: Node 1 started an election.
+2023/10/19 23:00:03 node.go:84: Node 0 Stop the goroutine broadcast_victory.
+2023/10/19 23:00:03 node.go:217: Node 0 received a message Request from node 0 is refused by node 2.
+2023/10/19 23:00:03 node.go:249: Node 2 sent ACK to node 0.
+2023/10/19 23:00:03 node.go:217: Node 2 received a message Elect 1 as new coordinator.
+2023/10/19 23:00:03 node.go:65: Node 1 sent elect msg to 2.
+2023/10/19 23:00:03 node.go:65: Node 1 sent elect msg to 2.
+2023/10/19 23:00:03 node.go:217: Node 0 received a message Node 2 is the new coordinator
+2023/10/19 23:00:03 node.go:101: Node 2 is broadcasting a victory to 0.
+2023/10/19 23:00:03 node.go:65: Node 1 sent elect msg to 3.
+2023/10/19 23:00:03 node.go:65: Node 1 sent elect msg to 3.
+2023/10/19 23:00:03 node.go:101: Node 2 is broadcasting a victory to 1.
+2023/10/19 23:00:03 node.go:217: Node 1 received a message Node 2 is the new coordinator
+2023/10/19 23:00:03 node.go:101: Node 2 is broadcasting a victory to 3.
+2023/10/19 23:00:03 node.go:123: Node 2 fails during broadcasting.
+2023/10/19 23:00:09 node.go:195: Node 0 detected coordinator 2 failed.
+2023/10/19 23:00:09 node.go:47: Node 0 started an election.
+2023/10/19 23:00:09 node.go:101: Node 1 is broadcasting a victory to 0.
+2023/10/19 23:00:09 node.go:101: Node 1 is broadcasting a victory to 2.
+2023/10/19 23:00:09 node.go:101: Node 1 is broadcasting a victory to 3.
+2023/10/19 23:00:09 node.go:65: Node 0 sent elect msg to 1.
+2023/10/19 23:00:09 node.go:65: Node 0 sent elect msg to 2.
+2023/10/19 23:00:09 node.go:217: Node 1 received a message Elect 0 as new coordinator.
+2023/10/19 23:00:09 node.go:84: Node 1 Stop the goroutine broadcast_victory.
+2023/10/19 23:00:09 node.go:65: Node 0 sent elect msg to 3.
+2023/10/19 23:00:09 node.go:217: Node 0 received a message Node 1 is the new coordinator
+2023/10/19 23:00:15 node.go:84: Node 0 Stop the goroutine broadcast_victory.
+2023/10/19 23:00:15 node.go:217: Node 0 received a message Request from node 0 is refused by node 1.
+2023/10/19 23:00:15 node.go:233: Node 1 sent ACK to node 0.
+2023/10/19 23:00:15 node.go:217: Node 1 received a message Stop the goroutine
+2023/10/19 23:00:15 node.go:120: Node 1 sent role switch messgae.
+2023/10/19 23:00:15 run.go:53: Node 1 switch role.
+2023/10/19 23:00:15 run.go:41: execute Node 1's state: NORMAL.
+2023/10/19 23:00:15 run.go:32: Node 1 starts to execute coordinator_tasks.
+2023/10/19 23:00:15 node.go:170: Node 1 received a message Stop the goroutine.
+2023/10/19 23:00:15 node.go:358: Coordinator 1 sent a sync message {}.
+2023/10/19 23:00:15 node.go:170: Node 0 received a message {}.
+2023/10/19 23:00:16 node.go:358: Coordinator 1 sent a sync message {}.
+2023/10/19 23:00:16 node.go:170: Node 0 received a message {}.
+2023/10/19 23:00:17 node.go:358: Coordinator 1 sent a sync message {}.
+2023/10/19 23:00:17 node.go:170: Node 0 received a message {}.
+2023/10/19 23:00:18 node.go:358: Coordinator 1 sent a sync message {}.
+2023/10/19 23:00:18 node.go:170: Node 0 received a message {}.
+2023/10/19 23:00:19 node.go:358: Coordinator 1 sent a sync message {}.
+2023/10/19 23:00:19 node.go:170: Node 0 received a message {}.

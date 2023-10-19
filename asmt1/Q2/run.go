@@ -36,10 +36,16 @@ func (n *Node) coordinator_tasks() {
 // switch role if get notification from ch_role_switch channel.
 func (n *Node) execute() {
 	for {
-		if n.role == COORDINATOR {
-			n.coordinator_tasks()
-		} else if n.role == WORKER {
-			n.worker_tasks()
+
+		fmt.Printf("execute: Node %d's state: %s.\n", n.id, n.state)
+		logger.Printf("execute Node %d's state: %s.\n", n.id, n.state)
+
+		if n.state != DOWN {
+			if n.role == COORDINATOR {
+				n.coordinator_tasks()
+			} else if n.role == WORKER {
+				n.worker_tasks()
+			}
 		}
 
 		<-n.ch_role_switch
@@ -61,8 +67,8 @@ func main() {
 
 	fail_coordinator := flag.Bool("failcoor", false, "if set to true, simulate coordinator fails")
 	fail_worker := flag.Bool("failworker", false, "if set to true, simulate coordinator fails")
-	fail_coor_during_election := flag.Bool("flcrel", false, "if set to true, simulate newly elected coordinator fails while announcing")
-	fail_worker_during_election := flag.Bool("flrpel", false, "if set to true, simulate node that is not the newly elected coordinator fails while announcing")
+	fail_coor_during_broadcasting := flag.Bool("failcoorvic", false, "if set to true, simulate newly elected coordinator fails while announcing")
+	fail_worker_during_broadcasting := flag.Bool("failworkervic", false, "if set to true, simulate worker node fails while announcing")
 
 	flag.Parse()
 
@@ -96,7 +102,7 @@ func main() {
 		}()
 	}
 
-	// // Simulate random node failure after 4 seconds
+	// Simulate worker failure after 4 seconds
 	if *fail_worker {
 		go func() {
 			time.Sleep(4 * time.Second)
@@ -107,18 +113,17 @@ func main() {
 					return
 				}
 			}
-
 		}()
 	}
 
 	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
-	if *fail_coor_during_election {
+	if *fail_coor_during_broadcasting {
 		go func() {
 			time.Sleep(4 * time.Second)
 			for {
 				for i := range nodes {
 					if nodes[i].state == BROADCATING {
-						nodes[i].fail_during_election()
+						nodes[i].coordinator_fail_during_broadcasting()
 						return
 					}
 				}
@@ -126,8 +131,8 @@ func main() {
 		}()
 	}
 
-	// // Simulate non-coordinator failure duing someone else broadcasting
-	if *fail_worker_during_election {
+	// Simulate non-coordinator failure duing someone else broadcasting
+	if *fail_worker_during_broadcasting {
 		go func() {
 			time.Sleep(4 * time.Second)
 			for {
@@ -136,14 +141,13 @@ func main() {
 						for {
 							random_node_idx := rand.Intn(len(nodes))
 							if random_node_idx != i && nodes[random_node_idx].state != DOWN {
-								nodes[random_node_idx].fail_during_election()
+								nodes[random_node_idx].worker_fail_during_broadcasting()
 								return
 							}
 						}
 					}
 				}
 			}
-
 		}()
 	}
 

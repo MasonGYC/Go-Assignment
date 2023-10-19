@@ -100,23 +100,28 @@ func (n *Node) broadcast_victory() {
 				fmt.Printf("Node %d is broadcasting a victory to %d.\n", n.id, nodes[i].id)
 				logger.Printf("Node %d is broadcasting a victory to %d.\n", n.id, nodes[i].id)
 			}
-
 		}
 
-		// update role and state
-		n.mutex.Lock()
-		n.state = NORMAL
-		n.role = COORDINATOR
-		n.coordinator_id = n.id
-		n.mutex.Unlock()
+		// check if it fails
+		if n.state != DOWN {
+			// update role and state
+			n.mutex.Lock()
+			n.state = NORMAL
+			n.role = COORDINATOR
+			n.coordinator_id = n.id
+			n.mutex.Unlock()
 
-		// switch role
-		n.ch_elect <- STOPMessage(n.id)
-		n.ch_sync <- STOPMessage(n.id)
-		n.ch_role_switch <- STOPMessage(n.id)
+			// switch role
+			n.ch_elect <- STOPMessage(n.id)
+			n.ch_sync <- STOPMessage(n.id)
+			n.ch_role_switch <- STOPMessage(n.id)
 
-		fmt.Printf("Node %d sent role switch messgae.\n", n.id)
-		logger.Printf("Node %d sent role switch messgae.\n", n.id)
+			fmt.Printf("Node %d sent role switch messgae.\n", n.id)
+			logger.Printf("Node %d sent role switch messgae.\n", n.id)
+		} else {
+			fmt.Printf("Node %d failed during broadcasting.\n", n.id)
+			logger.Printf("Node %d failed during broadcasting.\n", n.id)
+		}
 
 	}
 }
@@ -131,14 +136,26 @@ func (n *Node) fail() {
 	logger.Printf("Node %d failed.\n", n.id)
 }
 
-// simulate node wakeup
-func (n *Node) fail_during_election() {
-	fmt.Printf("Node %d fail_during_election.\n", n.id)
-	logger.Printf("Node %d fail_during_election.\n", n.id)
-	n.ch_stop_elect <- STOPMessage(n.id)
+// simulate worker fails during other broadcasting victory
+func (n *Node) worker_fail_during_broadcasting() {
+	fmt.Printf("Node %d fail_during_broadcasting.\n", n.id)
+	logger.Printf("Node %d fail_during_broadcasting.\n", n.id)
 	n.mutex.Lock()
 	n.state = DOWN
 	n.mutex.Unlock()
+}
+
+// simulate coordinator candidate fails when it's broadcasting victory
+func (n *Node) coordinator_fail_during_broadcasting() {
+	n.mutex.Lock()
+	n.state = DOWN
+	n.mutex.Unlock()
+
+	n.ch_stop_elect <- STOPMessage(n.id)
+
+	fmt.Printf("Node %d fail_during_broadcasting.\n", n.id)
+	logger.Printf("Node %d fail_during_broadcasting.\n", n.id)
+
 }
 
 // Worker listen to sync channel
