@@ -13,13 +13,13 @@ import (
 	"time"
 )
 
-// replica perform its tasks
-func (n *Node) replica_tasks() {
-	go n.rep_sync()
-	go n.rep_elect()
+// worker perform its tasks
+func (n *Node) worker_tasks() {
+	go n.worker_sync()
+	go n.worker_elect()
 
-	fmt.Printf("Node %d starts to execute replica_tasks.\n", n.id)
-	logger.Printf("Node %d starts to execute replica_tasks.\n", n.id)
+	fmt.Printf("Node %d starts to execute worker_tasks.\n", n.id)
+	logger.Printf("Node %d starts to execute worker_tasks.\n", n.id)
 }
 
 // coordinator perform its tasks
@@ -38,8 +38,8 @@ func (n *Node) execute() {
 	for {
 		if n.role == COORDINATOR {
 			n.coordinator_tasks()
-		} else if n.role == REPLICA {
-			n.replica_tasks()
+		} else if n.role == WORKER {
+			n.worker_tasks()
 		}
 
 		<-n.ch_role_switch
@@ -60,19 +60,19 @@ func main() {
 	timeout_second := flag.Int("timeout", 6, "2T(m) + T(p) in second")
 
 	fail_coordinator := flag.Bool("failcoor", false, "if set to true, simulate coordinator fails")
-	fail_replica := flag.Bool("failrep", false, "if set to true, simulate coordinator fails")
+	fail_worker := flag.Bool("failworker", false, "if set to true, simulate coordinator fails")
 	fail_coor_during_election := flag.Bool("flcrel", false, "if set to true, simulate newly elected coordinator fails while announcing")
-	fail_rep_during_election := flag.Bool("flrpel", false, "if set to true, simulate node that is not the newly elected coordinator fails while announcing")
+	fail_worker_during_election := flag.Bool("flrpel", false, "if set to true, simulate node that is not the newly elected coordinator fails while announcing")
 
 	flag.Parse()
 
 	var sync_interval = time.Duration(*sync_interval_second) * time.Second
 	var timeout = time.Duration(*timeout_second) * time.Second
 
-	// initialize (num_nodes-1) replicas
+	// initialize (num_nodes-1) workers
 	var nodes = make([]*Node, *num_nodes)
 	for i := 0; i < *num_nodes; i++ {
-		nodes[i] = NewNode(i, sync_interval, timeout, REPLICA, nodes)
+		nodes[i] = NewNode(i, sync_interval, timeout, WORKER, nodes)
 	}
 
 	// make graph[highest] coordinator
@@ -97,12 +97,12 @@ func main() {
 	}
 
 	// // Simulate random node failure after 4 seconds
-	if *fail_replica {
+	if *fail_worker {
 		go func() {
 			time.Sleep(4 * time.Second)
 			for {
 				random_node_idx := rand.Intn(len(nodes))
-				if nodes[random_node_idx].role == REPLICA {
+				if nodes[random_node_idx].role == WORKER {
 					nodes[random_node_idx].fail()
 					return
 				}
@@ -127,7 +127,7 @@ func main() {
 	}
 
 	// // Simulate non-coordinator failure duing someone else broadcasting
-	if *fail_rep_during_election {
+	if *fail_worker_during_election {
 		go func() {
 			time.Sleep(4 * time.Second)
 			for {

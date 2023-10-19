@@ -32,7 +32,7 @@ func ELECTMessage(sender_id int, new_coor_id int) Message {
 	}
 }
 
-// coordinator send this message to sync data with replica
+// coordinator send this message to sync data with worker
 func SYNCMessage(sender_id int, data Data) Message {
 	return Message{
 		sender_id:    sender_id,

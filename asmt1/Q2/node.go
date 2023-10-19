@@ -11,11 +11,11 @@ type Node struct {
 	ch_sync        chan Message  //channal listening to SYNC message
 	ch_elect       chan Message  //channal listening to ELECT, ACK, VICTORY message
 	ch_stop_elect  chan Message  // channal listening to STOP mesage to stop self_elect() or broadcast_victory()
-	ch_role_switch chan Message  // channal listening to STOP mesage to switch between Coordinator and Replica
+	ch_role_switch chan Message  // channal listening to STOP mesage to switch between Coordinator and worker
 	data           Data          // an arbitrary data structure
 	sync_interval  time.Duration // coordinator heartbeat time interval
 	timeout        time.Duration // 2T(m) + T(p)
-	role           string        // coordinator or replica
+	role           string        // coordinator or worker
 	nodes          []*Node       // all nodes in the network
 	coordinator_id int           // the current coordinator's id in the network
 	state          string
@@ -141,8 +141,8 @@ func (n *Node) fail_during_election() {
 	n.mutex.Unlock()
 }
 
-// Replica listen to sync channel
-func (n *Node) rep_sync() {
+// Worker listen to sync channel
+func (n *Node) worker_sync() {
 
 	for {
 		select {
@@ -187,8 +187,8 @@ func (n *Node) rep_sync() {
 	}
 }
 
-// Replica listen to elect channel
-func (n *Node) rep_elect() {
+// Worker listen to elect channel
+func (n *Node) worker_elect() {
 
 	for {
 		msg := <-n.ch_elect

@@ -19,7 +19,7 @@ Message is defined to be a struct with 4 fields:
  
 - `sender_id`: `int`, the id of the sender machine
 - `message_type`: `string`, the type of the message, including:  
- 	- `SYNC` Coordinator sync data with replica.  
+ 	- `SYNC` Coordinator sync data with worker.  
     - `ELECT` A node elect itself to be the new coordinator.  
 	- `ACK` A node refuse one's self-elect request.   
 	- `VICTORY` A node broadcast that it is the now coordinator. 
@@ -30,7 +30,7 @@ Message is defined to be a struct with 4 fields:
 ### Node
 Each node has a state, a role, 4 channels. 
 - Role:
-    - `REPLICA` 
+    - `WORKER` 
     - `COORDINATOR`
 - State:
     - `NORMAL` node performs normal work, not during election
@@ -41,11 +41,11 @@ Each node has a state, a role, 4 channels.
 	- `ch_sync` for SYNC message  
 	- `ch_elect` for ELECT, ACK, VICTORY message  
 	- `ch_stop_elect` for STOP mesage to stop self_elect() or broadcast_victory()  
-	- `ch_role_switch` for STOP mesage to switch between `COORDINATOR` and `REPLICA`   
+	- `ch_role_switch` for STOP mesage to switch between `COORDINATOR` and `WORKER`   
 
 ### Synchonization and Election
 - **Synchonization**  
- If Coordinator alive, send SYNC message at certain interval to Replica. If Replica receives SYNC message, update its data; if not for a timeout, start a election to elect itself as the Coordinator.
+ If Coordinator alive, send SYNC message at certain interval to Worker. If Worker receives SYNC message, update its data; if not for a timeout, start a election to elect itself as the Coordinator.
 
 - **Election by bully algorithm**  
  A node sends ELECT message to nodes with higher ids. If receives ACK or STOP, go back to NORMAL state and stops election. If not for a certain time, broadcasts its victory to all. After broadcasting, switch role to Coordinator and start sending SYNC messages.
@@ -76,9 +76,9 @@ Normal data sync between node 1,2
 	- set `failcoor` = true when execute
 	- sample output: `logs_coor_fails.txt` contains 3 and 4 nodes cases
 
-- [DONE] Replica silently leaves the network.
-	- set `failrep` = true when execute
-	- sample output: `logs_rep_fails.txt` contains 3 and 4 nodes cases
+- [DONE] Worker silently leaves the network.
+	- set `failworker` = true when execute
+	- sample output: `logs_worker_fails.txt` contains 3 and 4 nodes cases
 
 - [x] The newly elected coordinator fails while announcing.
 	- set `flcrel` = true and `fail_coordinator`= true when execute

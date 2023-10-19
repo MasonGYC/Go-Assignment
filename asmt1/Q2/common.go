@@ -10,7 +10,7 @@ const (
 
 	// node status
 	COORDINATOR string = "COORDINATOR"
-	REPLICA     string = "REPLICA"
+	WORKER      string = "WORKER"
 
 	// node state
 	// only following states possile: RN,CN,RE,CD,RD,RB

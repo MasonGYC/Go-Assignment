@@ -1,6 +1,6 @@
 2023/10/19 15:42:17 run.go:55: ===============START===============
-2023/10/19 15:42:17 run.go:22: Node 0 starts to execute replica_tasks.
-2023/10/19 15:42:17 run.go:22: Node 1 starts to execute replica_tasks.
+2023/10/19 15:42:17 run.go:22: Node 0 starts to execute worker_tasks.
+2023/10/19 15:42:17 run.go:22: Node 1 starts to execute worker_tasks.
 2023/10/19 15:42:17 run.go:32: Node 2 starts to execute coordinator_tasks.
 2023/10/19 15:42:17 node.go:341: Coordinator 2 sent a sync message {}.
 2023/10/19 15:42:17 node.go:153: Node 1 received a message {}.
@@ -31,9 +31,9 @@
 2023/10/19 15:42:28 node.go:153: Node 0 received a message {}.
 
 2023/10/19 15:53:49 run.go:55: ===============START===============
-2023/10/19 15:53:49 run.go:22: Node 1 starts to execute replica_tasks.
-2023/10/19 15:53:49 run.go:22: Node 0 starts to execute replica_tasks.
-2023/10/19 15:53:49 run.go:22: Node 2 starts to execute replica_tasks.
+2023/10/19 15:53:49 run.go:22: Node 1 starts to execute worker_tasks.
+2023/10/19 15:53:49 run.go:22: Node 0 starts to execute worker_tasks.
+2023/10/19 15:53:49 run.go:22: Node 2 starts to execute worker_tasks.
 2023/10/19 15:53:49 run.go:32: Node 3 starts to execute coordinator_tasks.
 2023/10/19 15:53:49 node.go:153: Node 0 received a message {}.
 2023/10/19 15:53:49 node.go:153: Node 1 received a message {}.
