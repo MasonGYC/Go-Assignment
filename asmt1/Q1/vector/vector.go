@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"flag"
 	"fmt"
 	"log"
 	"math/rand"
@@ -84,8 +85,8 @@ func clientSend(c Client, sch chan Message) {
 			// receive data
 			msg := <-c.ch
 
-			fmt.Printf("Client %d received:.\n", msg)
-			log.Printf("Client %d received:.\n", msg)
+			fmt.Printf("Client %d received Server's message. Sent from Client %d at clock %d.\n", c.id, msg.sender_id, msg.clock)
+			log.Printf("Client %d received Server's message. Sent from Client %d at clock %d.\n", c.id, msg.sender_id, msg.clock)
 
 			// check causality violation
 			// If the local vector clock of the receiving machine is more than the vector clock Of the message, then a potential causality violation is detected.
@@ -125,11 +126,11 @@ func clientSend(c Client, sch chan Message) {
 			// send a new message
 			send := newMessage(c.id, i, c.clock)
 
-			fmt.Printf("Client %d's clock:.\n", c.clock)
-			log.Printf("Client %d's clock:.\n", c.clock)
+			fmt.Printf("Client %d's clock: %d.\n", c.id, c.clock)
+			log.Printf("Client %d's clock: %d.\n", c.id, c.clock)
 
-			fmt.Printf("Client %d sending:.\n", send)
-			log.Printf("Client %d sending:.\n", send)
+			fmt.Printf("Client %d sending the %d-th message at clock %d.\n", c.id, send.message, send.clock)
+			log.Printf("Client %d sending the %d-th message at clock %d.\n", c.id, send.message, send.clock)
 
 			sch <- send
 
@@ -147,8 +148,8 @@ func serverRecv(s Server) {
 	for {
 		// receive messages from all channels and print it
 		msg := <-s.ch
-		fmt.Printf("Server received: %d.\n", msg)
-		log.Printf("Server received: %d.\n", msg)
+		fmt.Printf("Server received Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
+		log.Printf("Server received Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
 
 		// check causality violation
 		// If the local vector clock of the receiving machine is more than the vector clock Of the message, then a potential causality violation is detected.
@@ -170,8 +171,8 @@ func serverRecv(s Server) {
 		s.clock[s.id] = s.clock[s.id] + 1
 		mutex.Unlock()
 
-		fmt.Printf("Server's clock: ", s.clock)
-		log.Printf("Server's clock: ", s.clock)
+		fmt.Printf("Server's clock: %d.\n", s.clock)
+		log.Printf("Server's clock: %d.\n", s.clock)
 
 		// check forward or drop
 		flag := rand.Intn(2)
@@ -181,15 +182,15 @@ func serverRecv(s Server) {
 			msg.clock = s.clock
 			for j := 0; j < s.num_clients; j++ {
 				if j != msg.sender_id {
-					fmt.Printf("Server forward to Client %d %d.\n", j, msg)
-					log.Printf("Server forward to Client %d %d.\n", j, msg)
+					fmt.Printf("Server forward to Client %d Client %d's %d-th message.\n", j, msg.sender_id, msg.message)
+					log.Printf("Server forward to Client %d Client %d's %d-th message.\n", j, msg.sender_id, msg.message)
 
 					s.clients[j].ch <- msg
 				}
 			}
 		} else {
-			fmt.Printf("Drop the message %d.\n", msg)
-			log.Printf("Drop the message %d.\n", msg)
+			fmt.Printf("Drop Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
+			log.Printf("Drop Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
 		}
 
 	}
@@ -207,23 +208,24 @@ func main() {
 	log.Printf("===============START===============")
 
 	// define the number of clients
-	const num_clients int = 15
+	num_clients := flag.Int("clients", 15, "number of clients")
+	flag.Parse()
 
-	// init clients and channels
+	// init server and clients
 	var server = Server{
-		num_clients: num_clients,
-		id:          num_clients, // last one
+		num_clients: *num_clients,
+		id:          *num_clients, // last one
 		clients:     make(map[int]Client),
 		ch:          make(chan Message),
-		clock:       make([]int, num_clients+1), //plus server
+		clock:       make([]int, *num_clients+1), //plus server
 	}
 
-	for i := 0; i < num_clients; i++ {
-		server.clients[i] = newClient(i, make(chan Message), make([]int, num_clients+1))
+	for i := 0; i < server.num_clients; i++ {
+		server.clients[i] = newClient(i, make(chan Message), make([]int, server.num_clients+1))
 	}
 
 	// execute client and server go routines
-	for i := 0; i < num_clients; i++ {
+	for i := 0; i < server.num_clients; i++ {
 		go clientSend(server.clients[i], server.ch)
 	}
 	go serverRecv(server)

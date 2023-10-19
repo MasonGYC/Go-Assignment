@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"math/rand"
@@ -48,22 +49,22 @@ func clientSend(c Client, sch chan Message) {
 
 	var mutex sync.Mutex
 
-	// Start a goroutine toreceive server forward message
+	// Start a goroutine to receive server forward message
 	go func() {
 		for {
 
 			// receive data
 			m := <-c.ch
-			fmt.Printf("Client %d received: %d.\n", c.id, m.message)
-			log.Printf("Client %d received: %d.\n", c.id, m.message)
+			fmt.Printf("Client %d received Server's message. Sent from Client %d at clock %d.\n", c.id, m.sender_id, m.clock)
+			log.Printf("Client %d received Server's message. Sent from Client %d at clock %d.\n", c.id, m.sender_id, m.clock)
 
 			// update clock
 			mutex.Lock()
 			c.clock = max(m.clock, c.clock) + 1
 			mutex.Unlock()
 
-			fmt.Printf("Client %d's clock: %d", c.id, c.clock)
-			log.Printf("Client %d's clock: %d", c.id, c.clock)
+			fmt.Printf("Client %d's clock: %d.\n", c.id, c.clock)
+			log.Printf("Client %d's clock: %d.\n", c.id, c.clock)
 		}
 	}()
 
@@ -82,8 +83,8 @@ func clientSend(c Client, sch chan Message) {
 			fmt.Printf("Client %d's clock:  %d.\n", c.id, c.clock)
 			log.Printf("Client %d's clock:  %d.\n", c.id, c.clock)
 
-			fmt.Printf("Client %d sending: %d.\n", c.id, send)
-			log.Printf("Client %d sending: %d.\n", c.id, send)
+			fmt.Printf("Client %d sending the %d-th message at clock %d.\n", c.id, send.message, send.clock)
+			log.Printf("Client %d sending the %d-th message at clock %d.\n", c.id, send.message, send.clock)
 
 			sch <- send
 
@@ -101,8 +102,8 @@ func serverRecv(s Server) {
 	for {
 		// receive messages from all channels and print it
 		msg := <-s.ch
-		fmt.Printf("Server received: %d.\n", msg)
-		log.Printf("Server received: %d.\n", msg)
+		fmt.Printf("Server received Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
+		log.Printf("Server received Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
 
 		// update clock
 		mutex.Lock()
@@ -112,7 +113,7 @@ func serverRecv(s Server) {
 		fmt.Printf("Server's clock: %d.\n", s.clock)
 		log.Printf("Server's clock: %d.\n", s.clock)
 
-		// check forward or drop
+		// check forward or drop, each has 50% chance
 		flag := rand.Intn(2)
 
 		if flag == 0 {
@@ -121,16 +122,16 @@ func serverRecv(s Server) {
 			for j := 0; j < s.num_clients; j++ {
 				// check if not sender, then forward
 				if j != msg.sender_id {
-					fmt.Printf("Server forward to Client %d %d.\n", j, msg)
-					log.Printf("Server forward to Client %d %d.\n", j, msg)
+					fmt.Printf("Server forward to Client %d Client %d's %d-th message.\n", j, msg.sender_id, msg.message)
+					log.Printf("Server forward to Client %d Client %d's %d-th message.\n", j, msg.sender_id, msg.message)
 
 					s.clients[j].ch <- msg
 				}
 
 			}
 		} else {
-			fmt.Printf("Drop the message: %d.\n", msg)
-			log.Printf("Drop the message: %d.\n", msg)
+			fmt.Printf("Drop Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
+			log.Printf("Drop Client %d's %d-th message of clock %d.\n", msg.sender_id, msg.message, msg.clock)
 		}
 
 	}
@@ -147,25 +148,27 @@ func main() {
 	log.SetOutput(file)
 	log.Printf("===============START===============")
 
-	// define the number of clients
-	const num_clients int = 15
+	// define the number of clients, pass by flag
+	num_clients := flag.Int("clients", 15, "number of clients")
+	flag.Parse()
 
 	// init server and clients
 	var server = Server{
-		num_clients: num_clients,
+		num_clients: *num_clients,
 		clients:     make(map[int]Client),
 		ch:          make(chan Message),
 		clock:       0,
 	}
 
-	for i := 0; i < num_clients; i++ {
+	for i := 0; i < server.num_clients; i++ {
 		server.clients[i] = newClient(i, make(chan Message), 0)
 	}
 
-	// execute client and server go routines
-	for i := 0; i < num_clients; i++ {
+	// execute client goroutines
+	for i := 0; i < server.num_clients; i++ {
 		go clientSend(server.clients[i], server.ch)
 	}
+	// execute server goroutines
 	go serverRecv(server)
 
 	var input string

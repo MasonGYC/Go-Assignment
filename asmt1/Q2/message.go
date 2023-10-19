@@ -8,10 +8,11 @@ import (
 type Message struct {
 	sender_id    int
 	message_type string
-	message      any // i-th msg
+	message      any
 	timestamp    time.Time
 }
 
+// refuse self-elect request
 func ACKMessage(request_id int, refuse_id int) Message {
 	return Message{
 		sender_id:    refuse_id,
@@ -21,7 +22,7 @@ func ACKMessage(request_id int, refuse_id int) Message {
 	}
 }
 
-// only self elect is possible can broadcase, so sender_id == new_coor_id
+// self elect message
 func ELECTMessage(sender_id int, new_coor_id int) Message {
 	return Message{
 		sender_id:    sender_id,
@@ -31,6 +32,7 @@ func ELECTMessage(sender_id int, new_coor_id int) Message {
 	}
 }
 
+// coordinator send this message to sync data with replica
 func SYNCMessage(sender_id int, data Data) Message {
 	return Message{
 		sender_id:    sender_id,
@@ -40,7 +42,7 @@ func SYNCMessage(sender_id int, data Data) Message {
 	}
 }
 
-// only winner can broadcase, so sender_id == winner_id
+// newly elected coordinator broadcast its win
 func VICTORYMessage(sender_id int, winner_id int) Message {
 	return Message{
 		sender_id:    sender_id,

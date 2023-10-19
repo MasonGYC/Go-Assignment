@@ -10,9 +10,11 @@ Q2:
 `go run .\bully.go .\common.go .\message.go .\node.go .\node_listen.go .\logger.go`
 
 todo:
-1. lamport total order, present order
-2. q1 register pattern
-3. q1 function func (a * server), don't use go func () inside a func
-9. build code: https://go.dev/doc/code#Organization 
-10. documentation
+
+3. build code: https://go.dev/doc/code#Organization 
+4. documentation
+5. random replica fails
+
 11. random node fails at predefined time
+1. lamport total order, present order
+
