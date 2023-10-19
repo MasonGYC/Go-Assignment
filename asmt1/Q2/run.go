@@ -9,6 +9,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"math/rand"
 	"time"
 )
 
@@ -41,8 +42,7 @@ func (n *Node) execute() {
 			n.replica_tasks()
 		}
 
-		role_switch_msg := <-n.ch_role_switch
-		fmt.Println(role_switch_msg)
+		<-n.ch_role_switch
 		fmt.Printf("Node %d switch to role.\n", n.id)
 		logger.Printf("Node %d switch role.\n", n.id)
 	}
@@ -54,10 +54,16 @@ func main() {
 	// log outputs for debugging purpose
 	logger.Println("===============START===============")
 
-	// define the number of nodes, pass by flag
+	// define cmd flags
 	num_nodes := flag.Int("nodes", 3, "number of nodes")
 	sync_interval_second := flag.Int("sync", 1, "the time interval to sync in second")
 	timeout_second := flag.Int("timeout", 6, "2T(m) + T(p) in second")
+
+	fail_coordinator := flag.Bool("failcoor", false, "if set to true, simulate coordinator fails")
+	fail_replica := flag.Bool("failrep", false, "if set to true, simulate coordinator fails")
+	fail_coor_during_election := flag.Bool("flcrel", false, "if set to true, simulate newly elected coordinator fails while announcing")
+	fail_rep_during_election := flag.Bool("flrpel", false, "if set to true, simulate node that is not the newly elected coordinator fails while announcing")
+
 	flag.Parse()
 
 	var sync_interval = time.Duration(*sync_interval_second) * time.Second
@@ -78,54 +84,68 @@ func main() {
 	}
 
 	// Simulate coordinator failure after 4 seconds
-	go func() {
-		time.Sleep(4 * time.Second)
-		for i := range nodes {
-			if nodes[i].role == COORDINATOR {
-				nodes[i].fail()
-				break
+	if *fail_coordinator {
+		go func() {
+			time.Sleep(4 * time.Second)
+			for i := range nodes {
+				if nodes[i].role == COORDINATOR {
+					nodes[i].fail()
+					break
+				}
 			}
-		}
-	}()
+		}()
+	}
 
 	// // Simulate random node failure after 4 seconds
-	// go func() {
-	// 	time.Sleep(4 * time.Second)
-	// 	random_node_idx := rand.Intn(len(nodes))
-	// 	nodes[random_node_idx].fail()
-	// }()
-
-	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
-	go func() {
-		time.Sleep(3 * time.Second)
-		for {
-			for i := range nodes {
-				if nodes[i].state == BROADCATING {
-					nodes[i].fail()
+	if *fail_replica {
+		go func() {
+			time.Sleep(4 * time.Second)
+			for {
+				random_node_idx := rand.Intn(len(nodes))
+				if nodes[random_node_idx].role == REPLICA {
+					nodes[random_node_idx].fail()
 					return
 				}
 			}
-		}
-	}()
+
+		}()
+	}
+
+	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
+	if *fail_coor_during_election {
+		go func() {
+			time.Sleep(4 * time.Second)
+			for {
+				for i := range nodes {
+					if nodes[i].state == BROADCATING {
+						nodes[i].fail_during_election()
+						return
+					}
+				}
+			}
+		}()
+	}
+
 	// // Simulate non-coordinator failure duing someone else broadcasting
-	// go func() {
-	// 	for {
-	// 		time.Sleep(10 * time.Second) //check every 5 seconds
-	// 		for i := range nodes {
-	// 			if nodes[i].state == BROADCATING {
-	// 				for {
-	// 					random_node_idx := rand.Intn(len(nodes))
-	// 					if random_node_idx != i && nodes[random_node_idx].state != DOWN {
-	// 						nodes[random_node_idx].fail()
-	// 						return
-	// 					}
+	if *fail_rep_during_election {
+		go func() {
+			time.Sleep(4 * time.Second)
+			for {
+				for i := range nodes {
+					if nodes[i].state == BROADCATING {
+						for {
+							random_node_idx := rand.Intn(len(nodes))
+							if random_node_idx != i && nodes[random_node_idx].state != DOWN {
+								nodes[random_node_idx].fail_during_election()
+								return
+							}
+						}
+					}
+				}
+			}
 
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-
-	// }()
+		}()
+	}
 
 	var input string
 	// wait for the input, as otherwise, the program will not wait

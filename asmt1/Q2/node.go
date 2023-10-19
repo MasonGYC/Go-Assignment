@@ -123,7 +123,9 @@ func (n *Node) broadcast_victory() {
 
 // simulate node failure
 func (n *Node) fail() {
+	n.mutex.Lock()
 	n.state = DOWN
+	n.mutex.Unlock()
 
 	fmt.Printf("Node %d failed.\n", n.id)
 	logger.Printf("Node %d failed.\n", n.id)
@@ -145,28 +147,30 @@ func (n *Node) rep_sync() {
 	for {
 		select {
 		case msg := <-n.ch_sync:
-			fmt.Printf("Node %d received a message %s.\n", n.id, msg.message)
-			logger.Printf("Node %d received a message %s.\n", n.id, msg.message)
-			switch msg.message_type {
-			case STOP:
-				return
-			case SYNC:
-				switch n.state {
-				case NORMAL:
-					coor_data := msg.message.(Data) // SYNC come with Data in message field
-					n.data = coor_data              // update local data
-				}
-			case SELF_ELECTING, BROADCATING:
-				// stops electing if receive sync again
-				n.ch_stop_elect <- STOPMessage(n.id)
-				n.mutex.Lock()
-				n.state = NORMAL
-				n.mutex.Unlock()
-			}
-		case <-time.After(n.timeout):
+			// if alive, process msg
+			if n.state != DOWN {
+				fmt.Printf("Node %d received a message %s.\n", n.id, msg.message)
+				logger.Printf("Node %d received a message %s.\n", n.id, msg.message)
 
-			fmt.Printf("Node %d sync timeout\n", n.id)
-			logger.Printf("Node %d sync timeout\n", n.id)
+				switch msg.message_type {
+				case STOP:
+					return
+				case SYNC:
+					switch n.state {
+					case NORMAL:
+						coor_data := msg.message.(Data) // SYNC come with Data in message field
+						n.data = coor_data              // update local data
+					}
+				case SELF_ELECTING, BROADCATING:
+					// stops electing if receive sync again
+					n.ch_stop_elect <- STOPMessage(n.id)
+					n.mutex.Lock()
+					n.state = NORMAL
+					n.mutex.Unlock()
+				}
+			}
+
+		case <-time.After(n.timeout):
 
 			//select new coordinator using bully algo
 			if n.coordinator_id != n.id && n.state == NORMAL {
@@ -178,7 +182,6 @@ func (n *Node) rep_sync() {
 				n.mutex.Unlock()
 
 				go n.self_elect()
-
 			}
 		}
 	}
@@ -189,77 +192,84 @@ func (n *Node) rep_elect() {
 
 	for {
 		msg := <-n.ch_elect
-		fmt.Printf("Node %d received a message %s\n", n.id, msg.message)
-		logger.Printf("Node %d received a message %s\n", n.id, msg.message)
-		switch msg.message_type {
-		case STOP:
-			return
-		case ELECT:
-			switch n.state {
-			case NORMAL:
-				// haven't realized coor down
-				// send ack first, and start election
-				if msg.sender_id < n.id {
-					// refuse
-					ack := ACKMessage(msg.sender_id, n.id)
-					n.nodes[msg.sender_id].ch_elect <- ack
 
-					fmt.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
-					logger.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
+		// if alive, process msg
+		if n.state != DOWN {
 
-					if n.coordinator_id != n.id {
-						n.mutex.Lock()
-						n.state = SELF_ELECTING
-						n.mutex.Unlock()
-						go n.self_elect() // start election in background
+			fmt.Printf("Node %d received a message %s\n", n.id, msg.message)
+			logger.Printf("Node %d received a message %s\n", n.id, msg.message)
+
+			switch msg.message_type {
+			case STOP:
+				return
+			case ELECT:
+				switch n.state {
+				case NORMAL:
+					// haven't realized coor down
+					// send ack first, and start election
+					if msg.sender_id < n.id {
+						// refuse
+						ack := ACKMessage(msg.sender_id, n.id)
+						n.nodes[msg.sender_id].ch_elect <- ack
+
+						fmt.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
+						logger.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
+
+						if n.coordinator_id != n.id {
+							n.mutex.Lock()
+							n.state = SELF_ELECTING
+							n.mutex.Unlock()
+							go n.self_elect() // start election in background
+						}
+					}
+				case SELF_ELECTING:
+					if msg.sender_id < n.id {
+						// refuse
+						ack := ACKMessage(msg.sender_id, n.id)
+						n.nodes[msg.sender_id].ch_elect <- ack
+
+						fmt.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
+						logger.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
 					}
 				}
-			case SELF_ELECTING:
-				if msg.sender_id < n.id {
-					// refuse
-					ack := ACKMessage(msg.sender_id, n.id)
-					n.nodes[msg.sender_id].ch_elect <- ack
-
-					fmt.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
-					logger.Printf("Node %d sent ACK to node %d.\n", n.id, msg.sender_id)
-				}
-			}
-		case ACK:
-			switch n.state {
-			case SELF_ELECTING:
-				// stop self electing and go back to normal
-				n.ch_stop_elect <- STOPMessage(n.id)
-				n.mutex.Lock()
-				n.state = NORMAL
-				n.mutex.Unlock()
-			}
-		case VICTORY:
-			switch n.state {
-			case NORMAL:
-				if msg.sender_id > n.id {
-					// agree on new coordinator
-					n.mutex.Lock()
-					n.coordinator_id = msg.sender_id
-					n.mutex.Unlock()
-				} else {
-					// self elect
-					n.mutex.Lock()
-					n.state = SELF_ELECTING
-					n.mutex.Unlock()
-					go n.self_elect()
-				}
-
-			case SELF_ELECTING:
-				// stop self electing and ackowledge the new coordinator
-				if msg.sender_id > n.id {
+			case ACK:
+				switch n.state {
+				case SELF_ELECTING:
+					// stop self electing and go back to normal
 					n.ch_stop_elect <- STOPMessage(n.id)
 					n.mutex.Lock()
 					n.state = NORMAL
-					n.coordinator_id = msg.sender_id
 					n.mutex.Unlock()
+				}
+			case VICTORY:
+				switch n.state {
+				case NORMAL:
+					if msg.sender_id > n.id {
+						// agree on new coordinator
+						n.mutex.Lock()
+						n.coordinator_id = msg.sender_id
+						n.mutex.Unlock()
+					} else {
+						// self elect
+						n.mutex.Lock()
+						n.state = SELF_ELECTING
+						n.mutex.Unlock()
+						go n.self_elect()
+					}
+
+				case SELF_ELECTING:
+					// stop self electing and ackowledge the new coordinator
+					if msg.sender_id > n.id {
+						n.ch_stop_elect <- STOPMessage(n.id)
+						n.mutex.Lock()
+						n.state = NORMAL
+						n.coordinator_id = msg.sender_id
+						n.mutex.Unlock()
+					}
 				}
 			}
 		}
+
 	}
 }
 
@@ -267,51 +277,57 @@ func (n *Node) rep_elect() {
 func (n *Node) coor_elect() {
 	for {
 		msg := <-n.ch_elect
-		fmt.Printf("Coordinator %d received a message %s.\n", n.id, msg.message)
-		logger.Printf("Coordinator %d received a message %s.\n", n.id, msg.message)
 
-		switch msg.message_type {
-		case STOP:
-			return
-		case ELECT:
-			switch n.state {
-			// when a new coor wakeup
-			case NORMAL:
-				if msg.sender_id > n.id {
-					// step down and switch role
-					n.ch_stop_elect <- STOPMessage(n.id)
-					n.mutex.Lock()
-					n.state = NORMAL
-					n.coordinator_id = msg.sender_id
-					n.mutex.Unlock()
-					return
-				} else {
-					// send victory again in case it didn't catch
-					victory_msg := VICTORYMessage(n.id, n.id)
-					n.nodes[msg.sender_id].ch_elect <- victory_msg
+		// if alive, process msg
+		if n.state != DOWN {
+			fmt.Printf("Coordinator %d received a message %s.\n", n.id, msg.message)
+			logger.Printf("Coordinator %d received a message %s.\n", n.id, msg.message)
+
+			switch msg.message_type {
+			case STOP:
+				return
+			case ELECT:
+				switch n.state {
+				// when a new coor wakeup
+				case NORMAL:
+					if msg.sender_id > n.id {
+						// step down and switch role
+						n.ch_stop_elect <- STOPMessage(n.id)
+						n.mutex.Lock()
+						n.state = NORMAL
+						n.coordinator_id = msg.sender_id
+						n.mutex.Unlock()
+						return
+					} else {
+						// send victory again in case it didn't catch
+						victory_msg := VICTORYMessage(n.id, n.id)
+						n.nodes[msg.sender_id].ch_elect <- victory_msg
+					}
 				}
-			}
-		case VICTORY:
-			switch n.state {
-			case NORMAL:
-				if msg.sender_id > n.id {
-					// agree on new coordinator
-					n.mutex.Lock()
-					n.coordinator_id = msg.sender_id
-					n.mutex.Unlock()
-					// stop current sync
-					n.ch_role_switch <- STOPMessage(n.id)
-					n.ch_sync <- STOPMessage(n.id)
-					n.ch_elect <- STOPMessage(n.id)
+			case VICTORY:
+				switch n.state {
+				case NORMAL:
+					if msg.sender_id > n.id {
+						// agree on new coordinator
+						n.mutex.Lock()
+						n.coordinator_id = msg.sender_id
+						n.mutex.Unlock()
+						// stop current sync
+						n.ch_role_switch <- STOPMessage(n.id)
+						n.ch_sync <- STOPMessage(n.id)
+						n.ch_elect <- STOPMessage(n.id)
+					}
 				}
 			}
 		}
+
 	}
 }
 
 // Coordinator send sync message to sync channel
 func (n *Node) coor_sync() {
 	for {
+		// if alive, process msg
 		if n.state != DOWN {
 			msg := SYNCMessage(n.id, n.data)
 
