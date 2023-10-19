@@ -131,11 +131,12 @@ func (n *Node) fail() {
 
 // simulate node wakeup
 func (n *Node) fail_during_election() {
-	n.state = DOWN
+	fmt.Printf("Node %d fail_during_election.\n", n.id)
+	logger.Printf("Node %d fail_during_election.\n", n.id)
 	n.ch_stop_elect <- STOPMessage(n.id)
-
-	fmt.Printf("Node %d failed.\n", n.id)
-	logger.Printf("Node %d failed.\n", n.id)
+	n.mutex.Lock()
+	n.state = DOWN
+	n.mutex.Unlock()
 }
 
 // Replica listen to sync channel

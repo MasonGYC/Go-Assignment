@@ -13,8 +13,7 @@ todo:
 
 3. build code: https://go.dev/doc/code#Organization 
 4. documentation
-5. random replica fails
 
-11. random node fails at predefined time
+**11. random node fails at predefined time**
 1. lamport total order, present order
 

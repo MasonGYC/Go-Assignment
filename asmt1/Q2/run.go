@@ -82,15 +82,22 @@ func main() {
 		time.Sleep(4 * time.Second)
 		for i := range nodes {
 			if nodes[i].role == COORDINATOR {
-				nodes[i].fail_during_election()
+				nodes[i].fail()
 				break
 			}
 		}
 	}()
 
+	// // Simulate random node failure after 4 seconds
+	// go func() {
+	// 	time.Sleep(4 * time.Second)
+	// 	random_node_idx := rand.Intn(len(nodes))
+	// 	nodes[random_node_idx].fail()
+	// }()
+
 	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
 	go func() {
-		time.Sleep(4 * time.Second)
+		time.Sleep(3 * time.Second)
 		for {
 			for i := range nodes {
 				if nodes[i].state == BROADCATING {
@@ -99,9 +106,7 @@ func main() {
 				}
 			}
 		}
-
 	}()
-
 	// // Simulate non-coordinator failure duing someone else broadcasting
 	// go func() {
 	// 	for {
