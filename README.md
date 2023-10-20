@@ -1,10 +1,7 @@
 # Go Assignment 1
-50.041 Distributed Systems and Computing Go Assignment 1
-Name: Guo Yuchen
-Student ID: 1004885
-
-todo:
-2. register pattern q1 
+50.041 Distributed Systems and Computing Go Assignment 1  
+Name: Guo Yuchen  
+Student ID: 1004885  
 
 # Question 1
 ## Compilation
@@ -77,7 +74,6 @@ The `logs.txt` in each folder contains the sample outputs with 15 clients. Refer
 09:03:31 Server received Client 3's 0-th message of clock [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0].
 09:03:31 Server's clock: [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1].
 09:03:31 Drop Client 3's 0-th message of clock [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0].
-
 ...
 09:03:31 Server's clock: [0 0 0 1 0 0 1 1 0 1 1 1 0 0 0 6].
 09:03:31 Server forward to Client 0 Client 10's 0-th message.
@@ -156,7 +152,7 @@ Each node has a state, a role, 4 channels.
 
 ### Synchonization and Election
 - **Synchonization**  
- If Coordinator alive, send SYNC message at certain interval to Worker. If Worker receives SYNC message, update its data; if not for a timeout, start a election to elect itself as the Coordinator.
+ If Coordinator is alive, it sends SYNC message at certain interval to Worker. If Worker receives SYNC message, update its data; if not for a timeout, start a election to elect itself as the Coordinator.
 
 - **Election by bully algorithm**  
  A node sends ELECT message to nodes with higher ids. If receives ACK or STOP, go back to NORMAL state and stops election. If not for a certain time, broadcasts its victory to all. After broadcasting, switch role to Coordinator and start sending SYNC messages.
@@ -167,16 +163,7 @@ Each node has a state, a role, 4 channels.
  For implementation details, refer to the code.
 
 ## Output
-The `logs.txt` in each folder contains the sample outputs with 3 nodes, and the coordinator fails after 4 seconds.  
-
-**Process:**  
-Normal data sync between node 1,2,3->   
-Coordinator fails ->   
-Node 0 and 1 both detect failure and start election ->     
-Node 1 refuse Node 0's request ->  
-Node 0 ends election ->  
-Node 1 won election and become coordinator ->  
-Normal data sync between node 1,2  
+The `logs.txt` in each folder contains the sample outputs with 3 nodes, and the coordinator fails after 4 seconds.   
 
 ### Simulation
 #### 1. Multiple GO routines / Best case / Worst case
@@ -231,8 +218,17 @@ Normal data sync between node 1,2
 ...
 ```
 
+**TL;DR for above log**  
+Normal data sync between node 1,2,3->   
+Coordinator fails ->   
+Node 0 and 1 both detect failure and start election ->     
+Node 1 refuse Node 0's request ->  
+Node 0 ends election ->  
+Node 1 won election and become coordinator ->  
+Normal data sync between node 1,2 
+
 #### 2. Coordinator silently leaves the network. 
-Set `failcoor` = true when execute the program. This will trigger the following goroutine in `run.go`:
+Set `failcoor= true` when execute the program. This will trigger the following goroutine in `run.go`:
 ```go
 	// Simulate coordinator failure after 4 seconds
 	if *fail_coordinator {
@@ -251,7 +247,7 @@ Set `failcoor` = true when execute the program. This will trigger the following 
  For the output, please refer to the previous case. 
 
 #### 3. Worker silently leaves the network. 
-Set `failworker` = true when execute the program. This will trigger the following goroutine in `run.go`:
+Set `failworker=true` when execute the program. This will trigger the following goroutine in `run.go`:
 ```go
 	// Simulate worker failure after 4 seconds
 	if *fail_worker {
@@ -285,7 +281,7 @@ Set `failworker` = true when execute the program. This will trigger the followin
  ```
 
 #### 4. The newly elected coordinator fails while announcing.
-Set `failcoorvic`=true and `fail_coordinator`=true when execute the program, i.e. run command `.\run.exe -nodes=4 -sync=1 -timeout=6 -failcoor=1 -failworker=0 -failcoorvic=1` This will trigger the following goroutine in `run.go`:
+Set `failcoorvic=true` and `fail_coordinator=true` when execute the program, i.e. run command `.\run.exe -nodes=4 -sync=1 -timeout=6 -failcoor=true -failcoorvic=true`. This will trigger the following goroutine in `run.go`:
 ```go
 	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
 	if *fail_coor_during_broadcasting {
@@ -335,7 +331,7 @@ Notice that this situation does not always happen due to racing between broadcas
 
 
 #### 5. A node The failed node that is not the newly elected coordinator fails while announcing.
-Set `failworkervic`=true and `fail_coordinator`=true when execute the program, i.e., run command `.\run.exe -nodes=3 -sync=1 -timeout=6 -failcoor=1 -failworkervic=1`.  
+Set `failworkervic=true` and `fail_coordinator=true` when execute the program, i.e., run command `.\run.exe -nodes=3 -sync=1 -timeout=6 -failcoor=true -failworkervic=true`.  
 
 This will trigger the following goroutine in `run.go`:
 ```go

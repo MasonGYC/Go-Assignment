@@ -1,11 +1,5 @@
 package main
 
-// 1. Implement the above protocol of joint synchronization and election via GO (20 points)
-// The coordinator initiates the synchronization process by sending message to all other machines.
-// Upon receiving the message from the coordinator, each machine updates its local version of the data structure with the coordinator’s version.
-// a new coordinator is chosen by the Bully algorithm. You can assume a fixed timeout to simulate the behaviour of detecting a fault.
-// version working w/o bully. can send sync msg
-
 import (
 	"flag"
 	"fmt"
