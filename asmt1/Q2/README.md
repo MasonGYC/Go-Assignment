@@ -82,7 +82,7 @@ Normal data sync between node 1,2
  These conditions are implemented inside the system. If a worker hasn't received SYNC message from the Coordinator after timeout, it will start an election no matter whether there's any ongoing election or not. This election, if fails, will be terminated by receiving either ACK or STOP message eventually.
 
  The following is part of a sample log in `logs_coor_fails.txt` for 4 nodes with Coordinator fails:
-```
+```log
 15:51:13 run.go:55: ===============START===============
 15:51:13 run.go:22: Node 0 starts to execute worker_tasks.
 15:51:13 run.go:22: Node 2 starts to execute worker_tasks.
@@ -132,7 +132,7 @@ Normal data sync between node 1,2
 
 #### 2. Coordinator silently leaves the network. 
 Set `failcoor` = true when execute the program. This will trigger the following goroutine in `run.go`:
-```
+```go
 	// Simulate coordinator failure after 4 seconds
 	if *fail_coordinator {
 		go func() {
@@ -151,7 +151,7 @@ Set `failcoor` = true when execute the program. This will trigger the following 
 
 #### 3. Worker silently leaves the network. 
 Set `failworker` = true when execute the program. This will trigger the following goroutine in `run.go`:
-```
+```go
 	// Simulate worker failure after 4 seconds
 	if *fail_worker {
 		go func() {
@@ -167,7 +167,7 @@ Set `failworker` = true when execute the program. This will trigger the followin
 	}
 ```
  The following is a sample log in `logs_worker_fails.txt` for 4 nodes with a random worker fails:
- ```
+ ```log
 15:53:49 run.go:55: ===============START===============
 15:53:49 run.go:22: Node 1 starts to execute worker_tasks.
 15:53:49 run.go:22: Node 0 starts to execute worker_tasks.
@@ -185,7 +185,7 @@ Set `failworker` = true when execute the program. This will trigger the followin
 
 #### 4. The newly elected coordinator fails while announcing.
 Set `failcoorvic`=true and `fail_coordinator`=true when execute the program, i.e. run command `.\run.exe -nodes=4 -sync=1 -timeout=6 -failcoor=1 -failworker=0 -failcoorvic=1` This will trigger the following goroutine in `run.go`:
-```
+```go
 	// Simulate coordinator candicate (newly seleted coordinator) failure duing broadcasting
 	if *fail_coor_during_broadcasting {
 		go func() {
@@ -202,7 +202,7 @@ Set `failcoorvic`=true and `fail_coordinator`=true when execute the program, i.e
 	}
 ```
  The following is part of a sample log in `logs_coor_fail_announcing.txt.txt` of 4 nodes:
-```
+```log
 22:59:48 run.go:61: ===============START===============
 22:59:48 run.go:22: Node 0 starts to execute worker_tasks.
 22:59:48 run.go:22: Node 2 starts to execute worker_tasks.
@@ -237,7 +237,7 @@ Notice that this situation does not always happen due to racing between broadcas
 Set `failworkervic`=true and `fail_coordinator`=true when execute the program, i.e., run command `.\run.exe -nodes=3 -sync=1 -timeout=6 -failcoor=1 -failworkervic=1`.  
 
 This will trigger the following goroutine in `run.go`:
-```
+```go
 // Simulate non-coordinator failure duing someone else broadcasting
 	if *fail_worker_during_broadcasting {
 		go func() {
@@ -259,7 +259,7 @@ This will trigger the following goroutine in `run.go`:
 	}
 ```
  The following is part of a sample log in `logs_worker_fail_announcing.txt`for 3 nodes:
-```
+```log
  20:41:26 run.go:55: ===============START===============
  20:41:26 run.go:22: Node 1 starts to execute worker_tasks.
  20:41:26 run.go:32: Node 2 starts to execute coordinator_tasks.
