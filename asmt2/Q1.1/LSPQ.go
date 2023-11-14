@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"math/rand"
 	"os"
 )
 
@@ -37,10 +36,10 @@ func main() {
 		go servers[i].listen()
 	}
 
-	random_server_idx := rand.Intn(len(servers))
-	go servers[random_server_idx].request()
-
-	// TODO: to be filled
+	// simulate request
+	// random_server_idx := rand.Intn(len(servers))
+	go servers[0].request()
+	go servers[1].request()
 
 	var input string
 	// wait for the input, as otherwise, the program will not wait

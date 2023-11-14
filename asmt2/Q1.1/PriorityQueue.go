@@ -8,13 +8,18 @@ import (
 // An Request is something we manage in a priority queue.
 type Request struct {
 	value     string // the sender's i-th request
-	clock     []int
-	sender_id int // the id of the requester
+	clock     int
+	requester int // the id of the requester
 	index     int // The index of the item in the heap.
 }
 
+type RequestIdentifier struct {
+	clock     int
+	requester int // the id of the requester
+}
+
 func (r1 *Request) isEqual(r2 Request) bool {
-	if r1.value == r2.value && clockEqual(r1.clock, r2.clock) && r1.sender_id == r2.sender_id {
+	if r1.value == r2.value && r1.clock == r2.clock && r1.requester == r2.requester {
 		return true
 	} else {
 		return false
@@ -28,10 +33,10 @@ func (pq RequestPriorityQueue) Len() int { return len(pq) }
 
 // lower clock or higher sender_id (if concurrent) has higher priority.
 func (pq RequestPriorityQueue) Less(i, j int) bool {
-	if clockLess(pq[i].clock, pq[j].clock) || clockLess(pq[j].clock, pq[i].clock) {
-		return clockLess(pq[i].clock, pq[j].clock)
+	if pq[i].clock < pq[j].clock || pq[j].clock < pq[i].clock {
+		return pq[i].clock < pq[j].clock
 	} else {
-		return pq[i].sender_id > pq[j].sender_id
+		return pq[i].requester > pq[j].requester
 	}
 }
 
@@ -59,7 +64,7 @@ func (pq *RequestPriorityQueue) Pop() any {
 }
 
 // update modifies the priority and value of an Item in the queue.
-func (pq *RequestPriorityQueue) Update(item *Request, value string, clock []int) {
+func (pq *RequestPriorityQueue) Update(item *Request, value string, clock int) {
 	item.value = value
 	item.clock = clock
 	heap.Fix(pq, item.index)
