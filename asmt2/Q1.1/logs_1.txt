@@ -1,0 +1,373 @@
+2023/11/18 19:14:18 LSPQ.go:20: ===============START===============
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 0 at clock 3.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 2 at clock 3.
+2023/11/18 19:14:18 server.go:54: Server 0 received Server 1's request at clock 1.
+2023/11/18 19:14:18 server.go:54: Server 1 received Server 0's request at clock 2.
+2023/11/18 19:14:18 server.go:172: Server 1 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 1 at clock 2.
+2023/11/18 19:14:18 server.go:54: Server 2 received Server 1's request at clock 3.
+2023/11/18 19:14:18 server.go:54: Server 2 received Server 0's request at clock 2.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 3 at clock 3.
+2023/11/18 19:14:18 server.go:172: Server 3 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:54: Server 3 received Server 1's request at clock 3.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 4 at clock 3.
+2023/11/18 19:14:18 server.go:183: Server 1 holds reply to 0.
+2023/11/18 19:14:18 server.go:172: Server 2 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:177: Server 2 has req from server 0 at clock 2 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 2 replys to 1 at clock 6.
+2023/11/18 19:14:18 server.go:177: Server 3 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:172: Server 0 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:177: Server 0 has req from server 1 at clock 1 at head of queue.
+2023/11/18 19:14:18 server.go:172: Server 4 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 5 at clock 7.
+2023/11/18 19:14:18 server.go:177: Server 4 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:172: Server 5 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 2 at clock 3.
+2023/11/18 19:14:18 server.go:172: Server 2 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 2 has req from server 0 at clock 2 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 2 replys to 0 at clock 7.
+2023/11/18 19:14:18 server.go:54: Server 4 received Server 1's request at clock 3.
+2023/11/18 19:14:18 server.go:54: Server 5 received Server 1's request at clock 3.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 6 at clock 7.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 7 at clock 7.
+2023/11/18 19:14:18 server.go:172: Server 6 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:177: Server 5 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 3 at clock 8.
+2023/11/18 19:14:18 server.go:54: Server 3 received Server 0's request at clock 3.
+2023/11/18 19:14:18 server.go:172: Server 3 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 2's reply at clock 6.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 7.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 2's reply at clock 7.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 8.
+2023/11/18 19:14:18 server.go:54: Server 6 received Server 1's request at clock 7.
+2023/11/18 19:14:18 server.go:54: Server 7 received Server 1's request at clock 7.
+2023/11/18 19:14:18 server.go:172: Server 7 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 8 at clock 8.
+2023/11/18 19:14:18 server.go:54: Server 8 received Server 1's request at clock 7.
+2023/11/18 19:14:18 server.go:172: Server 8 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:177: Server 6 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 4 at clock 8.
+2023/11/18 19:14:18 server.go:54: Server 4 received Server 0's request at clock 8.
+2023/11/18 19:14:18 server.go:172: Server 4 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 3 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 3's reply at clock 5.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 0's reply at clock 3.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 4's reply at clock 5.
+2023/11/18 19:14:18 server.go:177: Server 7 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:99: Server 1 requests to 9 at clock 11.
+2023/11/18 19:14:18 server.go:54: Server 9 received Server 1's request at clock 8.
+2023/11/18 19:14:18 server.go:172: Server 9 has pushed req from 1 to queue.
+2023/11/18 19:14:18 server.go:177: Server 9 has req from server 1 at clock 8 at head of queue.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 5 at clock 9.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 6 at clock 9.
+2023/11/18 19:14:18 server.go:172: Server 5 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 5 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 3 replys to 0 at clock 7.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 3's reply at clock 7.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 5's reply at clock 10.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 4.
+2023/11/18 19:14:18 server.go:119: Server 0 replys to 1 at clock 11.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 4.
+2023/11/18 19:14:18 server.go:119: Server 3 replys to 1 at clock 7.
+2023/11/18 19:14:18 server.go:119: Server 4 replys to 1 at clock 9.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 4.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 5's reply at clock 5.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 6's reply at clock 9.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 7's reply at clock 9.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 9's reply at clock 10.
+2023/11/18 19:14:18 server.go:54: Server 5 received Server 0's request at clock 8.
+2023/11/18 19:14:18 server.go:54: Server 6 received Server 0's request at clock 9.
+2023/11/18 19:14:18 server.go:172: Server 6 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 6 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 6 replys to 0 at clock 11.
+2023/11/18 19:14:18 server.go:172: Server 7 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 7 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 5.
+2023/11/18 19:14:18 server.go:119: Server 5 replys to 0 at clock 10.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 5.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 1.
+2023/11/18 19:14:18 server.go:119: Server 6 replys to 1 at clock 11.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 1.
+2023/11/18 19:14:18 server.go:119: Server 5 replys to 1 at clock 10.
+2023/11/18 19:14:18 server.go:119: Server 7 replys to 1 at clock 11.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 1.
+2023/11/18 19:14:18 server.go:177: Server 8 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 9 replys to 1 at clock 10.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 0.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 7 at clock 12.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 8 at clock 12.
+2023/11/18 19:14:18 server.go:99: Server 0 requests to 9 at clock 12.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 5.
+2023/11/18 19:14:18 server.go:177: Server 4 has req from server 1 at clock 3 at head of queue.
+2023/11/18 19:14:18 server.go:119: Server 8 replys to 1 at clock 13.
+2023/11/18 19:14:18 server.go:60: Server 1 received Server 8's reply at clock 9.
+2023/11/18 19:14:18 server.go:200: Server 1's reply_counter is 9.
+2023/11/18 19:14:18 server.go:54: Server 7 received Server 0's request at clock 9.
+2023/11/18 19:14:18 server.go:54: Server 8 received Server 0's request at clock 12.
+2023/11/18 19:14:18 server.go:172: Server 8 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 8 has req from server 1 at clock 7 at head of queue.
+2023/11/18 19:14:18 server.go:54: Server 9 received Server 0's request at clock 12.
+2023/11/18 19:14:18 server.go:172: Server 9 has pushed req from 0 to queue.
+2023/11/18 19:14:18 server.go:177: Server 9 has req from server 1 at clock 8 at head of queue.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 6's reply at clock 11.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 7's reply at clock 11.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 1's reply at clock 17.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 2.
+2023/11/18 19:14:18 server.go:119: Server 7 replys to 0 at clock 11.
+2023/11/18 19:14:18 server.go:119: Server 1 replys to 0 at clock 17.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 2.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 4's reply at clock 10.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 8's reply at clock 14.
+2023/11/18 19:14:18 server.go:60: Server 0 received Server 9's reply at clock 14.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 0.
+2023/11/18 19:14:18 server.go:119: Server 8 replys to 0 at clock 14.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 9.
+2023/11/18 19:14:18 server.go:119: Server 4 replys to 0 at clock 10.
+2023/11/18 19:14:18 server.go:119: Server 9 replys to 0 at clock 14.
+2023/11/18 19:14:18 server.go:200: Server 0's reply_counter is 9.
+2023/11/18 19:14:20 server.go:155: 2023-11-18 19:14:20.0858125 +0800 CST m=+2.033089101
+2023/11/18 19:14:20 server.go:160: Server 0 has finished cs execution.
+2023/11/18 19:14:20 server.go:155: 2023-11-18 19:14:20.0861491 +0800 CST m=+2.033425701
+2023/11/18 19:14:20 server.go:160: Server 1 has finished cs execution.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 0 at clock 18.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 1 at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 0 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 2 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 2 received Server 1's release at clock 18.
+2023/11/18 19:14:20 server.go:232: Server 2 has poped req from queue.
+2023/11/18 19:14:20 server.go:66: Server 0 received Server 1's release at clock 18.
+2023/11/18 19:14:20 server.go:66: Server 1 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 1 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 3 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 3 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 3 has poped req from queue.
+2023/11/18 19:14:20 server.go:66: Server 2 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 2 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 2 at clock 24.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 4 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 4 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 4 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 3 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 3 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 3 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 5 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 5 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 5 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 4 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 4 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 4 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 6 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 6 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 6 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 5 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 5 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 5 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 7 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 7 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 7 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 6 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 6 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 6 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 8 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 8 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 8 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 7 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 7 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 7 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 1 release to 9 at clock 25.
+2023/11/18 19:14:20 server.go:66: Server 9 received Server 1's release at clock 25.
+2023/11/18 19:14:20 server.go:232: Server 9 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 8 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 8 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 8 has poped req from queue.
+2023/11/18 19:14:20 server.go:139: Server 0 release to 9 at clock 24.
+2023/11/18 19:14:20 server.go:66: Server 9 received Server 0's release at clock 24.
+2023/11/18 19:14:20 server.go:232: Server 9 has poped req from queue.
+2023/11/18 19:16:19 LSPQ.go:20: ===============START===============
+2023/11/18 19:16:19 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 19:16:19 server.go:55: Server 1 received Server 0's request at clock 3.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 0 at clock 4.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 2 at clock 4.
+2023/11/18 19:16:19 server.go:177: Server 1 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:177: Server 0 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 1 at clock 3.
+2023/11/18 19:16:19 server.go:55: Server 2 received Server 1's request at clock 4.
+2023/11/18 19:16:19 server.go:177: Server 2 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 2 has req from server 0 at clock 3 at head of queue.
+2023/11/18 19:16:19 server.go:124: Server 2 replys to 1 at clock 7.
+2023/11/18 19:16:19 server.go:177: Server 3 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 19:16:19 server.go:182: Server 0 has req from server 1 at clock 1 at head of queue.
+2023/11/18 19:16:19 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 19:16:19 server.go:177: Server 2 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 2 at clock 4.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 3 at clock 8.
+2023/11/18 19:16:19 server.go:55: Server 3 received Server 1's request at clock 4.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 8.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 2's reply at clock 7.
+2023/11/18 19:16:19 server.go:182: Server 3 has req from server 1 at clock 4 at head of queue.
+2023/11/18 19:16:19 server.go:188: Server 1 holds reply to 0.
+2023/11/18 19:16:19 server.go:182: Server 2 has req from server 0 at clock 3 at head of queue.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 4 at clock 9.
+2023/11/18 19:16:19 server.go:55: Server 4 received Server 1's request at clock 8.
+2023/11/18 19:16:19 server.go:177: Server 4 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:55: Server 3 received Server 0's request at clock 4.
+2023/11/18 19:16:19 server.go:177: Server 3 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:182: Server 3 has req from server 1 at clock 4 at head of queue.
+2023/11/18 19:16:19 server.go:124: Server 0 replys to 1 at clock 9.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 0's reply at clock 4.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 6.
+2023/11/18 19:16:19 server.go:124: Server 2 replys to 0 at clock 8.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 2's reply at clock 8.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 7.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 5 at clock 10.
+2023/11/18 19:16:19 server.go:55: Server 5 received Server 1's request at clock 9.
+2023/11/18 19:16:19 server.go:177: Server 5 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 5 has req from server 1 at clock 9 at head of queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 3 at clock 10.
+2023/11/18 19:16:19 server.go:124: Server 3 replys to 1 at clock 8.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 3's reply at clock 7.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 5's reply at clock 11.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 3's reply at clock 8.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 7.
+2023/11/18 19:16:19 server.go:124: Server 3 replys to 0 at clock 8.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 6 at clock 12.
+2023/11/18 19:16:19 server.go:55: Server 6 received Server 1's request at clock 10.
+2023/11/18 19:16:19 server.go:177: Server 6 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 4 has req from server 1 at clock 8 at head of queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 4 at clock 10.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 5 at clock 10.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 6 at clock 10.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 4.
+2023/11/18 19:16:19 server.go:124: Server 5 replys to 1 at clock 12.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 4.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 7 at clock 13.
+2023/11/18 19:16:19 server.go:55: Server 7 received Server 1's request at clock 12.
+2023/11/18 19:16:19 server.go:177: Server 7 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 6 has req from server 1 at clock 10 at head of queue.
+2023/11/18 19:16:19 server.go:124: Server 4 replys to 1 at clock 12.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 4's reply at clock 12.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 3.
+2023/11/18 19:16:19 server.go:55: Server 4 received Server 0's request at clock 10.
+2023/11/18 19:16:19 server.go:55: Server 5 received Server 0's request at clock 10.
+2023/11/18 19:16:19 server.go:177: Server 5 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:177: Server 4 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:55: Server 6 received Server 0's request at clock 10.
+2023/11/18 19:16:19 server.go:177: Server 6 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 8 at clock 14.
+2023/11/18 19:16:19 server.go:55: Server 8 received Server 1's request at clock 13.
+2023/11/18 19:16:19 server.go:177: Server 8 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:55: Server 7 received Server 0's request at clock 10.
+2023/11/18 19:16:19 server.go:177: Server 7 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 7 at clock 10.
+2023/11/18 19:16:19 server.go:182: Server 7 has req from server 0 at clock 10 at head of queue.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 6's reply at clock 13.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 2.
+2023/11/18 19:16:19 server.go:124: Server 6 replys to 1 at clock 13.
+2023/11/18 19:16:19 server.go:182: Server 5 has req from server 1 at clock 9 at head of queue.
+2023/11/18 19:16:19 server.go:182: Server 4 has req from server 1 at clock 8 at head of queue.
+2023/11/18 19:16:19 server.go:182: Server 6 has req from server 1 at clock 10 at head of queue.
+2023/11/18 19:16:19 server.go:104: Server 1 requests to 9 at clock 16.
+2023/11/18 19:16:19 server.go:55: Server 9 received Server 1's request at clock 14.
+2023/11/18 19:16:19 server.go:177: Server 9 has pushed req from 1 to queue.
+2023/11/18 19:16:19 server.go:182: Server 8 has req from server 1 at clock 13 at head of queue.
+2023/11/18 19:16:19 server.go:182: Server 7 has req from server 0 at clock 10 at head of queue.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 8 at clock 14.
+2023/11/18 19:16:19 server.go:104: Server 0 requests to 9 at clock 14.
+2023/11/18 19:16:19 server.go:177: Server 8 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:182: Server 8 has req from server 0 at clock 10 at head of queue.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 2.
+2023/11/18 19:16:19 server.go:124: Server 7 replys to 1 at clock 16.
+2023/11/18 19:16:19 server.go:124: Server 5 replys to 0 at clock 13.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 5's reply at clock 13.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 4's reply at clock 13.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 6's reply at clock 14.
+2023/11/18 19:16:19 server.go:55: Server 8 received Server 0's request at clock 10.
+2023/11/18 19:16:19 server.go:55: Server 9 received Server 0's request at clock 14.
+2023/11/18 19:16:19 server.go:177: Server 9 has pushed req from 0 to queue.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 7's reply at clock 15.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 8's reply at clock 16.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 3.
+2023/11/18 19:16:19 server.go:124: Server 4 replys to 0 at clock 13.
+2023/11/18 19:16:19 server.go:182: Server 9 has req from server 1 at clock 14 at head of queue.
+2023/11/18 19:16:19 server.go:124: Server 9 replys to 1 at clock 17.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 3.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 7's reply at clock 16.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 8's reply at clock 17.
+2023/11/18 19:16:19 server.go:124: Server 7 replys to 0 at clock 16.
+2023/11/18 19:16:19 server.go:182: Server 9 has req from server 1 at clock 14 at head of queue.
+2023/11/18 19:16:19 server.go:124: Server 9 replys to 0 at clock 18.
+2023/11/18 19:16:19 server.go:124: Server 8 replys to 1 at clock 17.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 0.
+2023/11/18 19:16:19 server.go:124: Server 6 replys to 0 at clock 14.
+2023/11/18 19:16:19 server.go:61: Server 1 received Server 9's reply at clock 17.
+2023/11/18 19:16:19 server.go:205: Server 1's reply_counter is 9.
+2023/11/18 19:16:19 server.go:124: Server 8 replys to 0 at clock 17.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 1.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 1.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 1.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 9's reply at clock 18.
+2023/11/18 19:16:19 server.go:61: Server 0 received Server 1's reply at clock 20.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 0.
+2023/11/18 19:16:19 server.go:124: Server 1 replys to 0 at clock 20.
+2023/11/18 19:16:19 server.go:205: Server 0's reply_counter is 9.
+2023/11/18 19:16:21 server.go:160: 2023-11-18 19:16:21.8942904 +0800 CST m=+2.021318601
+2023/11/18 19:16:21 server.go:165: Server 0 has finished cs execution.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 1 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 2 at clock 23.
+2023/11/18 19:16:21 server.go:67: Server 1 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 1 has poped req from queue.
+2023/11/18 19:16:21 server.go:160: 2023-11-18 19:16:21.8955145 +0800 CST m=+2.022542701
+2023/11/18 19:16:21 server.go:67: Server 2 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 2 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 3 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 4 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 5 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 6 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 7 at clock 23.
+2023/11/18 19:16:21 server.go:67: Server 4 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 4 has poped req from queue.
+2023/11/18 19:16:21 server.go:237: Server 3 has poped req from queue.
+2023/11/18 19:16:21 server.go:67: Server 5 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 5 has poped req from queue.
+2023/11/18 19:16:21 server.go:165: Server 1 has finished cs execution.
+2023/11/18 19:16:21 server.go:67: Server 6 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 6 has poped req from queue.
+2023/11/18 19:16:21 server.go:67: Server 3 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:67: Server 7 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 7 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 8 at clock 23.
+2023/11/18 19:16:21 server.go:144: Server 0 release to 9 at clock 23.
+2023/11/18 19:16:21 server.go:237: Server 8 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 0 at clock 25.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 2 at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 9 has poped req from queue.
+2023/11/18 19:16:21 server.go:67: Server 8 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:67: Server 0 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 0 has poped req from queue.
+2023/11/18 19:16:21 server.go:67: Server 9 received Server 0's release at clock 23.
+2023/11/18 19:16:21 server.go:67: Server 2 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 2 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 3 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 3 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 3 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 4 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 4 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 4 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 5 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 5 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 5 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 6 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 6 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 6 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 7 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 7 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 7 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 8 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 8 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 8 has poped req from queue.
+2023/11/18 19:16:21 server.go:144: Server 1 release to 9 at clock 25.
+2023/11/18 19:16:21 server.go:67: Server 9 received Server 1's release at clock 25.
+2023/11/18 19:16:21 server.go:237: Server 9 has poped req from queue.
+2023/11/18 19:16:26 LSPQ.go:61: Elapsed time:  2.0107036s

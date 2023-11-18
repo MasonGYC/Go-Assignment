@@ -250,3 +250,173 @@
 2023/11/07 17:10:44 server.go:70: Server 8 received Server 2's release at clock [19 17 19 7 8 7 8 8 7 8].
 2023/11/07 17:10:44 server.go:173: Server 2 release to 9 at [19 17 19 7 8 7 8 8 7 8].
 2023/11/07 17:10:44 server.go:70: Server 9 received Server 2's release at clock [19 17 19 7 8 7 8 8 7 8].
+2023/11/18 19:19:48 voting.go:19: ===============START===============
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 0 at [3 0 2 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 1 at [3 0 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 0 received Server 2's request at clock [3 0 2 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:127: Server 0 vote to 2 at [4 3 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 0 received Server 1's request at clock [3 3 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 2 received Server 0's vote at clock [5 3 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 0 at [3 3 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 1 received Server 0's request at clock [5 3 1 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 1's vote at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:127: Server 1 vote to 0 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 2 received Server 0's request at clock [6 3 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 2 at [6 3 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 1 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 1 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 2's vote at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:127: Server 2 vote to 0 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 2 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 2 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 3 at [7 3 4 2 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 4 at [7 3 4 2 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 3's vote at clock [6 3 4 2 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:127: Server 3 vote to 0 at [6 3 4 2 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 3 received Server 0's request at clock [8 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 4 received Server 0's request at clock [8 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 5 at [8 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 5 received Server 0's request at clock [8 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 4's vote at clock [7 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:127: Server 4 vote to 0 at [7 3 4 2 2 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 3 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 3 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 6 at [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 7 at [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 8 at [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 0 requests to 9 at [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 3 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 3 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 4 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 4 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 6 received Server 0's request at clock [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 7 received Server 0's request at clock [10 3 4 2 2 2 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 5's vote at clock [7 4 5 2 0 3 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 6's vote at clock [8 3 4 2 2 0 2 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 9 received Server 0's request at clock [12 3 4 2 2 2 2 2 0 0].
+2023/11/18 19:19:48 server.go:127: Server 5 vote to 0 at [7 4 5 2 0 3 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 5 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 5 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 4 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 4 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 8 received Server 0's request at clock [12 3 4 2 2 2 2 2 0 0].
+2023/11/18 19:19:48 server.go:127: Server 6 vote to 0 at [8 4 5 2 2 0 3 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 7's vote at clock [10 3 4 2 2 2 0 2 0 0].
+2023/11/18 19:19:48 server.go:127: Server 7 vote to 0 at [10 3 4 2 2 2 0 2 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 6 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 6 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 5 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 5 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 8's vote at clock [10 3 4 2 2 2 0 0 2 0].
+2023/11/18 19:19:48 server.go:127: Server 8 vote to 0 at [10 3 4 2 2 2 0 0 2 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 7 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 7 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 6 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 6 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:63: Server 0 received Server 9's vote at clock [10 3 4 2 2 2 0 0 0 2].
+2023/11/18 19:19:48 server.go:127: Server 9 vote to 0 at [10 3 4 2 2 2 0 0 0 2].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 8 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 8 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 7 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 7 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 2 requests to 9 at [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 9 received Server 2's request at clock [5 4 5 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 8 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:107: Server 1 requests to 9 at [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 8 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:48 server.go:57: Server 9 received Server 1's request at clock [5 4 4 0 0 0 0 0 0 0].
+2023/11/18 19:19:50 server.go:199: 2023-11-18 19:19:50.499639 +0800 CST m=+2.021974201
+2023/11/18 19:19:50 server.go:204: Server 0 has finished cs execution.
+2023/11/18 19:19:50 server.go:176: Server 0 release to 1 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 1 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 1's vote at clock [15 6 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 1 vote to 2 at [15 7 8 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 2 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 2 vote to 1 at [15 6 8 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 1 received Server 2's vote at clock [15 6 8 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 2 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 3 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 3 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 3 vote to 2 at [15 4 5 6 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 3's vote at clock [15 4 5 6 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 4 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 5 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 6 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 7 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 8 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:176: Server 0 release to 9 at [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 4's vote at clock [15 4 5 2 6 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 6 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 4 vote to 2 at [15 4 5 2 6 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 7 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 4 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 8 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 5 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:69: Server 9 received Server 0's release at clock [15 3 4 2 2 2 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 5's vote at clock [15 4 5 2 2 6 2 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 6's vote at clock [15 4 5 2 2 2 6 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 5 vote to 2 at [15 4 5 2 2 6 2 2 2 2].
+2023/11/18 19:19:50 server.go:127: Server 6 vote to 2 at [15 4 5 2 2 2 6 2 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 7's vote at clock [15 4 5 2 2 2 2 6 2 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 8's vote at clock [15 4 5 2 2 2 2 2 6 2].
+2023/11/18 19:19:50 server.go:127: Server 7 vote to 2 at [15 4 5 2 2 2 2 6 2 2].
+2023/11/18 19:19:50 server.go:127: Server 8 vote to 2 at [15 4 5 2 2 2 2 2 6 2].
+2023/11/18 19:19:50 server.go:63: Server 2 received Server 9's vote at clock [15 4 5 2 2 2 2 2 2 6].
+2023/11/18 19:19:50 server.go:127: Server 9 vote to 2 at [15 4 5 2 2 2 2 2 2 6].
+2023/11/18 19:19:52 server.go:199: 2023-11-18 19:19:52.5153656 +0800 CST m=+4.037700801
+2023/11/18 19:19:52 server.go:204: Server 2 has finished cs execution.
+2023/11/18 19:19:52 server.go:176: Server 2 release to 0 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 0 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 0 vote to 1 at [17 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 0's vote at clock [17 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 1 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 1 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 3 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 4 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 5 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 6 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 7 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 8 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:176: Server 2 release to 9 at [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 5 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 3's vote at clock [15 6 17 8 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 4's vote at clock [15 6 17 6 8 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 5's vote at clock [15 6 17 6 6 8 6 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 6's vote at clock [15 6 17 6 6 6 8 6 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 7's vote at clock [15 6 17 6 6 6 6 8 6 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 8's vote at clock [15 6 17 6 6 6 6 6 8 6].
+2023/11/18 19:19:52 server.go:63: Server 1 received Server 9's vote at clock [15 6 17 6 6 6 6 6 6 8].
+2023/11/18 19:19:52 server.go:69: Server 9 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 6 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 4 vote to 1 at [15 6 17 6 8 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 3 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 5 vote to 1 at [15 6 17 6 6 8 6 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 7 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 6 vote to 1 at [15 6 17 6 6 6 8 6 6 6].
+2023/11/18 19:19:52 server.go:69: Server 4 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 7 vote to 1 at [15 6 17 6 6 6 6 8 6 6].
+2023/11/18 19:19:52 server.go:69: Server 8 received Server 2's release at clock [15 6 17 6 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 8 vote to 1 at [15 6 17 6 6 6 6 6 8 6].
+2023/11/18 19:19:52 server.go:127: Server 3 vote to 1 at [15 6 17 8 6 6 6 6 6 6].
+2023/11/18 19:19:52 server.go:127: Server 9 vote to 1 at [15 6 17 6 6 6 6 6 6 8].
+2023/11/18 19:19:54 server.go:199: 2023-11-18 19:19:54.5267794 +0800 CST m=+6.049114601
+2023/11/18 19:19:54 server.go:204: Server 1 has finished cs execution.
+2023/11/18 19:19:54 server.go:176: Server 1 release to 0 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 2 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 0 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 3 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 4 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 5 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 6 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 3 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 2 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 5 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 4 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 6 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 7 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 7 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 8 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:176: Server 1 release to 9 at [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 8 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:19:54 server.go:69: Server 9 received Server 1's release at clock [17 18 17 8 8 8 8 8 8 8].
+2023/11/18 19:20:04 voting.go:59: Elapsed time:  6.0339738s

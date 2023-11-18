@@ -18,14 +18,6 @@ type RequestIdentifier struct {
 	requester int // the id of the requester
 }
 
-func (r1 *Request) isEqual(r2 Request) bool {
-	if r1.value == r2.value && r1.clock == r2.clock && r1.requester == r2.requester {
-		return true
-	} else {
-		return false
-	}
-}
-
 // A RequestPriorityQueue implements heap.Interface and holds Items.
 type RequestPriorityQueue []*Request
 

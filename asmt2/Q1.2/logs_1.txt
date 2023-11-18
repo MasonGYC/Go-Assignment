@@ -1,0 +1,986 @@
+2023/11/18 16:30:44 LSPQ_RA.go:11: ===============START===============
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 1 at 2.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 2 at 2.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 3 at 2.
+2023/11/18 16:30:44 server.go:155: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 16:30:44 server.go:54: Server 1 received Server 0's request at clock 1.
+2023/11/18 16:30:44 server.go:155: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 0 at 4.
+2023/11/18 16:30:44 server.go:54: Server 2 received Server 0's request at clock 2.
+2023/11/18 16:30:44 server.go:54: Server 0 received Server 1's request at clock 1.
+2023/11/18 16:30:44 server.go:54: Server 3 received Server 0's request at clock 2.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 4 at 5.
+2023/11/18 16:30:44 server.go:54: Server 4 received Server 0's request at clock 2.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 0's reply at clock 3.
+2023/11/18 16:30:44 server.go:113: Server 0 replys to 1 at 5.
+2023/11/18 16:30:44 server.go:166: Server 1 has pushed req from 0 to queue .
+2023/11/18 16:30:44 server.go:54: Server 2 received Server 1's request at clock 4.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 2 at 7.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 2's reply at clock 4.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 3's reply at clock 4.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 5 at 7.
+2023/11/18 16:30:44 server.go:54: Server 5 received Server 0's request at clock 5.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 2's reply at clock 6.
+2023/11/18 16:30:44 server.go:113: Server 2 replys to 1 at 6.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 3 at 10.
+2023/11/18 16:30:44 server.go:54: Server 3 received Server 1's request at clock 7.
+2023/11/18 16:30:44 server.go:113: Server 2 replys to 0 at 6.
+2023/11/18 16:30:44 server.go:113: Server 3 replys to 0 at 9.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 4's reply at clock 4.
+2023/11/18 16:30:44 server.go:113: Server 4 replys to 0 at 12.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 6 at 8.
+2023/11/18 16:30:44 server.go:54: Server 6 received Server 0's request at clock 7.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 3's reply at clock 9.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 4's reply at clock 12.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 4 at 13.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 5 at 13.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 6 at 16.
+2023/11/18 16:30:44 server.go:113: Server 5 replys to 0 at 15.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 7 at 8.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 8 at 8.
+2023/11/18 16:30:44 server.go:93: Server 0 requests to 9 at 8.
+2023/11/18 16:30:44 server.go:113: Server 4 replys to 1 at 12.
+2023/11/18 16:30:44 server.go:54: Server 4 received Server 1's request at clock 10.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 5's reply at clock 7.
+2023/11/18 16:30:44 server.go:54: Server 6 received Server 1's request at clock 13.
+2023/11/18 16:30:44 server.go:113: Server 6 replys to 1 at 15.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 6's reply at clock 15.
+2023/11/18 16:30:44 server.go:54: Server 5 received Server 1's request at clock 13.
+2023/11/18 16:30:44 server.go:54: Server 7 received Server 0's request at clock 8.
+2023/11/18 16:30:44 server.go:54: Server 7 received Server 1's request at clock 16.
+2023/11/18 16:30:44 server.go:113: Server 3 replys to 1 at 9.
+2023/11/18 16:30:44 server.go:54: Server 9 received Server 0's request at clock 8.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 6's reply at clock 9.
+2023/11/18 16:30:44 server.go:113: Server 6 replys to 0 at 15.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 5's reply at clock 15.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 7's reply at clock 18.
+2023/11/18 16:30:44 server.go:54: Server 8 received Server 0's request at clock 8.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 7 at 19.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 8 at 22.
+2023/11/18 16:30:44 server.go:113: Server 7 replys to 0 at 18.
+2023/11/18 16:30:44 server.go:113: Server 5 replys to 1 at 15.
+2023/11/18 16:30:44 server.go:113: Server 7 replys to 1 at 18.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 7's reply at clock 10.
+2023/11/18 16:30:44 server.go:54: Server 8 received Server 1's request at clock 19.
+2023/11/18 16:30:44 server.go:113: Server 8 replys to 1 at 21.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 8's reply at clock 21.
+2023/11/18 16:30:44 server.go:60: Server 1 received Server 9's reply at clock 24.
+2023/11/18 16:30:44 server.go:54: Server 9 received Server 1's request at clock 22.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 8's reply at clock 10.
+2023/11/18 16:30:44 server.go:113: Server 8 replys to 0 at 21.
+2023/11/18 16:30:44 server.go:93: Server 1 requests to 9 at 26.
+2023/11/18 16:30:44 server.go:113: Server 9 replys to 1 at 24.
+2023/11/18 16:30:44 server.go:60: Server 0 received Server 9's reply at clock 10.
+2023/11/18 16:30:44 server.go:113: Server 9 replys to 0 at 24.
+2023/11/18 16:30:46 server.go:145: Server 1 has finished cs execution.
+2023/11/18 16:30:46 server.go:132: Server 1 Poped reuqest from 1.
+2023/11/18 16:30:46 server.go:113: Server 1 replys to 0 at 28.
+2023/11/18 16:30:46 server.go:132: Server 1 Poped reuqest from 0.
+2023/11/18 16:30:46 server.go:60: Server 0 received Server 1's reply at clock 28.
+2023/11/18 16:30:48 server.go:145: Server 0 has finished cs execution.
+2023/11/18 16:30:48 server.go:132: Server 0 Poped reuqest from 0.
+2023/11/18 16:37:38 LSPQ_RA.go:17: ===============START===============
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 1 at 4.
+2023/11/18 16:37:38 server.go:54: Server 1 received Server 0's request at clock 1.
+2023/11/18 16:37:38 server.go:113: Server 1 replys to 0 at 4.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 1's reply at clock 3.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 2 at 5.
+2023/11/18 16:37:38 server.go:54: Server 2 received Server 0's request at clock 4.
+2023/11/18 16:37:38 server.go:54: Server 0 received Server 1's request at clock 4.
+2023/11/18 16:37:38 server.go:161: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 16:37:38 server.go:172: Server 0 has pushed req from 1 to queue .
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 3 at 7.
+2023/11/18 16:37:38 server.go:54: Server 3 received Server 0's request at clock 5.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 2's reply at clock 6.
+2023/11/18 16:37:38 server.go:113: Server 2 replys to 0 at 6.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 0 at 4.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 4 at 8.
+2023/11/18 16:37:38 server.go:54: Server 4 received Server 0's request at clock 7.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 3's reply at clock 7.
+2023/11/18 16:37:38 server.go:113: Server 3 replys to 0 at 7.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 2 at 9.
+2023/11/18 16:37:38 server.go:54: Server 2 received Server 1's request at clock 4.
+2023/11/18 16:37:38 server.go:113: Server 2 replys to 1 at 8.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 2's reply at clock 8.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 5 at 10.
+2023/11/18 16:37:38 server.go:54: Server 5 received Server 0's request at clock 8.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 4's reply at clock 9.
+2023/11/18 16:37:38 server.go:113: Server 4 replys to 0 at 9.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 3 at 12.
+2023/11/18 16:37:38 server.go:54: Server 3 received Server 1's request at clock 9.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 3's reply at clock 11.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 4's reply at clock 14.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 6 at 11.
+2023/11/18 16:37:38 server.go:54: Server 6 received Server 0's request at clock 10.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 5's reply at clock 10.
+2023/11/18 16:37:38 server.go:113: Server 5 replys to 0 at 10.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 4 at 15.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 5 at 18.
+2023/11/18 16:37:38 server.go:113: Server 3 replys to 1 at 11.
+2023/11/18 16:37:38 server.go:113: Server 4 replys to 1 at 14.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 7 at 13.
+2023/11/18 16:37:38 server.go:54: Server 7 received Server 0's request at clock 11.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 6's reply at clock 12.
+2023/11/18 16:37:38 server.go:113: Server 6 replys to 0 at 20.
+2023/11/18 16:37:38 server.go:54: Server 4 received Server 1's request at clock 12.
+2023/11/18 16:37:38 server.go:54: Server 5 received Server 1's request at clock 15.
+2023/11/18 16:37:38 server.go:113: Server 5 replys to 1 at 17.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 5's reply at clock 17.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 6 at 21.
+2023/11/18 16:37:38 server.go:54: Server 6 received Server 1's request at clock 18.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 8 at 14.
+2023/11/18 16:37:38 server.go:54: Server 8 received Server 0's request at clock 13.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 7's reply at clock 13.
+2023/11/18 16:37:38 server.go:113: Server 7 replys to 0 at 23.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 6's reply at clock 20.
+2023/11/18 16:37:38 server.go:113: Server 6 replys to 1 at 20.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 7 at 24.
+2023/11/18 16:37:38 server.go:54: Server 7 received Server 1's request at clock 21.
+2023/11/18 16:37:38 server.go:93: Server 0 requests to 9 at 16.
+2023/11/18 16:37:38 server.go:54: Server 9 received Server 0's request at clock 14.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 8's reply at clock 15.
+2023/11/18 16:37:38 server.go:113: Server 8 replys to 0 at 26.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 7's reply at clock 23.
+2023/11/18 16:37:38 server.go:113: Server 7 replys to 1 at 23.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 8 at 27.
+2023/11/18 16:37:38 server.go:54: Server 8 received Server 1's request at clock 24.
+2023/11/18 16:37:38 server.go:60: Server 0 received Server 9's reply at clock 16.
+2023/11/18 16:37:38 server.go:113: Server 9 replys to 0 at 29.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 8's reply at clock 26.
+2023/11/18 16:37:38 server.go:113: Server 8 replys to 1 at 26.
+2023/11/18 16:37:38 server.go:93: Server 1 requests to 9 at 30.
+2023/11/18 16:37:38 server.go:54: Server 9 received Server 1's request at clock 27.
+2023/11/18 16:37:38 server.go:60: Server 1 received Server 9's reply at clock 29.
+2023/11/18 16:37:38 server.go:113: Server 9 replys to 1 at 29.
+2023/11/18 16:37:40 server.go:147: 2023-11-18 16:37:40.9463875 +0800 CST m=+2.022827301
+2023/11/18 16:37:40 server.go:151: Server 0 has finished cs execution.
+2023/11/18 16:37:40 server.go:132: Server 0 Poped reuqest from 0.
+2023/11/18 16:37:40 server.go:113: Server 0 replys to 1 at 20.
+2023/11/18 16:37:40 server.go:60: Server 1 received Server 0's reply at clock 20.
+2023/11/18 16:37:40 server.go:132: Server 0 Poped reuqest from 1.
+2023/11/18 16:37:42 server.go:147: 2023-11-18 16:37:42.9566062 +0800 CST m=+4.033046001
+2023/11/18 16:37:42 server.go:151: Server 1 has finished cs execution.
+2023/11/18 16:37:42 server.go:132: Server 1 Poped reuqest from 1.
+2023/11/18 16:42:08 LSPQ_RA.go:20: ===============START===============
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 0 at 2.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 1 at 2.
+2023/11/18 16:42:08 server.go:54: Server 1 received Server 0's request at clock 1.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 2's reply at clock 4.
+2023/11/18 16:42:08 server.go:54: Server 0 received Server 1's request at clock 1.
+2023/11/18 16:42:08 server.go:160: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 16:42:08 server.go:113: Server 0 replys to 1 at 3.
+2023/11/18 16:42:08 server.go:54: Server 2 received Server 1's request at clock 2.
+2023/11/18 16:42:08 server.go:160: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 16:42:08 server.go:113: Server 2 replys to 1 at 6.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 2 at 6.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 0's reply at clock 3.
+2023/11/18 16:42:08 server.go:54: Server 2 received Server 0's request at clock 2.
+2023/11/18 16:42:08 server.go:113: Server 2 replys to 0 at 6.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 2's reply at clock 6.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 2 at 7.
+2023/11/18 16:42:08 server.go:171: Server 1 has pushed req from 0 to queue .
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 3 at 9.
+2023/11/18 16:42:08 server.go:54: Server 3 received Server 1's request at clock 6.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 3's reply at clock 8.
+2023/11/18 16:42:08 server.go:113: Server 3 replys to 1 at 10.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 4 at 12.
+2023/11/18 16:42:08 server.go:54: Server 4 received Server 1's request at clock 9.
+2023/11/18 16:42:08 server.go:54: Server 3 received Server 0's request at clock 7.
+2023/11/18 16:42:08 server.go:113: Server 3 replys to 0 at 10.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 3's reply at clock 10.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 3 at 11.
+2023/11/18 16:42:08 server.go:113: Server 4 replys to 1 at 13.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 4's reply at clock 11.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 5 at 15.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 6 at 15.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 7 at 15.
+2023/11/18 16:42:08 server.go:54: Server 4 received Server 0's request at clock 11.
+2023/11/18 16:42:08 server.go:113: Server 4 replys to 0 at 13.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 4's reply at clock 13.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 5's reply at clock 14.
+2023/11/18 16:42:08 server.go:113: Server 5 replys to 1 at 14.
+2023/11/18 16:42:08 server.go:54: Server 5 received Server 1's request at clock 12.
+2023/11/18 16:42:08 server.go:54: Server 6 received Server 1's request at clock 15.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 4 at 14.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 5 at 17.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 8 at 18.
+2023/11/18 16:42:08 server.go:54: Server 8 received Server 1's request at clock 15.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 6's reply at clock 17.
+2023/11/18 16:42:08 server.go:113: Server 6 replys to 1 at 19.
+2023/11/18 16:42:08 server.go:54: Server 7 received Server 1's request at clock 15.
+2023/11/18 16:42:08 server.go:54: Server 5 received Server 0's request at clock 14.
+2023/11/18 16:42:08 server.go:113: Server 5 replys to 0 at 16.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 5's reply at clock 16.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 6 at 20.
+2023/11/18 16:42:08 server.go:54: Server 6 received Server 0's request at clock 17.
+2023/11/18 16:42:08 server.go:93: Server 1 requests to 9 at 19.
+2023/11/18 16:42:08 server.go:54: Server 9 received Server 1's request at clock 18.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 7's reply at clock 17.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 8's reply at clock 17.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 6's reply at clock 19.
+2023/11/18 16:42:08 server.go:113: Server 6 replys to 0 at 19.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 7 at 23.
+2023/11/18 16:42:08 server.go:54: Server 7 received Server 0's request at clock 20.
+2023/11/18 16:42:08 server.go:113: Server 7 replys to 1 at 22.
+2023/11/18 16:42:08 server.go:113: Server 8 replys to 1 at 25.
+2023/11/18 16:42:08 server.go:60: Server 1 received Server 9's reply at clock 20.
+2023/11/18 16:42:08 server.go:113: Server 9 replys to 1 at 20.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 7's reply at clock 22.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 8's reply at clock 25.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 8 at 26.
+2023/11/18 16:42:08 server.go:54: Server 8 received Server 0's request at clock 23.
+2023/11/18 16:42:08 server.go:113: Server 7 replys to 0 at 22.
+2023/11/18 16:42:08 server.go:113: Server 8 replys to 0 at 25.
+2023/11/18 16:42:08 server.go:93: Server 0 requests to 9 at 29.
+2023/11/18 16:42:08 server.go:54: Server 9 received Server 0's request at clock 26.
+2023/11/18 16:42:08 server.go:113: Server 9 replys to 0 at 28.
+2023/11/18 16:42:08 server.go:60: Server 0 received Server 9's reply at clock 28.
+2023/11/18 16:42:10 server.go:150: Server 1 has finished cs execution.
+2023/11/18 16:42:10 server.go:132: Server 1 Poped reuqest from 1.
+2023/11/18 16:42:10 server.go:113: Server 1 replys to 0 at 24.
+2023/11/18 16:42:10 server.go:132: Server 1 Poped reuqest from 0.
+2023/11/18 16:42:10 server.go:60: Server 0 received Server 1's reply at clock 24.
+2023/11/18 16:42:12 server.go:150: Server 0 has finished cs execution.
+2023/11/18 16:42:12 server.go:132: Server 0 Poped reuqest from 0.
+2023/11/18 16:43:00 LSPQ_RA.go:20: ===============START===============
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 0 at 2.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 1 at 2.
+2023/11/18 16:43:00 server.go:54: Server 1 received Server 0's request at clock 1.
+2023/11/18 16:43:00 server.go:160: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 16:43:00 server.go:54: Server 0 received Server 1's request at clock 1.
+2023/11/18 16:43:00 server.go:160: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 2 at 5.
+2023/11/18 16:43:00 server.go:54: Server 2 received Server 1's request at clock 2.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 2's reply at clock 4.
+2023/11/18 16:43:00 server.go:113: Server 2 replys to 1 at 6.
+2023/11/18 16:43:00 server.go:171: Server 1 has pushed req from 0 to queue .
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 3 at 6.
+2023/11/18 16:43:00 server.go:54: Server 3 received Server 1's request at clock 5.
+2023/11/18 16:43:00 server.go:54: Server 2 received Server 0's request at clock 2.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 2 at 7.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 2's reply at clock 6.
+2023/11/18 16:43:00 server.go:113: Server 2 replys to 0 at 6.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 0's reply at clock 3.
+2023/11/18 16:43:00 server.go:113: Server 0 replys to 1 at 10.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 4 at 8.
+2023/11/18 16:43:00 server.go:54: Server 4 received Server 1's request at clock 6.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 3 at 10.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 4 at 10.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 3's reply at clock 9.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 4's reply at clock 12.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 3's reply at clock 7.
+2023/11/18 16:43:00 server.go:113: Server 3 replys to 1 at 9.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 5 at 9.
+2023/11/18 16:43:00 server.go:54: Server 5 received Server 1's request at clock 8.
+2023/11/18 16:43:00 server.go:54: Server 5 received Server 0's request at clock 10.
+2023/11/18 16:43:00 server.go:54: Server 4 received Server 0's request at clock 10.
+2023/11/18 16:43:00 server.go:113: Server 3 replys to 0 at 9.
+2023/11/18 16:43:00 server.go:113: Server 4 replys to 0 at 12.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 4's reply at clock 8.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 5's reply at clock 10.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 6 at 12.
+2023/11/18 16:43:00 server.go:54: Server 6 received Server 1's request at clock 9.
+2023/11/18 16:43:00 server.go:54: Server 3 received Server 0's request at clock 7.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 5 at 14.
+2023/11/18 16:43:00 server.go:113: Server 5 replys to 0 at 12.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 5's reply at clock 12.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 6's reply at clock 16.
+2023/11/18 16:43:00 server.go:113: Server 5 replys to 1 at 12.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 6's reply at clock 11.
+2023/11/18 16:43:00 server.go:113: Server 6 replys to 1 at 16.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 7 at 15.
+2023/11/18 16:43:00 server.go:54: Server 7 received Server 1's request at clock 12.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 6 at 17.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 7 at 20.
+2023/11/18 16:43:00 server.go:113: Server 4 replys to 1 at 12.
+2023/11/18 16:43:00 server.go:113: Server 6 replys to 0 at 16.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 7's reply at clock 14.
+2023/11/18 16:43:00 server.go:113: Server 7 replys to 1 at 19.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 8 at 18.
+2023/11/18 16:43:00 server.go:54: Server 8 received Server 1's request at clock 15.
+2023/11/18 16:43:00 server.go:54: Server 6 received Server 0's request at clock 14.
+2023/11/18 16:43:00 server.go:54: Server 7 received Server 0's request at clock 17.
+2023/11/18 16:43:00 server.go:113: Server 7 replys to 0 at 19.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 7's reply at clock 19.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 8's reply at clock 17.
+2023/11/18 16:43:00 server.go:113: Server 8 replys to 1 at 22.
+2023/11/18 16:43:00 server.go:93: Server 1 requests to 9 at 22.
+2023/11/18 16:43:00 server.go:54: Server 9 received Server 1's request at clock 18.
+2023/11/18 16:43:00 server.go:54: Server 8 received Server 0's request at clock 20.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 8 at 23.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 8's reply at clock 22.
+2023/11/18 16:43:00 server.go:113: Server 8 replys to 0 at 22.
+2023/11/18 16:43:00 server.go:60: Server 1 received Server 9's reply at clock 20.
+2023/11/18 16:43:00 server.go:113: Server 9 replys to 1 at 25.
+2023/11/18 16:43:00 server.go:93: Server 0 requests to 9 at 26.
+2023/11/18 16:43:00 server.go:54: Server 9 received Server 0's request at clock 23.
+2023/11/18 16:43:00 server.go:60: Server 0 received Server 9's reply at clock 25.
+2023/11/18 16:43:00 server.go:113: Server 9 replys to 0 at 25.
+2023/11/18 16:43:02 server.go:150: Server 1 has finished cs execution.
+2023/11/18 16:43:02 server.go:132: Server 1 Poped reuqest from 1.
+2023/11/18 16:43:02 server.go:113: Server 1 replys to 0 at 24.
+2023/11/18 16:43:02 server.go:132: Server 1 Poped reuqest from 0.
+2023/11/18 16:43:02 server.go:60: Server 0 received Server 1's reply at clock 24.
+2023/11/18 16:43:04 server.go:150: Server 0 has finished cs execution.
+2023/11/18 16:43:04 server.go:132: Server 0 Poped reuqest from 0.
+2023/11/18 16:54:53 LSPQ_RA.go:17: ===============START===============
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 1 at 2.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 0 at 2.
+2023/11/18 16:54:53 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 16:54:53 server.go:167: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 16:54:53 server.go:55: Server 1 received Server 0's request at clock 1.
+2023/11/18 16:54:53 server.go:167: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 2 at 6.
+2023/11/18 16:54:53 server.go:55: Server 2 received Server 0's request at clock 2.
+2023/11/18 16:54:53 server.go:114: Server 2 replys to 0 at 6.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 2's reply at clock 4.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 0's reply at clock 6.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 2's reply at clock 6.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 3 at 9.
+2023/11/18 16:54:53 server.go:55: Server 3 received Server 0's request at clock 6.
+2023/11/18 16:54:53 server.go:178: Server 1 has pushed req from 0 to queue .
+2023/11/18 16:54:53 server.go:55: Server 2 received Server 1's request at clock 2.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 2 at 8.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 3's reply at clock 8.
+2023/11/18 16:54:53 server.go:114: Server 3 replys to 0 at 10.
+2023/11/18 16:54:53 server.go:114: Server 0 replys to 1 at 12.
+2023/11/18 16:54:53 server.go:114: Server 2 replys to 1 at 6.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 4 at 12.
+2023/11/18 16:54:53 server.go:55: Server 4 received Server 0's request at clock 9.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 3 at 11.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 4 at 11.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 3's reply at clock 10.
+2023/11/18 16:54:53 server.go:114: Server 3 replys to 1 at 10.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 4's reply at clock 11.
+2023/11/18 16:54:53 server.go:114: Server 4 replys to 0 at 13.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 5 at 15.
+2023/11/18 16:54:53 server.go:55: Server 5 received Server 0's request at clock 12.
+2023/11/18 16:54:53 server.go:55: Server 3 received Server 1's request at clock 8.
+2023/11/18 16:54:53 server.go:55: Server 4 received Server 1's request at clock 11.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 4's reply at clock 13.
+2023/11/18 16:54:53 server.go:114: Server 4 replys to 1 at 13.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 5's reply at clock 14.
+2023/11/18 16:54:53 server.go:114: Server 5 replys to 0 at 16.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 6 at 18.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 7 at 18.
+2023/11/18 16:54:53 server.go:55: Server 5 received Server 1's request at clock 11.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 5 at 17.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 5's reply at clock 16.
+2023/11/18 16:54:53 server.go:114: Server 5 replys to 1 at 16.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 6's reply at clock 17.
+2023/11/18 16:54:53 server.go:114: Server 6 replys to 0 at 17.
+2023/11/18 16:54:53 server.go:55: Server 7 received Server 0's request at clock 18.
+2023/11/18 16:54:53 server.go:55: Server 6 received Server 0's request at clock 15.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 8 at 21.
+2023/11/18 16:54:53 server.go:55: Server 8 received Server 0's request at clock 18.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 7's reply at clock 20.
+2023/11/18 16:54:53 server.go:114: Server 7 replys to 0 at 20.
+2023/11/18 16:54:53 server.go:55: Server 6 received Server 1's request at clock 17.
+2023/11/18 16:54:53 server.go:114: Server 6 replys to 1 at 19.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 6's reply at clock 19.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 6 at 20.
+2023/11/18 16:54:53 server.go:94: Server 0 requests to 9 at 22.
+2023/11/18 16:54:53 server.go:55: Server 9 received Server 0's request at clock 21.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 8's reply at clock 20.
+2023/11/18 16:54:53 server.go:114: Server 8 replys to 0 at 20.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 7 at 23.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 8 at 23.
+2023/11/18 16:54:53 server.go:114: Server 7 replys to 1 at 22.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 7's reply at clock 22.
+2023/11/18 16:54:53 server.go:114: Server 9 replys to 0 at 25.
+2023/11/18 16:54:53 server.go:61: Server 0 received Server 9's reply at clock 23.
+2023/11/18 16:54:53 server.go:55: Server 7 received Server 1's request at clock 20.
+2023/11/18 16:54:53 server.go:55: Server 8 received Server 1's request at clock 23.
+2023/11/18 16:54:53 server.go:94: Server 1 requests to 9 at 26.
+2023/11/18 16:54:53 server.go:55: Server 9 received Server 1's request at clock 23.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 8's reply at clock 25.
+2023/11/18 16:54:53 server.go:61: Server 1 received Server 9's reply at clock 25.
+2023/11/18 16:54:53 server.go:114: Server 8 replys to 1 at 25.
+2023/11/18 16:54:53 server.go:114: Server 9 replys to 1 at 25.
+2023/11/18 16:54:55 server.go:151: 2023-11-18 16:54:55.6782545 +0800 CST m=+2.033072201
+2023/11/18 18:03:07 LSPQ_RA.go:18: ===============START===============
+2023/11/18 18:03:07 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:03:07 server.go:55: Server 1 received Server 0's request at clock 3.
+2023/11/18 18:03:07 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 0 at 4.
+2023/11/18 18:03:07 server.go:171: Server 0 has req from server 0 at clock 3 at head of queue.
+2023/11/18 18:03:07 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 2 at 7.
+2023/11/18 18:03:07 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:03:07 server.go:119: Server 2 replys to 0 at 7.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 2's reply at clock 5.
+2023/11/18 18:03:07 server.go:119: Server 0 replys to 1 at 10.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 0's reply at clock 7.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 3 at 10.
+2023/11/18 18:03:07 server.go:55: Server 3 received Server 0's request at clock 7.
+2023/11/18 18:03:07 server.go:55: Server 2 received Server 1's request at clock 4.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 2 at 9.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 3 at 9.
+2023/11/18 18:03:07 server.go:119: Server 3 replys to 0 at 11.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 2's reply at clock 7.
+2023/11/18 18:03:07 server.go:119: Server 2 replys to 1 at 7.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 4 at 10.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 5 at 10.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 6 at 10.
+2023/11/18 18:03:07 server.go:55: Server 3 received Server 1's request at clock 9.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 3's reply at clock 11.
+2023/11/18 18:03:07 server.go:119: Server 3 replys to 1 at 11.
+2023/11/18 18:03:07 server.go:55: Server 4 received Server 0's request at clock 10.
+2023/11/18 18:03:07 server.go:55: Server 5 received Server 0's request at clock 10.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 3's reply at clock 9.
+2023/11/18 18:03:07 server.go:55: Server 6 received Server 0's request at clock 10.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 7 at 13.
+2023/11/18 18:03:07 server.go:55: Server 7 received Server 0's request at clock 10.
+2023/11/18 18:03:07 server.go:55: Server 4 received Server 1's request at clock 9.
+2023/11/18 18:03:07 server.go:119: Server 4 replys to 1 at 14.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 4 at 15.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 5 at 15.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 4's reply at clock 12.
+2023/11/18 18:03:07 server.go:119: Server 4 replys to 0 at 14.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 8 at 14.
+2023/11/18 18:03:07 server.go:55: Server 8 received Server 0's request at clock 13.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 4's reply at clock 14.
+2023/11/18 18:03:07 server.go:55: Server 5 received Server 1's request at clock 15.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 6 at 18.
+2023/11/18 18:03:07 server.go:55: Server 6 received Server 1's request at clock 15.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 5's reply at clock 12.
+2023/11/18 18:03:07 server.go:119: Server 5 replys to 0 at 17.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 6's reply at clock 12.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 7's reply at clock 12.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 5's reply at clock 17.
+2023/11/18 18:03:07 server.go:119: Server 5 replys to 1 at 17.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 7 at 19.
+2023/11/18 18:03:07 server.go:55: Server 7 received Server 1's request at clock 18.
+2023/11/18 18:03:07 server.go:119: Server 6 replys to 0 at 17.
+2023/11/18 18:03:07 server.go:99: Server 0 requests to 9 at 17.
+2023/11/18 18:03:07 server.go:55: Server 9 received Server 0's request at clock 14.
+2023/11/18 18:03:07 server.go:119: Server 7 replys to 0 at 20.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 8's reply at clock 15.
+2023/11/18 18:03:07 server.go:119: Server 8 replys to 0 at 21.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 6's reply at clock 17.
+2023/11/18 18:03:07 server.go:119: Server 6 replys to 1 at 17.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 8 at 21.
+2023/11/18 18:03:07 server.go:55: Server 8 received Server 1's request at clock 19.
+2023/11/18 18:03:07 server.go:61: Server 0 received Server 9's reply at clock 16.
+2023/11/18 18:03:07 server.go:119: Server 9 replys to 0 at 23.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 7's reply at clock 20.
+2023/11/18 18:03:07 server.go:119: Server 7 replys to 1 at 20.
+2023/11/18 18:03:07 server.go:99: Server 1 requests to 9 at 22.
+2023/11/18 18:03:07 server.go:55: Server 9 received Server 1's request at clock 21.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 8's reply at clock 21.
+2023/11/18 18:03:07 server.go:119: Server 8 replys to 1 at 21.
+2023/11/18 18:03:07 server.go:61: Server 1 received Server 9's reply at clock 23.
+2023/11/18 18:03:07 server.go:119: Server 9 replys to 1 at 23.
+2023/11/18 18:03:09 server.go:156: 2023-11-18 18:03:09.1806458 +0800 CST m=+2.025910501
+2023/11/18 18:03:09 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:03:09 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:03:09 server.go:119: Server 1 replys to 0 at 27.
+2023/11/18 18:03:09 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:03:09 server.go:61: Server 0 received Server 1's reply at clock 27.
+2023/11/18 18:03:11 server.go:156: 2023-11-18 18:03:11.1940374 +0800 CST m=+4.039302101
+2023/11/18 18:03:11 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:03:11 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:08:32 LSPQ_RA.go:17: ===============START===============
+2023/11/18 18:08:32 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:08:32 server.go:55: Server 1 received Server 0's request at clock 3.
+2023/11/18 18:08:32 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 0 at 4.
+2023/11/18 18:08:32 server.go:171: Server 0 has req from server 0 at clock 3 at head of queue.
+2023/11/18 18:08:32 server.go:119: Server 0 replys to 1 at 7.
+2023/11/18 18:08:32 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:08:32 server.go:119: Server 2 replys to 0 at 7.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 2's reply at clock 5.
+2023/11/18 18:08:32 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 2 at 7.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 3 at 10.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 3's reply at clock 9.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 4's reply at clock 12.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 0's reply at clock 7.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 2's reply at clock 7.
+2023/11/18 18:08:32 server.go:55: Server 3 received Server 0's request at clock 7.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 4 at 13.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 5 at 16.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 6 at 16.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 7 at 16.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 8 at 16.
+2023/11/18 18:08:32 server.go:99: Server 0 requests to 9 at 16.
+2023/11/18 18:08:32 server.go:119: Server 2 replys to 1 at 7.
+2023/11/18 18:08:32 server.go:55: Server 4 received Server 0's request at clock 10.
+2023/11/18 18:08:32 server.go:55: Server 5 received Server 0's request at clock 13.
+2023/11/18 18:08:32 server.go:119: Server 5 replys to 0 at 15.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 5's reply at clock 15.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 6's reply at clock 18.
+2023/11/18 18:08:32 server.go:55: Server 6 received Server 0's request at clock 16.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 2 at 9.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 3 at 12.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 4 at 12.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 5 at 12.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 6 at 12.
+2023/11/18 18:08:32 server.go:55: Server 9 received Server 0's request at clock 16.
+2023/11/18 18:08:32 server.go:55: Server 2 received Server 1's request at clock 4.
+2023/11/18 18:08:32 server.go:119: Server 6 replys to 0 at 20.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 7's reply at clock 18.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 8's reply at clock 18.
+2023/11/18 18:08:32 server.go:55: Server 7 received Server 0's request at clock 16.
+2023/11/18 18:08:32 server.go:55: Server 7 received Server 1's request at clock 12.
+2023/11/18 18:08:32 server.go:119: Server 3 replys to 1 at 11.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 3's reply at clock 11.
+2023/11/18 18:08:32 server.go:119: Server 4 replys to 0 at 14.
+2023/11/18 18:08:32 server.go:55: Server 4 received Server 1's request at clock 12.
+2023/11/18 18:08:32 server.go:55: Server 8 received Server 0's request at clock 16.
+2023/11/18 18:08:32 server.go:55: Server 5 received Server 1's request at clock 12.
+2023/11/18 18:08:32 server.go:119: Server 3 replys to 0 at 11.
+2023/11/18 18:08:32 server.go:55: Server 6 received Server 1's request at clock 12.
+2023/11/18 18:08:32 server.go:119: Server 7 replys to 0 at 20.
+2023/11/18 18:08:32 server.go:119: Server 8 replys to 0 at 18.
+2023/11/18 18:08:32 server.go:61: Server 0 received Server 9's reply at clock 18.
+2023/11/18 18:08:32 server.go:119: Server 9 replys to 0 at 18.
+2023/11/18 18:08:32 server.go:55: Server 3 received Server 1's request at clock 9.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 7 at 15.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 8 at 15.
+2023/11/18 18:08:32 server.go:119: Server 4 replys to 1 at 14.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 4's reply at clock 14.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 5's reply at clock 17.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 6's reply at clock 20.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 7's reply at clock 20.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 8's reply at clock 20.
+2023/11/18 18:08:32 server.go:61: Server 1 received Server 9's reply at clock 20.
+2023/11/18 18:08:32 server.go:99: Server 1 requests to 9 at 25.
+2023/11/18 18:08:32 server.go:119: Server 6 replys to 1 at 20.
+2023/11/18 18:08:32 server.go:55: Server 9 received Server 1's request at clock 15.
+2023/11/18 18:08:32 server.go:119: Server 7 replys to 1 at 20.
+2023/11/18 18:08:32 server.go:55: Server 8 received Server 1's request at clock 15.
+2023/11/18 18:08:32 server.go:119: Server 8 replys to 1 at 20.
+2023/11/18 18:08:32 server.go:119: Server 5 replys to 1 at 17.
+2023/11/18 18:08:32 server.go:119: Server 9 replys to 1 at 20.
+2023/11/18 18:08:34 server.go:156: 2023-11-18 18:08:34.228201 +0800 CST m=+2.021483701
+2023/11/18 18:08:34 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:08:34 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:08:34 server.go:119: Server 1 replys to 0 at 27.
+2023/11/18 18:08:34 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:08:34 server.go:61: Server 0 received Server 1's reply at clock 27.
+2023/11/18 18:08:36 server.go:156: 2023-11-18 18:08:36.2326068 +0800 CST m=+4.025889501
+2023/11/18 18:08:36 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:08:36 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:10:27 LSPQ_RA.go:18: ===============START===============
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 1 at 2.
+2023/11/18 18:10:27 server.go:55: Server 1 received Server 0's request at clock 1.
+2023/11/18 18:10:27 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:10:27 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:10:27 server.go:171: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 18:10:27 server.go:119: Server 0 replys to 1 at 6.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 2 at 6.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 3 at 6.
+2023/11/18 18:10:27 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 2's reply at clock 4.
+2023/11/18 18:10:27 server.go:119: Server 2 replys to 0 at 4.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 0 at 7.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 0's reply at clock 6.
+2023/11/18 18:10:27 server.go:55: Server 2 received Server 0's request at clock 2.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 4 at 9.
+2023/11/18 18:10:27 server.go:55: Server 4 received Server 0's request at clock 6.
+2023/11/18 18:10:27 server.go:55: Server 3 received Server 0's request at clock 6.
+2023/11/18 18:10:27 server.go:119: Server 4 replys to 0 at 8.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 4's reply at clock 8.
+2023/11/18 18:10:27 server.go:55: Server 2 received Server 1's request at clock 7.
+2023/11/18 18:10:27 server.go:119: Server 2 replys to 1 at 9.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 2's reply at clock 9.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 2 at 10.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 3 at 13.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 4 at 13.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 3's reply at clock 8.
+2023/11/18 18:10:27 server.go:119: Server 3 replys to 0 at 12.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 5 at 12.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 6 at 12.
+2023/11/18 18:10:27 server.go:119: Server 3 replys to 1 at 12.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 3's reply at clock 12.
+2023/11/18 18:10:27 server.go:55: Server 5 received Server 0's request at clock 9.
+2023/11/18 18:10:27 server.go:55: Server 4 received Server 1's request at clock 13.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 5's reply at clock 11.
+2023/11/18 18:10:27 server.go:119: Server 5 replys to 0 at 15.
+2023/11/18 18:10:27 server.go:55: Server 3 received Server 1's request at clock 10.
+2023/11/18 18:10:27 server.go:55: Server 6 received Server 0's request at clock 12.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 7 at 15.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 8 at 15.
+2023/11/18 18:10:27 server.go:99: Server 0 requests to 9 at 15.
+2023/11/18 18:10:27 server.go:119: Server 4 replys to 1 at 15.
+2023/11/18 18:10:27 server.go:55: Server 5 received Server 1's request at clock 13.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 5 at 16.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 6 at 16.
+2023/11/18 18:10:27 server.go:119: Server 6 replys to 0 at 18.
+2023/11/18 18:10:27 server.go:55: Server 7 received Server 0's request at clock 12.
+2023/11/18 18:10:27 server.go:55: Server 8 received Server 0's request at clock 15.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 4's reply at clock 15.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 5's reply at clock 15.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 6's reply at clock 18.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 7's reply at clock 18.
+2023/11/18 18:10:27 server.go:55: Server 7 received Server 1's request at clock 16.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 7 at 20.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 8 at 23.
+2023/11/18 18:10:27 server.go:119: Server 5 replys to 1 at 15.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 6's reply at clock 14.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 7's reply at clock 14.
+2023/11/18 18:10:27 server.go:55: Server 6 received Server 1's request at clock 16.
+2023/11/18 18:10:27 server.go:119: Server 7 replys to 1 at 18.
+2023/11/18 18:10:27 server.go:55: Server 9 received Server 0's request at clock 15.
+2023/11/18 18:10:27 server.go:55: Server 8 received Server 1's request at clock 20.
+2023/11/18 18:10:27 server.go:119: Server 8 replys to 1 at 22.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 8's reply at clock 22.
+2023/11/18 18:10:27 server.go:61: Server 1 received Server 9's reply at clock 25.
+2023/11/18 18:10:27 server.go:119: Server 7 replys to 0 at 18.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 8's reply at clock 17.
+2023/11/18 18:10:27 server.go:61: Server 0 received Server 9's reply at clock 17.
+2023/11/18 18:10:27 server.go:55: Server 9 received Server 1's request at clock 23.
+2023/11/18 18:10:27 server.go:99: Server 1 requests to 9 at 27.
+2023/11/18 18:10:27 server.go:119: Server 6 replys to 1 at 18.
+2023/11/18 18:10:27 server.go:119: Server 9 replys to 1 at 25.
+2023/11/18 18:10:27 server.go:119: Server 8 replys to 0 at 22.
+2023/11/18 18:10:27 server.go:119: Server 9 replys to 0 at 25.
+2023/11/18 18:10:29 server.go:156: 2023-11-18 18:10:29.151178 +0800 CST m=+2.025835901
+2023/11/18 18:10:29 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:10:29 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:10:29 server.go:119: Server 1 replys to 0 at 29.
+2023/11/18 18:10:29 server.go:61: Server 0 received Server 1's reply at clock 29.
+2023/11/18 18:10:29 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:10:31 server.go:156: 2023-11-18 18:10:31.1633055 +0800 CST m=+4.037963401
+2023/11/18 18:10:31 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:10:31 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:10:32 LSPQ_RA.go:59: end_time:  2023-11-18 18:10:31.1633055 +0800 CST m=+4.037963401
+2023/11/18 18:12:36 LSPQ_RA.go:18: ===============START===============
+2023/11/18 18:12:36 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 0 at 4.
+2023/11/18 18:12:36 server.go:171: Server 0 has req from server 0 at clock 3 at head of queue.
+2023/11/18 18:12:36 server.go:55: Server 1 received Server 0's request at clock 3.
+2023/11/18 18:12:36 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 2 at 7.
+2023/11/18 18:12:36 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:12:36 server.go:119: Server 2 replys to 0 at 7.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 2's reply at clock 5.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 3's reply at clock 9.
+2023/11/18 18:12:36 server.go:119: Server 0 replys to 1 at 10.
+2023/11/18 18:12:36 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 3 at 10.
+2023/11/18 18:12:36 server.go:55: Server 3 received Server 0's request at clock 7.
+2023/11/18 18:12:36 server.go:55: Server 2 received Server 1's request at clock 4.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 2 at 8.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 0's reply at clock 7.
+2023/11/18 18:12:36 server.go:119: Server 3 replys to 0 at 11.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 4 at 13.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 5 at 13.
+2023/11/18 18:12:36 server.go:119: Server 4 replys to 0 at 12.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 4's reply at clock 12.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 3 at 9.
+2023/11/18 18:12:36 server.go:55: Server 3 received Server 1's request at clock 8.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 2's reply at clock 7.
+2023/11/18 18:12:36 server.go:119: Server 2 replys to 1 at 7.
+2023/11/18 18:12:36 server.go:55: Server 4 received Server 0's request at clock 10.
+2023/11/18 18:12:36 server.go:55: Server 5 received Server 0's request at clock 13.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 6 at 16.
+2023/11/18 18:12:36 server.go:55: Server 6 received Server 0's request at clock 13.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 5's reply at clock 15.
+2023/11/18 18:12:36 server.go:119: Server 5 replys to 0 at 15.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 3's reply at clock 11.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 4's reply at clock 14.
+2023/11/18 18:12:36 server.go:55: Server 4 received Server 1's request at clock 9.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 4 at 15.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 7 at 17.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 8 at 17.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 6's reply at clock 15.
+2023/11/18 18:12:36 server.go:119: Server 6 replys to 0 at 15.
+2023/11/18 18:12:36 server.go:119: Server 3 replys to 1 at 11.
+2023/11/18 18:12:36 server.go:119: Server 4 replys to 1 at 14.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 5 at 18.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 6 at 18.
+2023/11/18 18:12:36 server.go:119: Server 5 replys to 1 at 17.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 5's reply at clock 17.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 6's reply at clock 20.
+2023/11/18 18:12:36 server.go:55: Server 8 received Server 0's request at clock 17.
+2023/11/18 18:12:36 server.go:99: Server 0 requests to 9 at 19.
+2023/11/18 18:12:36 server.go:55: Server 9 received Server 0's request at clock 17.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 7's reply at clock 18.
+2023/11/18 18:12:36 server.go:119: Server 7 replys to 0 at 18.
+2023/11/18 18:12:36 server.go:55: Server 5 received Server 1's request at clock 15.
+2023/11/18 18:12:36 server.go:55: Server 6 received Server 1's request at clock 18.
+2023/11/18 18:12:36 server.go:55: Server 7 received Server 0's request at clock 16.
+2023/11/18 18:12:36 server.go:55: Server 7 received Server 1's request at clock 18.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 8's reply at clock 19.
+2023/11/18 18:12:36 server.go:119: Server 8 replys to 0 at 19.
+2023/11/18 18:12:36 server.go:119: Server 6 replys to 1 at 20.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 7 at 22.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 8 at 22.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 7's reply at clock 20.
+2023/11/18 18:12:36 server.go:61: Server 0 received Server 9's reply at clock 19.
+2023/11/18 18:12:36 server.go:119: Server 9 replys to 0 at 24.
+2023/11/18 18:12:36 server.go:119: Server 7 replys to 1 at 20.
+2023/11/18 18:12:36 server.go:55: Server 8 received Server 1's request at clock 22.
+2023/11/18 18:12:36 server.go:99: Server 1 requests to 9 at 25.
+2023/11/18 18:12:36 server.go:55: Server 9 received Server 1's request at clock 22.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 8's reply at clock 24.
+2023/11/18 18:12:36 server.go:119: Server 8 replys to 1 at 24.
+2023/11/18 18:12:36 server.go:61: Server 1 received Server 9's reply at clock 24.
+2023/11/18 18:12:36 server.go:119: Server 9 replys to 1 at 24.
+2023/11/18 18:12:38 server.go:156: 2023-11-18 18:12:38.5522772 +0800 CST m=+2.035469801
+2023/11/18 18:12:38 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:12:38 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:12:38 server.go:119: Server 1 replys to 0 at 29.
+2023/11/18 18:12:38 server.go:61: Server 0 received Server 1's reply at clock 29.
+2023/11/18 18:12:38 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:12:40 server.go:156: 2023-11-18 18:12:40.5565426 +0800 CST m=+4.039735201
+2023/11/18 18:12:40 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:12:40 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:12:48 LSPQ_RA.go:59: Elapsed time:  4.0235904s
+2023/11/18 18:19:03 LSPQ_RA.go:19: ===============START===============
+2023/11/18 18:19:03 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:19:03 server.go:55: Server 1 received Server 0's request at clock 3.
+2023/11/18 18:19:03 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 0 at 4.
+2023/11/18 18:19:03 server.go:171: Server 0 has req from server 0 at clock 3 at head of queue.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 2 at 7.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 3 at 7.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 4 at 7.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 2's reply at clock 5.
+2023/11/18 18:19:03 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:19:03 server.go:119: Server 0 replys to 1 at 10.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 0's reply at clock 7.
+2023/11/18 18:19:03 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:19:03 server.go:119: Server 2 replys to 0 at 7.
+2023/11/18 18:19:03 server.go:55: Server 3 received Server 0's request at clock 7.
+2023/11/18 18:19:03 server.go:55: Server 4 received Server 0's request at clock 7.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 5 at 10.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 6 at 10.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 3's reply at clock 9.
+2023/11/18 18:19:03 server.go:119: Server 3 replys to 0 at 9.
+2023/11/18 18:19:03 server.go:55: Server 2 received Server 1's request at clock 4.
+2023/11/18 18:19:03 server.go:119: Server 2 replys to 1 at 7.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 2's reply at clock 7.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 2 at 9.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 3 at 12.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 4 at 12.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 7 at 11.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 8 at 11.
+2023/11/18 18:19:03 server.go:99: Server 0 requests to 9 at 11.
+2023/11/18 18:19:03 server.go:119: Server 4 replys to 0 at 14.
+2023/11/18 18:19:03 server.go:55: Server 5 received Server 0's request at clock 7.
+2023/11/18 18:19:03 server.go:55: Server 3 received Server 1's request at clock 9.
+2023/11/18 18:19:03 server.go:119: Server 3 replys to 1 at 11.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 3's reply at clock 11.
+2023/11/18 18:19:03 server.go:55: Server 6 received Server 0's request at clock 10.
+2023/11/18 18:19:03 server.go:55: Server 4 received Server 1's request at clock 12.
+2023/11/18 18:19:03 server.go:55: Server 7 received Server 0's request at clock 10.
+2023/11/18 18:19:03 server.go:55: Server 8 received Server 0's request at clock 11.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 4's reply at clock 9.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 5's reply at clock 9.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 6's reply at clock 12.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 5 at 15.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 4's reply at clock 14.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 5's reply at clock 14.
+2023/11/18 18:19:03 server.go:55: Server 5 received Server 1's request at clock 12.
+2023/11/18 18:19:03 server.go:55: Server 9 received Server 0's request at clock 11.
+2023/11/18 18:19:03 server.go:119: Server 5 replys to 0 at 14.
+2023/11/18 18:19:03 server.go:119: Server 6 replys to 0 at 17.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 7's reply at clock 12.
+2023/11/18 18:19:03 server.go:119: Server 7 replys to 0 at 12.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 6 at 18.
+2023/11/18 18:19:03 server.go:55: Server 6 received Server 1's request at clock 15.
+2023/11/18 18:19:03 server.go:119: Server 4 replys to 1 at 14.
+2023/11/18 18:19:03 server.go:119: Server 5 replys to 1 at 14.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 6's reply at clock 17.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 7's reply at clock 20.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 8's reply at clock 13.
+2023/11/18 18:19:03 server.go:119: Server 8 replys to 0 at 13.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 7 at 21.
+2023/11/18 18:19:03 server.go:55: Server 7 received Server 1's request at clock 18.
+2023/11/18 18:19:03 server.go:119: Server 6 replys to 1 at 17.
+2023/11/18 18:19:03 server.go:119: Server 7 replys to 1 at 20.
+2023/11/18 18:19:03 server.go:61: Server 0 received Server 9's reply at clock 13.
+2023/11/18 18:19:03 server.go:119: Server 9 replys to 0 at 13.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 8 at 24.
+2023/11/18 18:19:03 server.go:99: Server 1 requests to 9 at 24.
+2023/11/18 18:19:03 server.go:119: Server 8 replys to 1 at 23.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 8's reply at clock 23.
+2023/11/18 18:19:03 server.go:55: Server 8 received Server 1's request at clock 21.
+2023/11/18 18:19:03 server.go:55: Server 9 received Server 1's request at clock 24.
+2023/11/18 18:19:03 server.go:61: Server 1 received Server 9's reply at clock 26.
+2023/11/18 18:19:03 server.go:119: Server 9 replys to 1 at 26.
+2023/11/18 18:19:05 server.go:156: 2023-11-18 18:19:05.079639 +0800 CST m=+2.042468401
+2023/11/18 18:19:05 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:19:05 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:19:05 server.go:119: Server 1 replys to 0 at 30.
+2023/11/18 18:19:05 server.go:61: Server 0 received Server 1's reply at clock 30.
+2023/11/18 18:19:05 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:19:07 server.go:156: 2023-11-18 18:19:07.0858696 +0800 CST m=+4.048699001
+2023/11/18 18:19:07 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:19:07 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:19:15 LSPQ_RA.go:61: Elapsed time:  4.0377278s
+2023/11/18 18:21:15 LSPQ_RA.go:19: ===============START===============
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 0 at 2.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 2 at 2.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 3 at 2.
+2023/11/18 18:21:15 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:21:15 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:21:15 server.go:171: Server 0 has req from server 0 at clock 1 at head of queue.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:21:15 server.go:55: Server 2 received Server 1's request at clock 2.
+2023/11/18 18:21:15 server.go:55: Server 1 received Server 0's request at clock 1.
+2023/11/18 18:21:15 server.go:55: Server 3 received Server 1's request at clock 2.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 4 at 5.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 5 at 5.
+2023/11/18 18:21:15 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 2's reply at clock 6.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 2 at 7.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 3 at 10.
+2023/11/18 18:21:15 server.go:119: Server 2 replys to 1 at 6.
+2023/11/18 18:21:15 server.go:55: Server 4 received Server 1's request at clock 2.
+2023/11/18 18:21:15 server.go:55: Server 5 received Server 1's request at clock 5.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 6 at 5.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 7 at 5.
+2023/11/18 18:21:15 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:21:15 server.go:119: Server 2 replys to 0 at 6.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 2's reply at clock 4.
+2023/11/18 18:21:15 server.go:55: Server 3 received Server 0's request at clock 7.
+2023/11/18 18:21:15 server.go:119: Server 3 replys to 0 at 9.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 3's reply at clock 9.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 4's reply at clock 12.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 4 at 13.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 5 at 16.
+2023/11/18 18:21:15 server.go:55: Server 7 received Server 1's request at clock 5.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 8 at 6.
+2023/11/18 18:21:15 server.go:99: Server 1 requests to 9 at 6.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 3's reply at clock 4.
+2023/11/18 18:21:15 server.go:119: Server 3 replys to 1 at 9.
+2023/11/18 18:21:15 server.go:55: Server 4 received Server 0's request at clock 10.
+2023/11/18 18:21:15 server.go:119: Server 4 replys to 0 at 12.
+2023/11/18 18:21:15 server.go:55: Server 6 received Server 1's request at clock 5.
+2023/11/18 18:21:15 server.go:55: Server 6 received Server 0's request at clock 16.
+2023/11/18 18:21:15 server.go:119: Server 5 replys to 0 at 15.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 5's reply at clock 15.
+2023/11/18 18:21:15 server.go:55: Server 8 received Server 1's request at clock 5.
+2023/11/18 18:21:15 server.go:55: Server 9 received Server 1's request at clock 6.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 4's reply at clock 4.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 0's reply at clock 3.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 5's reply at clock 7.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 6 at 19.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 6's reply at clock 18.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 7's reply at clock 21.
+2023/11/18 18:21:15 server.go:119: Server 4 replys to 1 at 12.
+2023/11/18 18:21:15 server.go:119: Server 0 replys to 1 at 22.
+2023/11/18 18:21:15 server.go:55: Server 5 received Server 0's request at clock 13.
+2023/11/18 18:21:15 server.go:119: Server 5 replys to 1 at 15.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 6's reply at clock 7.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 7's reply at clock 7.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 8's reply at clock 7.
+2023/11/18 18:21:15 server.go:61: Server 1 received Server 9's reply at clock 8.
+2023/11/18 18:21:15 server.go:119: Server 6 replys to 0 at 18.
+2023/11/18 18:21:15 server.go:119: Server 7 replys to 0 at 21.
+2023/11/18 18:21:15 server.go:119: Server 6 replys to 1 at 18.
+2023/11/18 18:21:15 server.go:119: Server 7 replys to 1 at 21.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 7 at 22.
+2023/11/18 18:21:15 server.go:119: Server 8 replys to 1 at 7.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 8 at 25.
+2023/11/18 18:21:15 server.go:119: Server 9 replys to 1 at 27.
+2023/11/18 18:21:15 server.go:55: Server 7 received Server 0's request at clock 19.
+2023/11/18 18:21:15 server.go:55: Server 8 received Server 0's request at clock 22.
+2023/11/18 18:21:15 server.go:119: Server 8 replys to 0 at 24.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 8's reply at clock 24.
+2023/11/18 18:21:15 server.go:99: Server 0 requests to 9 at 28.
+2023/11/18 18:21:15 server.go:55: Server 9 received Server 0's request at clock 25.
+2023/11/18 18:21:15 server.go:61: Server 0 received Server 9's reply at clock 27.
+2023/11/18 18:21:15 server.go:119: Server 9 replys to 0 at 27.
+2023/11/18 18:21:17 server.go:156: 2023-11-18 18:21:17.0489684 +0800 CST m=+2.022627401
+2023/11/18 18:21:17 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:21:17 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:21:17 server.go:119: Server 1 replys to 0 at 16.
+2023/11/18 18:21:17 server.go:61: Server 0 received Server 1's reply at clock 16.
+2023/11/18 18:21:17 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:21:19 server.go:156: 2023-11-18 18:21:19.0625572 +0800 CST m=+4.036216201
+2023/11/18 18:21:19 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:21:19 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:21:27 LSPQ_RA.go:61: Elapsed time:  4.0238118s
+2023/11/18 18:29:42 LSPQ_RA.go:19: ===============START===============
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 0 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 2 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 3 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 4 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 5 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 6 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 7 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 8 at 3.
+2023/11/18 18:29:42 server.go:99: Server 1 requests to 9 at 3.
+2023/11/18 18:29:42 server.go:55: Server 3 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:171: Server 0 has req from server 0 at clock 2 at head of queue.
+2023/11/18 18:29:42 server.go:55: Server 4 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:55: Server 1 received Server 0's request at clock 2.
+2023/11/18 18:29:42 server.go:55: Server 5 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:171: Server 1 has req from server 1 at clock 1 at head of queue.
+2023/11/18 18:29:42 server.go:182: Server 1 has pushed req from 0 to queue .
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 1 at 3.
+2023/11/18 18:29:42 server.go:55: Server 7 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:55: Server 2 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:55: Server 2 received Server 0's request at clock 3.
+2023/11/18 18:29:42 server.go:55: Server 0 received Server 1's request at clock 1.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 2's reply at clock 7.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 2's reply at clock 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 3's reply at clock 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 4's reply at clock 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 5's reply at clock 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 6's reply at clock 5.
+2023/11/18 18:29:42 server.go:55: Server 9 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:119: Server 2 replys to 0 at 7.
+2023/11/18 18:29:42 server.go:119: Server 2 replys to 1 at 7.
+2023/11/18 18:29:42 server.go:119: Server 3 replys to 1 at 5.
+2023/11/18 18:29:42 server.go:55: Server 6 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:119: Server 4 replys to 1 at 5.
+2023/11/18 18:29:42 server.go:55: Server 8 received Server 1's request at clock 3.
+2023/11/18 18:29:42 server.go:119: Server 5 replys to 1 at 5.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 2 at 8.
+2023/11/18 18:29:42 server.go:119: Server 6 replys to 1 at 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 7's reply at clock 5.
+2023/11/18 18:29:42 server.go:119: Server 7 replys to 1 at 5.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 3 at 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 4 at 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 5 at 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 6 at 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 7 at 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 8 at 11.
+2023/11/18 18:29:42 server.go:55: Server 3 received Server 0's request at clock 8.
+2023/11/18 18:29:42 server.go:55: Server 4 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:119: Server 3 replys to 0 at 10.
+2023/11/18 18:29:42 server.go:55: Server 5 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 3's reply at clock 10.
+2023/11/18 18:29:42 server.go:55: Server 6 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 8's reply at clock 5.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 9's reply at clock 5.
+2023/11/18 18:29:42 server.go:119: Server 8 replys to 1 at 13.
+2023/11/18 18:29:42 server.go:55: Server 8 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:99: Server 0 requests to 9 at 14.
+2023/11/18 18:29:42 server.go:55: Server 9 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 4's reply at clock 13.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 5's reply at clock 13.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 6's reply at clock 13.
+2023/11/18 18:29:42 server.go:119: Server 9 replys to 1 at 13.
+2023/11/18 18:29:42 server.go:61: Server 1 received Server 0's reply at clock 3.
+2023/11/18 18:29:42 server.go:119: Server 0 replys to 1 at 17.
+2023/11/18 18:29:42 server.go:119: Server 4 replys to 0 at 13.
+2023/11/18 18:29:42 server.go:119: Server 5 replys to 0 at 13.
+2023/11/18 18:29:42 server.go:55: Server 7 received Server 0's request at clock 11.
+2023/11/18 18:29:42 server.go:119: Server 6 replys to 0 at 13.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 7's reply at clock 13.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 8's reply at clock 13.
+2023/11/18 18:29:42 server.go:119: Server 7 replys to 0 at 13.
+2023/11/18 18:29:42 server.go:119: Server 8 replys to 0 at 13.
+2023/11/18 18:29:42 server.go:61: Server 0 received Server 9's reply at clock 13.
+2023/11/18 18:29:42 server.go:119: Server 9 replys to 0 at 13.
+2023/11/18 18:29:44 server.go:156: 2023-11-18 18:29:44.556982 +0800 CST m=+2.033624001
+2023/11/18 18:29:44 server.go:161: Server 1 has finished cs execution.
+2023/11/18 18:29:44 server.go:138: Server 1 Poped reuqest from 1.
+2023/11/18 18:29:44 server.go:119: Server 1 replys to 0 at 17.
+2023/11/18 18:29:44 server.go:61: Server 0 received Server 1's reply at clock 17.
+2023/11/18 18:29:44 server.go:138: Server 1 Poped reuqest from 0.
+2023/11/18 18:29:46 server.go:156: 2023-11-18 18:29:46.5617527 +0800 CST m=+4.038394701
+2023/11/18 18:29:46 server.go:161: Server 0 has finished cs execution.
+2023/11/18 18:29:46 server.go:138: Server 0 Poped reuqest from 0.
+2023/11/18 18:29:54 LSPQ_RA.go:61: Elapsed time:  4.0208056s

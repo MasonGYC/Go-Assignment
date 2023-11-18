@@ -46,34 +46,37 @@ func (s *Server) hasMajorityVotes() bool {
 // listen to messages
 func (s *Server) listen() {
 	for {
-		// receive data
-		msg := <-s.ch
+		select {
+		case msg := <-s.ch:
+			s.updateClock(msg.clock)
 
-		s.updateClock(msg.clock)
+			if msg.message_type == REQ {
 
-		if msg.message_type == REQ {
+				go s.onReceiveReq(msg)
+				fmt.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-			go s.onReceiveReq(msg)
-			fmt.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
+			} else if msg.message_type == VOTE {
 
-		} else if msg.message_type == VOTE {
+				go s.onReceiveVote(msg.sender_id)
+				fmt.Printf("Server %d received Server %d's vote at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's vote at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-			go s.onReceiveVote(msg.sender_id)
-			fmt.Printf("Server %d received Server %d's vote at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's vote at clock %d.\n", s.id, msg.sender_id, msg.clock)
+			} else if msg.message_type == RLS {
 
-		} else if msg.message_type == RLS {
+				go s.onReceiveRls(msg.sender_id)
+				fmt.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-			go s.onReceiveRls(msg.sender_id)
-			fmt.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
+			} else if msg.message_type == RESCIND {
 
-		} else if msg.message_type == RESCIND {
+				go s.onReceiveRcd(msg.sender_id)
+				fmt.Printf("Server %d received Server %d's rescind at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's rescind at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-			go s.onReceiveRcd(msg.sender_id)
-			fmt.Printf("Server %d received Server %d's rescind at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's rescind at clock %d.\n", s.id, msg.sender_id, msg.clock)
+			}
+		case <-time.After(timeout):
+			return
 
 		}
 
@@ -185,7 +188,18 @@ func (s *Server) releaseAllVotes() {
 func (s *Server) executeCriticalSection() {
 
 	s.updateOwnClock()
-	time.Sleep(1 * time.Second)
+	time.Sleep(2 * time.Second)
+
+	time_mutex.Lock()
+	now := time.Now()
+	// if end_time before now
+	if end_time.Compare(now) == -1 {
+		end_time = now
+		fmt.Print(end_time)
+		logger.Print(end_time)
+	}
+	time_mutex.Unlock()
+
 	fmt.Printf("Server %d has finished cs execution.\n", s.id)
 	logger.Printf("Server %d has finished cs execution.\n", s.id)
 }

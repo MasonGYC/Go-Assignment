@@ -16,6 +16,7 @@ unique identifier for each request: requester_id and clock
 
 # TODO:
 4. terminate automatically when all finished (waitgroup?)
+5. compare performance
 
 
 go run LSPQ.go logger.go message.go PriorityQueue.go server.go

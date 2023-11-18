@@ -42,24 +42,30 @@ func NewServer(id int, num_servers int, servers []*Server) *Server {
 
 func (s *Server) listen() {
 	for {
+		select {
 		// receive data
-		msg := <-s.ch
+		case msg := <-s.ch:
 
-		s.updateClock(msg.clock)
+			s.updateClock(msg.clock)
 
-		if msg.message_type == REQ {
+			if msg.message_type == REQ {
 
-			go s.onReceiveReq(msg)
-			fmt.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				go s.onReceiveReq(msg)
+				fmt.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's request at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-		} else if msg.message_type == REP {
+			} else if msg.message_type == REP {
 
-			go s.onReceiveRep(msg)
-			fmt.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				go s.onReceiveRep(msg)
+				fmt.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
+				logger.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
+			}
+
+		case <-time.After(timeout):
+			return
 		}
+
 	}
 }
 
@@ -141,6 +147,17 @@ func (s *Server) empty_queue() {
 func (s *Server) executeCriticalSection() {
 	s.updateOwnClock()
 	time.Sleep(2 * time.Second)
+
+	time_mutex.Lock()
+	now := time.Now()
+	// if end_time before now
+	if end_time.Compare(now) == -1 {
+		end_time = now
+		fmt.Print(end_time)
+		logger.Print(end_time)
+	}
+	time_mutex.Unlock()
+
 	fmt.Printf("Server %d has finished cs execution.\n", s.id)
 	logger.Printf("Server %d has finished cs execution.\n", s.id)
 }
