@@ -175,8 +175,8 @@ func (s *Server) onReceiveReq(msg Message) {
 			// add to queue
 			req := &Request{
 				value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
-				clock:     msg.clock,
-				requester: msg.sender_id,
+				clock:     msg.message.clock,
+				requester: msg.message.requester,
 			}
 			heap.Push(&s.queue, req)
 			fmt.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)

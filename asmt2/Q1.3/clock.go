@@ -1,21 +1,5 @@
 package main
 
-// check whether c1 = c2
-func clockEqual(c1 []int, c2 []int) bool {
-	if len(c1) == len(c2) {
-		for i := 0; i < len(c1); i++ {
-			if c1[i] != c2[i] {
-				// if there is !=, not equal
-				return false
-			}
-		}
-		// if all =, equal
-		return true
-	} else {
-		return false
-	}
-}
-
 // check whether c1 < c2
 func clockLess(c1 []int, c2 []int) bool {
 	// check comparability

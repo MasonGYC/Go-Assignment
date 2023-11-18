@@ -21,4 +21,30 @@ unique identifier for each request: requester_id and clock
 
 go run LSPQ.go logger.go message.go PriorityQueue.go server.go
 go run LSPQ_RA.go logger.go message.go PriorityQueue.go server.go
-go run voting.go logger.go message.go queue.go server.go
+go run voting.go logger.go message.go queue.go server.go clock.go
+
+nanoseconds
+
+
+cd ../Q1.2;
+LSPQ_RA.exe -servers=10 -requests=1
+LSPQ_RA.exe -servers=10 -requests=2
+LSPQ_RA.exe -servers=10 -requests=3
+LSPQ_RA.exe -servers=10 -requests=4
+LSPQ_RA.exe -servers=10 -requests=5
+LSPQ_RA.exe -servers=10 -requests=6
+LSPQ_RA.exe -servers=10 -requests=7
+LSPQ_RA.exe -servers=10 -requests=8
+LSPQ_RA.exe -servers=10 -requests=9
+LSPQ_RA.exe -servers=10 -requests=10
+cd ../Q1.3;
+LSPQ_RA.exe -servers=10 -requests=1
+LSPQ_RA.exe -servers=10 -requests=2
+LSPQ_RA.exe -servers=10 -requests=3
+LSPQ_RA.exe -servers=10 -requests=4
+LSPQ_RA.exe -servers=10 -requests=5
+LSPQ_RA.exe -servers=10 -requests=6
+LSPQ_RA.exe -servers=10 -requests=7
+LSPQ_RA.exe -servers=10 -requests=8
+LSPQ_RA.exe -servers=10 -requests=9
+LSPQ_RA.exe -servers=10 -requests=10

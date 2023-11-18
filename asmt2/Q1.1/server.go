@@ -93,6 +93,9 @@ func (s *Server) request() {
 		}
 		heap.Push(&s.queue, req)
 
+		fmt.Printf("Server %d make request at clock %d.\n", s.id, req.clock)
+		logger.Printf("Server %d make request at clock %d.\n", s.id, req.clock)
+
 		// broadcast requests
 		servers := s.servers
 		for i := 0; i < len(servers); i++ {
@@ -169,8 +172,8 @@ func (s *Server) onReceiveReq(msg Message) {
 	// add to queue
 	req := &Request{
 		value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
-		clock:     msg.clock,
-		requester: msg.sender_id,
+		clock:     msg.message.clock,
+		requester: msg.message.requester,
 	}
 	heap.Push(&s.queue, req)
 	fmt.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
@@ -214,9 +217,12 @@ func (s *Server) onReceiveRep(msg Message) {
 				s.Unlock()
 
 				go func() {
-					// clear for holding reply
+					// clear holding reply
 					for i := 0; i < len(s.holding_reply); i++ {
 						req := s.holding_reply[i]
+						fmt.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
+						logger.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
+
 						s.reply(req.requester, req.clock)
 					}
 					s.holding_reply = make([]Request, 0)
