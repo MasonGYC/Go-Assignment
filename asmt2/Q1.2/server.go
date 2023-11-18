@@ -35,7 +35,7 @@ func NewServer(id int, num_servers int, servers []*Server) *Server {
 		clock:         0,
 		servers:       servers,
 		state:         NORMAL,
-		reply_counter: len(servers) - 1,
+		reply_counter: 0,
 		holding_reply: make([]Request, 0),
 	}
 }
@@ -59,12 +59,6 @@ func (s *Server) listen() {
 			fmt.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
 			logger.Printf("Server %d received Server %d's reply at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
-		} else if msg.message_type == RLS {
-
-			go s.onReceiveRls()
-			fmt.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
-			logger.Printf("Server %d received Server %d's release at clock %d.\n", s.id, msg.sender_id, msg.clock)
-
 		}
 	}
 }
@@ -75,10 +69,8 @@ func (s *Server) request() {
 
 		s.updateOwnClock()
 
-		s.Lock()
 		s.state = WAITING_FOR_REPLY
 		s.reply_counter = len(s.servers) - 1
-		s.Unlock()
 
 		// add to queue
 		req := &Request{
@@ -95,8 +87,8 @@ func (s *Server) request() {
 				req_msg := REQMessage(s.id, servers[i].id, req.clock, s.clock)
 				servers[i].ch <- req_msg
 
-				fmt.Printf("Server %d requests to %d at clock %d.\n", s.id, servers[i].id, s.clock)
-				logger.Printf("Server %d requests to %d at clock %d.\n", s.id, servers[i].id, s.clock)
+				fmt.Printf("Server %d requests to %d at %d.\n", s.id, servers[i].id, s.clock)
+				logger.Printf("Server %d requests to %d at %d.\n", s.id, servers[i].id, s.clock)
 			}
 		}
 	} else {
@@ -115,8 +107,8 @@ func (s *Server) reply(requester_id int, request_clock int) {
 	res_msg := REPMessage(s.id, requester_id, request_clock, s.clock)
 	s.servers[requester_id].ch <- res_msg
 
-	fmt.Printf("Server %d replys to %d at clock %d.\n", s.id, requester_id, s.clock)
-	logger.Printf("Server %d replys to %d at clock %d.\n", s.id, requester_id, s.clock)
+	fmt.Printf("Server %d replys to %d at %d.\n", s.id, requester_id, s.clock)
+	logger.Printf("Server %d replys to %d at %d.\n", s.id, requester_id, s.clock)
 }
 
 // release locks to cs
@@ -124,21 +116,23 @@ func (s *Server) release() {
 
 	s.updateOwnClock()
 
-	// Pop head of Q
-	request := heap.Pop(&s.queue).(*Request)
-	fmt.Printf("Poped reuqest %d:%s at clock %d.\n", request.clock, request.value, s.clock)
+	// empty queue by replying to all other requests
+	for {
+		request := heap.Pop(&s.queue).(*Request)
+		if request != nil {
+			if request.requester != s.id {
+				s.reply(request.requester, request.clock)
+			} else {
+				fmt.Printf("Poped own reuqest %.2d:%s ", request.clock, request.value)
+			}
 
-	// broadcast release
-	servers := s.servers
-	for i := 0; i < len(servers); i++ {
-		if servers[i].id != s.id {
-			rls_msg := RLSMessage(s.id, servers[i].id, request.clock, s.clock)
-			servers[i].ch <- rls_msg
-
-			fmt.Printf("Server %d release to %d at clock %d.\n", s.id, servers[i].id, s.clock)
-			logger.Printf("Server %d release to %d at clock %d.\n", s.id, servers[i].id, s.clock)
+		} else {
+			break
 		}
 	}
+
+	//
+
 }
 
 // simulate execution of critical section
@@ -150,30 +144,20 @@ func (s *Server) executeCriticalSection() {
 }
 
 func (s *Server) onReceiveReq(msg Message) {
-	// add to queue
-	req := &Request{
-		value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
-		clock:     msg.clock,
-		requester: msg.sender_id,
-	}
-	heap.Push(&s.queue, req)
-	fmt.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
-	logger.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
 
-	// If waiting for REPLY from j for an earlier request T, wait until j replies to you
+	// If waiting for REPLY from j for an earlier request T, add to queue
 	if s.state == WAITING_FOR_REPLY {
-		req_at_head := s.queue.Peek()
-		fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
-		logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
 
-		if req_at_head.requester == s.id {
-			// hold the reply
-			s.holding_reply = append(s.holding_reply, *req)
-			fmt.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
-			logger.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
-		} else {
-			s.reply(msg.sender_id, msg.clock)
+		// add to queue
+		req := &Request{
+			value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
+			clock:     msg.clock,
+			requester: msg.sender_id,
 		}
+		heap.Push(&s.queue, req)
+		fmt.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
+		logger.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
+
 	} else {
 		s.reply(msg.sender_id, msg.clock)
 	}
@@ -181,61 +165,28 @@ func (s *Server) onReceiveReq(msg Message) {
 }
 func (s *Server) onReceiveRep(msg Message) {
 
-	// if s.state == WAITING_FOR_REPLY {
-	if true {
-		s.Lock()
+	if s.state == WAITING_FOR_REPLY {
+
 		s.reply_counter--
-		s.Unlock()
 
-		// check replies and whether at the head of queue
-		req := s.queue.Peek()
-		fmt.Printf("Server %d's reply_counter is %d.\n", s.id, s.reply_counter)
-		logger.Printf("Server %d's reply_counter is %d.\n", s.id, s.reply_counter)
+		// check replies
 
-		if req != nil {
-			if s.reply_counter == 0 {
-
-				// change state to normal
-				s.Lock()
-				s.state = NORMAL
-				s.reply_counter = len(s.servers) - 1
-				s.Unlock()
-
-				go func() {
-					// clear for holding reply
-					for i := 0; i < len(s.holding_reply); i++ {
-						req := s.holding_reply[i]
-						s.reply(req.requester, req.clock)
-					}
-					s.holding_reply = make([]Request, 0)
-				}()
-
-				s.executeCriticalSection()
-				s.release()
-
-			}
-		}
-	}
-}
-
-func (s *Server) onReceiveRls() {
-	// pop queue
-	heap.Pop(&s.queue)
-	fmt.Printf("Server %d has poped req from queue.\n", s.id)
-	logger.Printf("Server %d has poped req from queue.\n", s.id)
-
-	// check replies and whether at the head of queue
-	if s.state == WAITING_FOR_REPLY && s.reply_counter == 0 {
-		req := s.queue.Peek()
-		if req != nil && req.requester == s.id {
+		if s.reply_counter == 0 {
 			// change state to normal
-			s.Lock()
 			s.state = NORMAL
-			s.reply_counter = len(s.servers) - 1
-			s.Unlock()
+
+			// check for holding reply
+			go func() {
+				for i := 0; i < len(s.holding_reply); i++ {
+					req := s.holding_reply[i]
+					s.reply(req.requester, req.clock)
+				}
+				s.holding_reply = make([]Request, 0)
+			}()
 
 			s.executeCriticalSection()
 			s.release()
+
 		}
 	}
 }

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 )
@@ -16,9 +15,4 @@ func init() {
 		os.Exit(1)
 	}
 	logger = log.New(file, "", log.Ldate|log.Ltime|log.Lshortfile)
-}
-
-func logstring(log string) {
-	fmt.Printf(log)
-	logger.Printf(log)
 }

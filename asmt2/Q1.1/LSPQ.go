@@ -19,10 +19,10 @@ func main() {
 	log.Printf("===============START===============")
 
 	// define the number of servers
-	num_servers := flag.Int("servers", 5, "number of servers")
+	num_servers := flag.Int("servers", 10, "number of servers")
 
 	// define the number of concurrent requests to make
-	// num_requests := flag.Int("requests", 2, "number of concurrent requests to make")
+	num_requests := flag.Int("requests", 2, "number of concurrent requests to make")
 	flag.Parse()
 
 	// initialize servers
@@ -37,9 +37,9 @@ func main() {
 	}
 
 	// simulate request
-	// random_server_idx := rand.Intn(len(servers))
-	go servers[0].request()
-	go servers[1].request()
+	for i := 0; i < *num_requests; i++ {
+		go servers[i].request()
+	}
 
 	var input string
 	// wait for the input, as otherwise, the program will not wait
