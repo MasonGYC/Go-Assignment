@@ -161,19 +161,15 @@ func (s *Server) onReceiveReq(msg Message) {
 	logger.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
 
 	// If waiting for REPLY from j for an earlier request T, wait until j replies to you
-	if s.state == WAITING_FOR_REPLY {
-		req_at_head := s.queue.Peek()
-		fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
-		logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
+	req_at_head := s.queue.Peek()
+	fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
+	logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
 
-		if req_at_head.requester == s.id {
-			// hold the reply
-			s.holding_reply = append(s.holding_reply, *req)
-			fmt.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
-			logger.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
-		} else {
-			s.reply(msg.sender_id, msg.clock)
-		}
+	if req_at_head.requester == s.id {
+		// hold the reply
+		s.holding_reply = append(s.holding_reply, *req)
+		fmt.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
+		logger.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
 	} else {
 		s.reply(msg.sender_id, msg.clock)
 	}
@@ -181,8 +177,8 @@ func (s *Server) onReceiveReq(msg Message) {
 }
 func (s *Server) onReceiveRep(msg Message) {
 
-	// if s.state == WAITING_FOR_REPLY {
-	if true {
+	if s.state == WAITING_FOR_REPLY {
+
 		s.Lock()
 		s.reply_counter--
 		s.Unlock()

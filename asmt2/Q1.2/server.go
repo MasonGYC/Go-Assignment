@@ -35,7 +35,7 @@ func NewServer(id int, num_servers int, servers []*Server) *Server {
 		clock:         0,
 		servers:       servers,
 		state:         NORMAL,
-		reply_counter: 0,
+		reply_counter: len(servers) - 1,
 		holding_reply: make([]Request, 0),
 	}
 }
@@ -69,8 +69,10 @@ func (s *Server) request() {
 
 		s.updateOwnClock()
 
+		s.Lock()
 		s.state = WAITING_FOR_REPLY
 		s.reply_counter = len(s.servers) - 1
+		s.Unlock()
 
 		// add to queue
 		req := &Request{
@@ -111,28 +113,28 @@ func (s *Server) reply(requester_id int, request_clock int) {
 	logger.Printf("Server %d replys to %d at %d.\n", s.id, requester_id, s.clock)
 }
 
-// release locks to cs
-func (s *Server) release() {
+// empty_queue locks to cs
+func (s *Server) empty_queue() {
 
 	s.updateOwnClock()
 
 	// empty queue by replying to all other requests
 	for {
-		request := heap.Pop(&s.queue).(*Request)
+		request := s.queue.Peek()
+
 		if request != nil {
+			request := heap.Pop(&s.queue).(*Request)
 			if request.requester != s.id {
 				s.reply(request.requester, request.clock)
-			} else {
-				fmt.Printf("Poped own reuqest %.2d:%s ", request.clock, request.value)
 			}
+
+			fmt.Printf("Server %d poped request from %d and replied at clock %d.\n", s.id, request.requester, s.clock)
+			logger.Printf("Server %d Poped reuqest from %d.\n", s.id, request.requester)
 
 		} else {
 			break
 		}
 	}
-
-	//
-
 }
 
 // simulate execution of critical section
@@ -145,18 +147,27 @@ func (s *Server) executeCriticalSection() {
 
 func (s *Server) onReceiveReq(msg Message) {
 
-	// If waiting for REPLY from j for an earlier request T, add to queue
-	if s.state == WAITING_FOR_REPLY {
+	// Check whether any reply is pending for an earlier request req(T’) in Qi
 
-		// add to queue
-		req := &Request{
-			value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
-			clock:     msg.clock,
-			requester: msg.sender_id,
+	req_at_head := s.queue.Peek()
+	if req_at_head != nil {
+		fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
+		logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
+
+		if req_at_head.clock < msg.clock || (req_at_head.clock == msg.clock && req_at_head.requester > msg.sender_id) {
+			// add to queue
+			req := &Request{
+				value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),
+				clock:     msg.clock,
+				requester: msg.sender_id,
+			}
+			heap.Push(&s.queue, req)
+			fmt.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
+			logger.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
+
+		} else {
+			s.reply(msg.sender_id, msg.clock)
 		}
-		heap.Push(&s.queue, req)
-		fmt.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
-		logger.Printf("Server %d has pushed req from %d to queue .\n", s.id, req.requester)
 
 	} else {
 		s.reply(msg.sender_id, msg.clock)
@@ -167,25 +178,21 @@ func (s *Server) onReceiveRep(msg Message) {
 
 	if s.state == WAITING_FOR_REPLY {
 
+		s.Lock()
 		s.reply_counter--
+		s.Unlock()
 
 		// check replies
 
 		if s.reply_counter == 0 {
 			// change state to normal
+			s.Lock()
 			s.state = NORMAL
-
-			// check for holding reply
-			go func() {
-				for i := 0; i < len(s.holding_reply); i++ {
-					req := s.holding_reply[i]
-					s.reply(req.requester, req.clock)
-				}
-				s.holding_reply = make([]Request, 0)
-			}()
+			s.reply_counter = len(s.servers) - 1
+			s.Unlock()
 
 			s.executeCriticalSection()
-			s.release()
+			s.empty_queue()
 
 		}
 	}

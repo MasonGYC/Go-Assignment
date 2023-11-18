@@ -15,9 +15,6 @@ unique identifier for each request: requester_id and clock
 ./run.exe -servers
 
 # TODO:
-1. add clock update
-2. multiple concurrent requests (hold reply)
-3. start with random clock
 4. terminate automatically when all finished (waitgroup?)
 
 

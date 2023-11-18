@@ -3,9 +3,8 @@
 Name: Guo Yuchen  
 Student ID: 1004885  
 
-# Question 2
+# Question 1
 ## Compilation
-For quetsion 1 and 2:  
 To build:
 ```
 go build .\LSPQ.go .\logger.go .\message.go .\PriorityQueue.go .\server.go
@@ -117,6 +116,89 @@ server.go:225: Server 4 has poped req from queue.
 ...
 ```
 
+## Others
+### Assumptions
+1. Network is reliable.
+2. Network is asynchoronous.
+3. Channels won't congest. (But it actually happens when node number increases.)
+
+
+# Question 2
+## Compilation
+To build:
+```
+go build .\LSPQ_RA.go .\logger.go .\message.go .\PriorityQueue.go .\server.go
+```
+
+To execute：
+```
+.\LSPQ_RA.exe -num_servers=? -num_requests=?
+```  
+- `-num_servers`: `int`, indicates the number of clients. The default number is 10.
+- `-num_requests`: `int`, indicates the number of concurrent requests to make. The default number is 2.
+
+## External package
+`log` : used for output logging and debugging purpose.
+
+## Implementation
+
+1. In the program, Message is defined to be a struct with 3 fields: 
+- `sender_id`: `int`, the id of the sender client/server
+- `message`: `int`, the i-th message being sent by a client
+- `clock`: `int` for lamport clock, `[]int` for vector clock
+2. Clients send a message every 5 seconds.
+3. There's a 50-50 chance of dropping or forwarding received message for the server. (flag can be 0 or 1, if 0, forward message)
+4. Clock is updated every time an action (i.e. receiving message, send message) is performed.
+5. In `vector.go`, causality violation is checked every time a message is received (`clockIsGreaterThan(c1, c2)`) If the local vector clock of the receiving machine is more than the vector clock of the message, then a potential causality violation is detected.  
+
+## Output interpretation
+The `logs.txt` in the folder contains the sample outputs with 5 and 10 clients, and 2 of them make request concurrently. Refer to the files for more logs.
+
+### Sample output with 5 clients
+
+```log
+===============START===============
+server.go:93: Server 0 requests to 1 at 2.
+server.go:93: Server 0 requests to 2 at 2.
+server.go:54: Server 0 received Server 1's request at clock 1.
+server.go:155: Server 0 has req from server 0 at clock 1 at head of queue.
+server.go:155: Server 1 has req from server 1 at clock 1 at head of queue.
+server.go:166: Server 1 has pushed req from 0 to queue .
+server.go:93: Server 1 requests to 0 at 2.
+server.go:54: Server 2 received Server 0's request at clock 2.
+server.go:93: Server 0 requests to 3 at 6.
+server.go:54: Server 3 received Server 0's request at clock 2.
+server.go:60: Server 0 received Server 2's reply at clock 4.
+server.go:113: Server 2 replys to 0 at 6.
+server.go:54: Server 1 received Server 0's request at clock 1.
+server.go:60: Server 1 received Server 0's reply at clock 6.
+server.go:93: Server 1 requests to 2 at 8.
+server.go:93: Server 0 requests to 4 at 7.
+server.go:54: Server 4 received Server 0's request at clock 6.
+server.go:113: Server 3 replys to 0 at 10.
+server.go:60: Server 0 received Server 3's reply at clock 4.
+server.go:54: Server 2 received Server 1's request at clock 2.
+server.go:113: Server 0 replys to 1 at 9.
+server.go:113: Server 2 replys to 1 at 6.
+server.go:60: Server 1 received Server 2's reply at clock 6.
+server.go:93: Server 1 requests to 3 at 11.
+server.go:54: Server 3 received Server 1's request at clock 8.
+server.go:60: Server 0 received Server 4's reply at clock 8.
+server.go:113: Server 4 replys to 0 at 13.
+server.go:60: Server 1 received Server 3's reply at clock 10.
+server.go:113: Server 3 replys to 1 at 10.
+server.go:93: Server 1 requests to 4 at 15.
+server.go:54: Server 4 received Server 1's request at clock 11.
+server.go:60: Server 1 received Server 4's reply at clock 13.
+server.go:113: Server 4 replys to 1 at 13.
+2023/11/18 16:04:58 server.go:145: Server 1 has finished cs execution.
+2023/11/18 16:04:58 server.go:132: Server 1 Poped reuqest from 1.
+2023/11/18 16:04:58 server.go:113: Server 1 replys to 0 at 17.
+2023/11/18 16:04:58 server.go:60: Server 0 received Server 1's reply at clock 17.
+2023/11/18 16:04:58 server.go:132: Server 1 Poped reuqest from 0.
+2023/11/18 16:05:00 server.go:145: Server 0 has finished cs execution.
+2023/11/18 16:05:00 server.go:132: Server 0 Poped reuqest from 0.
+```
 
 ## Others
 ### Assumptions
@@ -124,7 +206,8 @@ server.go:225: Server 4 has poped req from queue.
 2. Network is asynchoronous.
 3. Channels won't congest. (But it actually happens when node number increases.)
 
-# Question 2
+
+# Question 1
 ## Compilation
 
 To build: 

@@ -10,7 +10,7 @@ import (
 func main() {
 
 	// log outputs for debugging purpose
-	file, err := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	file, err := os.OpenFile("logs_1.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,7 +19,7 @@ func main() {
 	log.Printf("===============START===============")
 
 	// define the number of servers
-	num_servers := flag.Int("servers", 5, "number of servers")
+	num_servers := flag.Int("servers", 10, "number of servers")
 
 	// define the number of concurrent requests to make
 	num_requests := flag.Int("requests", 2, "number of concurrent requests to make")
