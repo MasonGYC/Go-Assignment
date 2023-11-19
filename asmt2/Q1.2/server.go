@@ -80,6 +80,11 @@ func (s *Server) request() {
 		s.reply_counter = len(s.servers) - 1
 		s.Unlock()
 
+		// if only one server
+		if s.reply_counter == 0 {
+			s.executeCriticalSection()
+		}
+
 		// add to queue
 		req := &Request{
 			value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", s.id, s.id),
@@ -87,6 +92,9 @@ func (s *Server) request() {
 			requester: s.id,
 		}
 		heap.Push(&s.queue, req)
+
+		fmt.Printf("Server %d make request at clock %d.\n", s.id, req.clock)
+		logger.Printf("Server %d make request at clock %d.\n", s.id, req.clock)
 
 		// broadcast requests
 		servers := s.servers
@@ -171,7 +179,7 @@ func (s *Server) onReceiveReq(msg Message) {
 		fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
 		logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
 
-		if req_at_head.clock < msg.clock || (req_at_head.clock == msg.clock && req_at_head.requester > msg.sender_id) {
+		if req_at_head.clock < msg.message.clock || (req_at_head.clock == msg.message.clock && req_at_head.requester > msg.message.requester) {
 			// add to queue
 			req := &Request{
 				value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", msg.sender_id, s.id),

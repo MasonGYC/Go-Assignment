@@ -7,21 +7,15 @@ import (
 	"time"
 )
 
-const (
-	// server states
-	WAITING_FOR_REPLY string = "WAITING_FOR_REPLY"
-	NORMAL            string = "NORMAL"
-)
-
 type Server struct {
-	id            int
-	ch            chan Message
-	queue         RequestPriorityQueue
-	clock         int       //lamport clock
-	servers       []*Server // all servers in the network
-	state         string    // REQUESTING, NORMAL
-	reply_counter int       // number of reply to be received
-	holding_reply []Request // number of holding replies
+	id                         int
+	ch                         chan Message
+	queue                      RequestPriorityQueue
+	clock                      int       //lamport clock
+	servers                    []*Server // all servers in the network
+	reply_counter              int       // number of reply to be received
+	holding_reply              []Request // number of holding replies
+	waiting_for_reply_at_clock int       // the clock of the request that waits for reply
 	sync.Mutex
 }
 
@@ -29,14 +23,14 @@ func NewServer(id int, num_servers int, servers []*Server) *Server {
 	pq := make(RequestPriorityQueue, 0)
 	heap.Init(&pq)
 	return &Server{
-		id:            id,
-		ch:            make(chan Message),
-		queue:         pq,
-		clock:         0,
-		servers:       servers,
-		state:         NORMAL,
-		reply_counter: len(servers) - 1,
-		holding_reply: make([]Request, 0),
+		id:                         id,
+		ch:                         make(chan Message),
+		queue:                      pq,
+		clock:                      0,
+		servers:                    servers,
+		reply_counter:              len(servers) - 1,
+		holding_reply:              make([]Request, 0),
+		waiting_for_reply_at_clock: -1,
 	}
 }
 
@@ -76,21 +70,27 @@ func (s *Server) listen() {
 
 // broadcast request to enter cs
 func (s *Server) request() {
-	if s.state == NORMAL {
+	if s.waiting_for_reply_at_clock == -1 {
 
 		s.updateOwnClock()
 
-		s.Lock()
-		s.state = WAITING_FOR_REPLY
-		s.reply_counter = len(s.servers) - 1
-		s.Unlock()
-
-		// add to queue
 		req := &Request{
 			value:     fmt.Sprintf("Request from server %d to server %d to enter critical section.", s.id, s.id),
 			clock:     s.clock,
 			requester: s.id,
 		}
+
+		s.Lock()
+		s.waiting_for_reply_at_clock = req.clock
+		s.reply_counter = len(s.servers) - 1
+		s.Unlock()
+
+		// if only 1 server
+		if s.reply_counter == 0 {
+			s.executeCriticalSection()
+		}
+
+		// add to queue
 		heap.Push(&s.queue, req)
 
 		fmt.Printf("Server %d make request at clock %d.\n", s.id, req.clock)
@@ -176,19 +176,19 @@ func (s *Server) onReceiveReq(msg Message) {
 		requester: msg.message.requester,
 	}
 	heap.Push(&s.queue, req)
-	fmt.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
-	logger.Printf("Server %d has pushed req from %d to queue.\n", s.id, req.requester)
+	fmt.Printf("Server %d pushed req from %d to queue.\n", s.id, req.requester)
+	logger.Printf("Server %d pushed req from %d to queue.\n", s.id, req.requester)
 
 	// If waiting for REPLY from j for an earlier request T, wait until j replies to you
-	req_at_head := s.queue.Peek()
-	fmt.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
-	logger.Printf("Server %d has req from server %d at clock %d at head of queue.\n", s.id, req_at_head.requester, req_at_head.clock)
-
-	if req_at_head.requester == s.id {
-		// hold the reply
-		s.holding_reply = append(s.holding_reply, *req)
-		fmt.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
-		logger.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
+	if s.waiting_for_reply_at_clock != -1 {
+		if s.waiting_for_reply_at_clock < req.clock || (s.waiting_for_reply_at_clock == req.clock && s.id > req.requester) {
+			// hold the reply
+			s.holding_reply = append(s.holding_reply, *req)
+			fmt.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
+			logger.Printf("Server %d holds reply to %d.\n", s.id, req.requester)
+		} else {
+			s.reply(msg.sender_id, msg.clock)
+		}
 	} else {
 		s.reply(msg.sender_id, msg.clock)
 	}
@@ -196,7 +196,7 @@ func (s *Server) onReceiveReq(msg Message) {
 }
 func (s *Server) onReceiveRep(msg Message) {
 
-	if s.state == WAITING_FOR_REPLY {
+	if s.waiting_for_reply_at_clock != -1 {
 
 		s.Lock()
 		s.reply_counter--
@@ -208,29 +208,8 @@ func (s *Server) onReceiveRep(msg Message) {
 		logger.Printf("Server %d's reply_counter is %d.\n", s.id, s.reply_counter)
 
 		if req != nil {
-			if s.reply_counter == 0 {
-
-				// change state to normal
-				s.Lock()
-				s.state = NORMAL
-				s.reply_counter = len(s.servers) - 1
-				s.Unlock()
-
-				go func() {
-					// clear holding reply
-					for i := 0; i < len(s.holding_reply); i++ {
-						req := s.holding_reply[i]
-						fmt.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
-						logger.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
-
-						s.reply(req.requester, req.clock)
-					}
-					s.holding_reply = make([]Request, 0)
-				}()
-
-				s.executeCriticalSection()
-				s.release()
-
+			if s.reply_counter == 0 && req.requester == s.id {
+				s.enterCS()
 			}
 		}
 	}
@@ -242,20 +221,37 @@ func (s *Server) onReceiveRls() {
 	fmt.Printf("Server %d has poped req from queue.\n", s.id)
 	logger.Printf("Server %d has poped req from queue.\n", s.id)
 
+	logger.Printf("Server %d waiting_for_reply_at_clock is: %d\n", s.id, s.waiting_for_reply_at_clock)
+	logger.Printf("Server %d reply_counter is: %d\n", s.id, s.reply_counter)
+
 	// check replies and whether at the head of queue
-	if s.state == WAITING_FOR_REPLY && s.reply_counter == 0 {
+	if s.waiting_for_reply_at_clock != -1 && s.reply_counter == 0 {
 		req := s.queue.Peek()
 		if req != nil && req.requester == s.id {
-			// change state to normal
-			s.Lock()
-			s.state = NORMAL
-			s.reply_counter = len(s.servers) - 1
-			s.Unlock()
-
-			s.executeCriticalSection()
-			s.release()
+			s.enterCS()
 		}
 	}
+}
+
+func (s *Server) enterCS() {
+	// change state to normal
+	s.Lock()
+	s.waiting_for_reply_at_clock = -1
+	s.reply_counter = len(s.servers) - 1
+	s.Unlock()
+
+	// clear holding reply
+	for i := 0; i < len(s.holding_reply); i++ {
+		req := s.holding_reply[i]
+		fmt.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
+		logger.Printf("Server %d clear holding reply from %d at %d.\n", s.id, req.requester, req.clock)
+
+		s.reply(req.requester, req.clock)
+	}
+	s.holding_reply = make([]Request, 0)
+
+	s.executeCriticalSection()
+	s.release()
 }
 
 // update clock

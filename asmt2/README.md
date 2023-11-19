@@ -1,5 +1,5 @@
-# Go Assignment 1
-50.041 Distributed Systems and Computing Go Assignment 1  
+# Go Assignment 2
+50.041 Distributed Systems and Computing Go Assignment 2  
 Name: Guo Yuchen  
 Student ID: 1004885  
 
@@ -8,17 +8,22 @@ Student ID: 1004885
 To build:
 ```
 go build .\LSPQ.go .\logger.go .\message.go .\PriorityQueue.go .\server.go
+go build .\LSPQ_RA.go .\logger.go .\message.go .\PriorityQueue.go .\server.go
+go build .\voting.go .\logger.go .\message.go .\queue.go .\server.go .\clock.go
 ```
 
 To execute：
 ```
-.\LSPQ.exe -num_servers=? -num_requests=?
+.\LSPQ.exe -servers=? -requests=?
+.\LSPQ_RA.exe -servers=? -requests=?
+.\voting.exe -servers=? -requests=?
 ```  
-- `-num_servers`: `int`, indicates the number of clients. The default number is 10.
-- `-num_requests`: `int`, indicates the number of concurrent requests to make. The default number is 2.
+- `-servers`: `int`, indicates the number of clients. The default number is 10.
+- `-requests`: `int`, indicates the number of concurrent requests to make. The default number is 2.
 
 ## External package
-`log` : used for output logging and debugging purpose.
+`log` : used for output logging and debugging purpose.   
+`container/heap`: used to construct priority queue.  
 
 ## Implementation
 
@@ -120,7 +125,7 @@ server.go:225: Server 4 has poped req from queue.
 ### Assumptions
 1. Network is reliable.
 2. Network is asynchoronous.
-3. Channels won't congest. (But it actually happens when node number increases.)
+3. 5 sec timeout
 
 
 # Question 2
@@ -514,3 +519,18 @@ This will trigger the following goroutine in `run.go`:
 1. Network is reliable.
 2. Network is asynchoronous.
 3. Channels won't congest. (But it actually happens when node number increases.)
+
+
+performance table
+| Number of Nodes | LSPQ | LSPQ_RA | VOTING |
+| ---------- | ---------- | ---------- | ---------- |
+| 1 | 2023142400 | 2006739800 |
+| 2 | 4029850400 | 4020691600 |
+| 3 | 6032194200 | 6027584600 |
+| 4 | 8071402200 | 8028002700 |
+| 5 | 10135472900 | 10088607300 |
+| 6 | 12091198200 | 12118110500 |
+| 7 | 14218373000 | 14139704100 |
+| 8 | 16253720000 | 16129828800 |
+| 9 | 18193093700 | 18100639200 |
+| 10 | 20235458800 | 20143705300 |
