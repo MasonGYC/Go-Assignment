@@ -11,7 +11,7 @@ import (
 var start_time time.Time
 var end_time time.Time
 var time_mutex sync.Mutex
-var timeout = 10 * time.Second
+var timeout = 5 * time.Second
 
 func main() {
 
@@ -19,10 +19,10 @@ func main() {
 	logger.Printf("===============START===============")
 
 	// define the number of servers
-	num_servers := flag.Int("servers", 10, "number of servers")
+	num_servers := flag.Int("servers", 4, "number of servers")
 
 	// define the number of concurrent requests to make
-	num_requests := flag.Int("requests", 3, "number of concurrent requests to make")
+	num_requests := flag.Int("requests", 4, "number of concurrent requests to make")
 	flag.Parse()
 
 	// set wg
