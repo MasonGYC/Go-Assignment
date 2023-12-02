@@ -77,6 +77,7 @@ func (m *Manager) monitor() {
 				if m.records[i].page_num == msg.page_num {
 
 					m.Lock()
+					logger.Println("record.writing is ", m.records[i].writing, " at clock ", m.clock)
 					if !m.records[i].writing {
 						m.records[i].writing = true
 						// execute req at the head

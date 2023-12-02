@@ -515,3 +515,75 @@
 2023/11/30 09:51:01 server.go:127: Server 0 sent WRITE confirm for page 3 to manager at clock 16.
 2023/11/30 09:51:01 manager.go:54: Manager received Server 0's write confirm at clock 16.
 2023/11/30 09:51:11 vanilaIvy.go:82: Elapsed time:  10.0095429s
+2023/11/30 10:03:34 vanilaIvy.go:24: ===============START===============
+2023/11/30 10:03:34 server.go:71: Server 1 wants to read page 3...
+2023/11/30 10:03:34 server.go:82: Server 1 request to read page 3 to manager at clock 0.
+2023/11/30 10:03:34 server.go:71: Server 0 wants to read page 3...
+2023/11/30 10:03:34 server.go:82: Server 0 request to read page 3 to manager at clock 0.
+2023/11/30 10:03:34 manager.go:41: Manager received Server 1's read request at clock 0.
+2023/11/30 10:03:34 manager.go:41: Manager received Server 0's read request at clock 0.
+2023/11/30 10:03:34 manager.go:114: Manager forward READ request for page 3 at clock 3.
+2023/11/30 10:03:34 server.go:40: Server 3 received Manager's read forward at clock 3.
+2023/11/30 10:03:34 server.go:113: Server 3 sent page 3 to Server 0 at clock 5.
+2023/11/30 10:03:34 server.go:55: Server 0 received Server 3's sent page at clock 5.
+2023/11/30 10:03:34 server.go:152: Server 0 is reading page 3...
+2023/11/30 10:03:34 server.go:127: Server 0 sent READ confirm for page 3 to manager at clock 7.
+2023/11/30 10:03:34 manager.go:50: Manager received Server 0's read confirm at clock 7.
+2023/11/30 10:03:34 manager.go:227: Manager adds server 0 to page 3's copyset.
+2023/11/30 10:03:34 manager.go:114: Manager forward READ request for page 3 at clock 9.
+2023/11/30 10:03:34 server.go:40: Server 3 received Manager's read forward at clock 9.
+2023/11/30 10:03:34 server.go:113: Server 3 sent page 3 to Server 1 at clock 11.
+2023/11/30 10:03:34 server.go:55: Server 1 received Server 3's sent page at clock 11.
+2023/11/30 10:03:34 server.go:152: Server 1 is reading page 3...
+2023/11/30 10:03:34 server.go:127: Server 1 sent READ confirm for page 3 to manager at clock 13.
+2023/11/30 10:03:34 manager.go:50: Manager received Server 1's read confirm at clock 13.
+2023/11/30 10:03:34 manager.go:227: Manager adds server 1 to page 3's copyset.
+2023/11/30 10:03:44 vanilaIvy.go:82: Elapsed time:  10.0007147s
+2023/11/30 10:07:47 vanilaIvy.go:24: ===============START===============
+2023/11/30 10:07:47 server.go:88: Server 2 wants to write page 4...
+2023/11/30 10:07:47 server.go:99: Server 2 request to write page 4 to manager at clock 0.
+2023/11/30 10:07:47 server.go:88: Server 1 wants to write page 4...
+2023/11/30 10:07:47 server.go:99: Server 1 request to write page 4 to manager at clock 0.
+2023/11/30 10:07:47 manager.go:46: Manager received Server 2's write request at clock 0.
+2023/11/30 10:07:47 server.go:88: Server 0 wants to write page 4...
+2023/11/30 10:07:47 server.go:99: Server 0 request to write page 4 to manager at clock 0.
+2023/11/30 10:07:47 manager.go:46: Manager received Server 1's write request at clock 0.
+2023/11/30 10:07:47 manager.go:46: Manager received Server 0's write request at clock 0.
+2023/11/30 10:07:47 manager.go:159: Manager pushed server 0's wr req for page 4 at clock 3.
+2023/11/30 10:07:47 manager.go:74: Signal channel received msg  {-1 -1 4 NOTICE_WRITE_REQUEST 0 {0 <nil>} 0}  at clock  4
+2023/11/30 10:07:47 manager.go:159: Manager pushed server 1's wr req for page 4 at clock 2.
+2023/11/30 10:07:47 manager.go:159: Manager pushed server 2's wr req for page 4 at clock 1.
+2023/11/30 10:07:47 manager.go:80: record.writing is  false  at clock  4
+2023/11/30 10:07:47 manager.go:86: Manager poped s2's wr req for page 4.
+2023/11/30 10:07:47 manager.go:115: Manager forward WRITE request for page 4 at clock 6.
+2023/11/30 10:07:47 server.go:45: Server 4 received Manager's write forward at clock 6.
+2023/11/30 10:07:47 manager.go:74: Signal channel received msg  {-1 -1 4 NOTICE_WRITE_REQUEST 0 {0 <nil>} 1}  at clock  5
+2023/11/30 10:07:47 manager.go:80: record.writing is  true  at clock  6
+2023/11/30 10:07:47 server.go:170: Server 2 is writing page 4 at clock 9.
+2023/11/30 10:07:47 server.go:113: Server 4 sent page 4 to Server 2 at clock 8.
+2023/11/30 10:07:47 manager.go:54: Manager received Server 2's write confirm at clock 10.
+2023/11/30 10:07:47 server.go:60: Server 2 received Server 4's sent page at clock 8.
+2023/11/30 10:07:47 manager.go:74: Signal channel received msg  {-1 -1 4 NOTICE_WRITE_REQUEST 0 {0 <nil>} 2}  at clock  7
+2023/11/30 10:07:47 manager.go:80: record.writing is  false  at clock  11
+2023/11/30 10:07:47 server.go:127: Server 2 sent WRITE confirm for page 4 to manager at clock 10.
+2023/11/30 10:07:47 manager.go:86: Manager poped s1's wr req for page 4.
+2023/11/30 10:07:47 manager.go:115: Manager forward WRITE request for page 4 at clock 13.
+2023/11/30 10:07:47 manager.go:74: Signal channel received msg  {-1 -1 4 NOTICE_WRITE_REQUEST 10 {0 <nil>} 2}  at clock  12
+2023/11/30 10:07:47 server.go:113: Server 2 sent page 4 to Server 1 at clock 15.
+2023/11/30 10:07:47 server.go:170: Server 1 is writing page 4 at clock 16.
+2023/11/30 10:07:47 server.go:127: Server 1 sent WRITE confirm for page 4 to manager at clock 17.
+2023/11/30 10:07:47 server.go:45: Server 2 received Manager's write forward at clock 13.
+2023/11/30 10:07:47 server.go:60: Server 1 received Server 2's sent page at clock 15.
+2023/11/30 10:07:47 manager.go:80: record.writing is  true  at clock  13
+2023/11/30 10:07:47 manager.go:54: Manager received Server 1's write confirm at clock 17.
+2023/11/30 10:07:47 manager.go:74: Signal channel received msg  {-1 -1 4 NOTICE_WRITE_REQUEST 17 {0 <nil>} 1}  at clock  19
+2023/11/30 10:07:47 manager.go:80: record.writing is  false  at clock  19
+2023/11/30 10:07:47 manager.go:86: Manager poped s0's wr req for page 4.
+2023/11/30 10:07:47 manager.go:115: Manager forward WRITE request for page 4 at clock 20.
+2023/11/30 10:07:47 server.go:45: Server 1 received Manager's write forward at clock 20.
+2023/11/30 10:07:47 server.go:113: Server 1 sent page 4 to Server 0 at clock 22.
+2023/11/30 10:07:47 server.go:170: Server 0 is writing page 4 at clock 23.
+2023/11/30 10:07:47 server.go:127: Server 0 sent WRITE confirm for page 4 to manager at clock 24.
+2023/11/30 10:07:47 server.go:60: Server 0 received Server 1's sent page at clock 22.
+2023/11/30 10:07:47 manager.go:54: Manager received Server 0's write confirm at clock 24.
+2023/11/30 10:07:57 vanilaIvy.go:82: Elapsed time:  10.0074807s

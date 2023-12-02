@@ -11,12 +11,18 @@ import (
 
 var start_time time.Time
 var end_time time.Time
-var time_mutex sync.Mutex
-var timeout = 10 * time.Second
 
+var timeout = 5 * time.Second
+var heartbeat_interval = 1 * time.Second
+var heartbeat_timeout = 2 * time.Second
+var resend_timeout = 2 * time.Second
+
+// roles
 const (
-	CM_ID         = -1 // id of central manager
-	BACK_UP_CM_ID = -2
+	CM_ID         int    = -1 // id of central manager
+	BACK_UP_CM_ID int    = -2
+	PRIMARY       string = "PRIMARY"
+	BACKUP        string = "BACKUP"
 )
 
 func main() {
@@ -40,13 +46,28 @@ func main() {
 		managerRecords = append(managerRecords, NewManagerRecord(i, make([]int, 0), i))
 	}
 
-	// initialize servers and manager
+	// initialize managers
 	var servers = make([]*Server, *num_servers)
-	var manager = NewManager(servers, managerRecords)
+	var managers = make([]*Manager, 2)
+	var primaryManager *Manager
+	var backupManager *Manager
+
+	primaryManager = NewManager(CM_ID, servers, managerRecords, PRIMARY)
+	backupManager = NewManager(BACK_UP_CM_ID, servers, managerRecords, BACKUP)
+
+	primaryManager.primaryManager = primaryManager
+	primaryManager.backupManager = backupManager
+	backupManager.primaryManager = primaryManager
+	backupManager.backupManager = backupManager
+
+	managers[0] = primaryManager
+	managers[1] = backupManager
+
+	// initialize servers
 	for i := 0; i < *num_servers; i++ {
 		serverRecords := make([]ServerRecord, 1)
 		serverRecords = append(serverRecords, NewServerRecord(i, RW, NewPage(i, i)))
-		servers[i] = NewServer(i, servers, manager, serverRecords)
+		servers[i] = NewServer(i, servers, primaryManager, managers, serverRecords)
 	}
 
 	// start listening on all servers
@@ -60,8 +81,25 @@ func main() {
 
 	wg.Add(1)
 	go func() {
-		manager.start()
+		primaryManager.start()
 		wg.Done()
+	}()
+
+	wg.Add(1)
+	go func() {
+		backupManager.start()
+		wg.Done()
+	}()
+
+	time.Sleep(time.Second)
+
+	go func() {
+		// simulate primary down
+		time.Sleep(100 * time.Millisecond)
+		primaryManager.down()
+		// simulate primary rejoin
+		time.Sleep(2 * time.Second)
+		primaryManager.rejoin()
 	}()
 
 	// simulate request
