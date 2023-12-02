@@ -2695,3 +2695,1292 @@
 17:14:16 manager.go:237: Manager -2 received heartbeat from -1 at clock 18.
 17:14:16 manager.go:237: Manager -1 received heartbeat from -2 at clock 41.
 17:14:16 fautTolerantIvy.go:127: Elapsed time:  8.5481405s
+17:38:39 fautTolerantIvy.go:31: ===============START===============
+17:38:39 server.go:32: Server 0 started listening...
+17:38:39 server.go:93: Server 0 wants to read page 0...
+17:38:39 server.go:98: Server 0 is reading page 0 at clock 1
+17:38:39 server.go:99: Server 0 finished reading page 0.
+17:38:39 manager.go:353: Manager -2 started.
+17:38:39 manager.go:353: Manager -1 started.
+17:38:39 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:38:39 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:38:39 manager.go:237: Manager -1 received heartbeat from -2 at clock 2.
+17:38:40 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:38:40 manager.go:237: Manager -1 received heartbeat from -2 at clock 4.
+17:38:40 manager.go:134: Manager -1 sent heartbeat to -2 at clock 4.
+17:38:41 manager.go:134: Manager -1 sent heartbeat to -2 at clock 6.
+17:38:41 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:38:41 manager.go:237: Manager -1 received heartbeat from -2 at clock 6.
+17:38:42 manager.go:134: Manager -1 sent heartbeat to -2 at clock 8.
+17:38:42 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:38:42 manager.go:237: Manager -1 received heartbeat from -2 at clock 8.
+17:38:43 manager.go:134: Manager -1 sent heartbeat to -2 at clock 10.
+17:38:43 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:38:43 manager.go:237: Manager -1 received heartbeat from -2 at clock 10.
+17:38:44 fautTolerantIvy.go:131: Elapsed time:  5.0139495s
+17:38:44 fautTolerantIvy.go:31: ===============START===============
+17:38:44 server.go:93: Server 0 wants to read page 1...
+17:38:44 server.go:32: Server 0 started listening...
+17:38:44 manager.go:353: Manager -1 started.
+17:38:44 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:38:44 server.go:32: Server 1 started listening...
+17:38:44 manager.go:353: Manager -2 started.
+17:38:44 server.go:104: Server 0 request to read page 1 to manager -1 at clock 1.
+17:38:44 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:38:44 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:38:44 manager.go:237: Manager -1 received heartbeat from -2 at clock 2.
+17:38:44 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:38:44 manager.go:61: Manager -1 received Server 0's read request at clock 1.
+17:38:44 manager.go:205: Manager -1 forward READ request for page 1 at clock 4.
+17:38:44 server.go:43: Server 1 received Manager -1's read forward at clock 4.
+17:38:44 server.go:141: Server 1 sent page 1 to Server 0 at clock 6.
+17:38:44 server.go:58: Server 0 received Server 1's sent page at clock 6.
+17:38:44 server.go:180: Server 0 is reading page 1...
+17:38:44 server.go:155: Server 0 sent READ confirm for page 1 to manager -1 at clock 8.
+17:38:44 manager.go:53: Manager -1 received Server 0's message at clock 8.
+17:38:44 manager.go:70: Manager -1 received Server 0's read confirm at clock 8.
+17:38:44 manager.go:339: Manager -1 adds server 0 to page 1's copyset.
+17:38:44 manager.go:123: Manager -2 updated records.
+17:38:45 server.go:114: Server 1 wants to write page 0...
+17:38:45 server.go:125: Server 1 request to write page 0 to manager -1 at clock 7.
+17:38:45 server.go:77: Server 1 resends request to manager -1 at clock 7.
+17:38:45 manager.go:53: Manager -1 received Server 1's message at clock 7.
+17:38:45 manager.go:66: Manager -1 received Server 1's write request at clock 7.
+17:38:45 manager.go:268: Manager -1 pushed server 1's wr req for page 0 at clock 11.
+17:38:45 manager.go:163: Signal channel received msg from requester 1 at clock 12
+17:38:45 manager.go:169: record.writing is  false  at clock  12
+17:38:45 manager.go:175: Manager -1 poped s1's wr req for page 0.
+17:38:45 manager.go:205: Manager -1 forward WRITE request for page 0 at clock 14.
+17:38:45 manager.go:123: Manager -2 updated records.
+17:38:45 manager.go:123: Manager -2 updated records.
+17:38:45 server.go:48: Server 0 received Manager -1's write forward at clock 14.
+17:38:45 server.go:141: Server 0 sent page 0 to Server 1 at clock 16.
+17:38:45 server.go:63: Server 1 received Server 0's sent page at clock 16.
+17:38:45 server.go:198: Server 1 is writing page 0 at clock 17.
+17:38:45 server.go:155: Server 1 sent WRITE confirm for page 0 to manager -1 at clock 18.
+17:38:45 manager.go:53: Manager -1 received Server 1's message at clock 18.
+17:38:45 manager.go:74: Manager -1 received Server 1's write confirm at clock 18.
+17:38:45 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:38:45 manager.go:237: Manager -1 received heartbeat from -2 at clock 21.
+17:38:45 manager.go:134: Manager -1 sent heartbeat to -2 at clock 21.
+17:38:46 manager.go:134: Manager -1 sent heartbeat to -2 at clock 23.
+17:38:46 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:38:46 manager.go:237: Manager -1 received heartbeat from -2 at clock 23.
+17:38:47 manager.go:134: Manager -1 sent heartbeat to -2 at clock 25.
+17:38:47 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:38:47 manager.go:237: Manager -1 received heartbeat from -2 at clock 25.
+17:38:48 manager.go:134: Manager -1 sent heartbeat to -2 at clock 27.
+17:38:48 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:38:48 manager.go:237: Manager -1 received heartbeat from -2 at clock 27.
+17:38:49 manager.go:134: Manager -1 sent heartbeat to -2 at clock 29.
+17:38:49 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:38:49 manager.go:237: Manager -1 received heartbeat from -2 at clock 29.
+17:38:50 fautTolerantIvy.go:131: Elapsed time:  5.5224385s
+17:38:50 fautTolerantIvy.go:31: ===============START===============
+17:38:50 server.go:114: Server 0 wants to write page 1...
+17:38:50 server.go:125: Server 0 request to write page 1 to manager -1 at clock 1.
+17:38:50 server.go:32: Server 0 started listening...
+17:38:50 server.go:32: Server 1 started listening...
+17:38:50 manager.go:353: Manager -2 started.
+17:38:50 server.go:32: Server 2 started listening...
+17:38:50 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:38:50 manager.go:353: Manager -1 started.
+17:38:50 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:38:50 manager.go:268: Manager -1 pushed server 0's wr req for page 1 at clock 2.
+17:38:50 manager.go:163: Signal channel received msg from requester 0 at clock 6
+17:38:50 manager.go:169: record.writing is  false  at clock  6
+17:38:50 manager.go:123: Manager -2 updated records.
+17:38:50 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:38:50 manager.go:134: Manager -1 sent heartbeat to -2 at clock 5.
+17:38:50 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:38:50 manager.go:237: Manager -1 received heartbeat from -2 at clock 6.
+17:38:50 manager.go:175: Manager -1 poped s0's wr req for page 1.
+17:38:50 manager.go:123: Manager -2 updated records.
+17:38:50 manager.go:205: Manager -1 forward WRITE request for page 1 at clock 7.
+17:38:50 server.go:48: Server 1 received Manager -1's write forward at clock 8.
+17:38:50 server.go:141: Server 1 sent page 1 to Server 0 at clock 10.
+17:38:50 server.go:63: Server 0 received Server 1's sent page at clock 10.
+17:38:50 server.go:198: Server 0 is writing page 1 at clock 11.
+17:38:50 server.go:155: Server 0 sent WRITE confirm for page 1 to manager -1 at clock 12.
+17:38:50 manager.go:53: Manager -1 received Server 0's message at clock 12.
+17:38:50 manager.go:74: Manager -1 received Server 0's write confirm at clock 12.
+17:38:51 server.go:93: Server 1 wants to read page 1...
+17:38:51 server.go:98: Server 1 is reading page 1 at clock 11
+17:38:51 server.go:99: Server 1 finished reading page 1.
+17:38:51 manager.go:134: Manager -1 sent heartbeat to -2 at clock 15.
+17:38:51 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:38:51 manager.go:237: Manager -1 received heartbeat from -2 at clock 15.
+17:38:51 server.go:114: Server 2 wants to write page 2...
+17:38:52 manager.go:134: Manager -1 sent heartbeat to -2 at clock 17.
+17:38:52 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:38:52 manager.go:237: Manager -1 received heartbeat from -2 at clock 17.
+17:38:52 server.go:120: Server 2 finished writing page 2.
+17:38:53 manager.go:134: Manager -1 sent heartbeat to -2 at clock 19.
+17:38:53 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:38:53 manager.go:237: Manager -1 received heartbeat from -2 at clock 19.
+17:38:54 manager.go:134: Manager -1 sent heartbeat to -2 at clock 21.
+17:38:54 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:38:54 manager.go:237: Manager -1 received heartbeat from -2 at clock 21.
+17:38:55 fautTolerantIvy.go:131: Elapsed time:  5.0009069s
+17:38:55 fautTolerantIvy.go:31: ===============START===============
+17:38:55 server.go:114: Server 0 wants to write page 3...
+17:38:55 server.go:125: Server 0 request to write page 3 to manager -1 at clock 1.
+17:38:55 server.go:32: Server 0 started listening...
+17:38:55 server.go:32: Server 1 started listening...
+17:38:55 server.go:32: Server 2 started listening...
+17:38:55 server.go:32: Server 3 started listening...
+17:38:55 manager.go:353: Manager -1 started.
+17:38:55 manager.go:353: Manager -2 started.
+17:38:55 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:38:55 manager.go:237: Manager -1 received heartbeat from -2 at clock 2.
+17:38:55 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:38:55 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:38:55 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:38:55 manager.go:268: Manager -1 pushed server 0's wr req for page 3 at clock 3.
+17:38:55 manager.go:163: Signal channel received msg from requester 0 at clock 4
+17:38:55 manager.go:169: record.writing is  false  at clock  4
+17:38:55 manager.go:175: Manager -1 poped s0's wr req for page 3.
+17:38:55 manager.go:205: Manager -1 forward WRITE request for page 3 at clock 5.
+17:38:55 server.go:48: Server 3 received Manager -1's write forward at clock 5.
+17:38:55 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:38:55 server.go:141: Server 3 sent page 3 to Server 0 at clock 7.
+17:38:55 server.go:63: Server 0 received Server 3's sent page at clock 7.
+17:38:55 server.go:198: Server 0 is writing page 3 at clock 8.
+17:38:55 server.go:155: Server 0 sent WRITE confirm for page 3 to manager -1 at clock 9.
+17:38:55 manager.go:53: Manager -1 received Server 0's message at clock 9.
+17:38:55 manager.go:74: Manager -1 received Server 0's write confirm at clock 9.
+17:38:55 manager.go:123: Manager -2 updated records.
+17:38:55 manager.go:123: Manager -2 updated records.
+17:38:56 server.go:93: Server 1 wants to read page 3...
+17:38:56 server.go:104: Server 1 request to read page 3 to manager -1 at clock 1.
+17:38:56 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:38:56 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:38:56 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:38:56 manager.go:205: Manager -1 forward READ request for page 3 at clock 12.
+17:38:56 server.go:43: Server 0 received Manager -1's read forward at clock 12.
+17:38:56 server.go:141: Server 0 sent page 3 to Server 1 at clock 14.
+17:38:56 server.go:58: Server 1 received Server 0's sent page at clock 14.
+17:38:56 server.go:180: Server 1 is reading page 3...
+17:38:56 server.go:155: Server 1 sent READ confirm for page 3 to manager -1 at clock 16.
+17:38:56 manager.go:53: Manager -1 received Server 1's message at clock 16.
+17:38:56 manager.go:70: Manager -1 received Server 1's read confirm at clock 16.
+17:38:56 manager.go:123: Manager -2 updated records.
+17:38:56 manager.go:339: Manager -1 adds server 1 to page 3's copyset.
+17:38:56 server.go:114: Server 2 wants to write page 3...
+17:38:56 server.go:125: Server 2 request to write page 3 to manager -1 at clock 1.
+17:38:56 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:38:56 manager.go:134: Manager -1 sent heartbeat to -2 at clock 20.
+17:38:56 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:38:56 manager.go:66: Manager -1 received Server 2's write request at clock 1.
+17:38:56 manager.go:268: Manager -1 pushed server 2's wr req for page 3 at clock 21.
+17:38:56 manager.go:163: Signal channel received msg from requester 2 at clock 22
+17:38:56 manager.go:169: record.writing is  false  at clock  23
+17:38:56 manager.go:175: Manager -1 poped s2's wr req for page 3.
+17:38:56 manager.go:226: Manager -1 request server 1 to invalidate cache for page 3 at clock 24.
+17:38:56 server.go:53: Server 1 received Manager -1's invalidation request at clock 24.
+17:38:56 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:38:56 manager.go:237: Manager -1 received heartbeat from -2 at clock 24.
+17:38:56 manager.go:123: Manager -2 updated records.
+17:38:56 manager.go:123: Manager -2 updated records.
+17:38:57 server.go:114: Server 3 wants to write page 1...
+17:38:57 server.go:125: Server 3 request to write page 1 to manager -1 at clock 8.
+17:38:57 server.go:77: Server 3 resends request to manager -1 at clock 8.
+17:38:57 manager.go:53: Manager -1 received Server 3's message at clock 8.
+17:38:57 manager.go:66: Manager -1 received Server 3's write request at clock 8.
+17:38:57 manager.go:268: Manager -1 pushed server 3's wr req for page 1 at clock 26.
+17:38:57 manager.go:163: Signal channel received msg from requester 3 at clock 28
+17:38:57 manager.go:169: record.writing is  false  at clock  28
+17:38:57 manager.go:175: Manager -1 poped s3's wr req for page 1.
+17:38:57 manager.go:123: Manager -2 updated records.
+17:38:57 manager.go:123: Manager -2 updated records.
+17:38:57 manager.go:205: Manager -1 forward WRITE request for page 1 at clock 29.
+17:38:57 server.go:48: Server 1 received Manager -1's write forward at clock 30.
+17:38:57 server.go:141: Server 1 sent page 1 to Server 3 at clock 32.
+17:38:57 server.go:63: Server 3 received Server 1's sent page at clock 32.
+17:38:57 server.go:198: Server 3 is writing page 1 at clock 33.
+17:38:57 server.go:155: Server 3 sent WRITE confirm for page 1 to manager -1 at clock 34.
+17:38:57 manager.go:53: Manager -1 received Server 3's message at clock 34.
+17:38:57 manager.go:74: Manager -1 received Server 3's write confirm at clock 34.
+17:38:57 manager.go:134: Manager -1 sent heartbeat to -2 at clock 37.
+17:38:57 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:38:57 manager.go:237: Manager -1 received heartbeat from -2 at clock 37.
+17:38:58 manager.go:134: Manager -1 sent heartbeat to -2 at clock 39.
+17:38:58 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:38:58 manager.go:237: Manager -1 received heartbeat from -2 at clock 39.
+17:38:59 manager.go:134: Manager -1 sent heartbeat to -2 at clock 41.
+17:38:59 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:38:59 manager.go:237: Manager -1 received heartbeat from -2 at clock 41.
+17:39:00 manager.go:134: Manager -1 sent heartbeat to -2 at clock 43.
+17:39:00 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:00 manager.go:237: Manager -1 received heartbeat from -2 at clock 43.
+17:39:01 manager.go:134: Manager -1 sent heartbeat to -2 at clock 45.
+17:39:01 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:01 manager.go:237: Manager -1 received heartbeat from -2 at clock 45.
+17:39:02 fautTolerantIvy.go:131: Elapsed time:  6.5291631s
+17:39:02 fautTolerantIvy.go:31: ===============START===============
+17:39:02 server.go:114: Server 0 wants to write page 3...
+17:39:02 server.go:125: Server 0 request to write page 3 to manager -1 at clock 1.
+17:39:02 server.go:32: Server 0 started listening...
+17:39:02 server.go:32: Server 1 started listening...
+17:39:02 server.go:32: Server 2 started listening...
+17:39:02 server.go:32: Server 3 started listening...
+17:39:02 server.go:32: Server 4 started listening...
+17:39:02 manager.go:353: Manager -1 started.
+17:39:02 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:02 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:39:02 manager.go:353: Manager -2 started.
+17:39:02 manager.go:268: Manager -1 pushed server 0's wr req for page 3 at clock 3.
+17:39:02 manager.go:134: Manager -1 sent heartbeat to -2 at clock 4.
+17:39:02 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:02 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:02 manager.go:237: Manager -1 received heartbeat from -2 at clock 5.
+17:39:02 manager.go:163: Signal channel received msg from requester 0 at clock 5
+17:39:02 manager.go:169: record.writing is  false  at clock  5
+17:39:02 manager.go:175: Manager -1 poped s0's wr req for page 3.
+17:39:02 manager.go:205: Manager -1 forward WRITE request for page 3 at clock 6.
+17:39:02 server.go:48: Server 3 received Manager -1's write forward at clock 6.
+17:39:02 server.go:141: Server 3 sent page 3 to Server 0 at clock 8.
+17:39:02 manager.go:123: Manager -2 updated records.
+17:39:02 manager.go:123: Manager -2 updated records.
+17:39:02 server.go:63: Server 0 received Server 3's sent page at clock 8.
+17:39:02 server.go:198: Server 0 is writing page 3 at clock 9.
+17:39:02 server.go:155: Server 0 sent WRITE confirm for page 3 to manager -1 at clock 10.
+17:39:02 manager.go:53: Manager -1 received Server 0's message at clock 10.
+17:39:02 manager.go:74: Manager -1 received Server 0's write confirm at clock 10.
+17:39:02 server.go:93: Server 1 wants to read page 4...
+17:39:02 server.go:104: Server 1 request to read page 4 to manager -1 at clock 1.
+17:39:02 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:39:02 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:39:02 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:39:02 manager.go:205: Manager -1 forward READ request for page 4 at clock 13.
+17:39:02 server.go:43: Server 4 received Manager -1's read forward at clock 13.
+17:39:02 server.go:58: Server 1 received Server 4's sent page at clock 15.
+17:39:02 server.go:141: Server 4 sent page 4 to Server 1 at clock 15.
+17:39:02 server.go:180: Server 1 is reading page 4...
+17:39:02 server.go:155: Server 1 sent READ confirm for page 4 to manager -1 at clock 17.
+17:39:02 manager.go:53: Manager -1 received Server 1's message at clock 17.
+17:39:02 manager.go:70: Manager -1 received Server 1's read confirm at clock 17.
+17:39:02 manager.go:339: Manager -1 adds server 1 to page 4's copyset.
+17:39:02 manager.go:123: Manager -2 updated records.
+17:39:03 manager.go:134: Manager -1 sent heartbeat to -2 at clock 21.
+17:39:03 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:03 manager.go:237: Manager -1 received heartbeat from -2 at clock 21.
+17:39:03 server.go:93: Server 2 wants to read page 1...
+17:39:03 server.go:104: Server 2 request to read page 1 to manager -1 at clock 1.
+17:39:03 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:39:03 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:39:03 manager.go:61: Manager -1 received Server 2's read request at clock 1.
+17:39:03 manager.go:205: Manager -1 forward READ request for page 1 at clock 23.
+17:39:03 server.go:141: Server 1 sent page 1 to Server 2 at clock 25.
+17:39:03 server.go:43: Server 1 received Manager -1's read forward at clock 23.
+17:39:03 server.go:58: Server 2 received Server 1's sent page at clock 25.
+17:39:03 server.go:180: Server 2 is reading page 1...
+17:39:03 server.go:155: Server 2 sent READ confirm for page 1 to manager -1 at clock 27.
+17:39:03 manager.go:53: Manager -1 received Server 2's message at clock 27.
+17:39:03 manager.go:70: Manager -1 received Server 2's read confirm at clock 27.
+17:39:03 manager.go:339: Manager -1 adds server 2 to page 1's copyset.
+17:39:03 manager.go:123: Manager -2 updated records.
+17:39:03 server.go:114: Server 3 wants to write page 0...
+17:39:03 server.go:125: Server 3 request to write page 0 to manager -1 at clock 9.
+17:39:03 server.go:77: Server 3 resends request to manager -1 at clock 9.
+17:39:03 manager.go:53: Manager -1 received Server 3's message at clock 9.
+17:39:03 manager.go:66: Manager -1 received Server 3's write request at clock 9.
+17:39:03 manager.go:268: Manager -1 pushed server 3's wr req for page 0 at clock 30.
+17:39:03 manager.go:123: Manager -2 updated records.
+17:39:03 manager.go:163: Signal channel received msg from requester 3 at clock 32
+17:39:03 manager.go:169: record.writing is  false  at clock  32
+17:39:03 manager.go:175: Manager -1 poped s3's wr req for page 0.
+17:39:03 manager.go:205: Manager -1 forward WRITE request for page 0 at clock 33.
+17:39:03 server.go:48: Server 0 received Manager -1's write forward at clock 33.
+17:39:03 server.go:141: Server 0 sent page 0 to Server 3 at clock 35.
+17:39:03 manager.go:123: Manager -2 updated records.
+17:39:03 server.go:63: Server 3 received Server 0's sent page at clock 35.
+17:39:03 server.go:198: Server 3 is writing page 0 at clock 36.
+17:39:03 server.go:155: Server 3 sent WRITE confirm for page 0 to manager -1 at clock 37.
+17:39:03 manager.go:53: Manager -1 received Server 3's message at clock 37.
+17:39:03 manager.go:74: Manager -1 received Server 3's write confirm at clock 37.
+17:39:04 manager.go:134: Manager -1 sent heartbeat to -2 at clock 40.
+17:39:04 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:04 manager.go:237: Manager -1 received heartbeat from -2 at clock 40.
+17:39:04 server.go:93: Server 4 wants to read page 4...
+17:39:04 server.go:98: Server 4 is reading page 4 at clock 16
+17:39:04 server.go:99: Server 4 finished reading page 4.
+17:39:05 manager.go:134: Manager -1 sent heartbeat to -2 at clock 42.
+17:39:05 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:05 manager.go:237: Manager -1 received heartbeat from -2 at clock 42.
+17:39:06 manager.go:134: Manager -1 sent heartbeat to -2 at clock 44.
+17:39:06 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:06 manager.go:237: Manager -1 received heartbeat from -2 at clock 44.
+17:39:07 manager.go:134: Manager -1 sent heartbeat to -2 at clock 46.
+17:39:07 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:07 manager.go:237: Manager -1 received heartbeat from -2 at clock 46.
+17:39:08 manager.go:134: Manager -1 sent heartbeat to -2 at clock 48.
+17:39:08 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:08 manager.go:237: Manager -1 received heartbeat from -2 at clock 48.
+17:39:08 fautTolerantIvy.go:131: Elapsed time:  6.5318749s
+17:39:08 fautTolerantIvy.go:31: ===============START===============
+17:39:08 server.go:93: Server 0 wants to read page 3...
+17:39:08 server.go:104: Server 0 request to read page 3 to manager -1 at clock 1.
+17:39:08 server.go:32: Server 0 started listening...
+17:39:08 server.go:32: Server 1 started listening...
+17:39:08 server.go:32: Server 2 started listening...
+17:39:08 server.go:32: Server 3 started listening...
+17:39:08 manager.go:353: Manager -1 started.
+17:39:08 server.go:32: Server 5 started listening...
+17:39:08 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:08 server.go:32: Server 4 started listening...
+17:39:08 manager.go:205: Manager -1 forward READ request for page 3 at clock 4.
+17:39:08 manager.go:61: Manager -1 received Server 0's read request at clock 1.
+17:39:08 server.go:141: Server 3 sent page 3 to Server 0 at clock 6.
+17:39:08 server.go:58: Server 0 received Server 3's sent page at clock 6.
+17:39:08 server.go:180: Server 0 is reading page 3...
+17:39:08 server.go:43: Server 3 received Manager -1's read forward at clock 4.
+17:39:08 manager.go:353: Manager -2 started.
+17:39:08 server.go:155: Server 0 sent READ confirm for page 3 to manager -1 at clock 8.
+17:39:08 manager.go:53: Manager -1 received Server 0's message at clock 8.
+17:39:08 manager.go:70: Manager -1 received Server 0's read confirm at clock 8.
+17:39:08 manager.go:339: Manager -1 adds server 0 to page 3's copyset.
+17:39:08 manager.go:123: Manager -2 updated records.
+17:39:08 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:08 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:08 manager.go:237: Manager -1 received heartbeat from -2 at clock 10.
+17:39:08 manager.go:134: Manager -1 sent heartbeat to -2 at clock 10.
+17:39:09 server.go:93: Server 1 wants to read page 4...
+17:39:09 server.go:104: Server 1 request to read page 4 to manager -1 at clock 1.
+17:39:09 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:39:09 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:39:09 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:39:09 manager.go:205: Manager -1 forward READ request for page 4 at clock 12.
+17:39:09 server.go:43: Server 4 received Manager -1's read forward at clock 12.
+17:39:09 server.go:141: Server 4 sent page 4 to Server 1 at clock 14.
+17:39:09 server.go:58: Server 1 received Server 4's sent page at clock 14.
+17:39:09 server.go:180: Server 1 is reading page 4...
+17:39:09 server.go:155: Server 1 sent READ confirm for page 4 to manager -1 at clock 16.
+17:39:09 manager.go:53: Manager -1 received Server 1's message at clock 16.
+17:39:09 manager.go:70: Manager -1 received Server 1's read confirm at clock 16.
+17:39:09 manager.go:339: Manager -1 adds server 1 to page 4's copyset.
+17:39:09 manager.go:123: Manager -2 updated records.
+17:39:09 server.go:114: Server 2 wants to write page 3...
+17:39:09 server.go:125: Server 2 request to write page 3 to manager -1 at clock 1.
+17:39:09 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:09 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:39:09 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:39:09 manager.go:134: Manager -1 sent heartbeat to -2 at clock 20.
+17:39:09 manager.go:237: Manager -1 received heartbeat from -2 at clock 20.
+17:39:09 manager.go:66: Manager -1 received Server 2's write request at clock 1.
+17:39:09 manager.go:268: Manager -1 pushed server 2's wr req for page 3 at clock 21.
+17:39:09 manager.go:163: Signal channel received msg from requester 2 at clock 23
+17:39:09 manager.go:169: record.writing is  false  at clock  23
+17:39:09 manager.go:123: Manager -2 updated records.
+17:39:09 manager.go:175: Manager -1 poped s2's wr req for page 3.
+17:39:09 manager.go:226: Manager -1 request server 0 to invalidate cache for page 3 at clock 24.
+17:39:09 manager.go:123: Manager -2 updated records.
+17:39:09 server.go:53: Server 0 received Manager -1's invalidation request at clock 25.
+17:39:10 server.go:114: Server 3 wants to write page 4...
+17:39:10 server.go:125: Server 3 request to write page 4 to manager -1 at clock 7.
+17:39:10 server.go:77: Server 3 resends request to manager -1 at clock 7.
+17:39:10 manager.go:53: Manager -1 received Server 3's message at clock 7.
+17:39:10 manager.go:66: Manager -1 received Server 3's write request at clock 7.
+17:39:10 manager.go:268: Manager -1 pushed server 3's wr req for page 4 at clock 26.
+17:39:10 manager.go:163: Signal channel received msg from requester 3 at clock 27
+17:39:10 manager.go:169: record.writing is  false  at clock  28
+17:39:10 manager.go:175: Manager -1 poped s3's wr req for page 4.
+17:39:10 manager.go:123: Manager -2 updated records.
+17:39:10 manager.go:123: Manager -2 updated records.
+17:39:10 manager.go:226: Manager -1 request server 1 to invalidate cache for page 4 at clock 29.
+17:39:10 server.go:53: Server 1 received Manager -1's invalidation request at clock 30.
+17:39:10 server.go:114: Server 4 wants to write page 5...
+17:39:10 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:10 manager.go:134: Manager -1 sent heartbeat to -2 at clock 32.
+17:39:10 server.go:125: Server 4 request to write page 5 to manager -1 at clock 15.
+17:39:10 server.go:77: Server 4 resends request to manager -1 at clock 15.
+17:39:10 manager.go:53: Manager -1 received Server 4's message at clock 15.
+17:39:10 manager.go:237: Manager -1 received heartbeat from -2 at clock 32.
+17:39:10 manager.go:66: Manager -1 received Server 4's write request at clock 15.
+17:39:10 manager.go:268: Manager -1 pushed server 4's wr req for page 5 at clock 33.
+17:39:10 manager.go:123: Manager -2 updated records.
+17:39:10 manager.go:163: Signal channel received msg from requester 4 at clock 35
+17:39:10 manager.go:169: record.writing is  false  at clock  35
+17:39:10 manager.go:175: Manager -1 poped s4's wr req for page 5.
+17:39:10 manager.go:205: Manager -1 forward WRITE request for page 5 at clock 36.
+17:39:10 server.go:48: Server 5 received Manager -1's write forward at clock 37.
+17:39:10 server.go:141: Server 5 sent page 5 to Server 4 at clock 39.
+17:39:10 manager.go:123: Manager -2 updated records.
+17:39:10 server.go:63: Server 4 received Server 5's sent page at clock 39.
+17:39:10 server.go:198: Server 4 is writing page 5 at clock 40.
+17:39:10 manager.go:53: Manager -1 received Server 4's message at clock 41.
+17:39:10 server.go:155: Server 4 sent WRITE confirm for page 5 to manager -1 at clock 41.
+17:39:10 manager.go:74: Manager -1 received Server 4's write confirm at clock 41.
+17:39:11 server.go:93: Server 5 wants to read page 2...
+17:39:11 server.go:104: Server 5 request to read page 2 to manager -1 at clock 40.
+17:39:11 server.go:77: Server 5 resends request to manager -1 at clock 40.
+17:39:11 manager.go:53: Manager -1 received Server 5's message at clock 40.
+17:39:11 manager.go:61: Manager -1 received Server 5's read request at clock 40.
+17:39:11 manager.go:205: Manager -1 forward READ request for page 2 at clock 44.
+17:39:11 server.go:43: Server 2 received Manager -1's read forward at clock 44.
+17:39:11 server.go:141: Server 2 sent page 2 to Server 5 at clock 46.
+17:39:11 server.go:180: Server 5 is reading page 2...
+17:39:11 server.go:155: Server 5 sent READ confirm for page 2 to manager -1 at clock 48.
+17:39:11 manager.go:53: Manager -1 received Server 5's message at clock 48.
+17:39:11 manager.go:70: Manager -1 received Server 5's read confirm at clock 48.
+17:39:11 manager.go:339: Manager -1 adds server 5 to page 2's copyset.
+17:39:11 manager.go:123: Manager -2 updated records.
+17:39:11 server.go:58: Server 5 received Server 2's sent page at clock 46.
+17:39:11 manager.go:134: Manager -1 sent heartbeat to -2 at clock 52.
+17:39:11 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:11 manager.go:237: Manager -1 received heartbeat from -2 at clock 52.
+17:39:12 manager.go:134: Manager -1 sent heartbeat to -2 at clock 54.
+17:39:12 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:12 manager.go:237: Manager -1 received heartbeat from -2 at clock 54.
+17:39:13 manager.go:134: Manager -1 sent heartbeat to -2 at clock 56.
+17:39:13 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:13 manager.go:237: Manager -1 received heartbeat from -2 at clock 56.
+17:39:14 manager.go:134: Manager -1 sent heartbeat to -2 at clock 58.
+17:39:14 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:14 manager.go:237: Manager -1 received heartbeat from -2 at clock 58.
+17:39:15 manager.go:134: Manager -1 sent heartbeat to -2 at clock 60.
+17:39:15 manager.go:237: Manager -2 received heartbeat from -1 at clock 7.
+17:39:15 manager.go:237: Manager -1 received heartbeat from -2 at clock 60.
+17:39:16 fautTolerantIvy.go:131: Elapsed time:  7.5299581s
+17:39:16 fautTolerantIvy.go:31: ===============START===============
+17:39:16 server.go:114: Server 0 wants to write page 3...
+17:39:16 server.go:125: Server 0 request to write page 3 to manager -1 at clock 1.
+17:39:16 server.go:32: Server 5 started listening...
+17:39:16 server.go:32: Server 4 started listening...
+17:39:16 server.go:32: Server 6 started listening...
+17:39:16 manager.go:353: Manager -2 started.
+17:39:16 server.go:32: Server 3 started listening...
+17:39:16 server.go:32: Server 0 started listening...
+17:39:16 server.go:32: Server 1 started listening...
+17:39:16 manager.go:353: Manager -1 started.
+17:39:16 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:16 server.go:32: Server 2 started listening...
+17:39:16 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:16 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:16 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:39:16 manager.go:237: Manager -1 received heartbeat from -2 at clock 4.
+17:39:16 manager.go:268: Manager -1 pushed server 0's wr req for page 3 at clock 3.
+17:39:16 manager.go:163: Signal channel received msg from requester 0 at clock 5
+17:39:16 manager.go:169: record.writing is  false  at clock  5
+17:39:16 manager.go:175: Manager -1 poped s0's wr req for page 3.
+17:39:16 manager.go:205: Manager -1 forward WRITE request for page 3 at clock 6.
+17:39:16 server.go:48: Server 3 received Manager -1's write forward at clock 6.
+17:39:16 server.go:141: Server 3 sent page 3 to Server 0 at clock 8.
+17:39:16 server.go:63: Server 0 received Server 3's sent page at clock 8.
+17:39:16 server.go:198: Server 0 is writing page 3 at clock 9.
+17:39:16 server.go:155: Server 0 sent WRITE confirm for page 3 to manager -1 at clock 10.
+17:39:16 manager.go:53: Manager -1 received Server 0's message at clock 10.
+17:39:16 manager.go:74: Manager -1 received Server 0's write confirm at clock 10.
+17:39:16 manager.go:123: Manager -2 updated records.
+17:39:16 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:39:16 manager.go:123: Manager -2 updated records.
+17:39:16 server.go:93: Server 1 wants to read page 3...
+17:39:16 server.go:104: Server 1 request to read page 3 to manager -1 at clock 1.
+17:39:16 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:39:16 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:39:16 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:39:16 manager.go:205: Manager -1 forward READ request for page 3 at clock 14.
+17:39:16 server.go:43: Server 0 received Manager -1's read forward at clock 14.
+17:39:16 server.go:141: Server 0 sent page 3 to Server 1 at clock 16.
+17:39:16 server.go:58: Server 1 received Server 0's sent page at clock 16.
+17:39:16 server.go:180: Server 1 is reading page 3...
+17:39:16 server.go:155: Server 1 sent READ confirm for page 3 to manager -1 at clock 18.
+17:39:16 manager.go:53: Manager -1 received Server 1's message at clock 18.
+17:39:16 manager.go:70: Manager -1 received Server 1's read confirm at clock 18.
+17:39:16 manager.go:339: Manager -1 adds server 1 to page 3's copyset.
+17:39:16 manager.go:123: Manager -2 updated records.
+17:39:17 manager.go:134: Manager -1 sent heartbeat to -2 at clock 22.
+17:39:17 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:17 manager.go:237: Manager -1 received heartbeat from -2 at clock 22.
+17:39:17 server.go:93: Server 2 wants to read page 6...
+17:39:17 server.go:104: Server 2 request to read page 6 to manager -1 at clock 1.
+17:39:17 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:39:17 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:39:17 manager.go:61: Manager -1 received Server 2's read request at clock 1.
+17:39:17 manager.go:205: Manager -1 forward READ request for page 6 at clock 24.
+17:39:17 server.go:43: Server 6 received Manager -1's read forward at clock 24.
+17:39:17 server.go:141: Server 6 sent page 6 to Server 2 at clock 26.
+17:39:17 server.go:180: Server 2 is reading page 6...
+17:39:17 server.go:155: Server 2 sent READ confirm for page 6 to manager -1 at clock 28.
+17:39:17 manager.go:53: Manager -1 received Server 2's message at clock 28.
+17:39:17 server.go:58: Server 2 received Server 6's sent page at clock 26.
+17:39:17 manager.go:70: Manager -1 received Server 2's read confirm at clock 28.
+17:39:17 manager.go:339: Manager -1 adds server 2 to page 6's copyset.
+17:39:17 manager.go:123: Manager -2 updated records.
+17:39:17 server.go:114: Server 3 wants to write page 4...
+17:39:17 server.go:125: Server 3 request to write page 4 to manager -1 at clock 9.
+17:39:17 server.go:77: Server 3 resends request to manager -1 at clock 9.
+17:39:17 manager.go:53: Manager -1 received Server 3's message at clock 9.
+17:39:17 manager.go:66: Manager -1 received Server 3's write request at clock 9.
+17:39:17 manager.go:268: Manager -1 pushed server 3's wr req for page 4 at clock 31.
+17:39:17 manager.go:163: Signal channel received msg from requester 3 at clock 32
+17:39:17 manager.go:169: record.writing is  false  at clock  33
+17:39:17 manager.go:175: Manager -1 poped s3's wr req for page 4.
+17:39:17 manager.go:123: Manager -2 updated records.
+17:39:17 manager.go:205: Manager -1 forward WRITE request for page 4 at clock 34.
+17:39:17 server.go:48: Server 4 received Manager -1's write forward at clock 35.
+17:39:17 manager.go:123: Manager -2 updated records.
+17:39:17 server.go:141: Server 4 sent page 4 to Server 3 at clock 37.
+17:39:17 server.go:63: Server 3 received Server 4's sent page at clock 37.
+17:39:17 server.go:198: Server 3 is writing page 4 at clock 38.
+17:39:17 server.go:155: Server 3 sent WRITE confirm for page 4 to manager -1 at clock 39.
+17:39:17 manager.go:53: Manager -1 received Server 3's message at clock 39.
+17:39:17 manager.go:74: Manager -1 received Server 3's write confirm at clock 39.
+17:39:18 server.go:93: Server 4 wants to read page 6...
+17:39:18 server.go:104: Server 4 request to read page 6 to manager -1 at clock 38.
+17:39:18 manager.go:134: Manager -1 sent heartbeat to -2 at clock 42.
+17:39:18 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:18 server.go:77: Server 4 resends request to manager -1 at clock 38.
+17:39:18 manager.go:237: Manager -1 received heartbeat from -2 at clock 42.
+17:39:18 manager.go:53: Manager -1 received Server 4's message at clock 38.
+17:39:18 manager.go:61: Manager -1 received Server 4's read request at clock 38.
+17:39:18 manager.go:205: Manager -1 forward READ request for page 6 at clock 44.
+17:39:18 server.go:43: Server 6 received Manager -1's read forward at clock 44.
+17:39:18 server.go:141: Server 6 sent page 6 to Server 4 at clock 46.
+17:39:18 server.go:58: Server 4 received Server 6's sent page at clock 46.
+17:39:18 server.go:180: Server 4 is reading page 6...
+17:39:18 server.go:155: Server 4 sent READ confirm for page 6 to manager -1 at clock 48.
+17:39:18 manager.go:53: Manager -1 received Server 4's message at clock 48.
+17:39:18 manager.go:70: Manager -1 received Server 4's read confirm at clock 48.
+17:39:18 manager.go:339: Manager -1 adds server 4 to page 6's copyset.
+17:39:18 manager.go:123: Manager -2 updated records.
+17:39:18 server.go:93: Server 5 wants to read page 4...
+17:39:18 server.go:104: Server 5 request to read page 4 to manager -1 at clock 1.
+17:39:18 server.go:77: Server 5 resends request to manager -1 at clock 1.
+17:39:18 manager.go:53: Manager -1 received Server 5's message at clock 1.
+17:39:18 manager.go:61: Manager -1 received Server 5's read request at clock 1.
+17:39:18 manager.go:205: Manager -1 forward READ request for page 4 at clock 52.
+17:39:18 server.go:43: Server 3 received Manager -1's read forward at clock 52.
+17:39:18 server.go:141: Server 3 sent page 4 to Server 5 at clock 54.
+17:39:18 server.go:58: Server 5 received Server 3's sent page at clock 54.
+17:39:18 server.go:180: Server 5 is reading page 4...
+17:39:18 server.go:155: Server 5 sent READ confirm for page 4 to manager -1 at clock 56.
+17:39:18 manager.go:53: Manager -1 received Server 5's message at clock 56.
+17:39:18 manager.go:70: Manager -1 received Server 5's read confirm at clock 56.
+17:39:18 manager.go:339: Manager -1 adds server 5 to page 4's copyset.
+17:39:18 manager.go:123: Manager -2 updated records.
+17:39:19 manager.go:134: Manager -1 sent heartbeat to -2 at clock 60.
+17:39:19 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:19 manager.go:237: Manager -1 received heartbeat from -2 at clock 60.
+17:39:19 server.go:114: Server 6 wants to write page 0...
+17:39:19 server.go:125: Server 6 request to write page 0 to manager -1 at clock 47.
+17:39:19 server.go:77: Server 6 resends request to manager -1 at clock 47.
+17:39:19 manager.go:53: Manager -1 received Server 6's message at clock 47.
+17:39:19 manager.go:66: Manager -1 received Server 6's write request at clock 47.
+17:39:19 manager.go:268: Manager -1 pushed server 6's wr req for page 0 at clock 61.
+17:39:19 manager.go:163: Signal channel received msg from requester 6 at clock 63
+17:39:19 manager.go:123: Manager -2 updated records.
+17:39:19 manager.go:169: record.writing is  false  at clock  63
+17:39:19 manager.go:175: Manager -1 poped s6's wr req for page 0.
+17:39:19 manager.go:205: Manager -1 forward WRITE request for page 0 at clock 64.
+17:39:19 manager.go:123: Manager -2 updated records.
+17:39:19 server.go:48: Server 0 received Manager -1's write forward at clock 65.
+17:39:19 server.go:141: Server 0 sent page 0 to Server 6 at clock 67.
+17:39:19 server.go:63: Server 6 received Server 0's sent page at clock 67.
+17:39:19 server.go:198: Server 6 is writing page 0 at clock 68.
+17:39:19 server.go:155: Server 6 sent WRITE confirm for page 0 to manager -1 at clock 69.
+17:39:19 manager.go:53: Manager -1 received Server 6's message at clock 69.
+17:39:19 manager.go:74: Manager -1 received Server 6's write confirm at clock 69.
+17:39:20 manager.go:134: Manager -1 sent heartbeat to -2 at clock 72.
+17:39:20 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:20 manager.go:237: Manager -1 received heartbeat from -2 at clock 72.
+17:39:21 manager.go:134: Manager -1 sent heartbeat to -2 at clock 74.
+17:39:21 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:21 manager.go:237: Manager -1 received heartbeat from -2 at clock 74.
+17:39:22 manager.go:134: Manager -1 sent heartbeat to -2 at clock 76.
+17:39:22 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:22 manager.go:237: Manager -1 received heartbeat from -2 at clock 76.
+17:39:23 manager.go:134: Manager -1 sent heartbeat to -2 at clock 78.
+17:39:23 manager.go:237: Manager -2 received heartbeat from -1 at clock 7.
+17:39:23 manager.go:237: Manager -1 received heartbeat from -2 at clock 78.
+17:39:24 fautTolerantIvy.go:131: Elapsed time:  8.0413993s
+17:39:24 fautTolerantIvy.go:31: ===============START===============
+17:39:24 server.go:114: Server 0 wants to write page 4...
+17:39:24 server.go:125: Server 0 request to write page 4 to manager -1 at clock 1.
+17:39:24 server.go:32: Server 3 started listening...
+17:39:24 server.go:32: Server 2 started listening...
+17:39:24 manager.go:353: Manager -2 started.
+17:39:24 server.go:32: Server 4 started listening...
+17:39:24 server.go:32: Server 1 started listening...
+17:39:24 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:24 manager.go:237: Manager -1 received heartbeat from -2 at clock 2.
+17:39:24 server.go:32: Server 5 started listening...
+17:39:24 server.go:32: Server 6 started listening...
+17:39:24 server.go:32: Server 7 started listening...
+17:39:24 manager.go:353: Manager -1 started.
+17:39:24 server.go:32: Server 0 started listening...
+17:39:24 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:24 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:39:24 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:24 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:39:24 manager.go:268: Manager -1 pushed server 0's wr req for page 4 at clock 3.
+17:39:24 manager.go:163: Signal channel received msg from requester 0 at clock 5
+17:39:24 manager.go:169: record.writing is  false  at clock  5
+17:39:24 manager.go:175: Manager -1 poped s0's wr req for page 4.
+17:39:24 manager.go:205: Manager -1 forward WRITE request for page 4 at clock 6.
+17:39:24 server.go:48: Server 4 received Manager -1's write forward at clock 6.
+17:39:24 server.go:141: Server 4 sent page 4 to Server 0 at clock 8.
+17:39:24 server.go:63: Server 0 received Server 4's sent page at clock 8.
+17:39:24 manager.go:123: Manager -2 updated records.
+17:39:24 server.go:198: Server 0 is writing page 4 at clock 9.
+17:39:24 manager.go:123: Manager -2 updated records.
+17:39:24 manager.go:53: Manager -1 received Server 0's message at clock 10.
+17:39:24 manager.go:74: Manager -1 received Server 0's write confirm at clock 10.
+17:39:24 server.go:155: Server 0 sent WRITE confirm for page 4 to manager -1 at clock 10.
+17:39:24 server.go:93: Server 1 wants to read page 5...
+17:39:24 server.go:104: Server 1 request to read page 5 to manager -1 at clock 1.
+17:39:24 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:39:24 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:39:24 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:39:24 manager.go:205: Manager -1 forward READ request for page 5 at clock 13.
+17:39:24 server.go:43: Server 5 received Manager -1's read forward at clock 13.
+17:39:24 server.go:141: Server 5 sent page 5 to Server 1 at clock 15.
+17:39:24 server.go:58: Server 1 received Server 5's sent page at clock 15.
+17:39:24 server.go:180: Server 1 is reading page 5...
+17:39:24 server.go:155: Server 1 sent READ confirm for page 5 to manager -1 at clock 17.
+17:39:24 manager.go:53: Manager -1 received Server 1's message at clock 17.
+17:39:24 manager.go:70: Manager -1 received Server 1's read confirm at clock 17.
+17:39:24 manager.go:339: Manager -1 adds server 1 to page 5's copyset.
+17:39:24 manager.go:123: Manager -2 updated records.
+17:39:25 server.go:114: Server 2 wants to write page 5...
+17:39:25 server.go:125: Server 2 request to write page 5 to manager -1 at clock 1.
+17:39:25 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:39:25 manager.go:134: Manager -1 sent heartbeat to -2 at clock 21.
+17:39:25 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:25 manager.go:237: Manager -1 received heartbeat from -2 at clock 21.
+17:39:25 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:39:25 manager.go:66: Manager -1 received Server 2's write request at clock 1.
+17:39:25 manager.go:268: Manager -1 pushed server 2's wr req for page 5 at clock 22.
+17:39:25 manager.go:163: Signal channel received msg from requester 2 at clock 23
+17:39:25 manager.go:169: record.writing is  false  at clock  23
+17:39:25 manager.go:175: Manager -1 poped s2's wr req for page 5.
+17:39:25 manager.go:123: Manager -2 updated records.
+17:39:25 manager.go:123: Manager -2 updated records.
+17:39:25 manager.go:226: Manager -1 request server 1 to invalidate cache for page 5 at clock 25.
+17:39:25 server.go:53: Server 1 received Manager -1's invalidation request at clock 26.
+17:39:25 server.go:93: Server 3 wants to read page 7...
+17:39:25 server.go:104: Server 3 request to read page 7 to manager -1 at clock 1.
+17:39:25 server.go:77: Server 3 resends request to manager -1 at clock 1.
+17:39:25 manager.go:53: Manager -1 received Server 3's message at clock 1.
+17:39:25 manager.go:61: Manager -1 received Server 3's read request at clock 1.
+17:39:25 manager.go:205: Manager -1 forward READ request for page 7 at clock 28.
+17:39:25 server.go:43: Server 7 received Manager -1's read forward at clock 28.
+17:39:25 server.go:141: Server 7 sent page 7 to Server 3 at clock 30.
+17:39:25 server.go:58: Server 3 received Server 7's sent page at clock 30.
+17:39:25 server.go:180: Server 3 is reading page 7...
+17:39:25 server.go:155: Server 3 sent READ confirm for page 7 to manager -1 at clock 32.
+17:39:25 manager.go:53: Manager -1 received Server 3's message at clock 32.
+17:39:25 manager.go:70: Manager -1 received Server 3's read confirm at clock 32.
+17:39:25 manager.go:339: Manager -1 adds server 3 to page 7's copyset.
+17:39:25 manager.go:123: Manager -2 updated records.
+17:39:26 server.go:93: Server 4 wants to read page 7...
+17:39:26 server.go:104: Server 4 request to read page 7 to manager -1 at clock 9.
+17:39:26 server.go:77: Server 4 resends request to manager -1 at clock 9.
+17:39:26 manager.go:134: Manager -1 sent heartbeat to -2 at clock 36.
+17:39:26 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:26 manager.go:237: Manager -1 received heartbeat from -2 at clock 36.
+17:39:26 manager.go:53: Manager -1 received Server 4's message at clock 9.
+17:39:26 manager.go:61: Manager -1 received Server 4's read request at clock 9.
+17:39:26 manager.go:205: Manager -1 forward READ request for page 7 at clock 38.
+17:39:26 server.go:43: Server 7 received Manager -1's read forward at clock 38.
+17:39:26 server.go:141: Server 7 sent page 7 to Server 4 at clock 40.
+17:39:26 server.go:58: Server 4 received Server 7's sent page at clock 40.
+17:39:26 server.go:180: Server 4 is reading page 7...
+17:39:26 server.go:155: Server 4 sent READ confirm for page 7 to manager -1 at clock 42.
+17:39:26 manager.go:53: Manager -1 received Server 4's message at clock 42.
+17:39:26 manager.go:70: Manager -1 received Server 4's read confirm at clock 42.
+17:39:26 manager.go:339: Manager -1 adds server 4 to page 7's copyset.
+17:39:26 manager.go:123: Manager -2 updated records.
+17:39:26 server.go:114: Server 5 wants to write page 7...
+17:39:26 server.go:125: Server 5 request to write page 7 to manager -1 at clock 16.
+17:39:26 server.go:77: Server 5 resends request to manager -1 at clock 16.
+17:39:26 manager.go:53: Manager -1 received Server 5's message at clock 16.
+17:39:26 manager.go:66: Manager -1 received Server 5's write request at clock 16.
+17:39:26 manager.go:268: Manager -1 pushed server 5's wr req for page 7 at clock 45.
+17:39:26 manager.go:163: Signal channel received msg from requester 5 at clock 47
+17:39:26 manager.go:169: record.writing is  false  at clock  47
+17:39:26 manager.go:175: Manager -1 poped s5's wr req for page 7.
+17:39:26 manager.go:123: Manager -2 updated records.
+17:39:26 manager.go:123: Manager -2 updated records.
+17:39:26 manager.go:226: Manager -1 request server 3 to invalidate cache for page 7 at clock 48.
+17:39:26 manager.go:226: Manager -1 request server 4 to invalidate cache for page 7 at clock 49.
+17:39:26 server.go:53: Server 4 received Manager -1's invalidation request at clock 49.
+17:39:26 server.go:53: Server 3 received Manager -1's invalidation request at clock 49.
+17:39:27 manager.go:134: Manager -1 sent heartbeat to -2 at clock 51.
+17:39:27 server.go:93: Server 6 wants to read page 4...
+17:39:27 server.go:104: Server 6 request to read page 4 to manager -1 at clock 1.
+17:39:27 server.go:77: Server 6 resends request to manager -1 at clock 1.
+17:39:27 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:27 manager.go:53: Manager -1 received Server 6's message at clock 1.
+17:39:27 manager.go:61: Manager -1 received Server 6's read request at clock 1.
+17:39:27 manager.go:205: Manager -1 forward READ request for page 4 at clock 53.
+17:39:27 manager.go:237: Manager -1 received heartbeat from -2 at clock 51.
+17:39:27 server.go:180: Server 6 is reading page 4...
+17:39:27 server.go:155: Server 6 sent READ confirm for page 4 to manager -1 at clock 57.
+17:39:27 manager.go:53: Manager -1 received Server 6's message at clock 57.
+17:39:27 manager.go:70: Manager -1 received Server 6's read confirm at clock 57.
+17:39:27 manager.go:339: Manager -1 adds server 6 to page 4's copyset.
+17:39:27 manager.go:123: Manager -2 updated records.
+17:39:27 server.go:43: Server 0 received Manager -1's read forward at clock 53.
+17:39:27 server.go:141: Server 0 sent page 4 to Server 6 at clock 55.
+17:39:27 server.go:58: Server 6 received Server 0's sent page at clock 55.
+17:39:27 server.go:93: Server 7 wants to read page 0...
+17:39:27 server.go:104: Server 7 request to read page 0 to manager -1 at clock 41.
+17:39:27 server.go:77: Server 7 resends request to manager -1 at clock 41.
+17:39:27 manager.go:53: Manager -1 received Server 7's message at clock 41.
+17:39:27 manager.go:61: Manager -1 received Server 7's read request at clock 41.
+17:39:27 manager.go:205: Manager -1 forward READ request for page 0 at clock 61.
+17:39:27 server.go:43: Server 0 received Manager -1's read forward at clock 61.
+17:39:27 server.go:141: Server 0 sent page 0 to Server 7 at clock 63.
+17:39:27 server.go:58: Server 7 received Server 0's sent page at clock 63.
+17:39:27 server.go:180: Server 7 is reading page 0...
+17:39:27 server.go:155: Server 7 sent READ confirm for page 0 to manager -1 at clock 65.
+17:39:27 manager.go:53: Manager -1 received Server 7's message at clock 65.
+17:39:27 manager.go:70: Manager -1 received Server 7's read confirm at clock 65.
+17:39:27 manager.go:339: Manager -1 adds server 7 to page 0's copyset.
+17:39:27 manager.go:123: Manager -2 updated records.
+17:39:28 manager.go:134: Manager -1 sent heartbeat to -2 at clock 69.
+17:39:28 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:28 manager.go:237: Manager -1 received heartbeat from -2 at clock 69.
+17:39:29 manager.go:134: Manager -1 sent heartbeat to -2 at clock 71.
+17:39:29 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:29 manager.go:237: Manager -1 received heartbeat from -2 at clock 71.
+17:39:30 manager.go:134: Manager -1 sent heartbeat to -2 at clock 73.
+17:39:30 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:30 manager.go:237: Manager -1 received heartbeat from -2 at clock 73.
+17:39:31 manager.go:134: Manager -1 sent heartbeat to -2 at clock 75.
+17:39:31 manager.go:237: Manager -2 received heartbeat from -1 at clock 7.
+17:39:31 manager.go:237: Manager -1 received heartbeat from -2 at clock 75.
+17:39:32 manager.go:134: Manager -1 sent heartbeat to -2 at clock 77.
+17:39:32 manager.go:237: Manager -2 received heartbeat from -1 at clock 8.
+17:39:32 manager.go:237: Manager -1 received heartbeat from -2 at clock 77.
+17:39:32 fautTolerantIvy.go:131: Elapsed time:  8.5450129s
+17:39:33 fautTolerantIvy.go:31: ===============START===============
+17:39:33 server.go:114: Server 0 wants to write page 6...
+17:39:33 server.go:125: Server 0 request to write page 6 to manager -1 at clock 1.
+17:39:33 server.go:32: Server 6 started listening...
+17:39:33 server.go:32: Server 5 started listening...
+17:39:33 manager.go:353: Manager -1 started.
+17:39:33 server.go:32: Server 2 started listening...
+17:39:33 server.go:32: Server 7 started listening...
+17:39:33 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:33 server.go:32: Server 4 started listening...
+17:39:33 server.go:32: Server 8 started listening...
+17:39:33 manager.go:123: Manager -2 updated records.
+17:39:33 server.go:32: Server 0 started listening...
+17:39:33 server.go:32: Server 1 started listening...
+17:39:33 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:33 manager.go:134: Manager -1 sent heartbeat to -2 at clock 5.
+17:39:33 manager.go:353: Manager -2 started.
+17:39:33 server.go:32: Server 3 started listening...
+17:39:33 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:39:33 manager.go:268: Manager -1 pushed server 0's wr req for page 6 at clock 4.
+17:39:33 manager.go:163: Signal channel received msg from requester 0 at clock 6
+17:39:33 manager.go:169: record.writing is  false  at clock  6
+17:39:33 manager.go:175: Manager -1 poped s0's wr req for page 6.
+17:39:33 manager.go:205: Manager -1 forward WRITE request for page 6 at clock 7.
+17:39:33 server.go:48: Server 6 received Manager -1's write forward at clock 7.
+17:39:33 server.go:141: Server 6 sent page 6 to Server 0 at clock 9.
+17:39:33 server.go:63: Server 0 received Server 6's sent page at clock 9.
+17:39:33 server.go:198: Server 0 is writing page 6 at clock 10.
+17:39:33 server.go:155: Server 0 sent WRITE confirm for page 6 to manager -1 at clock 11.
+17:39:33 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:33 manager.go:237: Manager -1 received heartbeat from -2 at clock 8.
+17:39:33 manager.go:53: Manager -1 received Server 0's message at clock 11.
+17:39:33 manager.go:74: Manager -1 received Server 0's write confirm at clock 11.
+17:39:33 manager.go:123: Manager -2 updated records.
+17:39:33 server.go:93: Server 1 wants to read page 6...
+17:39:33 server.go:104: Server 1 request to read page 6 to manager -1 at clock 1.
+17:39:33 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:39:33 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:39:33 manager.go:61: Manager -1 received Server 1's read request at clock 1.
+17:39:33 manager.go:205: Manager -1 forward READ request for page 6 at clock 14.
+17:39:33 server.go:43: Server 0 received Manager -1's read forward at clock 14.
+17:39:33 server.go:141: Server 0 sent page 6 to Server 1 at clock 16.
+17:39:33 server.go:58: Server 1 received Server 0's sent page at clock 16.
+17:39:33 server.go:180: Server 1 is reading page 6...
+17:39:33 server.go:155: Server 1 sent READ confirm for page 6 to manager -1 at clock 18.
+17:39:33 manager.go:53: Manager -1 received Server 1's message at clock 18.
+17:39:33 manager.go:70: Manager -1 received Server 1's read confirm at clock 18.
+17:39:33 manager.go:339: Manager -1 adds server 1 to page 6's copyset.
+17:39:33 manager.go:123: Manager -2 updated records.
+17:39:34 manager.go:134: Manager -1 sent heartbeat to -2 at clock 22.
+17:39:34 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:34 manager.go:237: Manager -1 received heartbeat from -2 at clock 22.
+17:39:34 server.go:114: Server 2 wants to write page 2...
+17:39:34 server.go:114: Server 3 wants to write page 4...
+17:39:34 server.go:125: Server 3 request to write page 4 to manager -1 at clock 1.
+17:39:34 server.go:77: Server 3 resends request to manager -1 at clock 1.
+17:39:34 manager.go:53: Manager -1 received Server 3's message at clock 1.
+17:39:34 manager.go:66: Manager -1 received Server 3's write request at clock 1.
+17:39:34 manager.go:268: Manager -1 pushed server 3's wr req for page 4 at clock 23.
+17:39:34 manager.go:163: Signal channel received msg from requester 3 at clock 24
+17:39:34 manager.go:169: record.writing is  false  at clock  24
+17:39:34 manager.go:175: Manager -1 poped s3's wr req for page 4.
+17:39:34 manager.go:205: Manager -1 forward WRITE request for page 4 at clock 25.
+17:39:34 server.go:48: Server 4 received Manager -1's write forward at clock 25.
+17:39:34 manager.go:123: Manager -2 updated records.
+17:39:34 manager.go:123: Manager -2 updated records.
+17:39:34 server.go:141: Server 4 sent page 4 to Server 3 at clock 27.
+17:39:34 server.go:63: Server 3 received Server 4's sent page at clock 27.
+17:39:34 server.go:198: Server 3 is writing page 4 at clock 28.
+17:39:34 server.go:155: Server 3 sent WRITE confirm for page 4 to manager -1 at clock 29.
+17:39:34 manager.go:53: Manager -1 received Server 3's message at clock 29.
+17:39:34 manager.go:74: Manager -1 received Server 3's write confirm at clock 29.
+17:39:35 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:35 manager.go:134: Manager -1 sent heartbeat to -2 at clock 32.
+17:39:35 manager.go:237: Manager -1 received heartbeat from -2 at clock 32.
+17:39:35 server.go:120: Server 2 finished writing page 2.
+17:39:35 server.go:93: Server 4 wants to read page 5...
+17:39:35 server.go:104: Server 4 request to read page 5 to manager -1 at clock 28.
+17:39:35 server.go:77: Server 4 resends request to manager -1 at clock 28.
+17:39:35 manager.go:53: Manager -1 received Server 4's message at clock 28.
+17:39:35 manager.go:61: Manager -1 received Server 4's read request at clock 28.
+17:39:35 manager.go:205: Manager -1 forward READ request for page 5 at clock 34.
+17:39:35 server.go:43: Server 5 received Manager -1's read forward at clock 34.
+17:39:35 server.go:141: Server 5 sent page 5 to Server 4 at clock 36.
+17:39:35 server.go:58: Server 4 received Server 5's sent page at clock 36.
+17:39:35 server.go:180: Server 4 is reading page 5...
+17:39:35 server.go:155: Server 4 sent READ confirm for page 5 to manager -1 at clock 38.
+17:39:35 manager.go:53: Manager -1 received Server 4's message at clock 38.
+17:39:35 manager.go:70: Manager -1 received Server 4's read confirm at clock 38.
+17:39:35 manager.go:339: Manager -1 adds server 4 to page 5's copyset.
+17:39:35 manager.go:123: Manager -2 updated records.
+17:39:35 server.go:114: Server 5 wants to write page 6...
+17:39:35 server.go:125: Server 5 request to write page 6 to manager -1 at clock 37.
+17:39:35 server.go:77: Server 5 resends request to manager -1 at clock 37.
+17:39:35 manager.go:53: Manager -1 received Server 5's message at clock 37.
+17:39:35 manager.go:66: Manager -1 received Server 5's write request at clock 37.
+17:39:35 manager.go:268: Manager -1 pushed server 5's wr req for page 6 at clock 41.
+17:39:35 manager.go:163: Signal channel received msg from requester 5 at clock 43
+17:39:35 manager.go:169: record.writing is  false  at clock  43
+17:39:35 manager.go:175: Manager -1 poped s5's wr req for page 6.
+17:39:35 manager.go:226: Manager -1 request server 1 to invalidate cache for page 6 at clock 44.
+17:39:35 server.go:53: Server 1 received Manager -1's invalidation request at clock 44.
+17:39:35 manager.go:123: Manager -2 updated records.
+17:39:35 manager.go:123: Manager -2 updated records.
+17:39:36 manager.go:134: Manager -1 sent heartbeat to -2 at clock 47.
+17:39:36 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:36 manager.go:237: Manager -1 received heartbeat from -2 at clock 47.
+17:39:36 server.go:93: Server 6 wants to read page 3...
+17:39:36 server.go:104: Server 6 request to read page 3 to manager -1 at clock 10.
+17:39:36 server.go:77: Server 6 resends request to manager -1 at clock 10.
+17:39:36 manager.go:53: Manager -1 received Server 6's message at clock 10.
+17:39:36 manager.go:61: Manager -1 received Server 6's read request at clock 10.
+17:39:36 manager.go:205: Manager -1 forward READ request for page 3 at clock 49.
+17:39:36 server.go:43: Server 3 received Manager -1's read forward at clock 49.
+17:39:36 server.go:141: Server 3 sent page 3 to Server 6 at clock 51.
+17:39:36 server.go:58: Server 6 received Server 3's sent page at clock 51.
+17:39:36 server.go:180: Server 6 is reading page 3...
+17:39:36 server.go:155: Server 6 sent READ confirm for page 3 to manager -1 at clock 53.
+17:39:36 manager.go:53: Manager -1 received Server 6's message at clock 53.
+17:39:36 manager.go:70: Manager -1 received Server 6's read confirm at clock 53.
+17:39:36 manager.go:339: Manager -1 adds server 6 to page 3's copyset.
+17:39:36 manager.go:123: Manager -2 updated records.
+17:39:36 server.go:93: Server 7 wants to read page 8...
+17:39:36 server.go:104: Server 7 request to read page 8 to manager -1 at clock 1.
+17:39:36 server.go:77: Server 7 resends request to manager -1 at clock 1.
+17:39:36 manager.go:53: Manager -1 received Server 7's message at clock 1.
+17:39:36 manager.go:61: Manager -1 received Server 7's read request at clock 1.
+17:39:36 manager.go:205: Manager -1 forward READ request for page 8 at clock 57.
+17:39:36 server.go:43: Server 8 received Manager -1's read forward at clock 57.
+17:39:36 server.go:141: Server 8 sent page 8 to Server 7 at clock 59.
+17:39:36 server.go:58: Server 7 received Server 8's sent page at clock 59.
+17:39:36 server.go:180: Server 7 is reading page 8...
+17:39:36 server.go:155: Server 7 sent READ confirm for page 8 to manager -1 at clock 61.
+17:39:36 manager.go:53: Manager -1 received Server 7's message at clock 61.
+17:39:36 manager.go:70: Manager -1 received Server 7's read confirm at clock 61.
+17:39:36 manager.go:339: Manager -1 adds server 7 to page 8's copyset.
+17:39:36 manager.go:123: Manager -2 updated records.
+17:39:37 manager.go:134: Manager -1 sent heartbeat to -2 at clock 65.
+17:39:37 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:37 manager.go:237: Manager -1 received heartbeat from -2 at clock 65.
+17:39:37 server.go:93: Server 8 wants to read page 1...
+17:39:37 server.go:104: Server 8 request to read page 1 to manager -1 at clock 60.
+17:39:37 server.go:77: Server 8 resends request to manager -1 at clock 60.
+17:39:37 manager.go:53: Manager -1 received Server 8's message at clock 60.
+17:39:37 manager.go:61: Manager -1 received Server 8's read request at clock 60.
+17:39:37 manager.go:205: Manager -1 forward READ request for page 1 at clock 67.
+17:39:37 server.go:43: Server 1 received Manager -1's read forward at clock 67.
+17:39:37 server.go:141: Server 1 sent page 1 to Server 8 at clock 69.
+17:39:37 server.go:58: Server 8 received Server 1's sent page at clock 69.
+17:39:37 server.go:180: Server 8 is reading page 1...
+17:39:37 server.go:155: Server 8 sent READ confirm for page 1 to manager -1 at clock 71.
+17:39:37 manager.go:53: Manager -1 received Server 8's message at clock 71.
+17:39:37 manager.go:70: Manager -1 received Server 8's read confirm at clock 71.
+17:39:37 manager.go:339: Manager -1 adds server 8 to page 1's copyset.
+17:39:37 manager.go:123: Manager -2 updated records.
+17:39:38 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:38 manager.go:134: Manager -1 sent heartbeat to -2 at clock 75.
+17:39:38 manager.go:237: Manager -1 received heartbeat from -2 at clock 75.
+17:39:39 manager.go:134: Manager -1 sent heartbeat to -2 at clock 77.
+17:39:39 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:39 manager.go:237: Manager -1 received heartbeat from -2 at clock 77.
+17:39:40 manager.go:134: Manager -1 sent heartbeat to -2 at clock 79.
+17:39:40 manager.go:237: Manager -2 received heartbeat from -1 at clock 7.
+17:39:40 manager.go:237: Manager -1 received heartbeat from -2 at clock 79.
+17:39:41 manager.go:134: Manager -1 sent heartbeat to -2 at clock 81.
+17:39:41 manager.go:237: Manager -2 received heartbeat from -1 at clock 8.
+17:39:41 manager.go:237: Manager -1 received heartbeat from -2 at clock 81.
+17:39:42 manager.go:134: Manager -1 sent heartbeat to -2 at clock 83.
+17:39:42 manager.go:237: Manager -2 received heartbeat from -1 at clock 9.
+17:39:42 manager.go:237: Manager -1 received heartbeat from -2 at clock 83.
+17:39:42 fautTolerantIvy.go:131: Elapsed time:  9.0854727s
+17:39:42 fautTolerantIvy.go:31: ===============START===============
+17:39:42 server.go:114: Server 0 wants to write page 5...
+17:39:42 server.go:32: Server 1 started listening...
+17:39:42 server.go:32: Server 0 started listening...
+17:39:42 manager.go:353: Manager -1 started.
+17:39:42 server.go:125: Server 0 request to write page 5 to manager -1 at clock 1.
+17:39:42 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:39:42 server.go:32: Server 3 started listening...
+17:39:42 server.go:32: Server 4 started listening...
+17:39:42 server.go:32: Server 5 started listening...
+17:39:42 server.go:32: Server 6 started listening...
+17:39:42 server.go:32: Server 7 started listening...
+17:39:42 server.go:32: Server 8 started listening...
+17:39:42 server.go:32: Server 9 started listening...
+17:39:42 server.go:32: Server 2 started listening...
+17:39:42 manager.go:353: Manager -2 started.
+17:39:42 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:39:42 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:39:42 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:39:42 manager.go:268: Manager -1 pushed server 0's wr req for page 5 at clock 3.
+17:39:42 manager.go:163: Signal channel received msg from requester 0 at clock 5
+17:39:42 manager.go:169: record.writing is  false  at clock  5
+17:39:42 manager.go:175: Manager -1 poped s0's wr req for page 5.
+17:39:42 manager.go:205: Manager -1 forward WRITE request for page 5 at clock 6.
+17:39:42 server.go:48: Server 5 received Manager -1's write forward at clock 6.
+17:39:42 server.go:141: Server 5 sent page 5 to Server 0 at clock 8.
+17:39:42 server.go:63: Server 0 received Server 5's sent page at clock 8.
+17:39:42 server.go:198: Server 0 is writing page 5 at clock 9.
+17:39:42 manager.go:123: Manager -2 updated records.
+17:39:42 manager.go:123: Manager -2 updated records.
+17:39:42 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:39:42 manager.go:237: Manager -1 received heartbeat from -2 at clock 7.
+17:39:42 server.go:155: Server 0 sent WRITE confirm for page 5 to manager -1 at clock 10.
+17:39:42 manager.go:53: Manager -1 received Server 0's message at clock 10.
+17:39:42 manager.go:74: Manager -1 received Server 0's write confirm at clock 10.
+17:39:42 server.go:93: Server 1 wants to read page 1...
+17:39:42 server.go:98: Server 1 is reading page 1 at clock 1
+17:39:42 server.go:99: Server 1 finished reading page 1.
+17:39:43 server.go:114: Server 2 wants to write page 9...
+17:39:43 server.go:125: Server 2 request to write page 9 to manager -1 at clock 1.
+17:39:43 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:39:43 manager.go:134: Manager -1 sent heartbeat to -2 at clock 13.
+17:39:43 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:39:43 manager.go:237: Manager -1 received heartbeat from -2 at clock 13.
+17:39:43 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:39:43 manager.go:66: Manager -1 received Server 2's write request at clock 1.
+17:39:43 manager.go:268: Manager -1 pushed server 2's wr req for page 9 at clock 14.
+17:39:43 manager.go:163: Signal channel received msg from requester 2 at clock 15
+17:39:43 manager.go:123: Manager -2 updated records.
+17:39:43 manager.go:169: record.writing is  false  at clock  16
+17:39:43 manager.go:175: Manager -1 poped s2's wr req for page 9.
+17:39:43 manager.go:205: Manager -1 forward WRITE request for page 9 at clock 17.
+17:39:43 manager.go:123: Manager -2 updated records.
+17:39:43 server.go:141: Server 9 sent page 9 to Server 2 at clock 20.
+17:39:43 server.go:198: Server 2 is writing page 9 at clock 21.
+17:39:43 server.go:155: Server 2 sent WRITE confirm for page 9 to manager -1 at clock 22.
+17:39:43 manager.go:53: Manager -1 received Server 2's message at clock 22.
+17:39:43 manager.go:74: Manager -1 received Server 2's write confirm at clock 22.
+17:39:43 server.go:48: Server 9 received Manager -1's write forward at clock 18.
+17:39:43 server.go:63: Server 2 received Server 9's sent page at clock 20.
+17:39:43 server.go:114: Server 3 wants to write page 9...
+17:39:43 server.go:125: Server 3 request to write page 9 to manager -1 at clock 1.
+17:39:43 server.go:77: Server 3 resends request to manager -1 at clock 1.
+17:39:43 manager.go:53: Manager -1 received Server 3's message at clock 1.
+17:39:43 manager.go:66: Manager -1 received Server 3's write request at clock 1.
+17:39:43 manager.go:268: Manager -1 pushed server 3's wr req for page 9 at clock 24.
+17:39:43 manager.go:123: Manager -2 updated records.
+17:39:43 manager.go:163: Signal channel received msg from requester 3 at clock 26
+17:39:43 manager.go:169: record.writing is  false  at clock  26
+17:39:43 manager.go:175: Manager -1 poped s3's wr req for page 9.
+17:39:43 manager.go:205: Manager -1 forward WRITE request for page 9 at clock 27.
+17:39:43 server.go:48: Server 2 received Manager -1's write forward at clock 27.
+17:39:43 server.go:141: Server 2 sent page 9 to Server 3 at clock 29.
+17:39:43 server.go:63: Server 3 received Server 2's sent page at clock 29.
+17:39:43 server.go:198: Server 3 is writing page 9 at clock 30.
+17:39:43 server.go:155: Server 3 sent WRITE confirm for page 9 to manager -1 at clock 31.
+17:39:43 manager.go:53: Manager -1 received Server 3's message at clock 31.
+17:39:43 manager.go:74: Manager -1 received Server 3's write confirm at clock 31.
+17:39:43 manager.go:123: Manager -2 updated records.
+17:39:44 server.go:93: Server 4 wants to read page 1...
+17:39:44 server.go:104: Server 4 request to read page 1 to manager -1 at clock 1.
+17:39:44 manager.go:134: Manager -1 sent heartbeat to -2 at clock 34.
+17:39:44 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:39:44 manager.go:53: Manager -1 received Server 4's message at clock 1.
+17:39:44 manager.go:61: Manager -1 received Server 4's read request at clock 1.
+17:39:44 server.go:77: Server 4 resends request to manager -1 at clock 1.
+17:39:44 manager.go:237: Manager -1 received heartbeat from -2 at clock 34.
+17:39:44 manager.go:205: Manager -1 forward READ request for page 1 at clock 36.
+17:39:44 server.go:43: Server 1 received Manager -1's read forward at clock 36.
+17:39:44 server.go:141: Server 1 sent page 1 to Server 4 at clock 38.
+17:39:44 server.go:58: Server 4 received Server 1's sent page at clock 38.
+17:39:44 server.go:180: Server 4 is reading page 1...
+17:39:44 server.go:155: Server 4 sent READ confirm for page 1 to manager -1 at clock 40.
+17:39:44 manager.go:53: Manager -1 received Server 4's message at clock 40.
+17:39:44 manager.go:70: Manager -1 received Server 4's read confirm at clock 40.
+17:39:44 manager.go:339: Manager -1 adds server 4 to page 1's copyset.
+17:39:44 manager.go:123: Manager -2 updated records.
+17:39:44 server.go:93: Server 5 wants to read page 9...
+17:39:44 server.go:104: Server 5 request to read page 9 to manager -1 at clock 9.
+17:39:44 server.go:77: Server 5 resends request to manager -1 at clock 9.
+17:39:44 manager.go:53: Manager -1 received Server 5's message at clock 9.
+17:39:44 manager.go:61: Manager -1 received Server 5's read request at clock 9.
+17:39:44 manager.go:205: Manager -1 forward READ request for page 9 at clock 44.
+17:39:44 server.go:43: Server 3 received Manager -1's read forward at clock 44.
+17:39:44 server.go:141: Server 3 sent page 9 to Server 5 at clock 46.
+17:39:44 server.go:58: Server 5 received Server 3's sent page at clock 46.
+17:39:44 server.go:180: Server 5 is reading page 9...
+17:39:44 server.go:155: Server 5 sent READ confirm for page 9 to manager -1 at clock 48.
+17:39:44 manager.go:53: Manager -1 received Server 5's message at clock 48.
+17:39:44 manager.go:70: Manager -1 received Server 5's read confirm at clock 48.
+17:39:44 manager.go:123: Manager -2 updated records.
+17:39:44 manager.go:339: Manager -1 adds server 5 to page 9's copyset.
+17:39:45 manager.go:134: Manager -1 sent heartbeat to -2 at clock 52.
+17:39:45 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:39:45 manager.go:237: Manager -1 received heartbeat from -2 at clock 52.
+17:39:45 server.go:93: Server 6 wants to read page 8...
+17:39:45 server.go:104: Server 6 request to read page 8 to manager -1 at clock 1.
+17:39:45 server.go:77: Server 6 resends request to manager -1 at clock 1.
+17:39:45 manager.go:53: Manager -1 received Server 6's message at clock 1.
+17:39:45 manager.go:61: Manager -1 received Server 6's read request at clock 1.
+17:39:45 manager.go:205: Manager -1 forward READ request for page 8 at clock 54.
+17:39:45 server.go:43: Server 8 received Manager -1's read forward at clock 54.
+17:39:45 server.go:141: Server 8 sent page 8 to Server 6 at clock 56.
+17:39:45 server.go:58: Server 6 received Server 8's sent page at clock 56.
+17:39:45 server.go:180: Server 6 is reading page 8...
+17:39:45 server.go:155: Server 6 sent READ confirm for page 8 to manager -1 at clock 58.
+17:39:45 manager.go:53: Manager -1 received Server 6's message at clock 58.
+17:39:45 manager.go:70: Manager -1 received Server 6's read confirm at clock 58.
+17:39:45 manager.go:339: Manager -1 adds server 6 to page 8's copyset.
+17:39:45 manager.go:123: Manager -2 updated records.
+17:39:45 server.go:114: Server 7 wants to write page 4...
+17:39:45 server.go:125: Server 7 request to write page 4 to manager -1 at clock 1.
+17:39:45 server.go:77: Server 7 resends request to manager -1 at clock 1.
+17:39:45 manager.go:53: Manager -1 received Server 7's message at clock 1.
+17:39:45 manager.go:66: Manager -1 received Server 7's write request at clock 1.
+17:39:45 manager.go:268: Manager -1 pushed server 7's wr req for page 4 at clock 61.
+17:39:45 manager.go:163: Signal channel received msg from requester 7 at clock 63
+17:39:45 manager.go:169: record.writing is  false  at clock  63
+17:39:45 manager.go:175: Manager -1 poped s7's wr req for page 4.
+17:39:45 manager.go:123: Manager -2 updated records.
+17:39:45 manager.go:123: Manager -2 updated records.
+17:39:45 manager.go:205: Manager -1 forward WRITE request for page 4 at clock 64.
+17:39:45 server.go:48: Server 4 received Manager -1's write forward at clock 65.
+17:39:45 server.go:141: Server 4 sent page 4 to Server 7 at clock 67.
+17:39:45 server.go:63: Server 7 received Server 4's sent page at clock 67.
+17:39:45 server.go:198: Server 7 is writing page 4 at clock 68.
+17:39:45 server.go:155: Server 7 sent WRITE confirm for page 4 to manager -1 at clock 69.
+17:39:45 manager.go:53: Manager -1 received Server 7's message at clock 69.
+17:39:45 manager.go:74: Manager -1 received Server 7's write confirm at clock 69.
+17:39:46 manager.go:134: Manager -1 sent heartbeat to -2 at clock 72.
+17:39:46 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:39:46 manager.go:237: Manager -1 received heartbeat from -2 at clock 72.
+17:39:46 server.go:93: Server 8 wants to read page 5...
+17:39:46 server.go:104: Server 8 request to read page 5 to manager -1 at clock 57.
+17:39:46 server.go:77: Server 8 resends request to manager -1 at clock 57.
+17:39:46 manager.go:53: Manager -1 received Server 8's message at clock 57.
+17:39:46 manager.go:61: Manager -1 received Server 8's read request at clock 57.
+17:39:46 manager.go:205: Manager -1 forward READ request for page 5 at clock 74.
+17:39:46 server.go:43: Server 0 received Manager -1's read forward at clock 74.
+17:39:46 server.go:141: Server 0 sent page 5 to Server 8 at clock 76.
+17:39:46 server.go:58: Server 8 received Server 0's sent page at clock 76.
+17:39:46 server.go:180: Server 8 is reading page 5...
+17:39:46 server.go:155: Server 8 sent READ confirm for page 5 to manager -1 at clock 78.
+17:39:46 manager.go:53: Manager -1 received Server 8's message at clock 78.
+17:39:46 manager.go:70: Manager -1 received Server 8's read confirm at clock 78.
+17:39:46 manager.go:339: Manager -1 adds server 8 to page 5's copyset.
+17:39:46 manager.go:123: Manager -2 updated records.
+17:39:46 server.go:93: Server 9 wants to read page 5...
+17:39:46 server.go:104: Server 9 request to read page 5 to manager -1 at clock 21.
+17:39:46 server.go:77: Server 9 resends request to manager -1 at clock 21.
+17:39:46 manager.go:53: Manager -1 received Server 9's message at clock 21.
+17:39:46 manager.go:61: Manager -1 received Server 9's read request at clock 21.
+17:39:46 manager.go:205: Manager -1 forward READ request for page 5 at clock 82.
+17:39:46 server.go:43: Server 0 received Manager -1's read forward at clock 82.
+17:39:46 server.go:141: Server 0 sent page 5 to Server 9 at clock 84.
+17:39:46 server.go:58: Server 9 received Server 0's sent page at clock 84.
+17:39:46 server.go:180: Server 9 is reading page 5...
+17:39:46 server.go:155: Server 9 sent READ confirm for page 5 to manager -1 at clock 86.
+17:39:46 manager.go:53: Manager -1 received Server 9's message at clock 86.
+17:39:46 manager.go:70: Manager -1 received Server 9's read confirm at clock 86.
+17:39:46 manager.go:339: Manager -1 adds server 9 to page 5's copyset.
+17:39:46 manager.go:123: Manager -2 updated records.
+17:39:47 manager.go:134: Manager -1 sent heartbeat to -2 at clock 90.
+17:39:47 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:39:47 manager.go:237: Manager -1 received heartbeat from -2 at clock 90.
+17:39:48 manager.go:134: Manager -1 sent heartbeat to -2 at clock 92.
+17:39:48 manager.go:237: Manager -2 received heartbeat from -1 at clock 6.
+17:39:48 manager.go:237: Manager -1 received heartbeat from -2 at clock 92.
+17:39:49 manager.go:134: Manager -1 sent heartbeat to -2 at clock 94.
+17:39:49 manager.go:237: Manager -2 received heartbeat from -1 at clock 7.
+17:39:49 manager.go:237: Manager -1 received heartbeat from -2 at clock 94.
+17:39:50 manager.go:134: Manager -1 sent heartbeat to -2 at clock 96.
+17:39:50 manager.go:237: Manager -2 received heartbeat from -1 at clock 8.
+17:39:50 manager.go:237: Manager -1 received heartbeat from -2 at clock 96.
+17:41:09 fautTolerantIvy.go:31: ===============START===============
+17:41:09 manager.go:353: Manager -2 started.
+17:41:09 server.go:32: Server 6 started listening...
+17:41:09 server.go:32: Server 0 started listening...
+17:41:09 server.go:32: Server 3 started listening...
+17:41:09 server.go:32: Server 4 started listening...
+17:41:09 server.go:32: Server 5 started listening...
+17:41:09 server.go:32: Server 9 started listening...
+17:41:09 server.go:32: Server 7 started listening...
+17:41:09 server.go:32: Server 8 started listening...
+17:41:09 manager.go:353: Manager -1 started.
+17:41:09 server.go:32: Server 2 started listening...
+17:41:09 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:41:09 manager.go:237: Manager -1 received heartbeat from -2 at clock 2.
+17:41:09 server.go:32: Server 1 started listening...
+17:41:09 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
+17:41:10 server.go:114: Server 0 wants to write page 5...
+17:41:10 server.go:125: Server 0 request to write page 5 to manager -1 at clock 1.
+17:41:10 server.go:77: Server 0 resends request to manager -1 at clock 1.
+17:41:10 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:41:10 manager.go:237: Manager -1 received heartbeat from -2 at clock 4.
+17:41:10 manager.go:134: Manager -1 sent heartbeat to -2 at clock 4.
+17:41:10 manager.go:53: Manager -1 received Server 0's message at clock 1.
+17:41:10 manager.go:66: Manager -1 received Server 0's write request at clock 1.
+17:41:10 manager.go:123: Manager -2 updated records.
+17:41:10 manager.go:268: Manager -1 pushed server 0's wr req for page 5 at clock 5.
+17:41:10 manager.go:163: Signal channel received msg from requester 0 at clock 7
+17:41:10 manager.go:169: record.writing is  false  at clock  7
+17:41:10 manager.go:175: Manager -1 poped s0's wr req for page 5.
+17:41:10 manager.go:205: Manager -1 forward WRITE request for page 5 at clock 8.
+17:41:10 server.go:48: Server 5 received Manager -1's write forward at clock 8.
+17:41:10 manager.go:123: Manager -2 updated records.
+17:41:10 server.go:141: Server 5 sent page 5 to Server 0 at clock 10.
+17:41:10 server.go:63: Server 0 received Server 5's sent page at clock 10.
+17:41:10 server.go:198: Server 0 is writing page 5 at clock 11.
+17:41:10 server.go:155: Server 0 sent WRITE confirm for page 5 to manager -1 at clock 12.
+17:41:10 manager.go:53: Manager -1 received Server 0's message at clock 12.
+17:41:10 manager.go:74: Manager -1 received Server 0's write confirm at clock 12.
+17:41:10 manager.go:364: Manager -2 is down.
+17:41:10 server.go:114: Server 1 wants to write page 8...
+17:41:10 server.go:125: Server 1 request to write page 8 to manager -1 at clock 1.
+17:41:10 server.go:77: Server 1 resends request to manager -1 at clock 1.
+17:41:10 manager.go:53: Manager -1 received Server 1's message at clock 1.
+17:41:10 manager.go:66: Manager -1 received Server 1's write request at clock 1.
+17:41:10 manager.go:268: Manager -1 pushed server 1's wr req for page 8 at clock 14.
+17:41:10 manager.go:163: Signal channel received msg from requester 1 at clock 15
+17:41:10 manager.go:169: record.writing is  false  at clock  15
+17:41:10 manager.go:175: Manager -1 poped s1's wr req for page 8.
+17:41:10 manager.go:205: Manager -1 forward WRITE request for page 8 at clock 16.
+17:41:10 server.go:48: Server 8 received Manager -1's write forward at clock 16.
+17:41:10 server.go:141: Server 8 sent page 8 to Server 1 at clock 18.
+17:41:10 server.go:63: Server 1 received Server 8's sent page at clock 18.
+17:41:10 server.go:198: Server 1 is writing page 8 at clock 19.
+17:41:10 server.go:155: Server 1 sent WRITE confirm for page 8 to manager -1 at clock 20.
+17:41:10 manager.go:53: Manager -1 received Server 1's message at clock 20.
+17:41:10 manager.go:74: Manager -1 received Server 1's write confirm at clock 20.
+17:41:11 manager.go:134: Manager -1 sent heartbeat to -2 at clock 23.
+17:41:11 server.go:114: Server 2 wants to write page 9...
+17:41:11 server.go:125: Server 2 request to write page 9 to manager -1 at clock 1.
+17:41:11 server.go:77: Server 2 resends request to manager -1 at clock 1.
+17:41:11 manager.go:53: Manager -1 received Server 2's message at clock 1.
+17:41:11 manager.go:66: Manager -1 received Server 2's write request at clock 1.
+17:41:11 manager.go:268: Manager -1 pushed server 2's wr req for page 9 at clock 24.
+17:41:11 manager.go:163: Signal channel received msg from requester 2 at clock 26
+17:41:11 manager.go:169: record.writing is  false  at clock  26
+17:41:11 manager.go:175: Manager -1 poped s2's wr req for page 9.
+17:41:11 manager.go:205: Manager -1 forward WRITE request for page 9 at clock 27.
+17:41:11 server.go:48: Server 9 received Manager -1's write forward at clock 27.
+17:41:11 server.go:141: Server 9 sent page 9 to Server 2 at clock 29.
+17:41:11 server.go:63: Server 2 received Server 9's sent page at clock 29.
+17:41:11 server.go:198: Server 2 is writing page 9 at clock 30.
+17:41:11 server.go:155: Server 2 sent WRITE confirm for page 9 to manager -1 at clock 31.
+17:41:11 manager.go:53: Manager -1 received Server 2's message at clock 31.
+17:41:11 manager.go:74: Manager -1 received Server 2's write confirm at clock 31.
+17:41:11 server.go:114: Server 3 wants to write page 1...
+17:41:11 server.go:125: Server 3 request to write page 1 to manager -1 at clock 1.
+17:41:11 server.go:77: Server 3 resends request to manager -1 at clock 1.
+17:41:11 manager.go:53: Manager -1 received Server 3's message at clock 1.
+17:41:11 manager.go:66: Manager -1 received Server 3's write request at clock 1.
+17:41:11 manager.go:268: Manager -1 pushed server 3's wr req for page 1 at clock 33.
+17:41:11 manager.go:163: Signal channel received msg from requester 3 at clock 35
+17:41:11 manager.go:169: record.writing is  false  at clock  35
+17:41:11 manager.go:175: Manager -1 poped s3's wr req for page 1.
+17:41:11 manager.go:205: Manager -1 forward WRITE request for page 1 at clock 36.
+17:41:11 server.go:48: Server 1 received Manager -1's write forward at clock 36.
+17:41:11 server.go:141: Server 1 sent page 1 to Server 3 at clock 38.
+17:41:11 server.go:63: Server 3 received Server 1's sent page at clock 38.
+17:41:11 server.go:198: Server 3 is writing page 1 at clock 39.
+17:41:11 server.go:155: Server 3 sent WRITE confirm for page 1 to manager -1 at clock 40.
+17:41:11 manager.go:53: Manager -1 received Server 3's message at clock 40.
+17:41:11 manager.go:74: Manager -1 received Server 3's write confirm at clock 40.
+17:41:12 manager.go:100: Manager -1 detects the other manager is down.
+17:41:12 manager.go:134: Manager -1 sent heartbeat to -2 at clock 43.
+17:41:12 server.go:114: Server 4 wants to write page 4...
+17:41:12 manager.go:368: Manager -2 rejoined.
+17:41:12 server.go:114: Server 5 wants to write page 3...
+17:41:12 server.go:125: Server 5 request to write page 3 to manager -1 at clock 11.
+17:41:12 server.go:77: Server 5 resends request to manager -1 at clock 11.
+17:41:12 manager.go:53: Manager -1 received Server 5's message at clock 11.
+17:41:12 manager.go:66: Manager -1 received Server 5's write request at clock 11.
+17:41:12 manager.go:268: Manager -1 pushed server 5's wr req for page 3 at clock 44.
+17:41:12 manager.go:163: Signal channel received msg from requester 5 at clock 45
+17:41:12 manager.go:169: record.writing is  false  at clock  45
+17:41:12 manager.go:175: Manager -1 poped s5's wr req for page 3.
+17:41:12 manager.go:205: Manager -1 forward WRITE request for page 3 at clock 46.
+17:41:12 server.go:48: Server 3 received Manager -1's write forward at clock 46.
+17:41:12 manager.go:123: Manager -2 updated records.
+17:41:12 manager.go:123: Manager -2 updated records.
+17:41:12 server.go:141: Server 3 sent page 3 to Server 5 at clock 48.
+17:41:12 server.go:63: Server 5 received Server 3's sent page at clock 48.
+17:41:12 server.go:198: Server 5 is writing page 3 at clock 49.
+17:41:12 server.go:155: Server 5 sent WRITE confirm for page 3 to manager -1 at clock 50.
+17:41:12 manager.go:53: Manager -1 received Server 5's message at clock 50.
+17:41:12 manager.go:74: Manager -1 received Server 5's write confirm at clock 50.
+17:41:13 manager.go:134: Manager -1 sent heartbeat to -2 at clock 53.
+17:41:13 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
+17:41:13 manager.go:237: Manager -1 received heartbeat from -2 at clock 53.
+17:41:13 server.go:120: Server 4 finished writing page 4.
+17:41:13 server.go:93: Server 6 wants to read page 5...
+17:41:13 server.go:104: Server 6 request to read page 5 to manager -1 at clock 1.
+17:41:13 server.go:77: Server 6 resends request to manager -1 at clock 1.
+17:41:13 manager.go:53: Manager -1 received Server 6's message at clock 1.
+17:41:13 manager.go:61: Manager -1 received Server 6's read request at clock 1.
+17:41:13 manager.go:205: Manager -1 forward READ request for page 5 at clock 55.
+17:41:13 server.go:43: Server 0 received Manager -1's read forward at clock 55.
+17:41:13 server.go:141: Server 0 sent page 5 to Server 6 at clock 57.
+17:41:13 server.go:58: Server 6 received Server 0's sent page at clock 57.
+17:41:13 server.go:180: Server 6 is reading page 5...
+17:41:13 server.go:155: Server 6 sent READ confirm for page 5 to manager -1 at clock 59.
+17:41:13 manager.go:53: Manager -1 received Server 6's message at clock 59.
+17:41:13 manager.go:70: Manager -1 received Server 6's read confirm at clock 59.
+17:41:13 manager.go:339: Manager -1 adds server 6 to page 5's copyset.
+17:41:13 manager.go:123: Manager -2 updated records.
+17:41:13 server.go:93: Server 7 wants to read page 3...
+17:41:13 server.go:104: Server 7 request to read page 3 to manager -1 at clock 1.
+17:41:13 server.go:77: Server 7 resends request to manager -1 at clock 1.
+17:41:13 manager.go:53: Manager -1 received Server 7's message at clock 1.
+17:41:13 manager.go:61: Manager -1 received Server 7's read request at clock 1.
+17:41:13 manager.go:205: Manager -1 forward READ request for page 3 at clock 63.
+17:41:13 server.go:43: Server 5 received Manager -1's read forward at clock 63.
+17:41:13 server.go:141: Server 5 sent page 3 to Server 7 at clock 65.
+17:41:13 server.go:58: Server 7 received Server 5's sent page at clock 65.
+17:41:13 server.go:180: Server 7 is reading page 3...
+17:41:13 server.go:155: Server 7 sent READ confirm for page 3 to manager -1 at clock 67.
+17:41:13 manager.go:53: Manager -1 received Server 7's message at clock 67.
+17:41:13 manager.go:70: Manager -1 received Server 7's read confirm at clock 67.
+17:41:13 manager.go:339: Manager -1 adds server 7 to page 3's copyset.
+17:41:13 manager.go:123: Manager -2 updated records.
+17:41:14 manager.go:134: Manager -1 sent heartbeat to -2 at clock 71.
+17:41:14 manager.go:237: Manager -2 received heartbeat from -1 at clock 1.
+17:41:14 manager.go:237: Manager -1 received heartbeat from -2 at clock 71.
+17:41:15 manager.go:134: Manager -1 sent heartbeat to -2 at clock 73.
+17:41:15 manager.go:237: Manager -2 received heartbeat from -1 at clock 2.
+17:41:15 manager.go:237: Manager -1 received heartbeat from -2 at clock 73.
+17:41:16 manager.go:134: Manager -1 sent heartbeat to -2 at clock 75.
+17:41:16 manager.go:237: Manager -2 received heartbeat from -1 at clock 3.
+17:41:16 manager.go:237: Manager -1 received heartbeat from -2 at clock 75.
+17:41:17 manager.go:134: Manager -1 sent heartbeat to -2 at clock 77.
+17:41:17 manager.go:237: Manager -2 received heartbeat from -1 at clock 4.
+17:41:17 manager.go:237: Manager -1 received heartbeat from -2 at clock 77.
+17:41:18 manager.go:134: Manager -1 sent heartbeat to -2 at clock 79.
+17:41:18 manager.go:237: Manager -2 received heartbeat from -1 at clock 5.
+17:41:18 manager.go:237: Manager -1 received heartbeat from -2 at clock 79.
+17:41:18 fautTolerantIvy.go:136: Elapsed time:  8.5698801s

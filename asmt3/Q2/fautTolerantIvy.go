@@ -35,6 +35,9 @@ func main() {
 
 	// define the number of concurrent requests to make
 	num_requests := flag.Int("requests", 8, "number of concurrent requests to make")
+
+	// define the number of tiems that the primary fails
+	// primary_fail_times := flag.Int("requests", 8, "number of concurrent requests to make")
 	flag.Parse()
 
 	// set wg
@@ -91,15 +94,20 @@ func main() {
 		wg.Done()
 	}()
 
+	// simulate faults of managers
 	time.Sleep(time.Second)
-
 	go func() {
-		// simulate primary down
+		// // simulate primary down
+		// time.Sleep(100 * time.Millisecond)
+		// primaryManager.down()
+		// // simulate primary rejoin
+		// time.Sleep(2 * time.Second)
+		// primaryManager.rejoin()
 		time.Sleep(100 * time.Millisecond)
-		primaryManager.down()
+		backupManager.down()
 		// simulate primary rejoin
 		time.Sleep(2 * time.Second)
-		primaryManager.rejoin()
+		backupManager.rejoin()
 	}()
 
 	// simulate request

@@ -12,7 +12,7 @@ import (
 var start_time time.Time
 var end_time time.Time
 var time_mutex sync.Mutex
-var timeout = 10 * time.Second
+var timeout = 5 * time.Second
 
 const (
 	CM_ID         = -1 // id of central manager

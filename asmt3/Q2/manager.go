@@ -368,13 +368,15 @@ func (m *Manager) rejoin() {
 	logger.Printf("Manager %d rejoined.\n", m.id)
 	m.Lock()
 	m.isAlive = true
-	m.isInCharge = true
 	m.Unlock()
-	for i := 0; i < len(m.servers); i++ {
-		logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.id, m.servers[i].id, m.clock)
-		go func(i int) {
-			m.servers[i].ch <- DeclarePrimaryMessage(m.id, m.servers[i].id, m.clock)
-		}(i)
+	if m.role == PRIMARY {
+		m.isInCharge = true
+		for i := 0; i < len(m.servers); i++ {
+			logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.id, m.servers[i].id, m.clock)
+			go func(i int) {
+				m.servers[i].ch <- DeclarePrimaryMessage(m.id, m.servers[i].id, m.clock)
+			}(i)
+		}
 	}
 }
 
