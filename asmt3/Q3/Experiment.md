@@ -2,7 +2,7 @@
 ## 1. Without any faults
 **Requirement**: Compare the performance of the basic version of Ivy protocol and the new fault tolerant version using requests from at least 10 clients.
 
-The simulation code is as follows. There will be `num_servers` servers making 3 requests each, therefore in total `num_servers * num_request_page` requests in one round. The request is raised every 1 second. 
+The simulation code is as follows. There will be `num_servers` servers making `num_request_page` requests each, therefore in total `num_servers * num_request_page` requests in one round. The request is raised every 1 second. 
 
 ```go
 for i := 0; i < *num_servers; i++ {
@@ -21,36 +21,18 @@ for i := 0; i < *num_servers; i++ {
 }
 ```
 The measured time(in second) is as follows:
-| Number of servers | Number of requests | Vanila Ivy | Fault Tolerant Ivy | 
+| Number of servers* | Number of requests* | Vanila Ivy | Fault Tolerant Ivy | 
 |----------|----------|----------|----------|
-| 10 | 3 | 14727643600 |
-| 15 | 3 | 22462469800 |
-| 20 | 3 | 30153258300 |
-| 10 | 5 | 24947046300 |
-| 15 | 5 | 37097288300 |
-| 20 | 5 | 49893654800 |
-| 10 | 10 | 50022001100 |
-| 15 | 10 | 75880231800 |
-| 20 | 10 | 101394502100 |
-14.7276436
-22.4624698
-30.1532583
-24.9470463
-37.0972883
-49.8936548
-50.0220011
-75.8802318
-101.3945021
-ft:
-| 10 | 3 | 14735053800 |
-| 15 | 3 | 22396158500 |
-| 20 | 3 | 31091008800 |
-| 10 | 5 | 24922633000 |
-| 15 | 5 | 40583409400 |
-| 20 | 5 | 60777452000 |
-| 10 | 10 | 49956169500 |
-| 15 | 10 | 75875247100 |
-| 20 | 10 | 101086242400 |
+| 10 | 3 | 14.73 | 14.74 |
+| 15 | 3 | 22.46 | 22.40 |
+| 10 | 5 | 24.95 | 24.92 |
+| 15 | 5 | 37.10 | 40.58 |
+| 10 | 10 | 50.02 | 49.96 |
+| 15 | 10 | 75.88 | 75.88 |
+
+*Number of servers = num_servers
+*Number of requests = num_request_page
+
 From the data we can see that the time is roughly the same, since the fault tolerance version shares almost the same process as the basic version, other than the data sync and heatbeat, which does not cause heavy overhead.
 
 ## 2. One CM fails only once
@@ -73,11 +55,14 @@ go func() {
 ```
 
 The measured time(in second) is as follows: (the last 2 columns are from this experiment)  
-| Number of servers | Vanila Ivy | Fault Tolerant Ivy | Primary fails | Primary fails and restarts | 
-|----------|----------|----------|----------|----------|
-| 11 | 61.78 | 61.78 | 61.89 | 61.90 |
-| 12 | 72.79 | 72.75 | 73.06 | 72.88 |
-| 13 | 85.93 | 85.80 | 86.26 | 85.98 |
+| Number of servers | Number of requests |  Primary fails | Primary fails and restarts | 
+|----------|----------|----------|----------|
+| 10 | 3 | 14.71 | 14.74 |
+| 15 | 3 | 22.31 | 22.33 |
+| 10 | 5 | 24.81 | 24.83 |
+| 15 | 5 | 39.02 | 8.07  |
+| 10 | 10 | 49.65 | 49.74 |
+| 15 | 10 | 75.39 | 46.10 |
 
 From the data we can see that the time is roughly the same, since when primary restarts, it only takes a very short time to get the control back. And compared with the case without any faults, the time generally increased since backup server needs to broadcast to all servers about its primary role, and some messages may get lost during the transfering period. And compared with fault-free version, the time increased due to the handling-over by the backup manager.
 
@@ -110,13 +95,16 @@ go func() {
 ```
 Let primary fails and restarts 2, 3 times.
 The measured time(in second) is as follows:
-| Number of servers | 1 | 2 | 3 |
+| Number of servers | Number of requests | 2 | 3 |
 |----------|----------|----------| ----------|
-| 11 |  61.90 | 62.12 |
-| 12 |  72.88 | 73.50 |
-| 13 |  85.98 | 86.54 |
+| 10 | 3 | 14.69 | 14.65 |
+| 15 | 3 | 22.31 | 22.18 |
+| 10 | 5 | 24.80 | 24.68 |
+| 15 | 5 | 37.49 | 37.27 |
+| 10 | 10 | 49.61 | 49.32 |
+| 15 | 10 | 75.32 | 74.89 |
 
-- `NA` is caused due to message lost. A 
+From the data we can see that the time is roughly the same, since the control transfer is fast enough, and lost message won't be retransmissioned by design. Thus it won't affect the general performance in terms of time, but the number of requests missing will increase.
 
 ## 4. Multiple faults for primary CM and backup CM 
 **Requirement**: Both primary CM and backup CM fail and restart multiple times. 
@@ -124,8 +112,14 @@ The measured time(in second) is as follows:
 The simulation code is the sam as (3), but set `fail_backup=true`.  
 Let both fail and restart 2, 3 times.  
 The measured time(in second) is as follows:  
-| Number of servers | 1 | 2 | 3 |
+| Number of servers | Number of requests | 2 | 3 |
 |----------|----------|----------| ----------|
-| 11 |  61.90 |  |
-| 12 |  72.88 |  |
-| 13 |  85.98 |  |
+fail 2 times
+
+fail 3 times
+| 10 | 3 | 19075749900 |
+| 15 | 3 | 20085428600 |
+| 10 | 5 | 19070842400 |
+| 15 | 5 | 19093296200 |
+| 10 | 10 | 19071587300 |
+| 15 | 10 | 19087787600 |

@@ -8518,3 +8518,276 @@
 10:51:24 server.go:40: Server 9 received Manager's read forward at clock 809.
 10:51:24 server.go:115: Server 9 sent page 9 to Server 19 at clock 811.
 10:51:54 vanilaIvy.go:88: Elapsed time:  1m41.3945021s
+13:06:43 vanilaIvy.go:24: ===============START===============
+13:06:43 server.go:90: Server 0 wants to write page 0...
+13:06:43 server.go:95: Server 0 is writing page 0 at clock 0
+13:06:43 server.go:96: Server 0 finished writing page 0.
+13:06:44 server.go:73: Server 0 wants to read page 1...
+13:06:44 server.go:84: Server 0 request to read page 1 to manager at clock 0.
+13:06:44 manager.go:115: Manager forward READ request for page 1 at clock 2.
+13:06:44 server.go:40: Server 1 received Manager's read forward at clock 2.
+13:06:44 server.go:115: Server 1 sent page 1 to Server 0 at clock 4.
+13:06:44 server.go:55: Server 0 received Server 1's sent page at clock 4.
+13:06:44 server.go:154: Server 0 is reading page 1...
+13:06:44 manager.go:41: Manager received Server 0's read request at clock 0.
+13:06:44 manager.go:50: Manager received Server 0's read confirm at clock 6.
+13:06:44 manager.go:228: Manager adds server 0 to page 1's copyset.
+13:06:44 server.go:129: Server 0 sent READ confirm for page 1 to manager at clock 6.
+13:06:44 server.go:90: Server 0 wants to write page 2...
+13:06:44 server.go:101: Server 0 request to write page 2 to manager at clock 6.
+13:06:44 manager.go:46: Manager received Server 0's write request at clock 6.
+13:06:44 manager.go:159: Manager pushed server 0's wr req for page 2 at clock 8.
+13:06:44 manager.go:74: Signal channel received msg  {-1 -1 2 NOTICE_WRITE_REQUEST 6 {0 <nil>} 0}  at clock  9
+13:06:44 manager.go:80: record.writing is  false  at clock  9
+13:06:44 manager.go:86: Manager poped s0's wr req for page 2.
+13:06:44 manager.go:115: Manager forward WRITE request for page 2 at clock 10.
+13:06:44 server.go:45: Server 2 received Manager's write forward at clock 10.
+13:06:44 server.go:60: Server 0 received Server 2's sent page at clock 12.
+13:06:44 server.go:172: Server 0 is writing page 2 at clock 13.
+13:06:44 server.go:129: Server 0 sent WRITE confirm for page 2 to manager at clock 14.
+13:06:44 manager.go:54: Manager received Server 0's write confirm at clock 14.
+13:06:44 server.go:115: Server 2 sent page 2 to Server 0 at clock 12.
+13:06:44 server.go:199: Server 2 remove access to page 2.
+13:06:45 server.go:90: Server 1 wants to write page 0...
+13:06:45 server.go:101: Server 1 request to write page 0 to manager at clock 4.
+13:06:45 manager.go:46: Manager received Server 1's write request at clock 4.
+13:06:45 manager.go:159: Manager pushed server 1's wr req for page 0 at clock 16.
+13:06:45 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 4 {0 <nil>} 1}  at clock  17
+13:06:45 manager.go:80: record.writing is  false  at clock  17
+13:06:45 manager.go:86: Manager poped s1's wr req for page 0.
+13:06:45 manager.go:115: Manager forward WRITE request for page 0 at clock 18.
+13:06:45 server.go:45: Server 0 received Manager's write forward at clock 18.
+13:06:45 server.go:115: Server 0 sent page 0 to Server 1 at clock 20.
+13:06:45 server.go:199: Server 0 remove access to page 0.
+13:06:45 server.go:199: Server 0 remove access to page 0.
+13:06:45 server.go:60: Server 1 received Server 0's sent page at clock 20.
+13:06:45 server.go:172: Server 1 is writing page 0 at clock 21.
+13:06:45 server.go:129: Server 1 sent WRITE confirm for page 0 to manager at clock 22.
+13:06:45 manager.go:54: Manager received Server 1's write confirm at clock 22.
+13:06:45 server.go:73: Server 1 wants to read page 1...
+13:06:45 server.go:78: Server 1 is reading page 1 at clock 22
+13:06:45 server.go:79: Server 1 finished reading page 1.
+13:06:46 server.go:90: Server 1 wants to write page 2...
+13:06:46 server.go:101: Server 1 request to write page 2 to manager at clock 22.
+13:06:46 manager.go:46: Manager received Server 1's write request at clock 22.
+13:06:46 manager.go:159: Manager pushed server 1's wr req for page 2 at clock 24.
+13:06:46 manager.go:74: Signal channel received msg  {-1 -1 2 NOTICE_WRITE_REQUEST 22 {0 <nil>} 1}  at clock  25
+13:06:46 manager.go:80: record.writing is  false  at clock  25
+13:06:46 manager.go:86: Manager poped s1's wr req for page 2.
+13:06:46 manager.go:115: Manager forward WRITE request for page 2 at clock 26.
+13:06:46 server.go:45: Server 0 received Manager's write forward at clock 26.
+13:06:46 server.go:115: Server 0 sent page 2 to Server 1 at clock 28.
+13:06:46 server.go:199: Server 0 remove access to page 2.
+13:06:46 server.go:60: Server 1 received Server 0's sent page at clock 28.
+13:06:46 server.go:172: Server 1 is writing page 2 at clock 29.
+13:06:46 server.go:129: Server 1 sent WRITE confirm for page 2 to manager at clock 30.
+13:06:46 manager.go:54: Manager received Server 1's write confirm at clock 30.
+13:06:46 server.go:90: Server 2 wants to write page 0...
+13:06:46 server.go:101: Server 2 request to write page 0 to manager at clock 12.
+13:06:46 manager.go:46: Manager received Server 2's write request at clock 12.
+13:06:46 manager.go:159: Manager pushed server 2's wr req for page 0 at clock 32.
+13:06:46 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 12 {0 <nil>} 2}  at clock  33
+13:06:46 manager.go:80: record.writing is  false  at clock  33
+13:06:46 manager.go:86: Manager poped s2's wr req for page 0.
+13:06:46 manager.go:115: Manager forward WRITE request for page 0 at clock 34.
+13:06:46 server.go:45: Server 1 received Manager's write forward at clock 34.
+13:06:46 server.go:115: Server 1 sent page 0 to Server 2 at clock 36.
+13:06:46 server.go:199: Server 1 remove access to page 0.
+13:06:46 server.go:60: Server 2 received Server 1's sent page at clock 36.
+13:06:46 server.go:172: Server 2 is writing page 0 at clock 37.
+13:06:46 server.go:129: Server 2 sent WRITE confirm for page 0 to manager at clock 38.
+13:06:46 manager.go:54: Manager received Server 2's write confirm at clock 38.
+13:06:47 server.go:73: Server 2 wants to read page 1...
+13:06:47 server.go:84: Server 2 request to read page 1 to manager at clock 38.
+13:06:47 manager.go:41: Manager received Server 2's read request at clock 38.
+13:06:47 manager.go:115: Manager forward READ request for page 1 at clock 41.
+13:06:47 server.go:40: Server 1 received Manager's read forward at clock 41.
+13:06:47 server.go:115: Server 1 sent page 1 to Server 2 at clock 43.
+13:06:47 server.go:55: Server 2 received Server 1's sent page at clock 43.
+13:06:47 server.go:154: Server 2 is reading page 1...
+13:06:47 server.go:129: Server 2 sent READ confirm for page 1 to manager at clock 45.
+13:06:47 manager.go:50: Manager received Server 2's read confirm at clock 45.
+13:06:47 manager.go:228: Manager adds server 2 to page 1's copyset.
+13:06:47 server.go:90: Server 2 wants to write page 2...
+13:06:47 server.go:95: Server 2 is writing page 2 at clock 45
+13:06:47 server.go:96: Server 2 finished writing page 2.
+13:06:48 server.go:90: Server 3 wants to write page 0...
+13:06:48 server.go:101: Server 3 request to write page 0 to manager at clock 0.
+13:06:48 manager.go:46: Manager received Server 3's write request at clock 0.
+13:06:48 manager.go:159: Manager pushed server 3's wr req for page 0 at clock 47.
+13:06:48 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 0 {0 <nil>} 3}  at clock  48
+13:06:48 manager.go:80: record.writing is  false  at clock  48
+13:06:48 manager.go:86: Manager poped s3's wr req for page 0.
+13:06:48 manager.go:115: Manager forward WRITE request for page 0 at clock 49.
+13:06:48 server.go:45: Server 2 received Manager's write forward at clock 49.
+13:06:48 server.go:115: Server 2 sent page 0 to Server 3 at clock 51.
+13:06:48 server.go:199: Server 2 remove access to page 0.
+13:06:48 server.go:60: Server 3 received Server 2's sent page at clock 51.
+13:06:48 server.go:172: Server 3 is writing page 0 at clock 52.
+13:06:48 server.go:129: Server 3 sent WRITE confirm for page 0 to manager at clock 53.
+13:06:48 manager.go:54: Manager received Server 3's write confirm at clock 53.
+13:06:48 server.go:73: Server 3 wants to read page 1...
+13:06:48 server.go:84: Server 3 request to read page 1 to manager at clock 53.
+13:06:48 manager.go:41: Manager received Server 3's read request at clock 53.
+13:06:48 manager.go:115: Manager forward READ request for page 1 at clock 56.
+13:06:48 server.go:40: Server 1 received Manager's read forward at clock 56.
+13:06:48 server.go:115: Server 1 sent page 1 to Server 3 at clock 58.
+13:06:48 server.go:55: Server 3 received Server 1's sent page at clock 58.
+13:06:48 server.go:154: Server 3 is reading page 1...
+13:06:48 server.go:129: Server 3 sent READ confirm for page 1 to manager at clock 60.
+13:06:48 manager.go:50: Manager received Server 3's read confirm at clock 60.
+13:06:48 manager.go:228: Manager adds server 3 to page 1's copyset.
+13:06:49 server.go:90: Server 3 wants to write page 2...
+13:06:49 server.go:101: Server 3 request to write page 2 to manager at clock 60.
+13:06:49 manager.go:46: Manager received Server 3's write request at clock 60.
+13:06:49 manager.go:159: Manager pushed server 3's wr req for page 2 at clock 62.
+13:06:49 manager.go:74: Signal channel received msg  {-1 -1 2 NOTICE_WRITE_REQUEST 60 {0 <nil>} 3}  at clock  63
+13:06:49 manager.go:80: record.writing is  false  at clock  63
+13:06:49 manager.go:86: Manager poped s3's wr req for page 2.
+13:06:49 manager.go:115: Manager forward WRITE request for page 2 at clock 64.
+13:06:49 server.go:45: Server 1 received Manager's write forward at clock 64.
+13:06:49 server.go:115: Server 1 sent page 2 to Server 3 at clock 66.
+13:06:49 server.go:199: Server 1 remove access to page 2.
+13:06:49 server.go:60: Server 3 received Server 1's sent page at clock 66.
+13:06:49 server.go:172: Server 3 is writing page 2 at clock 67.
+13:06:49 server.go:129: Server 3 sent WRITE confirm for page 2 to manager at clock 68.
+13:06:49 manager.go:54: Manager received Server 3's write confirm at clock 68.
+13:06:49 server.go:90: Server 4 wants to write page 0...
+13:06:49 server.go:101: Server 4 request to write page 0 to manager at clock 0.
+13:06:49 manager.go:46: Manager received Server 4's write request at clock 0.
+13:06:49 manager.go:159: Manager pushed server 4's wr req for page 0 at clock 70.
+13:06:49 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 0 {0 <nil>} 4}  at clock  71
+13:06:49 manager.go:80: record.writing is  false  at clock  71
+13:06:49 manager.go:86: Manager poped s4's wr req for page 0.
+13:06:49 manager.go:115: Manager forward WRITE request for page 0 at clock 72.
+13:06:49 server.go:45: Server 3 received Manager's write forward at clock 72.
+13:06:49 server.go:115: Server 3 sent page 0 to Server 4 at clock 74.
+13:06:49 server.go:199: Server 3 remove access to page 0.
+13:06:49 server.go:60: Server 4 received Server 3's sent page at clock 74.
+13:06:49 server.go:172: Server 4 is writing page 0 at clock 75.
+13:06:49 server.go:129: Server 4 sent WRITE confirm for page 0 to manager at clock 76.
+13:06:49 manager.go:54: Manager received Server 4's write confirm at clock 76.
+13:06:50 server.go:73: Server 4 wants to read page 1...
+13:06:50 server.go:84: Server 4 request to read page 1 to manager at clock 76.
+13:06:50 manager.go:41: Manager received Server 4's read request at clock 76.
+13:06:50 manager.go:115: Manager forward READ request for page 1 at clock 79.
+13:06:50 server.go:40: Server 1 received Manager's read forward at clock 79.
+13:06:50 server.go:115: Server 1 sent page 1 to Server 4 at clock 81.
+13:06:50 server.go:55: Server 4 received Server 1's sent page at clock 81.
+13:06:50 server.go:154: Server 4 is reading page 1...
+13:06:50 server.go:129: Server 4 sent READ confirm for page 1 to manager at clock 83.
+13:06:50 manager.go:50: Manager received Server 4's read confirm at clock 83.
+13:06:50 manager.go:228: Manager adds server 4 to page 1's copyset.
+13:06:50 server.go:90: Server 4 wants to write page 2...
+13:06:50 server.go:101: Server 4 request to write page 2 to manager at clock 83.
+13:06:50 manager.go:46: Manager received Server 4's write request at clock 83.
+13:06:50 manager.go:159: Manager pushed server 4's wr req for page 2 at clock 85.
+13:06:50 manager.go:74: Signal channel received msg  {-1 -1 2 NOTICE_WRITE_REQUEST 83 {0 <nil>} 4}  at clock  86
+13:06:50 manager.go:80: record.writing is  false  at clock  86
+13:06:50 manager.go:86: Manager poped s4's wr req for page 2.
+13:06:50 manager.go:115: Manager forward WRITE request for page 2 at clock 87.
+13:06:50 server.go:45: Server 3 received Manager's write forward at clock 87.
+13:06:50 server.go:115: Server 3 sent page 2 to Server 4 at clock 89.
+13:06:50 server.go:199: Server 3 remove access to page 2.
+13:06:50 server.go:60: Server 4 received Server 3's sent page at clock 89.
+13:06:50 server.go:172: Server 4 is writing page 2 at clock 90.
+13:06:50 server.go:129: Server 4 sent WRITE confirm for page 2 to manager at clock 91.
+13:06:50 manager.go:54: Manager received Server 4's write confirm at clock 91.
+13:07:20 vanilaIvy.go:88: Elapsed time:  7.0943575s
+13:14:11 vanilaIvy.go:24: ===============START===============
+13:14:11 server.go:90: Server 0 wants to write page 0...
+13:14:11 server.go:95: Server 0 is writing page 0 at clock 0
+13:14:11 server.go:96: Server 0 finished writing page 0.
+13:14:11 server.go:90: Server 1 wants to write page 0...
+13:14:11 server.go:101: Server 1 request to write page 0 to manager at clock 0.
+13:14:11 manager.go:46: Manager received Server 1's write request at clock 0.
+13:14:11 manager.go:159: Manager pushed server 1's wr req for page 0 at clock 1.
+13:14:11 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 0 {0 <nil>} 1}  at clock  2
+13:14:11 manager.go:80: record.writing is  false  at clock  2
+13:14:11 manager.go:86: Manager poped s1's wr req for page 0.
+13:14:11 manager.go:115: Manager forward WRITE request for page 0 at clock 3.
+13:14:11 server.go:45: Server 0 received Manager's write forward at clock 3.
+13:14:11 server.go:115: Server 0 sent page 0 to Server 1 at clock 5.
+13:14:11 server.go:199: Server 0 remove access to page 0.
+13:14:11 server.go:199: Server 0 remove access to page 0.
+13:14:11 server.go:60: Server 1 received Server 0's sent page at clock 5.
+13:14:11 server.go:172: Server 1 is writing page 0 at clock 6.
+13:14:11 server.go:129: Server 1 sent WRITE confirm for page 0 to manager at clock 7.
+13:14:11 manager.go:54: Manager received Server 1's write confirm at clock 7.
+13:14:12 server.go:90: Server 2 wants to write page 0...
+13:14:12 server.go:101: Server 2 request to write page 0 to manager at clock 0.
+13:14:12 manager.go:46: Manager received Server 2's write request at clock 0.
+13:14:12 manager.go:159: Manager pushed server 2's wr req for page 0 at clock 9.
+13:14:12 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 0 {0 <nil>} 2}  at clock  10
+13:14:12 manager.go:80: record.writing is  false  at clock  10
+13:14:12 manager.go:86: Manager poped s2's wr req for page 0.
+13:14:12 manager.go:115: Manager forward WRITE request for page 0 at clock 11.
+13:14:12 server.go:45: Server 1 received Manager's write forward at clock 11.
+13:14:12 server.go:60: Server 2 received Server 1's sent page at clock 13.
+13:14:12 server.go:115: Server 1 sent page 0 to Server 2 at clock 13.
+13:14:12 server.go:199: Server 1 remove access to page 0.
+13:14:12 server.go:172: Server 2 is writing page 0 at clock 14.
+13:14:12 server.go:129: Server 2 sent WRITE confirm for page 0 to manager at clock 15.
+13:14:12 manager.go:54: Manager received Server 2's write confirm at clock 15.
+13:14:42 vanilaIvy.go:88: Elapsed time:  1.046123s
+13:14:53 vanilaIvy.go:24: ===============START===============
+13:14:53 server.go:90: Server 0 wants to write page 0...
+13:14:53 server.go:95: Server 0 is writing page 0 at clock 0
+13:14:53 server.go:96: Server 0 finished writing page 0.
+13:14:53 server.go:73: Server 0 wants to read page 1...
+13:14:53 server.go:84: Server 0 request to read page 1 to manager at clock 0.
+13:14:53 manager.go:41: Manager received Server 0's read request at clock 0.
+13:14:53 manager.go:115: Manager forward READ request for page 1 at clock 2.
+13:14:53 server.go:40: Server 1 received Manager's read forward at clock 2.
+13:14:53 server.go:115: Server 1 sent page 1 to Server 0 at clock 4.
+13:14:53 server.go:55: Server 0 received Server 1's sent page at clock 4.
+13:14:53 server.go:154: Server 0 is reading page 1...
+13:14:53 server.go:129: Server 0 sent READ confirm for page 1 to manager at clock 6.
+13:14:53 manager.go:50: Manager received Server 0's read confirm at clock 6.
+13:14:53 manager.go:228: Manager adds server 0 to page 1's copyset.
+13:14:54 server.go:90: Server 1 wants to write page 0...
+13:14:54 server.go:101: Server 1 request to write page 0 to manager at clock 4.
+13:14:54 manager.go:46: Manager received Server 1's write request at clock 4.
+13:14:54 manager.go:159: Manager pushed server 1's wr req for page 0 at clock 8.
+13:14:54 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 4 {0 <nil>} 1}  at clock  9
+13:14:54 manager.go:80: record.writing is  false  at clock  9
+13:14:54 manager.go:86: Manager poped s1's wr req for page 0.
+13:14:54 manager.go:115: Manager forward WRITE request for page 0 at clock 10.
+13:14:54 server.go:45: Server 0 received Manager's write forward at clock 10.
+13:14:54 server.go:115: Server 0 sent page 0 to Server 1 at clock 12.
+13:14:54 server.go:172: Server 1 is writing page 0 at clock 13.
+13:14:54 server.go:129: Server 1 sent WRITE confirm for page 0 to manager at clock 14.
+13:14:54 manager.go:54: Manager received Server 1's write confirm at clock 14.
+13:14:54 server.go:60: Server 1 received Server 0's sent page at clock 12.
+13:14:54 server.go:199: Server 0 remove access to page 0.
+13:14:54 server.go:199: Server 0 remove access to page 0.
+13:14:54 server.go:73: Server 1 wants to read page 1...
+13:14:54 server.go:78: Server 1 is reading page 1 at clock 14
+13:14:54 server.go:79: Server 1 finished reading page 1.
+13:14:55 server.go:90: Server 2 wants to write page 0...
+13:14:55 server.go:101: Server 2 request to write page 0 to manager at clock 0.
+13:14:55 manager.go:46: Manager received Server 2's write request at clock 0.
+13:14:55 manager.go:159: Manager pushed server 2's wr req for page 0 at clock 16.
+13:14:55 manager.go:74: Signal channel received msg  {-1 -1 0 NOTICE_WRITE_REQUEST 0 {0 <nil>} 2}  at clock  17
+13:14:55 manager.go:80: record.writing is  false  at clock  17
+13:14:55 manager.go:86: Manager poped s2's wr req for page 0.
+13:14:55 manager.go:115: Manager forward WRITE request for page 0 at clock 18.
+13:14:55 server.go:115: Server 1 sent page 0 to Server 2 at clock 20.
+13:14:55 server.go:45: Server 1 received Manager's write forward at clock 18.
+13:14:55 server.go:172: Server 2 is writing page 0 at clock 21.
+13:14:55 server.go:129: Server 2 sent WRITE confirm for page 0 to manager at clock 22.
+13:14:55 server.go:199: Server 1 remove access to page 0.
+13:14:55 server.go:60: Server 2 received Server 1's sent page at clock 20.
+13:14:55 manager.go:54: Manager received Server 2's write confirm at clock 22.
+13:14:55 server.go:73: Server 2 wants to read page 1...
+13:14:55 server.go:84: Server 2 request to read page 1 to manager at clock 22.
+13:14:55 manager.go:41: Manager received Server 2's read request at clock 22.
+13:14:55 manager.go:115: Manager forward READ request for page 1 at clock 25.
+13:14:55 server.go:40: Server 1 received Manager's read forward at clock 25.
+13:14:55 server.go:115: Server 1 sent page 1 to Server 2 at clock 27.
+13:14:55 server.go:55: Server 2 received Server 1's sent page at clock 27.
+13:14:55 server.go:154: Server 2 is reading page 1...
+13:14:55 server.go:129: Server 2 sent READ confirm for page 1 to manager at clock 29.
+13:14:55 manager.go:50: Manager received Server 2's read confirm at clock 29.
+13:14:55 manager.go:228: Manager adds server 2 to page 1's copyset.
+13:15:25 vanilaIvy.go:88: Elapsed time:  2.5580574s

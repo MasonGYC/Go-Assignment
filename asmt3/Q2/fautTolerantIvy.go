@@ -11,10 +11,13 @@ import (
 var start_time time.Time
 var end_time time.Time
 
-var timeout = 30 * time.Second
+var timeout = 60 * time.Second
 var heartbeat_interval = 1 * time.Second
 var heartbeat_timeout = 2 * time.Second
 var resend_timeout = 2 * time.Second
+
+var completed_req int = 0
+var mu sync.Mutex
 
 // roles
 const (
@@ -30,11 +33,11 @@ func main() {
 	logger.Printf("===============START===============")
 
 	// command line args
-	num_servers := flag.Int("servers", 10, "number of servers")
-	num_request_page := flag.Int("request_page", 3, "number of concurrent requests to make")
+	num_servers := flag.Int("servers", 5, "number of servers")
+	num_request_page := flag.Int("request_page", 3, "number of requests for each server to make")
 	num_faults_primary := flag.Int("faults", 0, "number of times that the primary fails")
 	rejoin_primary := flag.Bool("rejoin", false, "whether primary rejoins after fails")
-	fail_backup := flag.Bool("fail_backup", false, "whether the backup maanger fails as well as the primary")
+	fail_backup := flag.Bool("fail_backup", false, "whether the backup manager fails as well as the primary")
 
 	flag.Parse()
 
@@ -102,7 +105,7 @@ func main() {
 
 			if *rejoin_primary {
 				// simulate primary rejoin
-				time.Sleep(2 * time.Second)
+				time.Sleep(3 * time.Second)
 				primaryManager.rejoin()
 			}
 
@@ -140,12 +143,15 @@ func main() {
 	wg.Wait()
 	end_time = time.Now()
 	elapsed_time := end_time.Sub(start_time) - timeout
+	completion_rate := float64(completed_req) / float64((*num_servers)*(*num_request_page)) * 100
 
 	fmt.Println("Elapsed time: ", elapsed_time)
 	logger.Println("Elapsed time: ", elapsed_time)
+	fmt.Printf("Request completion rate: %.0f%%\n", completion_rate)
+	logger.Printf("Request completion rate: %.0f%%\n", completion_rate)
 	fmt.Println("Refer to logs.txt for more logs.")
 
-	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d |\n", *num_servers, *num_request_page, elapsed_time)
+	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d | %.0f%% |\n", *num_servers, *num_request_page, elapsed_time, completion_rate)
 
 	// var input string
 	// // wait for the input, as otherwise, the program will not wait

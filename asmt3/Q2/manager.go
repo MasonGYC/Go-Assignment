@@ -179,31 +179,12 @@ func (m *Manager) listenToSignal() {
 							go m.updateData()
 							if m.isCopyEmpty(msgHead.page_num) {
 								go m.forwardReq(msgHead.requester, msgHead.page_num, WRITE)
-								// timeout
-								go func(pn int) {
-									time.Sleep(resend_timeout)
-									if m.records[i].writing {
-										m.records[i].writing = false
-										if m.records[i].queue.Len() != 0 {
-											m1 := m.records[i].queue.Peek()
-											m.sig_ch <- NoticeMessage(m1.requester, m.id, pn, m1.clock)
-										}
-									}
-								}(msgHead.page_num)
 							} else {
 								go m.requestInvalidateCopy(msgHead.sender_id, msg.page_num)
-								// timeout
-								go func(pn int) {
-									time.Sleep(resend_timeout)
-									if m.records[i].writing {
-										m.records[i].writing = false
-										if m.records[i].queue.Len() != 0 {
-											m1 := m.records[i].queue.Peek()
-											m.sig_ch <- NoticeMessage(m1.requester, m.id, pn, m1.clock)
-										}
-									}
-								}(msgHead.page_num)
 							}
+							// timeout
+							time.Sleep(resend_timeout)
+							go m.resendReq(msgHead.page_num)
 						}()
 					}
 					m.Unlock()
@@ -286,6 +267,9 @@ func (m *Manager) onReceiveReadReq(msg Message) {
 
 func (m *Manager) onReceiveReadConfirm(msg Message) {
 	m.addToCopySet(msg.page_num, msg.sender_id)
+	mu.Lock()
+	completed_req++
+	mu.Unlock()
 }
 
 func (m *Manager) onReceiveWriteReq(msg Message) {
@@ -312,6 +296,9 @@ func (m *Manager) onReceiveInvConfirm(msg Message) {
 }
 
 func (m *Manager) onReceiveWriteConfirm(msg Message) {
+	mu.Lock()
+	completed_req++
+	mu.Unlock()
 	pn := msg.page_num
 	for i := 0; i < len(m.records); i++ {
 		if m.records[i].page_num == pn {
@@ -319,6 +306,21 @@ func (m *Manager) onReceiveWriteConfirm(msg Message) {
 			m.records[i].owner = msg.sender_id
 			if m.records[i].queue.Len() != 0 {
 				m.sig_ch <- NoticeMessage(msg.requester, m.id, pn, msg.clock)
+			}
+		}
+	}
+}
+
+func (m *Manager) resendReq(page_num int) {
+
+	for j := 0; j < len(m.records); j++ {
+		if m.records[j].page_num == page_num {
+			if m.records[j].writing {
+				m.records[j].writing = false
+				if m.records[j].queue.Len() != 0 {
+					m1 := m.records[j].queue.Peek()
+					m.sig_ch <- NoticeMessage(m1.requester, m.id, page_num, m1.clock)
+				}
 			}
 		}
 	}
