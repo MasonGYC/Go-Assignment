@@ -1,17 +1,45 @@
-# Requirement
-You will design a protocol to maintain the consistency of (meta)data between the 
-primary and the backup CM. When the primary CM fails, the backup CM takes over. When the 
-primary CM restarts, then the control is handed over to the primary CM again taking care of 
-the (meta)data consistency. Note: the assignment does not demand/require the 
-implementation of Paxos state machine.
+# Go Assignment 3
+50.041 Distributed Systems and Computing Go Assignment 3  
+Name: Guo Yuchen  
+Student ID: 1004885  
 
-# TODO
-2. timeout for manager: rd and wr confirm
+# Question 1
+`vanilaIvy`: Basic verison of Ivy   
+`fautTolerantIvy`: Fault tolerance verison of Ivy  
 
-go run fautTolerantIvy.go server.go record.go PriorityQueue.go  page.go message.go manager.go logger.go
+## Compilation
+To build:
+```
+go build vanilaIvy.go server.go record.go PriorityQueue.go  page.go message.go manager.go logger.go
+go build fautTolerantIvy.go server.go record.go PriorityQueue.go  page.go message.go manager.go logger.go
+```
 
-# logs
-10 severs, 8 requests, down once rejoin once
+To execute：
+```
+./vanilaIvy.exe -servers=? -requests=? 
+
+```  
+- `-servers`: `int`, indicates the number of clients.  
+- `-requests`: `int`, indicates the number of concurrent requests to make.   
+
+## External package
+`log` : used for output logging and debugging purpose.   
+`container/heap`: used to construct priority queue.  
+
+## Implementation
+1. Priority has 2 metrics: 
+	1. lamport scalar clock (smaller clock -> higher priority)
+	2. node id (higher id -> higher priority)
+2. Each server can only make one request at one time. If it doesn't receive all replies, it won't start making new request. 
+3. Clocks are updated before the execution of a certain action.
+4. If no message is received after 5 seconds, the server will stop. (timeout = 5 seconds)
+5. lamport clock is used to avoid deadlock in comparison the timestamp.
+
+## Output interpretation
+The `logs.txt` in the folder contains the sample outputs with 1 - 10 clients, while all of them make request concurrently. Refer to the files for more logs.
+
+### Sample outputs
+10 severs, 8 requests, primary down once and rejoin once
 ```log
 17:14:07 manager.go:237: Manager -2 received heartbeat from -1 at clock 0.
 17:14:07 manager.go:134: Manager -1 sent heartbeat to -2 at clock 2.
@@ -181,3 +209,6 @@ go run fautTolerantIvy.go server.go record.go PriorityQueue.go  page.go message.
 17:14:16 fautTolerantIvy.go:127: Elapsed time:  8.5481405s
 ```
 
+# Q3 
+**Discuss whether your fault tolerant version of Ivy still preserves sequential consistency or not.**
+Yes. Because on each individual process, operations are still executed in sequence. The central manager, despite susceptible to fault, will serve all write request in a FIFO queue, thus eliminate the possibility of a server reading stale values. And this queue will be synchorinized with the backup manager everytime it gets updated. Thus when the central manager fails, the backup manager takes the same queue and continue execution. There may be message lost during the transferring process, but it does not affect the sequential consistency.

@@ -18,7 +18,7 @@ type Server struct {
 func NewServer(id int, servers []*Server, manager *Manager, records []ServerRecord) *Server {
 	return &Server{
 		id:      id,
-		ch:      make(chan Message),
+		ch:      make(chan Message, 5),
 		clock:   0,
 		servers: servers,
 		manager: manager,
@@ -59,6 +59,8 @@ func (s *Server) listen() {
 				go s.onReceiveWritePage(msg)
 				logger.Printf("Server %d received Server %d's sent page at clock %d.\n", s.id, msg.sender_id, msg.clock)
 
+			} else {
+				logger.Printf("Server %d received Server %d's %s message at clock %d.\n", s.id, msg.sender_id, msg.message_type, msg.clock)
 			}
 		case <-time.After(timeout):
 			return
@@ -90,7 +92,7 @@ func (s *Server) write(page_num int) {
 	// check if s is owner
 	for _, record := range s.records {
 		if record.page_num == page_num && record.access == RW {
-			time.Sleep(time.Second) // simulate write
+			logger.Printf("Server %d is writing page %d at clock %d", s.id, page_num, s.clock) // simulate writing
 			logger.Printf("Server %d finished writing page %d.\n", s.id, page_num)
 			return
 		}
@@ -180,9 +182,6 @@ func (s *Server) updateClock(msgClock int) {
 	s.Lock()
 	s.clock = max(msgClock, s.clock) + 1
 	s.Unlock()
-
-	// logger.Printf("Server %d's clock updated: %d.\n", s.id, s.clock)
-	// logger.Printf("Server %d's clock updated: %d.\n", s.id, s.clock)
 }
 
 // update clock
@@ -190,9 +189,6 @@ func (s *Server) updateOwnClock() {
 	s.Lock()
 	s.clock = s.clock + 1
 	s.Unlock()
-
-	// logger.Printf("Server %d's clock updated: %d.\n", s.id, s.clock)
-	// logger.Printf("Server %d's clock updated: %d.\n", s.id, s.clock)
 }
 
 func (s *Server) markNilAccess(page_num int) {
@@ -200,6 +196,7 @@ func (s *Server) markNilAccess(page_num int) {
 	for _, record := range s.records {
 		if record.page_num == page_num {
 			record.access = NIL
+			logger.Printf("Server %d remove access to page %d.\n", s.id, page_num)
 		}
 	}
 }

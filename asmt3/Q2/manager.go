@@ -96,21 +96,23 @@ func (m *Manager) listenToHeartbeat() {
 				go m.onReceiveHeartbeat(msg)
 			}
 		case <-time.After(heartbeat_timeout):
-			// the other manager is down
-			logger.Printf("Manager %d detects the other manager is down.\n", m.id)
-			go func() {
-				if !m.isInCharge {
-					m.Lock()
-					m.isInCharge = true
-					m.Unlock()
-					for i := 0; i < len(m.servers); i++ {
-						logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.id, m.servers[i].id, m.clock)
-						go func(i int) {
-							m.servers[i].ch <- DeclarePrimaryMessage(m.id, m.servers[i].id, m.clock)
-						}(i)
+			if m.isAlive {
+				// the other manager is down
+				logger.Printf("Manager %d detects the other manager is down.\n", m.id)
+				go func() {
+					if !m.isInCharge && !m.primaryManager.isAlive {
+						m.Lock()
+						m.isInCharge = true
+						m.Unlock()
+						for i := 0; i < len(m.servers); i++ {
+							logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.id, m.servers[i].id, m.clock)
+							go func(i int) {
+								m.servers[i].ch <- DeclarePrimaryMessage(m.id, m.servers[i].id, m.clock)
+							}(i)
+						}
 					}
-				}
-			}()
+				}()
+			}
 		}
 	}
 }
@@ -120,6 +122,7 @@ func (m *Manager) listenToData() {
 		msg := <-m.data_ch
 		if m.isAlive {
 			m.records = msg.records
+			m.clock = msg.clock
 			logger.Printf("Manager %d updated records.\n", m.id)
 		}
 	}
@@ -175,9 +178,31 @@ func (m *Manager) listenToSignal() {
 							logger.Printf("Manager %d poped s%d's wr req for page %d.\n", m.id, msgHead.requester, msgHead.page_num)
 							go m.updateData()
 							if m.isCopyEmpty(msgHead.page_num) {
-								m.forwardReq(msgHead.requester, msgHead.page_num, WRITE)
+								go m.forwardReq(msgHead.requester, msgHead.page_num, WRITE)
+								// timeout
+								go func(pn int) {
+									time.Sleep(resend_timeout)
+									if m.records[i].writing {
+										m.records[i].writing = false
+										if m.records[i].queue.Len() != 0 {
+											m1 := m.records[i].queue.Peek()
+											m.sig_ch <- NoticeMessage(m1.requester, m.id, pn, m1.clock)
+										}
+									}
+								}(msgHead.page_num)
 							} else {
-								m.requestInvalidateCopy(msgHead.sender_id, msg.page_num)
+								go m.requestInvalidateCopy(msgHead.sender_id, msg.page_num)
+								// timeout
+								go func(pn int) {
+									time.Sleep(resend_timeout)
+									if m.records[i].writing {
+										m.records[i].writing = false
+										if m.records[i].queue.Len() != 0 {
+											m1 := m.records[i].queue.Peek()
+											m.sig_ch <- NoticeMessage(m1.requester, m.id, pn, m1.clock)
+										}
+									}
+								}(msgHead.page_num)
 							}
 						}()
 					}
@@ -245,6 +270,12 @@ func (m *Manager) onReceiveHeartbeat(msg Message) {
 			m.isInCharge = false
 			m.Unlock()
 			go m.updateData()
+			for i := 0; i < len(m.servers); i++ {
+				logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.primaryManager.id, m.servers[i].id, m.clock)
+				go func(i int) {
+					m.servers[i].ch <- DeclarePrimaryMessage(m.primaryManager.id, m.servers[i].id, m.clock)
+				}(i)
+			}
 		}
 	}
 }
@@ -371,12 +402,6 @@ func (m *Manager) rejoin() {
 	m.Unlock()
 	if m.role == PRIMARY {
 		m.isInCharge = true
-		for i := 0; i < len(m.servers); i++ {
-			logger.Printf("Declare manager %d to be pri to server %d at clock %d.\n", m.id, m.servers[i].id, m.clock)
-			go func(i int) {
-				m.servers[i].ch <- DeclarePrimaryMessage(m.id, m.servers[i].id, m.clock)
-			}(i)
-		}
 	}
 }
 

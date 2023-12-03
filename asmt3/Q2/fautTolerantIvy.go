@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	performanceLogger "go_asmt/asmt1/asmt3"
-	"math/rand"
 	"sync"
 	"time"
 )
@@ -12,7 +11,7 @@ import (
 var start_time time.Time
 var end_time time.Time
 
-var timeout = 5 * time.Second
+var timeout = 30 * time.Second
 var heartbeat_interval = 1 * time.Second
 var heartbeat_timeout = 2 * time.Second
 var resend_timeout = 2 * time.Second
@@ -30,14 +29,13 @@ func main() {
 	// log outputs for debugging purpose
 	logger.Printf("===============START===============")
 
-	// define the number of servers
+	// command line args
 	num_servers := flag.Int("servers", 10, "number of servers")
+	num_request_page := flag.Int("request_page", 3, "number of concurrent requests to make")
+	num_faults_primary := flag.Int("faults", 0, "number of times that the primary fails")
+	rejoin_primary := flag.Bool("rejoin", false, "whether primary rejoins after fails")
+	fail_backup := flag.Bool("fail_backup", false, "whether the backup maanger fails as well as the primary")
 
-	// define the number of concurrent requests to make
-	num_requests := flag.Int("requests", 8, "number of concurrent requests to make")
-
-	// define the number of tiems that the primary fails
-	// primary_fail_times := flag.Int("requests", 8, "number of concurrent requests to make")
 	flag.Parse()
 
 	// set wg
@@ -96,47 +94,58 @@ func main() {
 
 	// simulate faults of managers
 	time.Sleep(time.Second)
+
 	go func() {
-		// // simulate primary down
-		// time.Sleep(100 * time.Millisecond)
-		// primaryManager.down()
-		// // simulate primary rejoin
-		// time.Sleep(2 * time.Second)
-		// primaryManager.rejoin()
-		time.Sleep(100 * time.Millisecond)
-		backupManager.down()
-		// simulate primary rejoin
-		time.Sleep(2 * time.Second)
-		backupManager.rejoin()
+		for i := 0; i < *num_faults_primary; i++ {
+			// simulate primary down
+			primaryManager.down()
+
+			if *rejoin_primary {
+				// simulate primary rejoin
+				time.Sleep(2 * time.Second)
+				primaryManager.rejoin()
+			}
+
+			if *fail_backup {
+				// simulate backup down
+				backupManager.down()
+
+				// simulate backup rejoin
+				time.Sleep(3 * time.Second)
+				backupManager.rejoin()
+			}
+			// rest a while, don't fail so frequently
+			time.Sleep(500 * time.Millisecond)
+		}
 	}()
 
 	// simulate request
 	start_time = time.Now()
-	for i := 0; i < *num_requests; i++ {
-		wg.Add(1)
-		go func(i int) {
-			randReq := rand.Intn(2)
-			randPage := rand.Intn(*num_servers)
-			if randReq == 0 {
-				servers[i].read(randPage)
-			} else {
-				servers[i].write(randPage)
-			}
-			wg.Done()
-		}(i)
-		time.Sleep(500 * time.Millisecond)
+	for i := 0; i < *num_servers; i++ {
+		for j := 0; j < *num_request_page; j++ {
+			wg.Add(1)
+			go func(i int) {
+				if j%2 == 1 {
+					servers[i].read(j)
+				} else {
+					servers[i].write(j)
+				}
+				wg.Done()
+			}(i)
+			time.Sleep(500 * time.Millisecond)
+		}
 	}
 
 	// wait for all goroutines to finish
 	wg.Wait()
 	end_time = time.Now()
-	elapsed_time := end_time.Sub(start_time)
+	elapsed_time := end_time.Sub(start_time) - timeout
 
 	fmt.Println("Elapsed time: ", elapsed_time)
 	logger.Println("Elapsed time: ", elapsed_time)
 	fmt.Println("Refer to logs.txt for more logs.")
 
-	performanceLogger.PerformanceLogger.Printf("| %d | %d |\n", *num_requests, elapsed_time)
+	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d |\n", *num_servers, *num_request_page, elapsed_time)
 
 	// var input string
 	// // wait for the input, as otherwise, the program will not wait

@@ -14,5 +14,5 @@ func init() {
 		log.Fatal(err)
 		os.Exit(1)
 	}
-	logger = log.New(file, "", log.Ldate|log.Ltime|log.Lshortfile)
+	logger = log.New(file, "", log.Ltime|log.Lshortfile)
 }
