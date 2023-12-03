@@ -24,8 +24,8 @@ func main() {
 	logger.Printf("===============START===============")
 
 	// command line args
-	num_servers := flag.Int("servers", 10, "number of servers")
-	num_request_page := flag.Int("request_page", 3, "number of concurrent requests to make")
+	num_server := flag.Int("servers", 10, "number of servers")
+	num_request := flag.Int("requests", 3, "number of concurrent requests to make")
 
 	flag.Parse()
 
@@ -34,21 +34,21 @@ func main() {
 
 	// initially, every server possess one page, the page number&content of it is its own id
 	var managerRecords = make([]ManagerRecord, 0)
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		managerRecords = append(managerRecords, NewManagerRecord(i, make([]int, 0), i))
 	}
 
 	// initialize servers and manager
-	var servers = make([]*Server, *num_servers)
+	var servers = make([]*Server, *num_server)
 	var manager = NewManager(servers, managerRecords)
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		serverRecords := make([]ServerRecord, 1)
 		serverRecords = append(serverRecords, NewServerRecord(i, RW, NewPage(i, i)))
 		servers[i] = NewServer(i, servers, manager, serverRecords)
 	}
 
 	// start listening on all servers
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		wg.Add(1)
 		go func(i int) {
 			servers[i].listen()
@@ -64,8 +64,8 @@ func main() {
 
 	// simulate request
 	start_time = time.Now()
-	for i := 0; i < *num_servers; i++ {
-		for j := 0; j < *num_request_page; j++ {
+	for i := 0; i < *num_server; i++ {
+		for j := 0; j < *num_request; j++ {
 			wg.Add(1)
 			go func(i int) {
 				if j%2 == 1 {
@@ -88,7 +88,7 @@ func main() {
 	logger.Println("Elapsed time: ", elapsed_time)
 	fmt.Println("Refer to logs.txt for more logs.")
 
-	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d |\n", *num_servers, *num_request_page, elapsed_time)
+	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d |\n", *num_server, *num_request, elapsed_time)
 
 	// var input string
 	// // wait for the input, as otherwise, the program will not wait

@@ -33,8 +33,8 @@ func main() {
 	logger.Printf("===============START===============")
 
 	// command line args
-	num_servers := flag.Int("servers", 5, "number of servers")
-	num_request_page := flag.Int("request_page", 3, "number of requests for each server to make")
+	num_server := flag.Int("servers", 5, "number of servers")
+	num_request := flag.Int("requests", 3, "number of requests for each server to make")
 	num_faults_primary := flag.Int("faults", 0, "number of times that the primary fails")
 	rejoin_primary := flag.Bool("rejoin", false, "whether primary rejoins after fails")
 	fail_backup := flag.Bool("fail_backup", false, "whether the backup manager fails as well as the primary")
@@ -46,12 +46,12 @@ func main() {
 
 	// initially, every server possess one page, the page number&content of it is its own id
 	var managerRecords = make([]ManagerRecord, 0)
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		managerRecords = append(managerRecords, NewManagerRecord(i, make([]int, 0), i))
 	}
 
 	// initialize managers
-	var servers = make([]*Server, *num_servers)
+	var servers = make([]*Server, *num_server)
 	var managers = make([]*Manager, 2)
 	var primaryManager *Manager
 	var backupManager *Manager
@@ -68,14 +68,14 @@ func main() {
 	managers[1] = backupManager
 
 	// initialize servers
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		serverRecords := make([]ServerRecord, 1)
 		serverRecords = append(serverRecords, NewServerRecord(i, RW, NewPage(i, i)))
 		servers[i] = NewServer(i, servers, primaryManager, managers, serverRecords)
 	}
 
 	// start listening on all servers
-	for i := 0; i < *num_servers; i++ {
+	for i := 0; i < *num_server; i++ {
 		wg.Add(1)
 		go func(i int) {
 			servers[i].listen()
@@ -124,8 +124,8 @@ func main() {
 
 	// simulate request
 	start_time = time.Now()
-	for i := 0; i < *num_servers; i++ {
-		for j := 0; j < *num_request_page; j++ {
+	for i := 0; i < *num_server; i++ {
+		for j := 0; j < *num_request; j++ {
 			wg.Add(1)
 			go func(i int) {
 				if j%2 == 1 {
@@ -143,7 +143,7 @@ func main() {
 	wg.Wait()
 	end_time = time.Now()
 	elapsed_time := end_time.Sub(start_time) - timeout
-	completion_rate := float64(completed_req) / float64((*num_servers)*(*num_request_page)) * 100
+	completion_rate := float64(completed_req) / float64((*num_server)*(*num_request)) * 100
 
 	fmt.Println("Elapsed time: ", elapsed_time)
 	logger.Println("Elapsed time: ", elapsed_time)
@@ -151,7 +151,7 @@ func main() {
 	logger.Printf("Request completion rate: %.0f%%\n", completion_rate)
 	fmt.Println("Refer to logs.txt for more logs.")
 
-	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d | %.0f%% |\n", *num_servers, *num_request_page, elapsed_time, completion_rate)
+	performanceLogger.PerformanceLogger.Printf("| %d | %d | %d | %.0f%% |\n", *num_server, *num_request, elapsed_time, completion_rate)
 
 	// var input string
 	// // wait for the input, as otherwise, the program will not wait

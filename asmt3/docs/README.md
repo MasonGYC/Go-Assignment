@@ -3,7 +3,7 @@
 Name: Guo Yuchen  
 Student ID: 1004885  
 
-# Question 1
+# Question 1&2
 `vanilaIvy`: Basic verison of Ivy  
 `fautTolerantIvy`: Fault tolerance verison of Ivy   
 
@@ -16,8 +16,8 @@ go build fautTolerantIvy.go server.go record.go PriorityQueue.go  page.go messag
 
 To execute：
 ```
-./vanilaIvy.exe -servers=? -request_page=? 
-./fautTolerantIvy.exe -servers=? -request_page=? -faults=? -rejoin=? -fail_backup=?
+./vanilaIvy.exe -servers=? -requests=? 
+./fautTolerantIvy.exe -servers=? -requests=? -faults=? -rejoin=? -fail_backup=?
 ```  
 - `-servers`: `int`, indicates the number of clients.  
 - `-requests`: `int`, indicates number of requests that each server will make. write and read will be simulated alternatively.
@@ -30,19 +30,18 @@ To execute：
 `container/heap`: used to construct priority queue.  
 
 ## Implementation
-1. Manager holds a priority queue, requests will be stored in queue and executed sequentially. Request with earlier timestamp or higher server id are prioritised.Priority has 2 metrics: 
-	1. lamport scalar clock (smaller clock -> higher priority)
-	2. node id (higher id -> higher priority) 
+1. Manager holds a priority queue, write requests will be stored in queue and executed sequentially. Request with earlier timestamp or higher server id are prioritised.
 2. The following state diagrams shows the workflow of the primary CM and server under fault-free condition.
 ![Central Manager work flow](manager_states.png)
 ![Server work flow](server_states.png)
 3. To detects faults of the CMs, heartbeat is initiated by primary CM, and the backup CM will reply when it gets the heartbeat message. If there's no heartbeat messgage from primary after a certain period of time, the backup will take control and announce it to all servers. Then when primary rejoin, the backup will notice and transfer the control back, update the primary's record and clock, and announce it to all servers. 
-4. The primary CM will sync the data with the backup everytime a change is made, which ensures the data consistency.
+4. The primary CM will sync data with the backup CM everytime a change to the data is made, which ensures the data consistency.
 5. When a CM is down, it marks itself's `is_alive` as false, clear the records, reset the clock, and stops sending heartbeat and processing incoming messages.
-6. Termination condition: There's no any incoming message for all channels after `timeout` time. 
+6. Termination condition: There's no any incoming message for all channels for `timeout` time long. 
+7. Records initiation: initially, every server is owner of one page, the page number of it is its own id.
 
 ## Output interpretation
-The `logs.txt` in the folder contains the sample outputs with 1 - 10 clients, while all of them make request concurrently. Refer to the files for more logs.
+The logger will log the information in `logs.txt` file in the folder, and the performance information will be stored in `performance_log.txt`.
 
 ### Sample outputs
 #### Basic version
@@ -281,23 +280,26 @@ The `logs.txt` in the folder contains the sample outputs with 1 - 10 clients, wh
 17:14:16 fautTolerantIvy.go:127: Elapsed time:  8.5481405s
 ```
 
-# Qyestion 3 
-**Discuss whether your fault tolerant version of Ivy still preserves sequential consistency or not.**
-Yes. Because on each individual process, operations are still executed in sequence. The central manager, despite susceptible to fault, will serve all write request in a FIFO queue, thus eliminate the possibility of a server reading stale values. And this queue will be synchorinized with the backup manager everytime it gets updated. Thus when the central manager fails, the backup manager takes the same queue and continue execution. There may be message lost during the transferring process, but it does not affect the sequential consistency.
+# Question 3 
+***Discuss whether your fault tolerant version of Ivy still preserves sequential consistency or not.*** 
+- Yes. Because on each individual process, operations are still executed in sequence. The central manager, despite susceptible to fault, will serve all requests in a FIFO order, and when a server finishes writing, the copyset in CM will be updated. Thus it eliminates the possibility of a server reading stale values. And the FIFO queue in primary CM will be synchorinized with the backup manager everytime it gets updated. So when the primary CM fails, the backup CM takes the same queue and continue execution. There may be message lost during the transferring process, but it does not affect the sequential consistency.
 
 # Experiments
 The following experiments measures 2 things: the end-to-end time, and the completion rate of the requests.
-- Time: measured from the first request is made, until all requests are served.
+- Time: measured from the first request made, until all requests are served/lost.
 - Completion rate: everytime the central manager receives a confirm from the server, the request is marked as completed. This is only measured in cases with faults.
+
+PS: The `run.bash` files in each folder are created for running multiple experiments automatically.
 
 ## 1. Without any fault
 **Requirement**: Compare the performance of the basic version of Ivy protocol and the new fault tolerant version using requests from at least 10 clients.
 
-The simulation code is as follows. There will be `num_servers` servers making `num_request_page` requests each, therefore in total `num_servers * num_request_page` requests in one round. The request is raised every 1 second. 
+The simulation code is as follows (in `vanilaIvy.go` and `fautTolerantIvy.go`).  
+There will be `num_server` servers making `num_request` requests each, therefore in total `num_server * num_request` requests in one round. The request is raised every 0.5 second. 
 
 ```go
-for i := 0; i < *num_servers; i++ {
-    for j := 0; j < *num_request_page; j++ {
+for i := 0; i < *num_server; i++ {
+    for j := 0; j < *num_request; j++ {
         wg.Add(1)
         go func(i int) {
             if j%2 == 1 {
@@ -307,7 +309,7 @@ for i := 0; i < *num_servers; i++ {
             }
             wg.Done()
         }(i)
-        time.Sleep(time.Second)
+        time.Sleep(500 * time.Millisecond)
     }
 }
 ```
@@ -321,17 +323,17 @@ The measured time(in second) is as follows:
 | 10 | 10 | 50.02 | 49.96 |
 | 15 | 10 | 75.88 | 75.88 |
 
-*Number of servers = num_servers
-*Number of requests = num_request_page
+`*Number of servers = num_server`  
+`*Number of requests = num_request`
 
-From the data we can see that the time is roughly the same, since the fault tolerance version shares almost the same process as the basic version, other than the data sync and heatbeat, which does not cause heavy overhead.
+From the data we can see that the time is roughly the same, since the fault tolerance version shares almost the same process as the basic version other than the data sync and heatbeat, which does not cause heavy overhead.
 
 ## 2. One CM fails only once
 **Requirement**: Simulate 2 cases:  
 - a) when the primary CM fails at a random time,  
-	- run `./fautTolerantIvy.exe -servers=? -request_page=? -faults=1 -rejoin=0 -fail_backup=0`  
+	- run `./fautTolerantIvy.exe -servers=? -requests=? -faults=1 -rejoin=0 -fail_backup=0`  
 - b) when the primary CM restarts after the failure.   
-	- run `./fautTolerantIvy.exe -servers=? -request_page=? -faults=1 -rejoin=1 -fail_backup=0`  
+	- run `./fautTolerantIvy.exe -servers=? -requests=? -faults=1 -rejoin=1 -fail_backup=0`  
 
 The simulation code is as follows:
 ```go
@@ -341,7 +343,7 @@ go func() {
 
     if *rejoin_primary {
         // simulate primary rejoin
-        time.Sleep(2 * time.Second)
+        time.Sleep(3 * time.Second)
         primaryManager.rejoin()
     }
 }()
@@ -360,17 +362,19 @@ The measured time(in second) is as follows:
 The measured request completion rate is as follows: 
 | Number of servers | Number of requests | Primary fails | Primary fails and restarts | 
 |----------|----------|----------|----------|
-| 10 | 3 | 83% |
-| 15 | 3 | 89% |
-| 10 | 5 | 82% |
-| 15 | 5 | 89% |
-| 10 | 10 | 87% |
-| 15 | 10 | 78% |
+| 10 | 3 | 83% | 83% |
+| 15 | 3 | 89% | 89% |
+| 10 | 5 | 82% | 84% |
+| 15 | 5 | 89% | 92% |
+| 10 | 10 | 87% | 87% |
+| 15 | 10 | 78% | 78% |
 
-From the data we can see that the time is roughly the same, since when primary restarts, it only takes a very short time to get the control back. And compared with the case without any faults, the time generally increased since backup server needs to broadcast to all servers about its primary role, and some messages may get lost during the transfering period. And compared with fault-free version, the time increased due to the handling-over by the backup manager.
+From the data we can see that the time and completion rate of 2 cases are roughly the same, since when primary restarts, it only takes a very short time to get the control back. And because both fail and rejoin of primary CM is detected by the backup CM, there won't be situation that some servers think the CM is the backup one, and some think that the CM is the primary one.  
+And compared with fault-free version, the time generally increased. Because backup server needs to broadcast to all servers about its primary role, and some messages may get lost during the transfering period. Thus teh completion rate also drops.
 
 ## 3. Multiple faults for primary CM
 **Requirement**: Primary CM fails and restarts multiple times.
+- run `./fautTolerantIvy.exe -servers=? -requests=? -faults=? -rejoin=1 -fail_backup=0`
 
 The simulation code is as follows:
 ```go
@@ -380,7 +384,7 @@ go func() {
         primaryManager.down()
 
         // simulate primary rejoin
-        time.Sleep(2 * time.Second)
+        time.Sleep(3 * time.Second)
         primaryManager.rejoin()
 
         if *fail_backup {
@@ -388,7 +392,7 @@ go func() {
             backupManager.down()
 
             // simulate backup rejoin
-            time.Sleep(2 * time.Second)
+            time.Sleep(3 * time.Second)
             backupManager.rejoin()
         }
         // rest a while, don't fail so frequently
@@ -396,10 +400,10 @@ go func() {
     }
 }()
 ```
-Let primary fails and restarts 2, 3 times.  
+Let primary fails and restarts 2 and 3 times.  
 
 The measured time(in second) is as follows:  
-| Number of servers | Number of requests | 2 | 3 |
+| Number of servers | Number of requests | Fail 2 times | Fail 3 times |
 |----------|----------|----------| ----------|
 | 10 | 3 | 14.69 | 14.65 |
 | 15 | 3 | 22.31 | 22.18 |
@@ -409,19 +413,26 @@ The measured time(in second) is as follows:
 | 15 | 10 | 75.32 | 74.89 |
 
 The measured request completion rate is as follows:   
-| Number of servers | Number of requests | 2 | 3 | 
+| Number of servers | Number of requests | Fail 2 times | Fail 3 times |
 |----------|----------|----------|----------|
+| 10 | 3 | 77% | 70% |
+| 15 | 3 | 84% | 80% |
+| 10 | 5 | 78% | 74% |
+| 15 | 5 | 85% | 83% |
+| 10 | 10 | 84% | 81% |
+| 15 | 10 | 83% | 81% |
 
-From the data we can see that the time is roughly the same, since the control transfer is fast enough, and lost message won't be retransmissioned by design. Thus it won't affect the general performance in terms of time, but the number of requests missing will increase.
+From the data we can see that the time is roughly the same, since the control transfer is fast enough, and lost message won't be retransmissioned by design. Thus it won't affect the general performance in terms of time, but the completion rate drops when the CM fails more times, since more requests are ignored during the failure handling.
 
 
 ## 4. Multiple faults for primary CM and backup CM 
 **Requirement**: Both primary CM and backup CM fail and restart multiple times. 
+- run `./fautTolerantIvy.exe -servers=? -requests=? -faults=? -rejoin=1 -fail_backup=1`
 
 The simulation code is the same as (3), but set `fail_backup=true`.    
-Let both fail and restart 2, 3 times.     
+Let both CM fail and restart 2 and 3 times.     
 The measured time(in second) is as follows:  
-| Number of servers | Number of requests | 2 | 3 |
+| Number of servers | Number of requests | Fail 2 times | Fail 3 times |
 |----------|----------|----------| ----------|
 | 10 | 3 | 13.56 | 19.08 |
 | 15 | 3 | 13.56 | 20.08 |
@@ -431,7 +442,13 @@ The measured time(in second) is as follows:
 | 15 | 10 | 15.89 | 19.09 |
 
 The measured request completion rate is as follows:   
-| Number of servers | Number of requests | 2 | 3 | 
+| Number of servers | Number of requests | Fail 2 times | Fail 3 times |
 |----------|----------|----------|----------|
+| 10 | 3 | 3% | 3% |
+| 15 | 3 | 2% | 2% |
+| 10 | 5 | 4% | 4% |
+| 15 | 5 | 3% | 3% |
+| 10 | 10 | 2% | 2% |
+| 15 | 10 | 1% | 3% |
 
-From the data we can see that when backup fails as well, the time drastically increased, since 
+From the data we can see that when backup fails as well, the time drastically increased and the completion rate drastically decreased, since there's no manager handling the requests, thus most of the messages are lost, resulting in incompleteness of the whole process.
